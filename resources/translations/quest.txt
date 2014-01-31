@@ -51,9 +51,9 @@ B16;新「三川艦隊」出撃せよ！;Sortie the New Mikawa Fleet!;完全編�
 B17;「潜水艦隊」出撃せよ！;Sortie a Submarine Fleet!;伊号潜水艦2隻からなる潜水艦隊でオリョール海の敵を撃滅せよ！;Deploy a fleet with 2 SS and 4 additional ships. Score a victory against World 2-3 Boss.
 B18;「航空水上打撃艦隊」出撃せよ！;Sortie a Navy Aviation Strike Fleet!;航空戦艦2隻と航空巡洋艦2隻を基幹とする艦隊でカレー洋の制海権を握れ！;Deploy a fleet with 2 BBV, 2 CAV and 2 additional ships. Score a victory against World 4-2 Boss.
 B19;「第六戦隊」出撃せよ！;Sortie the Cruiser Division 6!;編成した「第六戦隊」をもって出撃し、オリョール海の敵を撃滅「完全勝利」せよ！;Deploy a fleet with Furutaka, Kako, Kinugasa, Aoba and 2 additional ships. Score a S RATING victory or higher against World 2-3 Boss.
-B20;「第八駆逐隊」出撃せよ！;Sortie the Destroyer Squadron 8!;編成した「第八駆逐隊」を含む艦隊で出撃し、オリョール海の敵を撃滅せよ！;Deploy a fleet with Michishio, Ooshio, Arashio and 2 additional ships. Score a victory against World 2-3 Boss.
-B21;「第十八駆逐隊」出撃せよ！;Sortie the Destroyer Squadron 18!;編成した「第十八駆逐隊」を含む艦隊で出撃し、北方海域モーレイ海の敵を撃滅せよ！;Deploy a fleet with Kasumi, Arare, Kagerou, Shiranui and 2 additional ships. Score a victory against World 3-1 Boss.
-B22;「第三十駆逐隊(第一次)」出撃せよ！;Sortie the Destroyer Squadron 30 (Gen-1)!;「第三十駆逐隊(第一次)」を含む艦隊で出撃し、キス島沖の主力艦隊と交戦せよ！;Deploy a fleet with Mutsuki, Kisaragi, Yayoi, Mochizuki and 2 DD. Score a victory against World 3-2 Boss.
+B20;「第八駆逐隊」出撃せよ！;Sortie the Destroyer Division 8!;編成した「第八駆逐隊」を含む艦隊で出撃し、オリョール海の敵を撃滅せよ！;Deploy a fleet with Michishio, Ooshio, Arashio and 2 additional ships. Score a victory against World 2-3 Boss.
+B21;「第十八駆逐隊」出撃せよ！;Sortie the Destroyer Division 18!;編成した「第十八駆逐隊」を含む艦隊で出撃し、北方海域モーレイ海の敵を撃滅せよ！;Deploy a fleet with Kasumi, Arare, Kagerou, Shiranui and 2 additional ships. Score a victory against World 3-1 Boss.
+B22;「第三十駆逐隊(第一次)」出撃せよ！;Sortie the Destroyer Division 30 (Gen-1)!;「第三十駆逐隊(第一次)」を含む艦隊で出撃し、キス島沖の主力艦隊と交戦せよ！;Deploy a fleet with Mutsuki, Kisaragi, Yayoi, Mochizuki and 2 DD. Score a victory against World 3-2 Boss.
 Bd1;敵艦隊を撃破せよ！;Daily Sortie 1;艦隊を出撃させ、敵艦隊を捕捉、これを撃滅せよ！;Defeat an enemy fleet.
 Bd2;敵艦隊主力を撃滅せよ！;Daily Sortie 2;艦隊を出撃させ、敵艦隊「主力」を捕捉！これを撃滅せよ！;Defeat the flagship of an enemy fleet.
 Bd3;敵艦隊を10回邀撃せよ！;Daily Sortie 3;艦隊全力出撃！遊弋する敵艦隊を10回邀撃せよ！;Defeat 10 enemy fleets.
@@ -97,10 +97,10 @@ F1;はじめての「建造」！;First Ship Construction;「工廠」で鋼材�
 F2;はじめての「開発」！;First Equipment Development;「工廠」でボーキサイトなどの資材を使って新しい装備アイテムを「開発」しよう！;Craft a piece of equipment.
 F3;はじめての「解体」！;First Ship Scrapping;「工廠」で不要な艦を「解体」してみよう！;Dismantle a ship.
 F4;はじめての「廃棄」！;First Equipment Scrapping;「工廠」で不要な装備アイテムを「廃棄」してみよう！;Scrap a piece of equipment.
-F5;新装備「開発」指令;Daily Ship Construction 1;「工廠」で装備アイテムを新たに「開発」しよう(失敗もOK)！;Craft a piece of equipment. (Failures are OK)
-F6;新造艦「建造」指令;Daily Equipment Development 1;「工廠」で艦娘を本日中に新たに「建造」しよう！;Craft a ship.
-F7;装備「開発」集中強化！;Daily Ship Construction 2;「工廠」で装備アイテムを本日中に3回「開発」しよう(失敗もOK)！;Craft 3 pieces of equipment. (Failures are OK)
-F8;艦娘「建造」艦隊強化！;Daily Equipment Development 2;艦隊強化のため、「工廠」で艦娘を本日中に3隻「建造」しよう！;Craft 3 ships.
+F5;新装備「開発」指令;Daily Equipment Development 1;「工廠」で装備アイテムを新たに「開発」しよう(失敗もOK)！;Craft a piece of equipment. (Failures are OK)
+F6;新造艦「建造」指令;Daily Ship Construction 1;「工廠」で艦娘を本日中に新たに「建造」しよう！;Craft a ship.
+F7;装備「開発」集中強化！;Daily Equipment Development 2;「工廠」で装備アイテムを本日中に3回「開発」しよう(失敗もOK)！;Craft 3 pieces of equipment. (Failures are OK)
+F8;艦娘「建造」艦隊強化！;Daily Ship Construction 2;艦隊強化のため、「工廠」で艦娘を本日中に3隻「建造」しよう！;Craft 3 ships.
 F9;軍縮条約対応！;Daily Ship Scrapping;少し艦隊規模が大きくなりすぎました！「工廠」で不要な艦を2隻「解体」してください！;Scrap 2 ships.
 F10;「大型艦建造」の準備！(その弐);Preparation for LCS (Part 2);大型艦建造の準備をします！「工廠」で装備アイテムを4回「廃棄」してみてください！;Scrap 4 pieces of equipment.
 G1;はじめての「近代化改修」！;First Modernization;任意の艦を近代化改修(合成)して、強化せよ！;Perform a successful modernization.
