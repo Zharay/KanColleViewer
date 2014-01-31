@@ -29,13 +29,13 @@ A27;中規模潜水艦隊を編成せよ！;Form a Medium-Sized Submarine Fleet!
 A28;「第六戦隊」を編成せよ！;Form the Cruiser Division 6!;「古鷹」「加古」「青葉」「衣笠」を基幹とした第六戦隊を編成せよ！;Have Furutaka, Kako, Kinugasa and Aoba in your main fleet.
 A29;「第5艦隊」を編成せよ！;Form the 5th Fleet!;「那智」「足柄」「多摩」「木曾」を中核とした「第五艦隊」を編成せよ！;Have Nachi, Ashigara, Tama, and Kiso in your fleet.
 A30;「第1水雷戦隊」を編成せよ！;Form the Torpedo Squadron 1!;「阿武隈」「曙」「潮」「霞」「不知火」を中核とした「第1水雷戦隊」を編成せよ！;Have Abukuma, Akebono, Ushio, Kasumi and Shiranui in your fleet.
-A31;「第八駆逐隊」を編成せよ！;Form the Destroyer Squadron 8!;「朝潮」「満潮」「大潮」「荒潮」4隻による第八駆逐隊を編成せよ！;Have Asashio, Michishio, Ooshio and Arashio in your fleet.
-A32;「第十八駆逐隊」を編成せよ！;Form the Destroyer Squadron 18!;「霞」「霰」「陽炎」「不知火」4隻による第十八駆逐隊を編成せよ！;Have ONLY Kasumi, Arare, Kagerou and Shiranui in your fleet.
-A33;「第三十駆逐隊(第一次)」を編成せよ！;Form the Destroyer Squadron 30 (Gen-1)!;「睦月」「如月」「弥生」「望月」4隻による第三十駆逐隊を編成せよ！;Have ONLY Mutsuki, Kisaragi, Yayoi and Mochizuki in your fleet.
+A31;「第八駆逐隊」を編成せよ！;Form the Destroyer Division 8!;「朝潮」「満潮」「大潮」「荒潮」4隻による第八駆逐隊を編成せよ！;Have Asashio, Michishio, Ooshio and Arashio in your fleet.
+A32;「第十八駆逐隊」を編成せよ！;Form the Destroyer Division 18!;「霞」「霰」「陽炎」「不知火」4隻による第十八駆逐隊を編成せよ！;Have ONLY Kasumi, Arare, Kagerou and Shiranui in your fleet.
+A33;「第三十駆逐隊(第一次)」を編成せよ！;Form the Destroyer Division 30 (Gen-1)!;「睦月」「如月」「弥生」「望月」4隻による第三十駆逐隊(第一次)を編成せよ！;Have ONLY Mutsuki, Kisaragi, Yayoi and Mochizuki in your fleet.
 B1;はじめての「出撃」！;First Sortie!;艦隊を出撃させ、敵艦隊と交戦せよ！;Deploy your main fleet on a combat mission.
 B2;鎮守府正面海域を護れ！;Protect the Seas of Chinju-Fu!;鎮守府正面海域に艦隊を出撃させ、敵艦の跋梁を阻止せよ！;Deploy to World 1-1 and clear the stage.
 B3;第2艦隊、出撃せよ！;Second Fleet Sortie!;新たに編成した「第2艦隊」を出撃せよ！;Deploy your 2nd Fleet on a combat mission.
-B4;南西諸島沖に出撃せよ！;Sortie to Seas of Nansei Island!;南西諸島沖に艦隊を出撃させ、敵艦隊と交戦せよ！;Deploy to World 1-2 and clear the stage.
+B4;南西諸島沖に出撃せよ！;Sortie to the Coast of Nansei Islands!;南西諸島沖に艦隊を出撃させ、敵艦隊と交戦せよ！;Deploy to World 1-2 and clear the stage.
 B5;接近する「敵前衛艦隊」を迎撃せよ！;Intercept Approaching Enemy Vanguard Fleet!;南西諸島沖に接近する「敵前衛艦隊」を捕捉、これを撃滅せよ！;Deploy to World 1-2 after defeating its boss and clear the stage.
 B6;「水雷戦隊」で出撃せよ！;Sortie the Torpedo Squadron!;軽巡洋艦1隻を旗艦とし、複数の駆逐艦からなる水雷戦隊で出撃せよ！;Deploy a fleet with a CL as flagship and 3 DD as escorts.
 B7;「重巡洋艦」を出撃させよ！;Sortie a Heavy Cruiser!;重巡洋艦を旗艦とした艦隊を編成、これを出撃させよ！;Deploy a fleet with a CA as its flagship.
@@ -49,7 +49,7 @@ B14;「西村艦隊」出撃せよ！;Sortie the Nishimura Fleet!;「扶桑」�
 B15;「第五航空戦隊」出撃せよ！;Sortie the Carrier Division 5!;「翔鶴」「瑞鶴」を基幹とする第五航空戦隊で、北方海域モーレイ海の敵を撃滅せよ！;Deploy a fleet with Shokaku, Zuikaku and any 4 ships. Score a victory against World 3-1 Boss.
 B16;新「三川艦隊」出撃せよ！;Sortie the New Mikawa Fleet!;完全編成した「三川艦隊」をもって、オリョール海の敵を撃滅せよ！;Deploy a fleet with Choukai, Aoba, Kinugasa, Kako, Furutaka and Tenryuu. Score a victory against World 2-3 Boss.
 B17;「潜水艦隊」出撃せよ！;Sortie a Submarine Fleet!;伊号潜水艦2隻からなる潜水艦隊でオリョール海の敵を撃滅せよ！;Deploy a fleet with 2 SS and 4 additional ships. Score a victory against World 2-3 Boss.
-B18;「航空水上打撃艦隊」出撃せよ！;Sortie a Navy Aviation Strike Fleet!;航空戦艦2隻と航空巡洋艦2隻を基幹とする艦隊でカレー洋の制海権を握れ！;Deploy a fleet with 2 BBV, 2 CAV and 2 additional ships. Score a victory against World 4-2 Boss.
+B18;「航空水上打撃艦隊」出撃せよ！;Sortie a Naval Aviation Strike Fleet!;航空戦艦2隻と航空巡洋艦2隻を基幹とする艦隊でカレー洋の制海権を握れ！;Deploy a fleet with 2 BBV, 2 CAV and 2 additional ships. Score a victory against World 4-2 Boss.
 B19;「第六戦隊」出撃せよ！;Sortie the Cruiser Division 6!;編成した「第六戦隊」をもって出撃し、オリョール海の敵を撃滅「完全勝利」せよ！;Deploy a fleet with Furutaka, Kako, Kinugasa, Aoba and 2 additional ships. Score a S RATING victory or higher against World 2-3 Boss.
 B20;「第八駆逐隊」出撃せよ！;Sortie the Destroyer Division 8!;編成した「第八駆逐隊」を含む艦隊で出撃し、オリョール海の敵を撃滅せよ！;Deploy a fleet with Michishio, Ooshio, Arashio and 2 additional ships. Score a victory against World 2-3 Boss.
 B21;「第十八駆逐隊」出撃せよ！;Sortie the Destroyer Division 18!;編成した「第十八駆逐隊」を含む艦隊で出撃し、北方海域モーレイ海の敵を撃滅せよ！;Deploy a fleet with Kasumi, Arare, Kagerou, Shiranui and 2 additional ships. Score a victory against World 3-1 Boss.
@@ -71,13 +71,6 @@ Bw6;敵東方艦隊を撃滅せよ！;Weekly Sortie 6;西方海域に出撃し�
 Bw7;敵北方艦隊主力を撃滅せよ！;Weekly Sortie 7;北方海域の深部に出撃し、敵北方艦隊の主力艦隊を捕捉、これを撃滅せよ！;Defeat 5 bosses in World 3-3 and 3-4. 
 Bw8;敵東方中枢艦隊を撃破せよ！;Weekly Sortie 8;西方海域カスガダマ島沖に出撃し、敵東方中枢艦隊を捕捉、これを撃破せよ！;Defeat a boss in World 4-4.
 Bw9;南方海域珊瑚諸島沖の制空権を握れ！;Weekly Sortie 9;南方海域珊瑚諸島沖に出撃し、敵機動部隊本体を捕捉撃滅、これに完全勝利せよ！;Defeat 2 bosses in World 5-2 with S RATING victory or higher.
-MB02;観音崎沖の霧の艦隊を迎撃せよ！;Intercept the Fleet of Fog off the Coast of Kannonzaki!;観音崎沖海域に襲来した霧の艦隊を捕捉、これを邀撃し、敵戦力ゲージを破砕せよ！;Clear E-1 (Kannonzaki Littoral Interception Operation).
-MB01;謎の潜水艦「イオナ」と接触せよ！;Contact the Mysterious Submarine Iona!;敵潜水艦を捕捉、これを複数撃滅し、謎の潜水艦「イオナ」との接触を図れ！;Sink an enemy submarine in order to contact 'Iona'.
-MB03;霧の艦隊重巡「タカオ」と接触せよ！;Contact the Tsundere Cruiser Takao!;なるべく多くの敵主力艦隊を捕捉、これを多数撃滅し、「タカオ」との接触を図れ！;Defeat 4 bosses with A or S rank.
-MB04;硫黄島周辺の霧の艦隊を撃破せよ！;Defeat the Fleet of Fog Surrounding Iwo Jima!;硫黄島周辺海域に遊弋する霧の艦隊と交戦、これを撃滅し、敵戦力ゲージを破砕せよ！;Clear E-2 (Battle off the coast of Iwo Jima)
-MB05;霧の艦隊大戦艦「ハルナ」と接触せよ！;Contact the Fleet of Fog Battleship Haruna!;敵機動部隊を捕捉、これを邀撃！敵空母を多数撃滅し、「ハルナ」との接触を図れ！;Sink 8 aircraft carriers.
-MC01;対霧の艦隊「演習」を実施せよ！;Analysis of the Fleet of Fog in Exercises!;対霧の艦隊演習を実施する！本日中に「演習」で4回以上「勝利」をおさめよう！;Get 4 victories in practice mode.
-MD01;情報収集！ツンデレ重巡を探せ！;Intelligence Gathering! Find the Tsundere Cruiser!;艦隊を遠征させ情報収集にあたる！本日中に「遠征」を6回成功させよう！;Perform 6 successful expeditions within the same day.
 C1;はじめての「演習」！;First Exercise!;他の提督(プレイヤー)の艦隊と「演習」を行おう！;Challenge another fleet in practice mode.
 C2;「演習」で練度向上！;Daily Exercises 1;本日中に他の司令官の艦隊に対して3回「演習」を挑もう！;Challenge 3 other fleets in practice mode within the same day.
 C3;「演習」で他提督を圧倒せよ！;Daily Exercises 2;本日中に他の司令官の艦隊との「演習」で5回以上「勝利」をおさめよう！;Get 5 victories in practice mode within the same day.
@@ -93,17 +86,24 @@ E1;はじめての「補給」！;First Resupply;補給は大事です！燃料�
 E2;はじめての「入渠」！;First Repair;戦闘で傷ついた艦を「入渠」させて修理して、次の出撃に備えよう！;Repair a ship.
 E3;艦隊大整備！;Daily Repairs;各艦隊から整備が必要な艦を5隻以上ドック入りさせ、大規模な整備をしよう！;Repair 5 ships.
 E4;艦隊酒保祭り！;Daily Resupplies;艦隊酒保祭り！各艦に延べ15回以上の補給を実施しよう！;Resupply your ships 15 times.
-F1;はじめての「建造」！;First Ship Construction;「工廠」で鋼材などの資材を使って新しい艦を「建造」しよう！;Craft a ship.
-F2;はじめての「開発」！;First Equipment Development;「工廠」でボーキサイトなどの資材を使って新しい装備アイテムを「開発」しよう！;Craft a piece of equipment.
-F3;はじめての「解体」！;First Ship Scrapping;「工廠」で不要な艦を「解体」してみよう！;Dismantle a ship.
-F4;はじめての「廃棄」！;First Equipment Scrapping;「工廠」で不要な装備アイテムを「廃棄」してみよう！;Scrap a piece of equipment.
+F1;はじめての「建造」！;First Construction;「工廠」で鋼材などの資材を使って新しい艦を「建造」しよう！;Craft a ship.
+F2;はじめての「開発」！;First Development;「工廠」でボーキサイトなどの資材を使って新しい装備アイテムを「開発」しよう！;Craft a piece of equipment.
+F3;はじめての「解体」！;First Dismantlement;「工廠」で不要な艦を「解体」してみよう！;Dismantle a ship.
+F4;はじめての「廃棄」！;First Disposal;「工廠」で不要な装備アイテムを「廃棄」してみよう！;Scrap a piece of equipment.
 F5;新装備「開発」指令;Daily Equipment Development 1;「工廠」で装備アイテムを新たに「開発」しよう(失敗もOK)！;Craft a piece of equipment. (Failures are OK)
 F6;新造艦「建造」指令;Daily Ship Construction 1;「工廠」で艦娘を本日中に新たに「建造」しよう！;Craft a ship.
-F7;装備「開発」集中強化！;Daily Equipment Development 2;「工廠」で装備アイテムを本日中に3回「開発」しよう(失敗もOK)！;Craft 3 pieces of equipment. (Failures are OK)
-F8;艦娘「建造」艦隊強化！;Daily Ship Construction 2;艦隊強化のため、「工廠」で艦娘を本日中に3隻「建造」しよう！;Craft 3 ships.
-F9;軍縮条約対応！;Daily Ship Scrapping;少し艦隊規模が大きくなりすぎました！「工廠」で不要な艦を2隻「解体」してください！;Scrap 2 ships.
+F7;装備「開発」集中強化！;Daily Development 2;「工廠」で装備アイテムを本日中に3回「開発」しよう(失敗もOK)！;Craft 3 pieces of equipment. (Failures are OK)
+F8;艦娘「建造」艦隊強化！;Daily Construction 2;艦隊強化のため、「工廠」で艦娘を本日中に3隻「建造」しよう！;Craft 3 ships.
+F9;軍縮条約対応！;Daily Dismantlement;少し艦隊規模が大きくなりすぎました！「工廠」で不要な艦を2隻「解体」してください！;Scrap 2 ships.
 F10;「大型艦建造」の準備！(その弐);Preparation for LCS (Part 2);大型艦建造の準備をします！「工廠」で装備アイテムを4回「廃棄」してみてください！;Scrap 4 pieces of equipment.
 G1;はじめての「近代化改修」！;First Modernization;任意の艦を近代化改修(合成)して、強化せよ！;Perform a successful modernization.
 G2;艦の「近代化改修」を実施せよ！;Daily Modernization;近代化改修を実施して、２回以上これを成功させよ！;Perform 2 successful modernizations within the same day.
 G3;「近代化改修」を進め、戦備を整えよ！;Weekly Modernization;一週間の間に、近代化改修を１5回成功させよ！;Perform 15 successful modernizations within the same week.
 G4;「大型艦建造」の準備！(その壱);Preparation for LSC (Part 1);大型艦/新型艦建造のための準備を行う。任意の艦で近代化改修を4回成功させよ！;Perform 4 successful modernizations.
+MB01;謎の潜水艦「イオナ」と接触せよ！;Contact the Mysterious Submarine Iona!;敵潜水艦を捕捉、これを複数撃滅し、謎の潜水艦「イオナ」との接触を図れ！;Sink an enemy submarine in order to contact 'Iona'.
+MB02;観音崎沖の霧の艦隊を迎撃せよ！;Intercept the Fleet of Fog off the Coast of Kannonzaki!;観音崎沖海域に襲来した霧の艦隊を捕捉、これを邀撃し、敵戦力ゲージを破砕せよ！;Clear E-1 (Kannonzaki Littoral Interception Operation).
+MB03;霧の艦隊重巡「タカオ」と接触せよ！;Contact the Tsundere Cruiser Takao!;なるべく多くの敵主力艦隊を捕捉、これを多数撃滅し、「タカオ」との接触を図れ！;Defeat 4 bosses with A or S rank.
+MB04;硫黄島周辺の霧の艦隊を撃破せよ！;Defeat the Fleet of Fog Surrounding Iwo Jima!;硫黄島周辺海域に遊弋する霧の艦隊と交戦、これを撃滅し、敵戦力ゲージを破砕せよ！;Clear E-2 (Battle off the coast of Iwo Jima)
+MB05;霧の艦隊大戦艦「ハルナ」と接触せよ！;Contact the Fleet of Fog Battleship Haruna!;敵機動部隊を捕捉、これを邀撃！敵空母を多数撃滅し、「ハルナ」との接触を図れ！;Sink 8 aircraft carriers.
+MC01;対霧の艦隊「演習」を実施せよ！;Analysis of the Fleet of Fog in Exercises!;対霧の艦隊演習を実施する！本日中に「演習」で4回以上「勝利」をおさめよう！;Get 4 victories in practice mode.
+MD01;情報収集！ツンデレ重巡を探せ！;Intelligence Gathering! Find the Tsundere Cruiser!;艦隊を遠征させ情報収集にあたる！本日中に「遠征」を6回成功させよう！;Perform 6 successful expeditions within the same day.
