@@ -82,8 +82,8 @@ D4;大規模遠征作戦、発令！;Weekly Expeditions;今週中に「遠征」
 D5;第一次潜水艦派遣作戦;The First Submarine Operation;はじめての潜水艦派遣作戦を成功させよう！;Complete Expedition 30.
 D6;第二次潜水艦派遣作戦;The Second Submarine Operation;第2次潜水艦派遣作戦を成功させよう！;Complete Expedition 30 one more time.
 D7;潜水艦派遣作戦による技術入手の継続!;Continuation of Submarine Operations;第3次及び第4次潜水艦派遣作戦を成功させ、他国製技術の導入に努めよ!;Complete Expedition 30 two more times.
-E1;はじめての「補給」！;First Resupply;補給は大事です！燃料・弾薬を艦に「補給」しよう！;Resupply a ship.
-E2;はじめての「入渠」！;First Repair;戦闘で傷ついた艦を「入渠」させて修理して、次の出撃に備えよう！;Repair a ship.
+E1;はじめての「補給」！;First Supply;補給は大事です！燃料・弾薬を艦に「補給」しよう！;Resupply a ship.
+E2;はじめての「入渠」！;First Docking;戦闘で傷ついた艦を「入渠」させて修理して、次の出撃に備えよう！;Repair a ship.
 E3;艦隊大整備！;Daily Repairs;各艦隊から整備が必要な艦を5隻以上ドック入りさせ、大規模な整備をしよう！;Repair 5 ships.
 E4;艦隊酒保祭り！;Daily Resupplies;艦隊酒保祭り！各艦に延べ15回以上の補給を実施しよう！;Resupply your ships 15 times.
 F1;はじめての「建造」！;First Construction;「工廠」で鋼材などの資材を使って新しい艦を「建造」しよう！;Craft a ship.
