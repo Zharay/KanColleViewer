@@ -6,32 +6,32 @@ A4;6隻編成の艦隊を編成せよ！;Form a Six Ship Fleet!;全6隻で構成
 A5;軽巡2隻を擁する隊を編成せよ！;Form a Squadron with Two CL!;軽巡洋艦2隻を擁する高速艦隊を編成せよ！;Have 2 CL in your main fleet.
 A6;第2艦隊を編成せよ！;Form the Second Fleet!;二つ目の艦隊、第2艦隊の旗艦を指定して、第2艦隊を編成せよ！;Have a flagship in your second fleet.
 A7;「重巡戦隊」を編成せよ！;Form a Heavy Cruiser Squadron!;重巡洋艦2隻を擁する重巡艦隊を編成せよ！;Have 2 CA in your main fleet.
-A8;「天龍」型軽巡姉妹の全2艦を編成せよ！;Form the Tenryuu-class!;天龍型軽巡洋艦「天龍」「龍田」を同一艦隊に配属せよ！;Have Tenryuu and Tatsuta in your main fleet.
+A8;「天龍」型軽巡姉妹の全2艦を編成せよ！;Form the Tenryuu-class!;天龍型軽巡洋艦「天龍」「龍田」を同一艦隊に配属せよ！;Have Tenryuu (天龍) and Tatsuta (龍田) in your main fleet.
 A9;「水上機母艦」を配備せよ！;Ready a Seaplane Carrier!;多数の水上偵察機を運用する「水上機母艦」を艦隊に配備せよ！;Have an AV in your main fleet.
-A10;「第六駆逐隊」を編成せよ！;Form the Destroyer Division 6!;「暁」「響」「雷」「電」4隻による第六駆逐隊を編成せよ！;Have ONLY DD Akasuki, Hibiki, Inazuma and Ikazuchi in your main fleet.
+A10;「第六駆逐隊」を編成せよ！;Form the Destroyer Division 6!;「暁」「響」「雷」「電」4隻による第六駆逐隊を編成せよ！;Have ONLY Akasuki (暁), Hibiki (響), Inazuma (雷) and Ikazuchi (電) in your main fleet.
 A11;第2艦隊で空母機動部隊を編成せよ！;Form a Carrier Task Force in the Second Fleet!;第2艦隊に空母を配備して、空母機動部隊を編成せよ！;Have a CV/CVL and 3 DD in your second fleet.
 A12;空母機動部隊を編成せよ！;Form a Carrier Task Force!;空母1隻以上を旗艦とし、その護衛艦艇と共に、空母機動部隊を編成せよ！;Have a CV/CVL as a flagship and 3 DD in your main fleet.
 A13;戦艦と重巡による主力艦隊を編成せよ！;Form the Main Fleet with BB and CA!;戦艦1隻以上、重巡2隻以上を主力とした水上打撃艦隊を編成せよ！;Have a BB and 2 CA in your main fleet.
-A14;「川内」型軽巡姉妹の全3艦を編成せよ！;Form the Sendai-class!;川内型軽巡洋艦、「川内」「神通」「那珂」を同一艦隊に編成せよ！;Have Sendai, Jintsuu and Naka in your main fleet.
-A15;「妙高」型重巡姉妹の全4隻を編成せよ！;Form the Myoukou-class!;妙高型重巡洋艦「妙高」「那智」「足柄」「羽黒」を同一艦隊に配属せよ！;Have Myoukou, Nachi, Ashigara and Haguro in your main fleet.
-A16;「金剛」型による高速戦艦部隊を編成せよ！;Form the Kongou-class!;金剛型戦艦「金剛」「比叡」「榛名」「霧島」全4隻の高速戦艦を集中配備せよ！;Have Kongou, Hiei, Haruna and Kirishima in your main fleet.
-A17;「扶桑」型戦艦姉妹の全２隻を編成せよ！;Form the Fusou-class!;扶桑型戦艦「扶桑」「山城」を同一艦隊に配属せよ！;Have Fusou and Yamashiro in your main fleet.
-A18;「伊勢」型戦艦姉妹の全２隻を編成せよ！;Form the Ise-class!;伊勢型戦艦「伊勢」「日向」を同一艦隊に配属せよ！;Have Ise and Hyuuga in your main fleet.
-A19;「南雲機動部隊」を編成せよ！;Form the Nagumo Task Force!;一航戦「赤城」「加賀」二航戦「飛龍」「蒼龍」からなる第一機動部隊を編成せよ！;Have ONLY Akagi, Kaga, Hiryuu and Souryuu in your main fleet.
-A20;「三川艦隊」を編成せよ！;Form the Mikawa Fleet!;「鳥海」「青葉」「加古」「古鷹」「天龍」を含む高速艦隊を編成せよ！;Have Choukai, Aoba, Kako, Furutaka, Tenryuu and a FAST speed ship in your main fleet.
-A21;「第四戦隊」を編成せよ！;Form the Cruiser Division 4!;「愛宕」「高雄」「鳥海」「摩耶」を基幹とした第四戦隊を編成せよ！;Have Atago, Takao, Choukai and Maya in your main fleet.
-A22;「西村艦隊」を編成せよ！;Form the Nishimura Fleet!;「扶桑」「山城」「最上」「時雨」を基幹とした西村艦隊を編成せよ！;Have Fusou, Yamashiro, Mogami and Shigure in your main fleet.
-A23;「第五航空戦隊」を編成せよ！;Form the Carrier Division 5!;「翔鶴」「瑞鶴」を基幹とし、駆逐艦2隻を加えた第五航空戦隊を編成せよ！;Have Shoukaku, Zuikaku and 2 DD in your main fleet.
-A24;新「三川艦隊」を編成せよ！;Form the New Mikawa Fleet!;「鳥海」「青葉」「衣笠」「加古」「古鷹」「天龍」からなる三川艦隊を編成せよ！;Have Choukai, Aoba, Kinugasa, Kako, Furutaka and Tenryuu in your main fleet.
+A14;「川内」型軽巡姉妹の全3艦を編成せよ！;Form the Sendai-class!;川内型軽巡洋艦、「川内」「神通」「那珂」を同一艦隊に編成せよ！;Have Sendai (川内), Jintsuu (神通) and Naka (那珂) in your main fleet.
+A15;「妙高」型重巡姉妹の全4隻を編成せよ！;Form the Myoukou-class!;妙高型重巡洋艦「妙高」「那智」「足柄」「羽黒」を同一艦隊に配属せよ！;Have Myoukou (妙高), Nachi (那智), Ashigara (足柄) and Haguro (羽黒) in your main fleet.
+A16;「金剛」型による高速戦艦部隊を編成せよ！;Form the Kongou-class!;金剛型戦艦「金剛」「比叡」「榛名」「霧島」全4隻の高速戦艦を集中配備せよ！;Have Kongou (金剛), Hiei (比叡), Haruna (榛名) and Kirishima (霧島) in your main fleet.
+A17;「扶桑」型戦艦姉妹の全２隻を編成せよ！;Form the Fusou-class!;扶桑型戦艦「扶桑」「山城」を同一艦隊に配属せよ！;Have Fusou (扶桑) and Yamashiro (山城) in your main fleet.
+A18;「伊勢」型戦艦姉妹の全２隻を編成せよ！;Form the Ise-class!;伊勢型戦艦「伊勢」「日向」を同一艦隊に配属せよ！;Have Ise (伊勢) and Hyuuga (日向) in your main fleet.
+A19;「南雲機動部隊」を編成せよ！;Form the Nagumo Task Force!;一航戦「赤城」「加賀」二航戦「飛龍」「蒼龍」からなる第一機動部隊を編成せよ！;Have ONLY Akagi (赤城), Kaga (加賀), Hiryuu (飛龍) and Souryuu (蒼龍) in your main fleet.
+A20;「三川艦隊」を編成せよ！;Form the Mikawa Fleet!;「鳥海」「青葉」「加古」「古鷹」「天龍」を含む高速艦隊を編成せよ！;Have Choukai (鳥海), Aoba (青葉), Kako (加古), Furutaka (古鷹), Tenryuu (天龍) and a FAST speed ship in your main fleet.
+A21;「第四戦隊」を編成せよ！;Form the Cruiser Division 4!;「愛宕」「高雄」「鳥海」「摩耶」を基幹とした第四戦隊を編成せよ！;Have Atago (愛宕), Takao (高雄), Choukai (鳥海) and Maya (摩耶) in your main fleet.
+A22;「西村艦隊」を編成せよ！;Form the Nishimura Fleet!;「扶桑」「山城」「最上」「時雨」を基幹とした西村艦隊を編成せよ！;Have Fusou (扶桑), Yamashiro (山城), Mogami (最上) and Shigure (時雨) in your main fleet.
+A23;「第五航空戦隊」を編成せよ！;Form the Carrier Division 5!;「翔鶴」「瑞鶴」を基幹とし、駆逐艦2隻を加えた第五航空戦隊を編成せよ！;Have Shoukaku (翔鶴), Zuikaku (瑞鶴) and 2 DD in your main fleet.
+A24;新「三川艦隊」を編成せよ！;Form the New Mikawa Fleet!;「鳥海」「青葉」「衣笠」「加古」「古鷹」「天龍」からなる三川艦隊を編成せよ！;Have Choukai (鳥海), Aoba (青葉), Kinugasa (衣笠), Kako (加古), Furutaka (古鷹) and Tenryuu (天龍) in your main fleet.
 A25;潜水艦隊を編成せよ！;Form a Submarine Fleet!;伊号潜水艦2隻からなる潜水艦隊を編成せよ！;Have 2 SS in your main fleet.
 A26;航空水上打撃艦隊を編成せよ！;Form a Naval Aviation Strike Fleet!;航空戦艦2隻と航空巡洋艦2隻を基幹とする艦隊を編成せよ！;Have 2 BBV and 2 CAV in your main fleet.
 A27;中規模潜水艦隊を編成せよ！;Form a Medium-Sized Submarine Fleet!;伊号潜水艦3隻以上からなる潜水艦隊を編成せよ！;Have 3 SS in your main fleet.
-A28;「第六戦隊」を編成せよ！;Form the Cruiser Division 6!;「古鷹」「加古」「青葉」「衣笠」を基幹とした第六戦隊を編成せよ！;Have Furutaka, Kako, Kinugasa and Aoba in your main fleet.
-A29;「第5艦隊」を編成せよ！;Form the 5th Fleet!;「那智」「足柄」「多摩」「木曾」を中核とした「第五艦隊」を編成せよ！;Have Nachi, Ashigara, Tama, and Kiso in your fleet.
-A30;「第1水雷戦隊」を編成せよ！;Form the Torpedo Squadron 1!;「阿武隈」「曙」「潮」「霞」「不知火」を中核とした「第1水雷戦隊」を編成せよ！;Have Abukuma, Akebono, Ushio, Kasumi and Shiranui in your fleet.
-A31;「第八駆逐隊」を編成せよ！;Form the Destroyer Division 8!;「朝潮」「満潮」「大潮」「荒潮」4隻による第八駆逐隊を編成せよ！;Have Asashio, Michishio, Ooshio and Arashio in your fleet.
-A32;「第十八駆逐隊」を編成せよ！;Form the Destroyer Division 18!;「霞」「霰」「陽炎」「不知火」4隻による第十八駆逐隊を編成せよ！;Have ONLY Kasumi, Arare, Kagerou and Shiranui in your fleet.
-A33;「第三十駆逐隊(第一次)」を編成せよ！;Form the Destroyer Division 30 (Gen-1)!;「睦月」「如月」「弥生」「望月」4隻による第三十駆逐隊(第一次)を編成せよ！;Have ONLY Mutsuki, Kisaragi, Yayoi and Mochizuki in your fleet.
+A28;「第六戦隊」を編成せよ！;Form the Cruiser Division 6!;「古鷹」「加古」「青葉」「衣笠」を基幹とした第六戦隊を編成せよ！;Have Furutaka (古鷹), Kako(加古), Aoba (青葉) and Kinugasa (衣笠) in your main fleet.
+A29;「第5艦隊」を編成せよ！;Form the 5th Fleet!;「那智」「足柄」「多摩」「木曾」を中核とした「第五艦隊」を編成せよ！;Have Nachi (那智), Ashigara (足柄), Tama (多摩), and Kiso (木曾) in your fleet.
+A30;「第1水雷戦隊」を編成せよ！;Form the Torpedo Squadron 1!;「阿武隈」「曙」「潮」「霞」「不知火」を中核とした「第1水雷戦隊」を編成せよ！;Have Abukuma (阿武隈), Akebono (曙), Ushio (潮), Kasumi (霞) and Shiranui (不知火) in your fleet.
+A31;「第八駆逐隊」を編成せよ！;Form the Destroyer Division 8!;「朝潮」「満潮」「大潮」「荒潮」4隻による第八駆逐隊を編成せよ！;Have Asashio (朝潮), Michishio (満潮), Ooshio (大潮) and Arashio (荒潮) in your fleet.
+A32;「第十八駆逐隊」を編成せよ！;Form the Destroyer Division 18!;「霞」「霰」「陽炎」「不知火」4隻による第十八駆逐隊を編成せよ！;Have ONLY Kasumi (霞), Arare (霰), Kagerou (陽炎) and Shiranui (不知火) in your fleet.
+A33;「第三十駆逐隊(第一次)」を編成せよ！;Form the Destroyer Division 30 (Gen-1)!;「睦月」「如月」「弥生」「望月」4隻による第三十駆逐隊(第一次)を編成せよ！;Have ONLY Mutsuki (睦月), Kisaragi (如月), Yayoi (弥生) and Mochizuki (望月) in your fleet.
 B1;はじめての「出撃」！;First Sortie!;艦隊を出撃させ、敵艦隊と交戦せよ！;Deploy your main fleet on a combat mission.
 B2;鎮守府正面海域を護れ！;Protect the Seas of Chinju-Fu!;鎮守府正面海域に艦隊を出撃させ、敵艦の跋梁を阻止せよ！;Deploy to World 1-1 and clear the stage.
 B3;第2艦隊、出撃せよ！;Second Fleet Sortie!;新たに編成した「第2艦隊」を出撃せよ！;Deploy your 2nd Fleet on a combat mission.
