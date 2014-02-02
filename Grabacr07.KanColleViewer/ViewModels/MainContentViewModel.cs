@@ -22,6 +22,7 @@ namespace Grabacr07.KanColleViewer.ViewModels
 		public RepairyardViewModel Repairyard { get; private set; }
 		public QuestsViewModel Quests { get; private set; }
 		public ExpeditionsViewModel Expeditions { get; private set; }
+		public RankingsViewModel Rankings { get; private set; }
 
 		public IList<TabItemViewModel> TabItems { get; set; }
 		public IList<TabItemViewModel> SystemTabItems { get; set; }
@@ -62,6 +63,7 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			this.Repairyard = new RepairyardViewModel();
 			this.Quests = new QuestsViewModel();
 			this.Expeditions = new ExpeditionsViewModel(this.Fleets);
+			this.Rankings = new RankingsViewModel();
 
 			this.TabItems = new List<TabItemViewModel>
 			{
@@ -71,7 +73,6 @@ namespace Grabacr07.KanColleViewer.ViewModels
 				this.Dockyard,
 				this.Quests,
 				this.Expeditions,
-				new RankingsViewModel(),
 			};
 			this.SystemTabItems = new List<TabItemViewModel>
 			{

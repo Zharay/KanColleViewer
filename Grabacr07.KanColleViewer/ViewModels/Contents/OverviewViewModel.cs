@@ -43,6 +43,10 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents
 				case "Dockyard":
 					target = this.Content.Dockyard;
 					break;
+				case "Rankings":
+					target = this.Content.Rankings;
+					this.Content.SelectedItem = this.Content.Rankings;
+					break;
 			}
 
 			if (target != null) target.IsSelected = true;

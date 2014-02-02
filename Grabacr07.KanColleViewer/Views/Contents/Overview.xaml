@@ -161,6 +161,7 @@
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto" />
@@ -292,6 +293,18 @@
 						</ItemsControl.ItemTemplate>
 					</ItemsControl>
 				</StackPanel>
+			</metroControls:CallMethodButton>
+
+			<metroControls:CallMethodButton Grid.Row="2"
+											Grid.Column="0"
+											Grid.ColumnSpan="1"
+											Padding="5"
+											Style="{StaticResource JumbButtonStyleKey}"
+											MethodName="Jump"
+											MethodParameter="Rankings">
+				<TextBlock>
+					<Run Text="{Binding Content.Rankings.Name}" FontSize="12" />
+				</TextBlock>
 			</metroControls:CallMethodButton>
 		</Grid>
 
