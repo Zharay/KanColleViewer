@@ -10,6 +10,12 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents
 {
     public class RankingsViewModel : TabItemViewModel
     {
+        public override string Name
+        {
+            get { return Properties.Resources.Rankings; }
+            protected set { throw new NotImplementedException(); }
+        }
+
         #region Rankings
 
         private RankingViewModel[] _Rankings;
@@ -96,7 +102,7 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents
 
         public RankingsViewModel()
         {
-            this.Name = Properties.Resources.ViewModel_Rankings;
+            this.Name = Properties.Resources.Rankings;
             this.Rankings = KanColleClient.Current.Homeport.Rankings.Current.Select(x => new RankingViewModel(x)).ToArray();
             this.TotalRanked = KanColleClient.Current.Homeport.Rankings.TotalRanked;
             this.TotalPages = KanColleClient.Current.Homeport.Rankings.TotalPages;

@@ -9,12 +9,12 @@ namespace Grabacr07.KanColleViewer.ViewModels.Dev
 {
 	public class DebugTabViewModel : TabItemViewModel
 	{
-		public DebugTabViewModel()
+		public override string Name
 		{
-			this.Name = "Debug";
+			get { return "Debug"; }
+			protected set { throw new NotImplementedException(); }
 		}
-
-
+		
 		public void Notify()
 		{
 			WindowsNotification.Notifier.Show("Test", "This is a test notification.", () => App.ViewModelRoot.Activate());

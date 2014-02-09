@@ -2,6 +2,13 @@
 	KCV Change Log
 ========================
 
+v2.0.0 r252 - 2/4/2014
+	* *Fix* Quest paging bug - When the pages change from one less than before, it'd 
+		break the quest log.
+	* *Fix* Serious damage indicator now shows at 25% rather than 50%.
+	* *Trans* Kingusa Kai2 added
+	* *Trans* B20 - Missing Asashio
+
 v2.0.0 r242 - 1/31/2014
 	* *NEW* Rankings! New rankings tab brought in from m-kc. Visit your HQ and bring up 
 		the rankings for it to update.
