@@ -66,7 +66,7 @@
 
 	<Grid>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="295"/>
+			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="210" 
 							  MinWidth="210"/>
 		</Grid.ColumnDefinitions>
@@ -85,9 +85,10 @@
 							Foreground="{DynamicResource ActiveForegroundBrushKey}" />
 						</TextBlock>
 
-						<ItemsControl ItemsSource="{Binding Ships}"
-								Margin="0,3,0,0"
-								Grid.IsSharedSizeScope="True">
+                        <ItemsControl Name="OverViewFleetContent"
+                                      ItemsSource="{Binding Ships}"
+                                      Margin="0,3,0,0"
+                                      Grid.IsSharedSizeScope="True">
 							<ItemsControl.ItemTemplate>
 								<DataTemplate>
 									<StackPanel Margin="0,4,0,0">
@@ -172,11 +173,13 @@
 							Margin="0,7,0,3"
 							Style="{DynamicResource SeparatorRectangleStyleKey}" />
 
-					<TextBlock Text="{Binding Source={x:Static properties:Resources.Quests_Untaken}, Mode=OneWay}"
-							TextWrapping="Wrap"
-							Visibility="{Binding IsUntaken, Converter={StaticResource BooleanToVisibilityConverter}}"
-							HorizontalAlignment="Center"
-							Margin="0,5,0,0" />
+                    <TextBlock MaxWidth="{Binding Path=ActualWidth, ElementName=OverViewFleetContent}"
+                               Text="{Binding Source={x:Static properties:Resources.Quests_Untaken}, Mode=OneWay}"
+                               TextWrapping="Wrap"
+                               Visibility="{Binding IsUntaken, Converter={StaticResource BooleanToVisibilityConverter}}"
+                               HorizontalAlignment="Center"
+                               TextAlignment="Center"
+                               Margin="0,5,0,0" />
 
 					<ItemsControl ItemsSource="{Binding Current}"
 								Visibility="{Binding IsUntaken, Converter={StaticResource UniversalBooleanToVisibilityConverter}, ConverterParameter=Collapsed:Visible}">

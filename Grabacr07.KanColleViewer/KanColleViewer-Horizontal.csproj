@@ -246,6 +246,9 @@
     <Compile Include="Views\ExitDialog.xaml.cs">
       <DependentUpon>ExitDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Info.xaml.cs">
+      <DependentUpon>Info.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Settings\Operation.xaml.cs">
       <DependentUpon>Operation.xaml</DependentUpon>
     </Compile>
@@ -396,6 +399,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Settings\Common.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -499,6 +506,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

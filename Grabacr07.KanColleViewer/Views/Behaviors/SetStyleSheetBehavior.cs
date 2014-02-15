@@ -57,7 +57,7 @@ namespace Grabacr07.KanColleViewer.Views.Behaviors
 			var window = Window.GetWindow(this.AssociatedObject);
 			if (window != null && window.WindowState == WindowState.Normal)
 			{
-				window.SizeToContent = SizeToContent.Width;
+                window.SizeToContent = SizeToContent.WidthAndHeight;
 			}
 
 			this.AssociatedObject.Width = 800 / dpi.ScaleX;

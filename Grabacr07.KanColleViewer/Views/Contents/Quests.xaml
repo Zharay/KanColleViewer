@@ -17,16 +17,17 @@
 			 d:DataContext="{d:DesignInstance vmContents:QuestsViewModel}"
 			 Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}, Path=ActualWidth}">
 	<Grid>
-		<Grid Visibility="{Binding IsUntaken, Converter={StaticResource UniversalBooleanToVisibilityConverter}, ConverterParameter=Collapsed:Visible}">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="5*" />
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="4*" />
-			</Grid.ColumnDefinitions>
+        <Grid Visibility="{Binding IsUntaken, Converter={StaticResource UniversalBooleanToVisibilityConverter}, ConverterParameter=Collapsed:Visible}">
 			<Grid.RowDefinitions>
 				<RowDefinition />
 				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
+            <Grid Name="QuestContent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
 
 			<Grid>
 				<Grid.RowDefinitions>
@@ -169,24 +170,26 @@
 					</TabItem.Header>
 					<ItemsControl ItemsSource="{Binding Source={StaticResource WeeklyQuestSourceKey}}" />
 				</TabItem>
-			</TabControl>
+                </TabControl>
+            </Grid>
 
-			<TextBlock Grid.Row="1"
-					   Grid.Column="0"
-					   Grid.ColumnSpan="3"
+            <TextBlock Grid.Row="1"
+                       MaxWidth="{Binding ElementName=QuestContent, Path=ActualWidth}"
 					   Text="{Binding Resources.Quests_Notice, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 					   FontSize="10.5"
 					   TextTrimming="None"
 					   TextWrapping="Wrap"
-					   Margin="10" />
+					   Padding="10" />
 		</Grid>
 
-		<TextBlock Grid.ColumnSpan="3"
-				   Text="{Binding Resources.Quests_Untaken, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-				   TextWrapping="Wrap"
-				   FontSize="16"
-				   Visibility="{Binding IsUntaken, Converter={StaticResource BooleanToVisibilityConverter}}"
-				   HorizontalAlignment="Center"
-				   Margin="20,40" />
-	</Grid>
+        <Grid MaxWidth="{Binding ElementName=QuestContent, Path=ActualWidth}">
+                <TextBlock Text="{Binding Resources.Quests_Untaken, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+				       TextWrapping="Wrap"
+				       FontSize="16"
+				       Visibility="{Binding IsUntaken, Converter={StaticResource BooleanToVisibilityConverter}}"
+				       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+				       Margin="20,40" />
+        </Grid>
+    </Grid>
 </UserControl>
