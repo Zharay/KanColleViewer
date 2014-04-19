@@ -42,6 +42,12 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents
             protected set { throw new NotImplementedException(); }
         }
 
+        public override string Icon
+        {
+            get { return "📝"; }
+            protected set { throw new NotImplementedException(); }
+        }
+
         public ToolsViewModel()
         {
             this.Calculator = new CalculatorViewModel();

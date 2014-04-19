@@ -17,6 +17,12 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents.Fleets
 			protected set { throw new NotImplementedException(); }
 		}
 
+        public override string Icon
+        {
+            get { return "🚩"; }
+            protected set { throw new NotImplementedException(); }
+        }
+
 		#region Fleets 変更通知プロパティ
 
 		private FleetViewModel[] _Fleets;

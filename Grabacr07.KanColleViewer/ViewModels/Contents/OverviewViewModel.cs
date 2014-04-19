@@ -17,6 +17,12 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents
 			get { return Resources.IntegratedView; }
 			protected set { throw new NotImplementedException(); }
 		}
+
+        public override string Icon
+        {
+            get { return "👓"; }
+            protected set { throw new NotImplementedException(); }
+        }
 	
 		public MainContentViewModel Content { get; private set; }
 

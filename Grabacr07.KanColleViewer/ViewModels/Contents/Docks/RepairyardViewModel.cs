@@ -17,6 +17,12 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents.Docks
 			protected set { throw new NotImplementedException(); }
 		}
 
+        public override string Icon
+        {
+            get { return "⚓"; }
+            protected set { throw new NotImplementedException(); }
+        }
+
 		#region Docks 変更通知プロパティ
 
 		private RepairingDockViewModel[] _Docks;

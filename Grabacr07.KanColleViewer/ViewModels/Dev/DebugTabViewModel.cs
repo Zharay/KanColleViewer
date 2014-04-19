@@ -14,6 +14,12 @@ namespace Grabacr07.KanColleViewer.ViewModels.Dev
 			get { return Properties.Resources.Debug; }
 			protected set { throw new NotImplementedException(); }
 		}
+
+        public override string Icon
+        {
+            get { return "🔩"; }
+            protected set { throw new NotImplementedException(); }
+        }
 		
 		public void Notify()
 		{

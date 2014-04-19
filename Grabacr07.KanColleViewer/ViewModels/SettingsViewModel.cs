@@ -34,6 +34,12 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			protected set { throw new NotImplementedException(); }
 		}
 
+        public override string Icon
+        {
+            get { return "🔧"; }
+            protected set { throw new NotImplementedException(); }
+        }
+
 		public IEnumerable<string> FlashQualityList {get; private set;}
 		public string[] FlashQualities = { "Best", "High", "AutoHigh",  "Medium", "AutoLow", "Low" };
 

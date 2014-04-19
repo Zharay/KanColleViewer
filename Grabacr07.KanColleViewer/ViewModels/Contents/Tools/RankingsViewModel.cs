@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +14,12 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents.Tools
         public override string Name
         {
             get { return Resources.Tools_Rankings; }
+            protected set { throw new NotImplementedException(); }
+        }
+
+        public override string Icon
+        {
+            get { throw new NotImplementedException(); }
             protected set { throw new NotImplementedException(); }
         }
 

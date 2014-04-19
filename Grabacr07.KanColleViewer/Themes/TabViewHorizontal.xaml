@@ -22,6 +22,7 @@
 		<Setter Property="ItemContainerStyle">
 			<Setter.Value>
 				<Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="ToolTip" Value="{Binding Name}" />
 					<Setter Property="Foreground"
 							Value="{DynamicResource ActiveForegroundBrushKey}" />
 					<Setter Property="Height"
@@ -64,13 +65,13 @@
 				<DataTemplate DataType="{x:Type metro:ITabItem}">
 					<Grid>
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="10" />
-							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="10" />
-						</Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="25" />
+                        </Grid.ColumnDefinitions>
 						<TextBlock Grid.Column="1"
-								   Text="{Binding Name}"
-								   FontSize="14"
+								   Text="{Binding Icon}"
+								   FontSize="18"
 								   Foreground="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=Foreground}"
 								   VerticalAlignment="Center"
 								   TextTrimming="CharacterEllipsis" />

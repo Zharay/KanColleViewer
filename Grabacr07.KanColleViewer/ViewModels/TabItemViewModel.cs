@@ -84,6 +84,15 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 		#endregion
 
+        #region Icon 変更通知プロパティ
+
+        /// <summary>
+        /// タブイコンを取得します。
+        /// </summary>
+        public abstract string Icon { get; protected set; }
+
+        #endregion
+
 		public TabItemViewModel()
 		{
 			if (Helper.IsInDesignMode) return;

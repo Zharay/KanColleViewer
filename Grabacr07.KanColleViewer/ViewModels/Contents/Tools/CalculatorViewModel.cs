@@ -337,6 +337,12 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents.Tools
 			protected set { throw new NotImplementedException(); }
 		}
 
+        public override string Icon
+        {
+            get { throw new NotImplementedException(); }
+            protected set { throw new NotImplementedException(); }
+        }
+
 		public CalculatorViewModel()
 		{
 			this.SeaList = SeaExpTable.Keys.ToList();
