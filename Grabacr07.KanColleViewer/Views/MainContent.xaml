@@ -42,7 +42,8 @@
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
-		<Grid Margin="4,3">
+        <!-- Moved to Info.xaml  -->
+		<!--<Grid Margin="4,3">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="Auto" />
@@ -88,7 +89,7 @@
 					</Viewbox>
 				</metro2:CallMethodButton>
 			</StackPanel>
-		</Grid>
+		</Grid>-->
 
 		<!--<Border Grid.Row="1"
 				Background="#FFFFFFA0">

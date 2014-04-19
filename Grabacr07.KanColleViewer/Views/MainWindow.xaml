@@ -18,8 +18,8 @@
 				   Title="{Binding Title}"
 				   Width="1440"
 				   MinWidth="{Binding ElementName=KanColleHost, Path=MinWidth}"
-                   Height="525"
-				   MinHeight="525"
+                   Height="589"
+				   MinHeight="589"
 				   Topmost="{Binding TopMost}"
 				   FontSize="12"
 				   Background="{DynamicResource ThemeBrushKey}"
@@ -42,6 +42,7 @@
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 			<RowDefinition Height="18" />
 		</Grid.RowDefinitions>
@@ -86,7 +87,21 @@
 		</Border>
 		<!-- #endregion -->
 
-		<Grid Grid.Row="1">
+        <ContentControl Grid.Row="1" Content="{Binding Content}" Name="Info">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type viewModels:StartContentViewModel}">
+                    <Border ClipToBounds="True" Width="Auto">
+                        <views:BrowserNavigator Margin="6,4,6,10"
+VerticalAlignment="Top" />
+                    </Border>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:MainContentViewModel}">
+                    <views:Info Margin="4,2" />
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+        
+		<Grid Grid.Row="2">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="*" />
