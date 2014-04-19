@@ -65,9 +65,9 @@
 				<DataTemplate DataType="{x:Type metro:ITabItem}">
 					<Grid>
 						<Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="15" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="25" />
+                            <ColumnDefinition Width="20" />
                         </Grid.ColumnDefinitions>
 						<TextBlock Grid.Column="1"
 								   Text="{Binding Icon}"
