@@ -112,19 +112,11 @@
 				</Grid.ColumnDefinitions>
 
 
-				<metro:TabView ItemsSource="{Binding TabItems}"
+                <metro:TabView ItemsSource="{Binding TabItems}"
 							   SelectedValue="{Binding SelectedItem}"
-							   Style="{DynamicResource HorizontalTabViewStyle}">
-					<metro:TabView.Template>
-						<ControlTemplate TargetType="{x:Type metro:TabView}">
-							<StackPanel Background="{TemplateBinding Background}">
-								<StackPanel Orientation="Horizontal" IsItemsHost="True" />
-							</StackPanel>
-						</ControlTemplate>
-					</metro:TabView.Template>
-				</metro:TabView>
+							   Style="{DynamicResource HorizontalTabViewStyle}" />
 
-				<Rectangle Grid.Column="1"
+                <Rectangle Grid.Column="1"
 						   Height="1"
 						   Margin="10,5"
 						   Fill="{DynamicResource InactiveForegroundBrushKey}"
