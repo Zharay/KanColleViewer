@@ -121,20 +121,21 @@ namespace Grabacr07.KanColleWrapper.Models
 				IEnumerable<Ship> CriticalShips = ships.Where(s => (s.HP.Current / (double)s.HP.Maximum) <= 0.25);
 				foreach (Ship s in CriticalShips)
 				{
-					if (this.prevShips.Length > 0 && this.prevShips.First(p => p.Id == s.Id).HP.Current != s.HP.Current)
+					if (this.prevShips.Length > 0 && this.prevShips.First(p => p.Id == s.Id).HP.Current != s.HP.Current && this.CriticalCondition != null)
 						this.CriticalCondition(this, new ShipCriticalConditionEventArgs(s));
 
 				}
 
 				var RepairingCritShips = ships.Where(s => (s.HP.Current / (double)s.HP.Maximum) <= 0.25 && repairyard.CheckRepairing(s.Id)).Count();
 
-				if (ships.Where(s => (s.HP.Current / (double)s.HP.Maximum) <= 0.25).Count() == RepairingCritShips)
+				if (ships.Where(s => (s.HP.Current / (double)s.HP.Maximum) <= 0.25).Count() == RepairingCritShips && this.CriticalCleared != null)
 					this.CriticalCleared(this, new EventArgs());
 			}
 			else if (this.prevShips.Length > 0 && this.prevShips.Any(s => (s.HP.Current / (double)s.HP.Maximum) <= 0.25))
 			{
 				Array.Clear(this.prevShips, 0, this.prevShips.Length);
-				this.CriticalCleared(this, new EventArgs());
+				if (this.CriticalCleared != null)
+					this.CriticalCleared(this, new EventArgs());
 			}
 
 			if (ships.Any(s => s.Fuel.Current < s.Fuel.Maximum || s.Bull.Current < s.Bull.Maximum))
