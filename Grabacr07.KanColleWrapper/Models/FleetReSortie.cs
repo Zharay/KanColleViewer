@@ -128,7 +128,7 @@ namespace Grabacr07.KanColleWrapper.Models
 
 				var RepairingCritShips = ships.Where(s => (s.HP.Current / (double)s.HP.Maximum) <= 0.25 && repairyard.CheckRepairing(s.Id)).Count();
 
-				if (ships.Where(s => (s.HP.Current / (double)s.HP.Maximum) <= 0.25).Count() == RepairingCritShips && this.CriticalCondition != null)
+				if (ships.Where(s => (s.HP.Current / (double)s.HP.Maximum) <= 0.25).Count() == RepairingCritShips && this.CriticalCleared != null)
 					this.CriticalCleared(this, new EventArgs());
 			}
 			else if (this.prevShips.Length > 0 && this.prevShips.Any(s => (s.HP.Current / (double)s.HP.Maximum) <= 0.25))
