@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Ships Version="1.0.4">
+<Ships Version="1.0.5">
   <Ship>
     <JP-Name>長門</JP-Name>
     <TR-Name>Nagato</TR-Name>
@@ -1179,5 +1179,53 @@
   <Ship>
     <JP-Name>酒匂改</JP-Name>
     <TR-Name>Sakawa Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>浦風</JP-Name>
+    <TR-Name>Urakaze</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>浦風改</JP-Name>
+    <TR-Name>Urakaze Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>龍驤改二</JP-Name>
+    <TR-Name>Ryuujou Kai2</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>大鯨</JP-Name>
+    <TR-Name>Taigei</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>龍鳳</JP-Name>
+    <TR-Name>Ryuuhou</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>龍鳳改</JP-Name>
+    <TR-Name>Ryuuhou Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>羽黒改二</JP-Name>
+    <TR-Name>Haguro Kai2</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>妙高改二</JP-Name>
+    <TR-Name>Myoukou Kai2</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>飛龍改二</JP-Name>
+    <TR-Name>Hiryuu Kai2</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>蒼龍改二</JP-Name>
+    <TR-Name>Souryuu Kai2</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>川内改二</JP-Name>
+    <TR-Name>Sendai Kai2</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>綾波改二</JP-Name>
+    <TR-Name>Ayanami Kai2</TR-Name>
   </Ship>
 </Ships>

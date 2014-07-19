@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Quests Version="1.0.1">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Quests Version="1.0.2">
   <Quest>
     <ID>A1</ID>
     <JP-Name>はじめての「編成」！</JP-Name>
@@ -679,14 +679,14 @@
     <JP-Detail>大型艦建造の準備をします！「工廠」で装備アイテムを4回「廃棄」してみてください！</JP-Detail>
     <TR-Detail>Scrap equipment 4 times.</TR-Detail>
   </Quest>
-    <Quest>
+  <Quest>
     <ID>F11</ID>
     <JP-Name>輸送用ドラム缶の準備</JP-Name>
     <TR-Name>Preparation for Transport Drum Canisters</TR-Name>
     <JP-Detail>「工廠」で装備アイテムを3回「廃棄」して、輸送用ドラム缶を準備します。</JP-Detail>
     <TR-Detail>Scrap equipment 3 times.</TR-Detail>
   </Quest>
-    <Quest>
+  <Quest>
     <ID>F12</ID>
     <JP-Name>資源の再利用</JP-Name>
     <TR-Name>Weekly Dismantlement</TR-Name>
@@ -746,7 +746,7 @@
     <ID>WB01</ID>
     <JP-Name>式の準備！(最終)</JP-Name>
     <TR-Name>In Preparation of Love! (Final)</TR-Name>
-    <JP-Detail>練度の高い(Lv.90以上～99以下）第一艦隊旗艦で出撃し、オリョール海の暁に勝利を刻め！</JP-Detail>
+    <JP-Detail>練度の高い(Lv.90～99)第一艦隊旗艦で出撃し、オリョール海の暁に勝利を刻め！</JP-Detail>
     <TR-Detail>Deploy a fleet with a high level (Lv.90~99) flagship to 2-3 obtain an S victory or higher against the boss.</TR-Detail>
   </Quest>
   <Quest>
@@ -761,7 +761,7 @@
     <JP-Name>二人でする初めての任務！</JP-Name>
     <TR-Name>Your First Mission Together!</TR-Name>
     <JP-Detail>強い絆を結んだ艦娘を旗艦とした第一艦隊でリランカ島へ出撃、敵中枢を撃滅せよ！</JP-Detail>
-    <TR-Detail>Deploy a fleet to 4-3 with a bonded ship of Lv.100 or more as flagship and score an S vectory or higher against the boss.</TR-Detail>
+    <TR-Detail>Deploy a fleet to 4-3 with a bonded ship of Lv.100 or more as flagship and score an S victory or higher against the boss.</TR-Detail>
   </Quest>
   <Quest>
     <ID>612</ID>
@@ -788,7 +788,7 @@
     <ID>411</ID>
     <JP-Name>南方への鼠輸送を継続実施せよ！</JP-Name>
     <TR-Name>Weekly Expedition 3</TR-Name>
-    <JP-Detail>今週中に「東京急行」系遠征を継続的に実施、同種作戦を7回成功せさよう！</JP-Detail>
+    <JP-Detail>今週中に「東京急行」系遠征を継続的に実施、同種作戦を7回成功させよう！</JP-Detail>
     <TR-Detail>Complete expedition 37 or 38 a total of 7 times in a week</TR-Detail>
   </Quest>
   <Quest>
@@ -801,7 +801,7 @@
   <Quest>
     <ID>B22</ID>
     <JP-Name>「第三十駆逐隊（第一次）」出撃せよ！</JP-Name>
-    <TR-Name>Deploy the 13th Destroyer Fleet</TR-Name>
+    <TR-Name>Deploy the 13th Destroyer Fleet (Gen-1)!</TR-Name>
     <JP-Detail>「第三十駆逐隊(第一次)」を含む艦隊で出撃しキス島沖の主力艦隊と交戦せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet that consists of Mutsuki (睦月), Kisaragi (如月), Yayoi (弥生), Mochizuki (望月) and up to 2 additional DDs to world 3-2 and encounter the boss.</TR-Detail>
   </Quest>
@@ -811,5 +811,75 @@
     <TR-Name>Sortie an aviation battleship fleet!</TR-Name>
     <JP-Detail>航空戦艦2隻を基幹とする艦隊で、西方海域カスガダマ島の敵勢力を撃破せよ！</JP-Detail>
     <TR-Detail>Have 2 BBV ships in your main fleet and score a victory against World 4-4 Boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>138</ID>
+    <JP-Name>新編「第二航空戦隊」を編成せよ！</JP-Name>
+    <TR-Name>Form the New Second Carrier Division!</TR-Name>
+    <JP-Detail>「飛龍改二」(※旗艦)及び「蒼龍」を基幹とした二航戦(要駆逐艦2隻)を編成せよ！</JP-Detail>
+    <TR-Detail>Have Hiryuu Kai2 (飛龍改二) as flagship, Souryuu(蒼龍), and 2 destroyers in your fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>139</ID>
+    <JP-Name>潜水艦隊「第六艦隊」を編成せよ！</JP-Name>
+    <TR-Name>Form the Sixth Submarine Fleet!</TR-Name>
+    <JP-Detail>「潜水母艦」と複数の潜水艦(4隻以上)からなる潜水艦隊「第六艦隊」を編成せよ！</JP-Detail>
+    <TR-Detail>Have a submarine tender and 4 submarines in your fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>136</ID>
+    <JP-Name>「第三十駆逐隊(第二次)」を編成せよ！</JP-Name>
+    <TR-Name>Form the 30th Destroyer Fleet (Gen-2)!</TR-Name>
+    <JP-Detail>「睦月」「弥生」「卯月」「望月」4隻による第三十駆逐隊(第二次)を編成せよ！</JP-Detail>
+    <TR-Detail>Have ONLY Mutsuki (睦月), Yayoi (弥生), Uzuki (卯月), and Mochizuki (望月) in your fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>248</ID>
+    <JP-Name>「第三十駆逐隊」対潜哨戒！</JP-Name>
+    <TR-Name>Deploy 13th Destroyer Fleet (Gen-2)!</TR-Name>
+    <JP-Detail>「第三十駆逐隊(第二次)」は直ちに抜錨！鎮守府正面の対潜哨戒を実施せよ！</JP-Detail>
+    <TR-Detail>Deploy a fleet that consists of Mutsuki (睦月), Yayoi (弥生), Uzuki (卯月), and Mochizuki (望月) to world 1-5 and encounter the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>414</ID>
+    <TR-Name>遠洋潜水艦作戦を実施せよ！</TR-Name>
+    <JP-Name>Engage the Blue Waters Submarine Operation!</JP-Name>
+    <JP-Detail>「遠洋潜水艦作戦」を実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！</JP-Detail>
+    <TR-Detail>Complete Expedition 39.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>415</ID>
+    <JP-Name>遠洋潜水艦作戦の成果を拡大せよ！</JP-Name>
+    <TR-Name>Extended Blue Waters Submarine Operation!</TR-Name>
+    <JP-Detail>「遠洋潜水艦作戦」を継続実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！</JP-Detail>
+    <TR-Detail>Complete Expedition 39 two more times.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>250</ID>
+    <JP-Name>新編「第二航空戦隊」出撃せよ！</JP-Name>
+    <TR-Name>Sortie the New Second Carrier Division!</TR-Name>
+    <JP-Detail>新編「二航戦」を基幹とした艦隊で、珊瑚諸島沖に出撃、敵機動部隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Have Hiryuu Kai-2 as the flagship, Souryuu, 2 destroyers, and 2 additional ships to 5-2 to obtain an S victory or higher against the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>613</ID>
+    <JP-Name>機種転換</JP-Name>
+    <TR-Name>Model Conversion</TR-Name>
+    <JP-Detail>「九七式艦攻(友永隊)」搭載空母を秘書艦にした状態で新たに「天山」を2つ廃棄！</JP-Detail>
+    <TR-Detail>Have flagship equipped with Type 97 Torpedo Bomber (Tomonaga Squadron), then scrap 2 Tenzan.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>614</ID>
+    <JP-Name>機種転換</JP-Name>
+    <TR-Name>Model Conversion</TR-Name>
+    <JP-Detail>「九九式艦爆(江草隊)」搭載空母を秘書艦にした状態で新たに「彗星」を2つ廃棄！</JP-Detail>
+    <TR-Detail>Have flagship equipped with Type 99 Dive Bomber (Egusa Squadron), then scrap 2 Suisei.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>141</ID>
+    <JP-Name>再編成「第二航空戦隊」を強化せよ！</JP-Name>
+    <TR-Name>Sortie the Reorganized Second Carrier Division!</TR-Name>
+    <JP-Detail>「蒼龍改二」(※旗艦)及び「飛龍改二」を基幹とした二航戦(要駆逐艦2隻)を編成せよ！</JP-Detail>
+    <TR-Detail>Have Souryuu Kai-2 as the flagship, Hiryuu, 2 destroyers, and 2 additional ships to 4-3 to obtain an S victory or higher against the boss.</TR-Detail>
   </Quest>
 </Quests>
