@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Quests Version="1.0.4">
+<Quests Version="1.0.5">
   <Quest>
     <ID>A1</ID>
     <JP-Name>はじめての「編成」！</JP-Name>
@@ -51,7 +51,7 @@
   </Quest>
   <Quest>
     <ID>A8</ID>
-    <JP-Name>「天龍」型軽巡姉妹の全2艦を編成せよ！</JP-Name>
+    <JP-Name>「天龍」型軽巡姉妹の全２艦を編成せよ！</JP-Name>
     <TR-Name>Form the Tenryuu-class!</TR-Name>
     <JP-Detail>天龍型軽巡洋艦「天龍」「龍田」を同一艦隊に配属せよ！</JP-Detail>
     <TR-Detail>Have Tenryuu (天龍) and Tatsuta (龍田) in your main fleet.</TR-Detail>
@@ -68,7 +68,7 @@
     <JP-Name>「第六駆逐隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Destroyer Division 6!</TR-Name>
     <JP-Detail>「暁」「響」「雷」「電」4隻による第六駆逐隊を編成せよ！</JP-Detail>
-    <TR-Detail>Have ONLY Akasuki (暁), Hibiki (響), Inazuma (雷) and Ikazuchi (電) in your main fleet.</TR-Detail>
+    <TR-Detail>Have ONLY Akatsuki (暁), Hibiki (響), Inazuma (雷) and Ikazuchi (電) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
     <ID>A11</ID>
@@ -93,14 +93,14 @@
   </Quest>
   <Quest>
     <ID>A14</ID>
-    <JP-Name>「川内」型軽巡姉妹の全3艦を編成せよ！</JP-Name>
+    <JP-Name>「川内」型軽巡姉妹の全３艦を編成せよ！</JP-Name>
     <TR-Name>Form the Sendai-class!</TR-Name>
     <JP-Detail>川内型軽巡洋艦、「川内」「神通」「那珂」を同一艦隊に編成せよ！</JP-Detail>
     <TR-Detail>Have Sendai (川内), Jintsuu (神通) and Naka (那珂) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
     <ID>A15</ID>
-    <JP-Name>「妙高」型重巡姉妹の全4隻を編成せよ！</JP-Name>
+    <JP-Name>「妙高」型重巡姉妹の全４隻を編成せよ！</JP-Name>
     <TR-Name>Form the Myoukou-class!</TR-Name>
     <JP-Detail>妙高型重巡洋艦「妙高」「那智」「足柄」「羽黒」を同一艦隊に配属せよ！</JP-Detail>
     <TR-Detail>Have Myoukou (妙高), Nachi (那智), Ashigara (足柄) and Haguro (羽黒) in your main fleet.</TR-Detail>
@@ -334,7 +334,7 @@
     <JP-Name>「第五航空戦隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie the Carrier Division 5!</TR-Name>
     <JP-Detail>「翔鶴」「瑞鶴」を基幹とする第五航空戦隊で、北方海域モーレイ海の敵を撃滅せよ！</JP-Detail>
-    <TR-Detail>Deploy a fleet with Shokaku, Zuikaku and any 4 ships. Score a victory against World 3-1 Boss.</TR-Detail>
+    <TR-Detail>Deploy a fleet with Shoukaku, Zuikaku and any 4 ships. Score a victory against World 3-1 Boss.</TR-Detail>
   </Quest>
   <Quest>
     <ID>B16</ID>
@@ -801,7 +801,7 @@
   <Quest>
     <ID>B22</ID>
     <JP-Name>「第三十駆逐隊（第一次）」出撃せよ！</JP-Name>
-    <TR-Name>Deploy the 13th Destroyer Fleet</TR-Name>
+    <TR-Name>Deploy the 30th Destroyer Fleet (Gen.1)</TR-Name>
     <JP-Detail>「第三十駆逐隊(第一次)」を含む艦隊で出撃しキス島沖の主力艦隊と交戦せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet that consists of Mutsuki (睦月), Kisaragi (如月), Yayoi (弥生), Mochizuki (望月) and up to 2 additional DDs to world 3-2 and encounter the boss.</TR-Detail>
   </Quest>
@@ -815,7 +815,7 @@
   <Quest>
     <ID>136</ID>
     <JP-Name>「第三十駆逐隊(第二次)」を編成せよ！</JP-Name>
-    <TR-Name>Form the new 13th Destroyer Fleet</TR-Name>
+    <TR-Name>Form the 30th Destroyer Fleet (Gen.2)</TR-Name>
     <JP-Detail>「睦月」「弥生」「卯月」「望月」4隻による第三十駆逐隊(第二次)を編成せよ！</JP-Detail>
     <TR-Detail>Have only Mutsuki (睦月), Yayoi (弥生), Uzuki (卯月) and Mochizuki (望月) in your fleet.</TR-Detail>
   </Quest>
@@ -850,7 +850,7 @@
   <Quest>
     <ID>248</ID>
     <JP-Name>「第三十駆逐隊」対潜哨戒！</JP-Name>
-    <TR-Name>13th Destroyer Fleet's Anti-Submarine Patrol</TR-Name>
+    <TR-Name>30th Destroyer Fleet's Anti-Submarine Patrol</TR-Name>
     <JP-Detail>「第三十駆逐隊(第二次)」は直ちに抜錨！鎮守府正面の対潜哨戒を実施せよ！</JP-Detail>
     <TR-Detail>Deploy Mutsuki (睦月), Yayoi (弥生), Uzuki (卯月) and Mochizuki (望月) to World 1-5.</TR-Detail>
   </Quest>
