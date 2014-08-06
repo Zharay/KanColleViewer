@@ -21,7 +21,7 @@ namespace Grabacr07.KanColleWrapper
 		private bool waitingForShip;
 		private int dockid;
 		private readonly int[] shipmats;
-		private readonly string LogTimestampFormat = "yyyy-MM-dd HH:mm";
+		private readonly string LogTimestampFormat = "yyyy-MM-dd HH:mm:ss";
 
 		private enum LogType
 		{
