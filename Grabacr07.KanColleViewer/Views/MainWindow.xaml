@@ -25,7 +25,9 @@
 				   Foreground="{DynamicResource ActiveForegroundBrushKey}"
 				   IsRestoringWindowPlacement="True"
 				   SnapsToDevicePixels="True"
-				   TextOptions.TextFormattingMode="Display">
+				   TextOptions.TextFormattingMode="Display"
+				   UseLayoutRounding="True">
+
 	<Window.InputBindings>
 		<KeyBinding Key="F5" Command="{Binding RefreshNavigator}" />
 	</Window.InputBindings>
@@ -66,10 +68,8 @@
 
 				<TextBlock Grid.Column="1"
 						   Text="{Binding Title}"
-						   FontFamily="Segoe UI"
-						   FontSize="16"
-						   Margin="2,2,8,2"
-						   Opacity="0.85" />
+						   Style="{DynamicResource CaptionTextStyleKey}"
+						   Margin="2,0,8,0" />
 
 				<StackPanel Grid.Column="2"
 							Orientation="Horizontal"
@@ -102,7 +102,7 @@
 						<behaviors:ZoomAction />
 					</livet:InteractionMessageTrigger>
 				</i:Interaction.Triggers>
-				<WebBrowser controls:WebBrowserHelper.ScriptErrorsSuppressed="True">
+				<WebBrowser>
 					<i:Interaction.Behaviors>
 						<behaviors:NavigatorBehavior Navigator="{Binding Navigator}" />
 						<livet:WebBrowserSetStateToControlBehavior Source="{Binding Source={x:Static properties:Settings.Default}, Path=KanColleUrl, Mode=OneTime}"

@@ -1,4 +1,4 @@
-﻿KanColleViewer! (提督業も忙しい！)
+﻿﻿KanColleViewer! (提督業も忙しい！)
 --
 
 KCV is a browser utility that makes it easy to play Kantai Collection.
@@ -19,14 +19,10 @@ All builds can be found in the following links below.
 * [GitHub Releases](https://github.com/Yuubari/KanColleViewer/releases) -- Major revision binaries
 
 ## To Do
-* A better display for the rankings table
 * An update of the horizontal version of KCV
 * Some changes to the way construction/drop/development logging is handled
 
 ## Frequently Asked Questions
-
-#### Who the hell are you and where's Zharay?
-I'm no one and I have no clue where Zharay is. I hope he will continue working on this project and that he'll implement many a cool and powerful feature that 4chan's /jp/ or whoever else dreams about. This fork here focuses mainly on merging in upstream changes from Grabacr; new features are not planned for now.
 
 #### Is KCV safe?
 Yes. You are mainly playing off Internet Explorer (IE). The program itself wraps itself around IE and captures all network coming in and out. It only looks for incoming data and uses that for displaying in game information such as ships, expeditions, quests, and so on. **This does not change the game itself in any way**. **It does not change the packets in any way**. For other solutions to say that their version is "safer" while they are asking you to use an API link are just as much a problem as it is with this program.

@@ -7,9 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Net;
 using System.Xml.Linq;
 using Grabacr07.KanColleViewer.Models;
@@ -26,7 +24,7 @@ using Settings = Grabacr07.KanColleViewer.Models.Settings;
 
 namespace Grabacr07.KanColleViewer.ViewModels
 {
-	public class SettingsViewModel : TabItemViewModel, INotifyDataErrorInfo
+	public class SettingsViewModel : TabItemViewModel
 	{
 		public override string Name
 		{
@@ -77,129 +75,6 @@ namespace Grabacr07.KanColleViewer.ViewModels
 				if (Settings.Current.ScreenshotImageFormat != value)
 				{
 					Settings.Current.ScreenshotImageFormat = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region UseProxy 変更通知プロパティ
-
-		public string UseProxy
-		{
-			get { return Settings.Current.EnableProxy.ToString(); }
-			set
-			{
-				bool booleanValue;
-				if (Boolean.TryParse(value, out booleanValue))
-				{
-					Settings.Current.EnableProxy = booleanValue;
-					KanColleClient.Current.Proxy.UseProxyOnConnect = booleanValue;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region UseProxyForSSL 変更通知プロパティ
-
-		public bool UseProxyForSSL
-		{
-			get { return Settings.Current.EnableSSLProxy; }
-			set
-			{
-				if (Settings.Current.EnableSSLProxy != value)
-				{
-					Settings.Current.EnableSSLProxy = value;
-					KanColleClient.Current.Proxy.UseProxyOnSSLConnect = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region ProxyHost 変更通知プロパティ
-
-		public string ProxyHost
-		{
-			get { return Settings.Current.ProxyHost; }
-			set
-			{
-				if (Settings.Current.ProxyHost != value)
-				{
-					Settings.Current.ProxyHost = value;
-					KanColleClient.Current.Proxy.UpstreamProxyHost = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region ProxyPort 変更通知プロパティ
-
-		public string ProxyPort
-		{
-			get { return Settings.Current.ProxyPort.ToString(); }
-			set
-			{
-				UInt16 numberPort;
-				if (UInt16.TryParse(value, out numberPort))
-				{
-					Settings.Current.ProxyPort = numberPort;
-					KanColleClient.Current.Proxy.UpstreamProxyPort = numberPort;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region ReSortieCondition 変更通知プロパティ
-
-		private string _ReSortieCondition = Settings.Current.ReSortieCondition.ToString(CultureInfo.InvariantCulture);
-		private string reSortieConditionError;
-
-		public string ReSortieCondition
-		{
-			get { return this._ReSortieCondition; }
-			set
-			{
-				if (this._ReSortieCondition != value)
-				{
-					ushort cond;
-					if (ushort.TryParse(value, out cond) && cond <= 49)
-					{
-						Settings.Current.ReSortieCondition = cond;
-						this.reSortieConditionError = null;
-					}
-					else
-					{
-						this.reSortieConditionError = "Please enter a condition value between 0 and 49.";
-					}
-
-					this._ReSortieCondition = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region EnableLogging 変更通知プロパティ
-
-		public bool EnableLogging
-		{
-			get { return Settings.Current.EnableLogging; }
-			set
-			{
-				if (Settings.Current.EnableLogging != value)
-				{
-					Settings.Current.EnableLogging = value;
-					KanColleClient.Current.Homeport.Logger.EnableLogging = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -367,331 +242,17 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 		#endregion
 
-		#region EnableCriticalNotify 変更通知プロパティ
+		#region EnableLogging 変更通知プロパティ
 
-		public bool EnableCriticalNotify
+		public bool EnableLogging
 		{
-			get { return Settings.Current.EnableCriticalNotify; }
+			get { return Settings.Current.KanColleClientSettings.EnableLogging; }
 			set
 			{
-				if (Settings.Current.EnableCriticalNotify != value)
+				if (Settings.Current.KanColleClientSettings.EnableLogging != value)
 				{
-					Settings.Current.EnableCriticalNotify = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region EnableCriticalAccent 変更通知プロパティ
-
-		public bool EnableCriticalAccent
-		{
-			get { return Settings.Current.EnableCriticalAccent; }
-			set
-			{
-				if (Settings.Current.EnableCriticalAccent != value)
-				{
-					Settings.Current.EnableCriticalAccent = value;
-					if (!Settings.Current.EnableCriticalAccent && App.ViewModelRoot.Mode == Mode.CriticalCondition)
-						App.ViewModelRoot.Mode = Mode.Started;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region EquipmentVersion 変更通知プロパティ
-
-		public string EquipmentVersion
-		{
-			get { return KanColleClient.Current.Translations.EquipmentVersion; }
-			set
-			{
-				if (KanColleClient.Current.Translations.EquipmentVersion != value)
-				{
-					KanColleClient.Current.Translations.EquipmentVersion = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region OperationsVersion 変更通知プロパティ
-
-		public string OperationsVersion
-		{
-			get { return KanColleClient.Current.Translations.OperationsVersion; }
-			set
-			{
-				if (KanColleClient.Current.Translations.OperationsVersion != value)
-				{
-					KanColleClient.Current.Translations.OperationsVersion = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region QuestsVersion 変更通知プロパティ
-
-		public string QuestsVersion
-		{
-			get { return KanColleClient.Current.Translations.QuestsVersion; }
-			set
-			{
-				if (KanColleClient.Current.Translations.QuestsVersion != value)
-				{
-					KanColleClient.Current.Translations.QuestsVersion = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region ShipsVersion 変更通知プロパティ
-
-		public string ShipsVersion
-		{
-			get { return KanColleClient.Current.Translations.ShipsVersion; }
-			set
-			{
-				if (KanColleClient.Current.Translations.ShipsVersion != value)
-				{
-					KanColleClient.Current.Translations.ShipsVersion = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region ShipTypesVersion 変更通知プロパティ
-
-		public string ShipTypesVersion
-		{
-			get { return KanColleClient.Current.Translations.ShipTypesVersion; }
-			set
-			{
-				if (KanColleClient.Current.Translations.ShipTypesVersion != value)
-				{
-					KanColleClient.Current.Translations.ShipTypesVersion = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region AppOnlineVersion 変更通知プロパティ
-
-		private string _AppOnlineVersion;
-		public string AppOnlineVersionURL { get; set; }
-
-		public string AppOnlineVersion
-		{
-			get { return _AppOnlineVersion; }
-			set
-			{
-				if (_AppOnlineVersion != value)
-				{
-					_AppOnlineVersion = value;
-					this.RaisePropertyChanged();
-					this.RaisePropertyChanged("AppOnlineVersionURL");
-				}
-			}
-		}
-
-		#endregion
-
-		#region EquipmentOnlineVersion 変更通知プロパティ
-
-		private string _EquipmentOnlineVersion;
-		public string EquipmentOnlineVersionURL { get; set; }
-
-		public string EquipmentOnlineVersion
-		{
-			get { return _EquipmentOnlineVersion; }
-			set
-			{
-				if (_EquipmentOnlineVersion != value)
-				{
-					_EquipmentOnlineVersion = value;
-					this.RaisePropertyChanged();
-					this.RaisePropertyChanged("EquipmentOnlineVersionURL");
-				}
-			}
-		}
-
-		#endregion
-
-		#region OperationsOnlineVersion 変更通知プロパティ
-
-		private string _OperationsOnlineVersion;
-		public string OperationsOnlineVersionURL { get; set; }
-
-		public string OperationsOnlineVersion
-		{
-			get { return _OperationsOnlineVersion; }
-			set
-			{
-				if (_OperationsOnlineVersion != value)
-				{
-					_OperationsOnlineVersion = value;
-					this.RaisePropertyChanged();
-					this.RaisePropertyChanged("OperationsOnlineVersionURL");
-				}
-			}
-		}
-
-		#endregion
-
-		#region QuestsOnlineVersion 変更通知プロパティ
-
-		private string _QuestsOnlineVersion;
-		public string QuestsOnlineVersionURL {get; set;}
-
-		public string QuestsOnlineVersion
-		{
-			get { return _QuestsOnlineVersion; }
-			set
-			{
-				if (_QuestsOnlineVersion != value)
-				{
-					_QuestsOnlineVersion = value;
-					this.RaisePropertyChanged();
-					this.RaisePropertyChanged("QuestsOnlineVersionURL");
-				}
-			}
-		}
-
-		#endregion
-
-		#region ShipsOnlineVersion 変更通知プロパティ
-
-		private string _ShipsOnlineVersion;
-		public string ShipsOnlineVersionURL { get; set; }
-
-		public string ShipsOnlineVersion
-		{
-			get { return _ShipsOnlineVersion; }
-			set
-			{
-				if (_ShipsOnlineVersion != value)
-				{
-					_ShipsOnlineVersion = value;
-					this.RaisePropertyChanged();
-					this.RaisePropertyChanged("ShipsOnlineVersionURL");
-				}
-			}
-		}
-
-		#endregion
-
-		#region ShipTypesOnlineVersion 変更通知プロパティ
-
-		private string _ShipTypesOnlineVersion;
-		public string ShipTypesOnlineVersionURL { get; set; }
-
-		public string ShipTypesOnlineVersion
-		{
-			get { return _ShipTypesOnlineVersion; }
-			set
-			{
-				if (_ShipTypesOnlineVersion != value)
-				{
-					_ShipTypesOnlineVersion = value;
-					this.RaisePropertyChanged();
-					this.RaisePropertyChanged("ShipTypesOnlineVersionURL");
-				}
-			}
-		}
-
-		#endregion
-
-		#region EnableUpdateNotification 変更通知プロパティ
-
-		public bool EnableUpdateNotification
-		{
-			get { return Settings.Current.EnableUpdateNotification; }
-			set
-			{
-				if (Settings.Current.EnableUpdateNotification != value)
-				{
-					Settings.Current.EnableUpdateNotification = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region EnableUpdateTransOnStart 変更通知プロパティ
-
-		public bool EnableUpdateTransOnStart
-		{
-			get { return Settings.Current.EnableUpdateTransOnStart; }
-			set
-			{
-				if (Settings.Current.EnableUpdateTransOnStart != value)
-				{
-					Settings.Current.EnableUpdateTransOnStart = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region FlashQuality 変更通知プロパティ
-
-		public string FlashQuality
-		{
-			get { return Settings.Current.FlashQuality; }
-			set
-			{
-				if (Settings.Current.FlashQuality != value)
-				{
-					Settings.Current.FlashQuality = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region FlashWindow 変更通知プロパティ
-
-		public string FlashWindow
-		{
-			get { return Settings.Current.FlashWindow; }
-			set
-			{
-				if (Settings.Current.FlashWindow != value)
-				{
-					Settings.Current.FlashWindow = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region EnableFatigueNotification 変更通知プロパティ
-
-		public bool EnableFatigueNotification
-		{
-			get { return Settings.Current.EnableFatigueNotification; }
-			set
-			{
-				if (Settings.Current.EnableFatigueNotification != value)
-				{
-					Settings.Current.EnableFatigueNotification = value;
+					Settings.Current.KanColleClientSettings.EnableLogging = value;
+					KanColleClient.Current.Homeport.Logger.EnableLogging = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -716,11 +277,6 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 		#endregion
 
-		public bool HasErrors
-		{
-			get { return this.reSortieConditionError != null; }
-		}
-
 		public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
 
@@ -741,7 +297,7 @@ namespace Grabacr07.KanColleViewer.ViewModels
 					return list;
 				});
 
-			this.Cultures = new[] { new CultureViewModel { DisplayName = "(Auto)" } }
+			this.Cultures = new[] { new CultureViewModel { DisplayName = "(auto)" } }
 				.Concat(ResourceService.Current.SupportedCultures
 					.Select(x => new CultureViewModel { DisplayName = x.EnglishName, Name = x.Name })
 					.OrderBy(x => x.DisplayName))
@@ -814,24 +370,6 @@ namespace Grabacr07.KanColleViewer.ViewModels
 		public void SetLocationLeft()
 		{
 			App.ViewModelRoot.Messenger.Raise(new SetWindowLocationMessage { MessageKey = "Window/Location", Left = 0.0 });
-		}
-
-
-		public IEnumerable GetErrors(string propertyName)
-		{
-			var errors = new List<string>();
-
-			switch (propertyName)
-			{
-				case "ReSortieCondition":
-					if (this.reSortieConditionError != null)
-					{
-						errors.Add(this.reSortieConditionError);
-					}
-					break;
-			}
-
-			return errors.HasItems() ? errors : null;
 		}
 
 		protected void RaiseErrorsChanged([CallerMemberName]string propertyName = "")

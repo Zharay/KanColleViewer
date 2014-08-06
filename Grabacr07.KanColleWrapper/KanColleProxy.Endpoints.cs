@@ -136,6 +136,22 @@ namespace Grabacr07.KanColleWrapper
 		}
 
 		/// <summary>
+		/// エンド ポイント "/kcsapi/api_req_hokyu/charge" からのセッションを配信します。
+		/// </summary>
+		public IObservable<Session> api_req_hokyu_charge
+		{
+			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/kcsapi/api_req_hokyu/charge"); }
+		}
+
+		/// <summary>
+		/// エンド ポイント "/kcsapi/api_req_kaisou/powerup" からのセッションを配信します。
+		/// </summary>
+		public IObservable<Session> api_req_kaisou_powerup
+		{
+			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/kcsapi/api_req_kaisou/powerup"); }
+		}
+
+		/// <summary>
 		/// エンド ポイント "/kcsapi/api_req_kousyou/getship" からのセッションを配信します。
 		/// </summary>
 		public IObservable<Session> api_req_kousyou_getship
@@ -200,19 +216,11 @@ namespace Grabacr07.KanColleWrapper
 		}
 
 		/// <summary>
-		/// エンド ポイント "/kcsapi/api_req_hokyu/charge" からのセッションを配信します。
+		/// エンド ポイント "/kcsapi/api_req_map/start" からのセッションを配信します。
 		/// </summary>
-		public IObservable<Session> api_req_hokyu_charge
+		public IObservable<Session> api_req_map_start
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/kcsapi/api_req_hokyu/charge"); }
-		}
-
-		/// <summary>
-		/// エンド ポイント "/kcsapi/api_req_kaisou/powerup" からのセッションを配信します。
-		/// </summary>
-		public IObservable<Session> api_req_kaisou_powerup
-		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/kcsapi/api_req_kaisou/powerup"); }
+			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/kcsapi/api_req_map/start"); }
 		}
 
 		/// <summary>
@@ -229,6 +237,14 @@ namespace Grabacr07.KanColleWrapper
 		public IObservable<Session> api_req_member_updatecomment
 		{
 			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/kcsapi/api_req_member/updatecomment"); }
+		}
+
+		/// <summary>
+		/// エンド ポイント "/kcsapi/api_req_mission/result" からのセッションを配信します。
+		/// </summary>
+		public IObservable<Session> api_req_mission_result
+		{
+			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/kcsapi/api_req_mission/result"); }
 		}
 
 		/// <summary>

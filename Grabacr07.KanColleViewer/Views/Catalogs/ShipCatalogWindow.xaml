@@ -76,10 +76,8 @@
 
 				<TextBlock Grid.Column="1"
 						   Text="{Binding Title}"
-						   FontFamily="Segoe UI"
-						   FontSize="16"
-						   Margin="2,2,8,2"
-						   Opacity="0.85" />
+						   Style="{DynamicResource CaptionTextStyleKey}"
+						   Margin="2,0,8,0" />
 
 				<metro:SystemButtons Grid.Column="2"
 									 HorizontalAlignment="Right"
@@ -98,7 +96,8 @@
 					  IsExpanded="{Binding IsOpenSettings, Mode=TwoWay}">
 				<Expander.Header>
 					<TextBlock Text="Filter &amp; Settings"
-							   FontSize="14" />
+							   Style="{DynamicResource HeaderTextStyleKey}"
+							   Foreground="{DynamicResource ActiveForegroundBrushKey}" />
 				</Expander.Header>
 				<StackPanel Grid.IsSharedSizeScope="True">
 					<Border BorderThickness="1"
@@ -125,10 +124,9 @@
 
 							<CheckBox Grid.Row="0"
 									  Grid.Column="2"
+									  Content="Select All"
 									  IsChecked="{Binding CheckAllShipTypes, Mode=TwoWay}"
-									  Margin="0,2">
-								<TextBlock Text="Select All" />
-							</CheckBox>
+									  Margin="0,2" />
 
 							<ItemsControl Grid.Row="1"
 										  Grid.Column="2"
@@ -273,15 +271,12 @@
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<RadioButton IsChecked="{Binding Both, Mode=TwoWay}">
-											<TextBlock Text="All" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Level2OrMore, Mode=TwoWay}">
-											<TextBlock Text="Lv.2 and up" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Level1, Mode=TwoWay}">
-											<TextBlock Text="Lv.1" />
-										</RadioButton>
+										<RadioButton Content="All"
+													 IsChecked="{Binding Both, Mode=TwoWay}" />
+										<RadioButton Content="Lv.2 and up"
+													 IsChecked="{Binding Level2OrMore, Mode=TwoWay}" />
+										<RadioButton Content="Lv.1"
+													 IsChecked="{Binding Level1, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 
@@ -298,15 +293,12 @@
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<RadioButton IsChecked="{Binding Both, Mode=TwoWay}">
-											<TextBlock Text="All" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Locked, Mode=TwoWay}">
-											<TextBlock Text="Is locked" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Unlocked, Mode=TwoWay}">
-											<TextBlock Text="Is not locked" />
-										</RadioButton>
+										<RadioButton Content="All"
+													 IsChecked="{Binding Both, Mode=TwoWay}" />
+										<RadioButton Content="Locked"
+													 IsChecked="{Binding Locked, Mode=TwoWay}" />
+										<RadioButton Content="Not locked"
+													 IsChecked="{Binding Unlocked, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 
@@ -323,9 +315,8 @@
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<CheckBox IsChecked="{Binding WithoutExpedition, Mode=TwoWay}">
-											<TextBlock Text="Exclude ships on expeditions" />
-										</CheckBox>
+										<CheckBox Content="Exclude ships on expeditions"
+												  IsChecked="{Binding WithoutExpedition, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 							</StackPanel>
@@ -344,15 +335,12 @@
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<RadioButton IsChecked="{Binding Both, Mode=TwoWay}">
-											<TextBlock Text="All" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Fast, Mode=TwoWay}">
-											<TextBlock Text="Fast" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Low, Mode=TwoWay}">
-											<TextBlock Text="Slow" />
-										</RadioButton>
+										<RadioButton Content="All"
+													 IsChecked="{Binding Both, Mode=TwoWay}" />
+										<RadioButton Content="Fast"
+													 IsChecked="{Binding Fast, Mode=TwoWay}" />
+										<RadioButton Content="Slow"
+													 IsChecked="{Binding Low, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 
@@ -365,19 +353,16 @@
 									</Grid.ColumnDefinitions>
 									<TextBlock Margin="0,2"
 											   HorizontalAlignment="Right">
-										<Run Text="Remodeling" />
+										<Run Text="Remodels" />
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<RadioButton IsChecked="{Binding Both, Mode=TwoWay}">
-											<TextBlock Text="All" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding AlreadyRemodeling, Mode=TwoWay}">
-											<TextBlock Text="Complete" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding NotAlreadyRemodeling, Mode=TwoWay}">
-											<TextBlock Text="Incomplete" />
-										</RadioButton>
+										<RadioButton Content="All"
+													 IsChecked="{Binding Both, Mode=TwoWay}" />
+										<RadioButton Content="Remodelled"
+													 IsChecked="{Binding AlreadyRemodeling, Mode=TwoWay}" />
+										<RadioButton Content="Not remodelled"
+													 IsChecked="{Binding NotAlreadyRemodeling, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 
@@ -394,15 +379,12 @@
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<RadioButton IsChecked="{Binding Both, Mode=TwoWay}">
-											<TextBlock Text="All" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding MaxModernized, Mode=TwoWay}">
-											<TextBlock Text="Complete" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding NotMaxModernized, Mode=TwoWay}">
-											<TextBlock Text="Incomplete" />
-										</RadioButton>
+										<RadioButton Content="All"
+													 IsChecked="{Binding Both, Mode=TwoWay}" />
+										<RadioButton Content="Complete"
+													 IsChecked="{Binding MaxModernized, Mode=TwoWay}" />
+										<RadioButton Content="Incomplete"
+													 IsChecked="{Binding NotMaxModernized, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 							</StackPanel>
@@ -488,7 +470,8 @@
 					Margin="8,0,8,8">
 
 				<ListView ItemsSource="{Binding Ships}"
-						  ItemContainerStyle="{DynamicResource GridViewItemContainerStyleKey}">
+						  ItemContainerStyle="{DynamicResource GridViewItemContainerStyleKey}"
+						  ScrollViewer.PanningMode="Both">
 					<ListView.Resources>
 						<Style TargetType="{x:Type TextBlock}">
 							<Setter Property="Margin"
@@ -878,11 +861,10 @@
 					Padding="20"
 					Visibility="{Binding IsReloading, Converter={StaticResource BooleanToVisibilityConverter}}"
 					d:IsHidden="True">
-				<TextBlock Text="Updating..."
+				<TextBlock Text="Generating list…"
+						   Style="{DynamicResource EmphaticTextStyleKey}"
 						   FontSize="16"
-						   Foreground="{DynamicResource ActiveForegroundBrushKey}"
 						   Background="{DynamicResource ThemeBrushKey}"
-						   TextWrapping="Wrap"
 						   HorizontalAlignment="Center" />
 			</Border>
 		</Grid>

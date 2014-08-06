@@ -9,17 +9,13 @@
 			 xmlns:contents="clr-namespace:Grabacr07.KanColleViewer.Views.Contents"
 			 xmlns:properties="clr-namespace:Grabacr07.KanColleViewer.Properties"
 			 xmlns:vm="clr-namespace:Grabacr07.KanColleViewer.ViewModels"
-			 xmlns:vmDocks="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Contents.Docks"
 			 xmlns:vmFleets="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Contents.Fleets"
 			 xmlns:vmContents="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Contents"
 			 xmlns:dev="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Dev"
 			 xmlns:models="clr-namespace:Grabacr07.KanColleViewer.Models"
-			 xmlns:views="clr-namespace:Grabacr07.KanColleViewer.Views"
-			 xmlns:vmTools="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Contents.Tools"
 			 mc:Ignorable="d"
 			 d:DesignHeight="25"
 			 d:DesignWidth="780">
-
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
@@ -30,8 +26,9 @@
 				   Margin="5,0" />
 		<TextBlock Grid.Column="0"
 				   Text="{Binding Source={x:Static root:App.ViewModelRoot}, Path=StatusMessage}"
-				   TextTrimming="CharacterEllipsis"
+				   Style="{DynamicResource DefaultTextStyleKey}"
 				   Foreground="{DynamicResource AccentForegroundBrushKey}"
+				   TextWrapping="NoWrap"
 				   MaxWidth="{Binding ElementName=Col0, Path=ActualWidth}"
 				   Margin="5,0" />
 
@@ -71,10 +68,15 @@
 					<StackPanel Orientation="Horizontal"
 								DataContext="{Binding SelectedFleet}">
 						<StackPanel.Resources>
-							<Style TargetType="{x:Type TextBlock}"
-								   BasedOn="{StaticResource {x:Type TextBlock}}">
+							<Style TargetType="{x:Type TextBlock}">
 								<Setter Property="Foreground"
 										Value="{DynamicResource AccentForegroundBrushKey}" />
+								<Setter Property="FontFamily"
+										Value="{DynamicResource DefaultFontFamilyKey}" />
+								<Setter Property="FontSize"
+										Value="{DynamicResource DefaultFontSizeKey}" />
+								<Setter Property="VerticalAlignment"
+										Value="Center" />
 							</Style>
 						</StackPanel.Resources>
 
@@ -95,15 +97,12 @@
 								   MinWidth="60" />
 					</StackPanel>
 				</DataTemplate>
-				<DataTemplate DataType="{x:Type vmDocks:RepairyardViewModel}" />
-				<DataTemplate DataType="{x:Type vmDocks:DockyardViewModel}" />
+				<DataTemplate DataType="{x:Type vmContents:ShipyardViewModel}" />
 				<DataTemplate DataType="{x:Type vmContents:QuestsViewModel}" />
 				<DataTemplate DataType="{x:Type vmContents:ExpeditionsViewModel}" />
+				<DataTemplate DataType="{x:Type vmContents:ToolsViewModel}" />
 				<DataTemplate DataType="{x:Type vm:SettingsViewModel}" />
 				<DataTemplate DataType="{x:Type dev:DebugTabViewModel}" />
-				<DataTemplate DataType="{x:Type vmContents:ToolsViewModel}" />
-				<DataTemplate DataType="{x:Type vmTools:CalculatorViewModel}" />
-				<DataTemplate DataType="{x:Type vmTools:RankingsViewModel}" />
 			</ContentControl.Resources>
 		</ContentControl>
 	</Grid>

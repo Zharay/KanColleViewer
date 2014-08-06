@@ -53,12 +53,12 @@ namespace Grabacr07.KanColleViewer.Views.Controls
 
 			if (oldBrowser != null)
 			{
-				oldBrowser.LoadCompleted -= instance.ApplyStyleSheet;
+				oldBrowser.LoadCompleted -= instance.HandleLoadCompleted;
 				oldBrowser.LoadCompleted -= instance.ApplyFlashQualityScript;
 			}
 			if (newBrowser != null)
 			{
-				newBrowser.LoadCompleted += instance.ApplyStyleSheet;
+				newBrowser.LoadCompleted += instance.HandleLoadCompleted;
 				newBrowser.LoadCompleted += instance.ApplyFlashQualityScript;
 			}
 			if (instance.scrollViewer != null)
@@ -165,7 +165,21 @@ namespace Grabacr07.KanColleViewer.Views.Controls
 			}
 		}
 
-		private void ApplyStyleSheet(object sender, NavigationEventArgs e)
+		private void HandleLoadCompleted(object sender, NavigationEventArgs e)
+		{
+			this.ApplyStyleSheet();
+			WebBrowserHelper.SetScriptErrorsSuppressed(this.WebBrowser, true);
+
+			this.Update();
+
+			var window = Window.GetWindow(this.WebBrowser);
+			if (window != null)
+			{
+				window.Width = this.WebBrowser.Width;
+			}
+		}
+
+		private void ApplyStyleSheet()
 		{
 			try
 			{
@@ -192,6 +206,7 @@ namespace Grabacr07.KanColleViewer.Views.Controls
 					{
 						target.createStyleSheet().cssText = Properties.Settings.Default.OverrideStyleSheet;
 						this.styleSheetApplied = true;
+						return;
 					}
 				}
 			}
@@ -200,13 +215,7 @@ namespace Grabacr07.KanColleViewer.Views.Controls
 				StatusService.Current.Notify("failed to apply css: " + ex.Message);
 			}
 
-			this.Update();
-
-			var window = Window.GetWindow(this.WebBrowser);
-			if (window != null)
-			{
-				window.Width = this.WebBrowser.Width;
-			}
+			return;
 		}
 
 		public void ApplyFlashQualityScript(object sender, NavigationEventArgs e)
