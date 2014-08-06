@@ -181,7 +181,7 @@
 													<Run Text="{Binding Ship.Info.ShipType.Name, Mode=OneWay}"
 														 FontSize="11" />
 													<LineBreak />
-													<Run Text="{Binding StatsToolTip, Mode=OneWay}">
+													<Run Text="{Binding StatsToolTip, Mode=OneWay}" />
 												</TextBlock>
 											</TextBlock.ToolTip>
 										</TextBlock>

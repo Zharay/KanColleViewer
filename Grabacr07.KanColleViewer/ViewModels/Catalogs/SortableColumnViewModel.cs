@@ -270,7 +270,6 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 					.ThenBy(x => x.Info.ShipType.Id)
 					.ThenBy(x => x.Level)
 					.ThenBy(x => x.Info.Name);
-					.ThenBy(x => x.Info.SortId);
 			}
 			return list;
 		}

@@ -204,7 +204,6 @@
     <Compile Include="Quests.cs" />
     <Compile Include="Rankings.cs" />
     <Compile Include="Repairyard.cs" />
-    <Compile Include="TimerNotificator.cs" />
     <Compile Include="Translations.cs" />
     <Compile Include="Updater.cs" />
     <Compile Include="KanColleClientSettings.cs" />

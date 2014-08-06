@@ -68,7 +68,7 @@ namespace Grabacr07.KanColleViewer.Models
 				NotifyExpeditionReturned = true,
 				FlashQuality = "High",
 				FlashWindow = "Opaque",
-				CustomSoundVolume = 50
+				CustomSoundVolume = 50,
 				KanColleClientSettings = new KanColleClientSettings(),
 			};
 		}
@@ -932,6 +932,24 @@ namespace Grabacr07.KanColleViewer.Models
 				if (this._CustomSoundVolume != value)
 				{
 					this._CustomSoundVolume = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+		#endregion
+
+		#region EnableLogging 変更通知プロパティ
+
+		private bool _EnableLogging;
+
+		public bool EnableLogging
+		{
+			get { return this._EnableLogging; }
+			set 
+			{ 
+				if (this._EnableLogging != value)
+				{
+					this._EnableLogging = value;
 					this.RaisePropertyChanged();
 				}
 			}
