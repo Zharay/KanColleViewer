@@ -21,7 +21,10 @@ namespace Grabacr07.KanColleWrapper.Models
 											185, 190, 195, 200, 205, 210, 225, 230, 235, 240, 245, 250, 255, 260, 265, 280, 285, 290, 295, 300,
 											305, 310, 315, 320, 325, 330, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395, 400, 405, 420,
 											425, 430, 435, 440, 445, 450, 455, 460, 465, 470, 475, 480, 485, 490, 505, 510, 515, 520, 525, 530,
-											535, 540, 545, 550, 555, 560, 565, 570, 575, 580, 585, 600, 605, 610, 615, 620, 652, 630, 635, 635};
+											535, 540, 545, 550, 555, 560, 565, 570, 575, 580, 585, 600, 605, 610, 615, 620, 652, 630, 635, 635,
+											650, 655, 660, 665, 670, 675, 680, 685, 690, 695, 700, 705, 710, 715, 720, 725, 730, 735, 740, 745,
+											750, 755, 760, 765, 770, 775, 780, 785, 790, 795, 800, 805, 810, 815, 820, 825, 830, 835, 840, 845,
+											850, 855, 860, 865, 870, 875, 880, 885, 890, 895, 900, 905, 910, 915};
 
 		/// <summary>
 		/// この艦娘を識別する ID を取得します。
@@ -300,7 +303,7 @@ namespace Grabacr07.KanColleWrapper.Models
 		{
 			get
 			{
-				return TimeSpan.FromSeconds(Math.Floor((this.HP.Maximum - this.HP.Current) * BaseRepairTime[Math.Min(this.Level, 99)] * this.Info.ShipType.RepairMultiplier) + 30).ToString();
+				return TimeSpan.FromSeconds(Math.Floor((this.HP.Maximum - this.HP.Current) * BaseRepairTime[Math.Min(this.Level, 150)] * this.Info.ShipType.RepairMultiplier) + 30).ToString();
 			}
 		}
 
@@ -309,7 +312,7 @@ namespace Grabacr07.KanColleWrapper.Models
 			get
 			{
 				// Time it takes to heal 1HP
-				double MinDockTime = Math.Floor(BaseRepairTime[Math.Min(this.Level, 99)] * this.Info.ShipType.RepairMultiplier) + 30;
+				double MinDockTime = Math.Floor(BaseRepairTime[Math.Min(this.Level, 150)] * this.Info.ShipType.RepairMultiplier) + 30;
 
 				if (MinDockTime < 1200)
 					return RepairDockTime;
