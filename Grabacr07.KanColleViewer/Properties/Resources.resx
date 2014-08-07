@@ -786,6 +786,18 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Settings_Network_Proxy_Auth_Username" xml:space="preserve">
     <value>ユーザー名</value>
   </data>
+  <data name="Overview_Data" xml:space="preserve">
+    <value>データ</value>
+  </data>
+  <data name="Overview_EquipmentList" xml:space="preserve">
+    <value>装備一覧</value>
+  </data>
+  <data name="Overview_ShipList" xml:space="preserve">
+    <value>艦娘一覧</value>
+  </data>
+  <data name="Shipyard" xml:space="preserve">
+    <value>工廠</value>
+  </data>
   <data name="Shipyard_ConstructionDock" xml:space="preserve">
     <value>建造</value>
   </data>
@@ -803,5 +815,29 @@ Low: Performance over quality. Ugliest setting.</value>
   </data>
   <data name="Shipyard_RepairDock" xml:space="preserve">
     <value>入渠</value>
+  </data>
+  <data name="Ship_Repairing" xml:space="preserve">
+    <value>入渠中</value>
+  </data>
+  <data name="StateDetail_CriticalDamage" xml:space="preserve">
+    <value>大破した艦娘がいます！！！</value>
+  </data>
+  <data name="StateDetail_EmptyFleet" xml:space="preserve">
+    <value>艦隊に艦娘が編成されていません。</value>
+  </data>
+  <data name="StateDetail_IsReady" xml:space="preserve">
+    <value>出撃可能！</value>
+  </data>
+  <data name="StateDetail_MoraleRecovering" xml:space="preserve">
+    <value>疲労回復済み</value>
+  </data>
+  <data name="StateDetail_MoraleRecoveryTimer" xml:space="preserve">
+    <value>疲労回復まで</value>
+  </data>
+  <data name="StateDetail_OnExpedition" xml:space="preserve">
+    <value>遠征中</value>
+  </data>
+  <data name="StateDetail_OnSortie" xml:space="preserve">
+    <value>艦隊は出撃中です！</value>
   </data>
 </root>

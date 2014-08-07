@@ -565,6 +565,33 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to データ.
+        /// </summary>
+        public static string Overview_Data {
+            get {
+                return ResourceManager.GetString("Overview_Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 装備一覧.
+        /// </summary>
+        public static string Overview_EquipmentList {
+            get {
+                return ResourceManager.GetString("Overview_EquipmentList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦娘一覧.
+        /// </summary>
+        public static string Overview_ShipList {
+            get {
+                return ResourceManager.GetString("Overview_ShipList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 任務画面の全ページにアクセスしてください。.
         /// </summary>
         public static string Quest_Detail_Untaken {
@@ -1572,6 +1599,24 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 入渠中.
+        /// </summary>
+        public static string Ship_Repairing {
+            get {
+                return ResourceManager.GetString("Ship_Repairing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 工廠.
+        /// </summary>
+        public static string Shipyard {
+            get {
+                return ResourceManager.GetString("Shipyard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 建造.
         /// </summary>
         public static string Shipyard_ConstructionDock {
@@ -1685,6 +1730,69 @@ namespace Grabacr07.KanColleViewer.Properties {
         public static string StartContent_Welcom {
             get {
                 return ResourceManager.GetString("StartContent_Welcom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 大破した艦娘がいます！！！.
+        /// </summary>
+        public static string StateDetail_CriticalDamage {
+            get {
+                return ResourceManager.GetString("StateDetail_CriticalDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊に艦娘が編成されていません。.
+        /// </summary>
+        public static string StateDetail_EmptyFleet {
+            get {
+                return ResourceManager.GetString("StateDetail_EmptyFleet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 出撃可能！.
+        /// </summary>
+        public static string StateDetail_IsReady {
+            get {
+                return ResourceManager.GetString("StateDetail_IsReady", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 疲労回復済み.
+        /// </summary>
+        public static string StateDetail_MoraleRecovering {
+            get {
+                return ResourceManager.GetString("StateDetail_MoraleRecovering", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 疲労回復まで.
+        /// </summary>
+        public static string StateDetail_MoraleRecoveryTimer {
+            get {
+                return ResourceManager.GetString("StateDetail_MoraleRecoveryTimer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 遠征中.
+        /// </summary>
+        public static string StateDetail_OnExpedition {
+            get {
+                return ResourceManager.GetString("StateDetail_OnExpedition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊は出撃中です！.
+        /// </summary>
+        public static string StateDetail_OnSortie {
+            get {
+                return ResourceManager.GetString("StateDetail_OnSortie", resourceCulture);
             }
         }
         

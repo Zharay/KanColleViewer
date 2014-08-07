@@ -780,6 +780,18 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Settings_Network_Proxy_Auth_Username" xml:space="preserve">
     <value>User name</value>
   </data>
+  <data name="Overview_Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="Overview_EquipmentList" xml:space="preserve">
+    <value>Eq. List</value>
+  </data>
+  <data name="Overview_ShipList" xml:space="preserve">
+    <value>Ship List</value>
+  </data>
+  <data name="Shipyard" xml:space="preserve">
+    <value>Shipyard</value>
+  </data>
   <data name="Shipyard_ConstructionDock" xml:space="preserve">
     <value>Construction</value>
   </data>
@@ -797,5 +809,29 @@ Low: Performance over quality. Ugliest setting.</value>
   </data>
   <data name="Shipyard_RepairDock" xml:space="preserve">
     <value>Repairs</value>
+  </data>
+  <data name="Ship_Repairing" xml:space="preserve">
+    <value>Repairing</value>
+  </data>
+  <data name="StateDetail_CriticalDamage" xml:space="preserve">
+    <value>Some of your girls are critically damaged.</value>
+  </data>
+  <data name="StateDetail_EmptyFleet" xml:space="preserve">
+    <value>There are no ships in this fleet.</value>
+  </data>
+  <data name="StateDetail_IsReady" xml:space="preserve">
+    <value>Ready to sortie!</value>
+  </data>
+  <data name="StateDetail_MoraleRecovering" xml:space="preserve">
+    <value>Recovering</value>
+  </data>
+  <data name="StateDetail_MoraleRecoveryTimer" xml:space="preserve">
+    <value>Morale will be restored in</value>
+  </data>
+  <data name="StateDetail_OnExpedition" xml:space="preserve">
+    <value>On expedition</value>
+  </data>
+  <data name="StateDetail_OnSortie" xml:space="preserve">
+    <value>On sortie!</value>
   </data>
 </root>

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Grabacr07.KanColleViewer.Composition;
+using Grabacr07.KanColleViewer.Properties;
 using Grabacr07.KanColleWrapper;
 using Livet;
 
@@ -13,7 +14,7 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents
 	{
 		public override string Name
 		{
-			get { return "ツール"; }
+			get { return Resources.Tools; }
 			protected set { throw new NotImplementedException(); }
 		}
 
