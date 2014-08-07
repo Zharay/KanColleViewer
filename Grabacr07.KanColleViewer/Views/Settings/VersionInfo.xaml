@@ -68,8 +68,8 @@
 				<LineBreak />
 
 				<Run Text="Source code:" />
-				<metro2:HyperlinkEx Uri="https://github.com/Grabacr07/KanColleViewer">
-					<Run Text="https://github.com/Grabacr07/KanColleViewer" />
+				<metro2:HyperlinkEx Uri="https://github.com/Yuubari/KanColleViewer">
+					<Run Text="https://github.com/Yuubari/KanColleViewer" />
 				</metro2:HyperlinkEx>
 
 				<LineBreak />
@@ -88,11 +88,33 @@
 				</metro2:HyperlinkEx>
 
 				<LineBreak />
+				<LineBreak />
+						
+				<Run Text="Horizontal version and translation:" />
+				<metro2:HyperlinkEx Uri="https://twitter.com/Zharay">
+					<Run Text="@Zharay" />
+				</metro2:HyperlinkEx>
+						
+				<LineBreak />
 
-				<Run Text="Localization (English):" />
+				<Run Text="Updates for the translated version:" />
+				<metro2:HyperlinkEx Uri="https://twitter.com/Xiatian"><Run Text="@Xiatian" /></metro2:HyperlinkEx>
+
+				<LineBreak />
+
+				<Run Text="Localisation:" />
 				<metro2:HyperlinkEx Uri="https://twitter.com/southrop113">
 					<Run Text="@southrop113" />
 				</metro2:HyperlinkEx>
+				<Run Text="(English)" FontSize="8" /><Run Text="," />
+				<metro2:HyperlinkEx Uri="https://twitter.com/xshunin">
+					<Run Text="@xshunin" />
+				</metro2:HyperlinkEx><Run Text=", " />
+				<metro2:HyperlinkEx Uri="https://twitter.com/halcy">
+					<Run Text="@halcy" />
+				</metro2:HyperlinkEx>
+				<Run Text="(German)" FontSize="8" />
+
 			</TextBlock>
 
 			<Rectangle Height="1"
