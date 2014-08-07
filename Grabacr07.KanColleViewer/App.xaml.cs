@@ -55,7 +55,7 @@ namespace Grabacr07.KanColleViewer
 			{
 				if (Settings.Current.EnableUpdateNotification && KanColleClient.Current.Updater.IsOnlineVersionGreater(0, ProductInfo.Version.ToString()))
 				{
-					WindowsNotification.Notifier.Show(
+					PluginHost.Instance.GetNotifier().Show(NotifyType.Other,
 						KanColleViewer.Properties.Resources.Updater_Notification_Title,
 						string.Format(KanColleViewer.Properties.Resources.Updater_Notification_NewAppVersion, KanColleClient.Current.Updater.GetOnlineVersion(0)),
 						() => Process.Start(KanColleClient.Current.Updater.GetOnlineVersion(0, true)));
@@ -65,7 +65,7 @@ namespace Grabacr07.KanColleViewer
 				{
 					if (KanColleClient.Current.Updater.UpdateTranslations(AppSettings.Default.XMLTransUrl.AbsoluteUri, Settings.Current.Culture, KanColleClient.Current.Translations) > 0)
 					{
-						WindowsNotification.Notifier.Show(
+						PluginHost.Instance.GetNotifier().Show(NotifyType.Other,
 							KanColleViewer.Properties.Resources.Updater_Notification_Title,
 							KanColleViewer.Properties.Resources.Updater_Notification_TransUpdate_Success,
 							() => App.ViewModelRoot.Activate());

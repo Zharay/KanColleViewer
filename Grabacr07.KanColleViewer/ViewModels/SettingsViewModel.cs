@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Xml.Linq;
 using Grabacr07.KanColleViewer.Models;
+using Grabacr07.KanColleViewer.Composition;
 using Grabacr07.KanColleViewer.Properties;
 using Grabacr07.KanColleViewer.ViewModels.Messages;
 using Grabacr07.KanColleWrapper;
@@ -260,6 +261,302 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 		#endregion
 
+		#region EquipmentVersion 変更通知プロパティ
+
+		public string EquipmentVersion
+		{
+			get { return KanColleClient.Current.Translations.EquipmentVersion; }
+			set
+			{
+				if (KanColleClient.Current.Translations.EquipmentVersion != value)
+				{
+					KanColleClient.Current.Translations.EquipmentVersion = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region OperationsVersion 変更通知プロパティ
+
+		public string OperationsVersion
+		{
+			get { return KanColleClient.Current.Translations.OperationsVersion; }
+			set
+			{
+				if (KanColleClient.Current.Translations.OperationsVersion != value)
+				{
+					KanColleClient.Current.Translations.OperationsVersion = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region QuestsVersion 変更通知プロパティ
+
+		public string QuestsVersion
+		{
+			get { return KanColleClient.Current.Translations.QuestsVersion; }
+			set
+			{
+				if (KanColleClient.Current.Translations.QuestsVersion != value)
+				{
+					KanColleClient.Current.Translations.QuestsVersion = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region ShipsVersion 変更通知プロパティ
+
+		public string ShipsVersion
+		{
+			get { return KanColleClient.Current.Translations.ShipsVersion; }
+			set
+			{
+				if (KanColleClient.Current.Translations.ShipsVersion != value)
+				{
+					KanColleClient.Current.Translations.ShipsVersion = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region ShipTypesVersion 変更通知プロパティ
+
+		public string ShipTypesVersion
+		{
+			get { return KanColleClient.Current.Translations.ShipTypesVersion; }
+			set
+			{
+				if (KanColleClient.Current.Translations.ShipTypesVersion != value)
+				{
+					KanColleClient.Current.Translations.ShipTypesVersion = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region AppOnlineVersion 変更通知プロパティ
+
+		private string _AppOnlineVersion;
+		public string AppOnlineVersionURL { get; set; }
+
+		public string AppOnlineVersion
+		{
+			get { return _AppOnlineVersion; }
+			set
+			{
+				if (_AppOnlineVersion != value)
+				{
+					_AppOnlineVersion = value;
+					this.RaisePropertyChanged();
+					this.RaisePropertyChanged("AppOnlineVersionURL");
+				}
+			}
+		}
+
+		#endregion
+
+		#region EquipmentOnlineVersion 変更通知プロパティ
+
+		private string _EquipmentOnlineVersion;
+		public string EquipmentOnlineVersionURL { get; set; }
+
+		public string EquipmentOnlineVersion
+		{
+			get { return _EquipmentOnlineVersion; }
+			set
+			{
+				if (_EquipmentOnlineVersion != value)
+				{
+					_EquipmentOnlineVersion = value;
+					this.RaisePropertyChanged();
+					this.RaisePropertyChanged("EquipmentOnlineVersionURL");
+				}
+			}
+		}
+
+		#endregion
+
+		#region OperationsOnlineVersion 変更通知プロパティ
+
+		private string _OperationsOnlineVersion;
+		public string OperationsOnlineVersionURL { get; set; }
+
+		public string OperationsOnlineVersion
+		{
+			get { return _OperationsOnlineVersion; }
+			set
+			{
+				if (_OperationsOnlineVersion != value)
+				{
+					_OperationsOnlineVersion = value;
+					this.RaisePropertyChanged();
+					this.RaisePropertyChanged("OperationsOnlineVersionURL");
+				}
+			}
+		}
+
+		#endregion
+
+		#region QuestsOnlineVersion 変更通知プロパティ
+
+		private string _QuestsOnlineVersion;
+		public string QuestsOnlineVersionURL { get; set; }
+
+		public string QuestsOnlineVersion
+		{
+			get { return _QuestsOnlineVersion; }
+			set
+			{
+				if (_QuestsOnlineVersion != value)
+				{
+					_QuestsOnlineVersion = value;
+					this.RaisePropertyChanged();
+					this.RaisePropertyChanged("QuestsOnlineVersionURL");
+				}
+			}
+		}
+
+		#endregion
+
+		#region ShipsOnlineVersion 変更通知プロパティ
+
+		private string _ShipsOnlineVersion;
+		public string ShipsOnlineVersionURL { get; set; }
+
+		public string ShipsOnlineVersion
+		{
+			get { return _ShipsOnlineVersion; }
+			set
+			{
+				if (_ShipsOnlineVersion != value)
+				{
+					_ShipsOnlineVersion = value;
+					this.RaisePropertyChanged();
+					this.RaisePropertyChanged("ShipsOnlineVersionURL");
+				}
+			}
+		}
+
+		#endregion
+
+		#region ShipTypesOnlineVersion 変更通知プロパティ
+
+		private string _ShipTypesOnlineVersion;
+		public string ShipTypesOnlineVersionURL { get; set; }
+
+		public string ShipTypesOnlineVersion
+		{
+			get { return _ShipTypesOnlineVersion; }
+			set
+			{
+				if (_ShipTypesOnlineVersion != value)
+				{
+					_ShipTypesOnlineVersion = value;
+					this.RaisePropertyChanged();
+					this.RaisePropertyChanged("ShipTypesOnlineVersionURL");
+				}
+			}
+		}
+
+		#endregion
+
+		#region EnableUpdateNotification 変更通知プロパティ
+
+		public bool EnableUpdateNotification
+		{
+			get { return Settings.Current.EnableUpdateNotification; }
+			set
+			{
+				if (Settings.Current.EnableUpdateNotification != value)
+				{
+					Settings.Current.EnableUpdateNotification = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region EnableUpdateTransOnStart 変更通知プロパティ
+
+		public bool EnableUpdateTransOnStart
+		{
+			get { return Settings.Current.EnableUpdateTransOnStart; }
+			set
+			{
+				if (Settings.Current.EnableUpdateTransOnStart != value)
+				{
+					Settings.Current.EnableUpdateTransOnStart = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region FlashQuality 変更通知プロパティ
+
+		public string FlashQuality
+		{
+			get { return Settings.Current.FlashQuality; }
+			set
+			{
+				if (Settings.Current.FlashQuality != value)
+				{
+					Settings.Current.FlashQuality = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region FlashWindow 変更通知プロパティ
+
+		public string FlashWindow
+		{
+			get { return Settings.Current.FlashWindow; }
+			set
+			{
+				if (Settings.Current.FlashWindow != value)
+				{
+					Settings.Current.FlashWindow = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region EnableFatigueNotification 変更通知プロパティ
+
+		public bool EnableFatigueNotification
+		{
+			get { return Settings.Current.EnableFatigueNotification; }
+			set
+			{
+				if (Settings.Current.EnableFatigueNotification != value)
+				{
+					Settings.Current.EnableFatigueNotification = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
 		#region CustomSoundVolume 変更通知プロパティ
 
 		public int CustomSoundVolume
@@ -400,7 +697,7 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			}
 			else
 			{
-				WindowsNotification.Notifier.Show(
+				PluginHost.Instance.GetNotifier().Show(NotifyType.Other,
 					Resources.Updater_Notification_Title,
 					Resources.Updater_Notification_CheckFailed,
 					() => App.ViewModelRoot.Activate());
@@ -413,21 +710,21 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			
 			if (UpdateStatus > 0)
 			{
-				WindowsNotification.Notifier.Show(
+				PluginHost.Instance.GetNotifier().Show(NotifyType.Other,
 					Resources.Updater_Notification_Title,
 					Resources.Updater_Notification_TransUpdate_Success,
 					() => App.ViewModelRoot.Activate());
 			}
 			else if (UpdateStatus < 0)
 			{
-				WindowsNotification.Notifier.Show(
+				PluginHost.Instance.GetNotifier().Show(NotifyType.Other,
 					Resources.Updater_Notification_Title,
 					Resources.Updater_Notification_TransUpdate_Fail,
 					() => App.ViewModelRoot.Activate());
 			}
 			else
 			{
-				WindowsNotification.Notifier.Show(
+				PluginHost.Instance.GetNotifier().Show(NotifyType.Other,
 					Resources.Updater_Notification_Title,
 					Resources.Updater_Notification_TransUpdate_Same,
 					() => App.ViewModelRoot.Activate());

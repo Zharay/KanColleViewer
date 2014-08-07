@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 using System.Media;
 using NAudio.Wave;
 using Settings = Grabacr07.KanColleViewer.Models.Settings;
+using StatusService = Grabacr07.KanColleViewer.Models.StatusService;
+using Volume = Grabacr07.KanColleViewer.Models.Volume;
 
-namespace Grabacr07.KanColleViewer.Models
+namespace Grabacr07.KanColleViewer.Plugins
 {
 	class CustomSound
 	{
