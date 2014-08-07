@@ -172,13 +172,13 @@
     <value>Individual Dock Settings</value>
   </data>
   <data name="Dockyard_ShipName" xml:space="preserve">
-    <value>Ship In Progress</value>
+    <value>Ship</value>
   </data>
   <data name="Dockyard_TimeComplete" xml:space="preserve">
-    <value>Completion Time</value>
+    <value>ETA</value>
   </data>
   <data name="Dockyard_TimeRemaining" xml:space="preserve">
-    <value>Remaining Time</value>
+    <value>Remaining</value>
   </data>
   <data name="Dockyard_Unused" xml:space="preserve">
     <value>Empty</value>
@@ -316,10 +316,10 @@
     <value>Individual Dock Settings</value>
   </data>
   <data name="Repairyard_ShipName" xml:space="preserve">
-    <value>Docked Ship</value>
+    <value>Ship</value>
   </data>
   <data name="Repairyard_TimeComplete" xml:space="preserve">
-    <value>Completion</value>
+    <value>ETA</value>
   </data>
   <data name="Repairyard_TimeRemaining" xml:space="preserve">
     <value>Remaining</value>
@@ -779,5 +779,23 @@ Low: Performance over quality. Ugliest setting.</value>
   </data>
   <data name="Settings_Network_Proxy_Auth_Username" xml:space="preserve">
     <value>User name</value>
+  </data>
+  <data name="Shipyard_ConstructionDock" xml:space="preserve">
+    <value>Construction</value>
+  </data>
+  <data name="Shipyard_Development" xml:space="preserve">
+    <value>Development</value>
+  </data>
+  <data name="Shipyard_Development_Result_Failure" xml:space="preserve">
+    <value>Failure</value>
+  </data>
+  <data name="Shipyard_Development_Result_None" xml:space="preserve">
+    <value>No results</value>
+  </data>
+  <data name="Shipyard_Development_Result_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="Shipyard_RepairDock" xml:space="preserve">
+    <value>Repairs</value>
   </data>
 </root>

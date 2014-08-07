@@ -1572,6 +1572,60 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 建造.
+        /// </summary>
+        public static string Shipyard_ConstructionDock {
+            get {
+                return ResourceManager.GetString("Shipyard_ConstructionDock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 装備開発.
+        /// </summary>
+        public static string Shipyard_Development {
+            get {
+                return ResourceManager.GetString("Shipyard_Development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 失敗.
+        /// </summary>
+        public static string Shipyard_Development_Result_Failure {
+            get {
+                return ResourceManager.GetString("Shipyard_Development_Result_Failure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 結果なし.
+        /// </summary>
+        public static string Shipyard_Development_Result_None {
+            get {
+                return ResourceManager.GetString("Shipyard_Development_Result_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 成功.
+        /// </summary>
+        public static string Shipyard_Development_Result_Success {
+            get {
+                return ResourceManager.GetString("Shipyard_Development_Result_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 入渠.
+        /// </summary>
+        public static string Shipyard_RepairDock {
+            get {
+                return ResourceManager.GetString("Shipyard_RepairDock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to キャッシュの削除.
         /// </summary>
         public static string StartContent_ClearCacheButton {
