@@ -364,7 +364,7 @@
     <value>Network</value>
   </data>
   <data name="Settings_Operation" xml:space="preserve">
-    <value>Behaviour</value>
+    <value>Sortie</value>
   </data>
   <data name="Settings_Other" xml:space="preserve">
     <value>Other</value>
@@ -692,9 +692,6 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Settings_Updates_GetKCVBtn_ToolTip" xml:space="preserve">
     <value>Opens a link to the latest version of KCV found here.</value>
   </data>
-  <data name="Settings_Notify_Fatigue" xml:space="preserve">
-    <value>Give a notification when a fleet's fatigue as reset.</value>
-  </data>
   <data name="Settings_Flash_Message" xml:space="preserve">
     <value>This works with DMM.com. OSAPI, and API links now!
 [You must reload the game for the changes to take affect.]</value>
@@ -731,5 +728,56 @@ Low: Performance over quality. Ugliest setting.</value>
   </data>
   <data name="Tools" xml:space="preserve">
     <value>Tools</value>
+  </data>
+  <data name="Settings_Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="Settings_Notifications_AheadOfTime" xml:space="preserve">
+    <value>Notify ahead of time by</value>
+  </data>
+  <data name="Settings_Notifications_AheadOfTime_Description" xml:space="preserve">
+    <value>Recommended: 40-50 seconds. Specifies the server time deviation, up to 1 minute depending on various factors.</value>
+  </data>
+  <data name="Settings_Notifications_AheadOfTime_Seconds" xml:space="preserve">
+    <value>sec.</value>
+  </data>
+  <data name="Settings_Notifications_Construction_Enabled" xml:space="preserve">
+    <value>When construction completes</value>
+  </data>
+  <data name="Settings_Notifications_Expeditions_Enabled" xml:space="preserve">
+    <value>When expeditions finish</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale" xml:space="preserve">
+    <value>Notify when a fleet recovers from fatigue</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale_Description" xml:space="preserve">
+    <value>Notifies when the morale of every ship girl in a fleet reaches this threshold. Morale increases by 3 every 3 minutes, but due to the way the API works the notification might appear earlier than needed.</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale_Reference" xml:space="preserve">
+    <value>※ Can be set in Operation Settings, Sortie morale threshold.</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale_Threshold" xml:space="preserve">
+    <value>Morale threshold</value>
+  </data>
+  <data name="Settings_Notifications_Repair_Enabled" xml:space="preserve">
+    <value>When repairs finish</value>
+  </data>
+  <data name="Settings_Operation_SortieCondition" xml:space="preserve">
+    <value>出撃コンディション</value>
+  </data>
+  <data name="Settings_Operation_SortieCondition_Description" xml:space="preserve">
+    <value>※通常は、間宮アイコンが消灯する 40 か、自然回復上限の 49 に設定します。</value>
+  </data>
+  <data name="Settings_Operation_SortieCondition_Title" xml:space="preserve">
+    <value>艦隊内の全艦のコンディションが次の数値以上になったとき、出撃可能と判断する</value>
+  </data>
+  <data name="Settings_Network_Proxy_Auth_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Settings_Network_Proxy_Auth_Required" xml:space="preserve">
+    <value>Proxy server requires authorization</value>
+  </data>
+  <data name="Settings_Network_Proxy_Auth_Username" xml:space="preserve">
+    <value>User name</value>
   </data>
 </root>

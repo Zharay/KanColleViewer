@@ -61,7 +61,7 @@
 
 			<TabItem>
 				<TabItem.Header>
-					<TextBlock Text="通知設定"
+					<TextBlock Text="{Binding Resources.Settings_Notifications, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 							   Style="{StaticResource TabHeaderTextStyleKey}" />
 				</TabItem.Header>
 				<settings:Notification Margin="10,0" />
@@ -77,10 +77,26 @@
 
 			<TabItem>
 				<TabItem.Header>
+					<TextBlock Text="{Binding Resources.Settings_Language, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+							   Style="{StaticResource TabHeaderTextStyleKey}" />
+				</TabItem.Header>
+				<settings:Language Margin="10,0" />
+			</TabItem>
+
+			<TabItem>
+				<TabItem.Header>
 					<TextBlock Text="{Binding Resources.Settings_Other, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 							   Style="{StaticResource TabHeaderTextStyleKey}" />
 				</TabItem.Header>
 				<settings:Others Margin="10,0" />
+			</TabItem>
+
+			<TabItem>
+				<TabItem.Header>
+					<TextBlock Text="{Binding Resources.Settings_Updates, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+							   Style="{StaticResource TabHeaderTextStyleKey}" />
+				</TabItem.Header>
+				<settings:Updates Margin="10,0" />
 			</TabItem>
 
 			<TabItem>

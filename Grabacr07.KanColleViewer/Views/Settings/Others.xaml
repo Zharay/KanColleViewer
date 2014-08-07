@@ -41,7 +41,7 @@
 	<StackPanel>
 		<TextBlock Text="{Binding Resources.Settings_Screenshot, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 				   Style="{DynamicResource SettingsHeaderTextStyleKey}" />
-		<Grid Margin="20,0,0,10">
+		<Grid Margin="20,0,0,5">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
@@ -91,17 +91,17 @@
 		</Grid>
 
 		<Rectangle Height="1"
-				   Margin="0,10"
+				   Margin="0,5"
 				   Style="{DynamicResource SeparatorRectangleStyleKey}" />
-		<TextBlock Text="{Binding Source={x:Static properties:Resources.Settings_Logging}, Mode=OneWay}" Style="{DynamicResource HeaderTextBlockStyleKey}" />
+		<TextBlock Text="{Binding Source={x:Static properties:Resources.Settings_Logging}, Mode=OneWay}" Style="{DynamicResource SettingsHeaderTextStyleKey}" />
 		<CheckBox Content="{Binding Source={x:Static properties:Resources.Settings_Logging_Enable}, Mode=OneWay}" IsChecked="{Binding EnableLogging}" Height="17" Margin="15,0,0,10"/>
 
 
 
 		<Rectangle Height="1"
-				   Margin="0,10"
+				   Margin="0,5"
 				   Style="{DynamicResource SeparatorRectangleStyleKey}" />
-		<TextBlock Text="{Binding Source={x:Static properties:Resources.Settings_CustomSound}, Mode=OneWay}" Style="{DynamicResource HeaderTextBlockStyleKey}" />
+		<TextBlock Text="{Binding Source={x:Static properties:Resources.Settings_CustomSound}, Mode=OneWay}" Style="{DynamicResource SettingsHeaderTextStyleKey}" />
 		
 		<Grid Margin="15, 0">
 			<Grid.ColumnDefinitions>
@@ -148,7 +148,7 @@
 		<Rectangle Height="1"
 				   Style="{DynamicResource SeparatorRectangleStyleKey}" />-->
 
-		<TextBlock Text="{Binding Resources.Settings_Language, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+		<!--<TextBlock Text="{Binding Resources.Settings_Language, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 				   Style="{DynamicResource SettingsHeaderTextStyleKey}"
 				   Margin="0,10" />
 
@@ -163,7 +163,7 @@
 							  MinWidth="250" />
 
 		<Rectangle Height="1"
-				   Style="{DynamicResource SeparatorRectangleStyleKey}" />
+				   Style="{DynamicResource SeparatorRectangleStyleKey}" />-->
 
 		<!--<TextBlock Text="{Binding Source={x:Static properties:Resources.Settings_Logging}, Mode=OneWay}"
 				   Style="{DynamicResource HeaderTextBlockStyleKey}"

@@ -902,24 +902,6 @@ namespace Grabacr07.KanColleViewer.Models
 		}
 		#endregion
 
-		#region EnableFatigueNotification 変更通知プロパティ
-
-		private bool _EnableFatigueNotification;
-
-		public bool EnableFatigueNotification
-		{
-			get { return this._EnableFatigueNotification; }
-			set
-			{
-				if (this._EnableFatigueNotification != value)
-				{
-					this._EnableFatigueNotification = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-		#endregion
-
 		#region CustomSoundVolume 変更通知プロパティ
 
 		private int _CustomSoundVolume;

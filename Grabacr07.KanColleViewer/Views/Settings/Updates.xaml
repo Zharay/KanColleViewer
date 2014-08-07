@@ -23,7 +23,7 @@
 
 	<StackPanel>
 		<TextBlock Text="Check For Updates"
-				   Style="{DynamicResource HeaderTextBlockStyleKey}" />
+				   Style="{DynamicResource SettingsHeaderTextStyleKey}" />
 
 		<Grid Margin="6,0">
 			<Grid.RowDefinitions>
@@ -195,7 +195,7 @@
 				   Margin="0,10"
 				   Style="{DynamicResource SeparatorRectangleStyleKey}" />
 		
-		<TextBlock Text="Update Options" Style="{DynamicResource HeaderTextBlockStyleKey}" />
+		<TextBlock Text="Update Options" Style="{DynamicResource SettingsHeaderTextStyleKey}" />
 
 		<CheckBox Content="{Binding Resources.Settings_Updates_UpdateOnStartup, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" 
 				  IsChecked="{Binding EnableUpdateNotification}" 
@@ -205,8 +205,6 @@
 				  IsChecked="{Binding EnableUpdateTransOnStart}" 
 				  Height="17" 
 				  Margin="15,0,0,10"/>
-
-
 	</StackPanel>
 </UserControl>
 

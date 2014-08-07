@@ -187,43 +187,6 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 		#endregion
 
-		#region EnableTranslations 変更通知プロパティ
-
-		public bool EnableTranslations
-		{
-			get { return Settings.Current.EnableTranslations; }
-			set
-			{
-				if (Settings.Current.EnableTranslations != value)
-				{
-					Settings.Current.EnableTranslations = value;
-					KanColleClient.Current.Translations.EnableTranslations = value;
-					KanColleClient.Current.Translations.ChangeCulture(this.Culture);
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region EnableAddUntranslated 変更通知プロパティ
-
-		public bool EnableAddUntranslated
-		{
-			get { return Settings.Current.EnableAddUntranslated; }
-			set
-			{
-				if (Settings.Current.EnableAddUntranslated != value)
-				{
-					Settings.Current.EnableAddUntranslated = value;
-					KanColleClient.Current.Translations.EnableAddUntranslated = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
 		#region BrowserZoomFactor 変更通知プロパティ
 
 		private BrowserZoomFactor _BrowserZoomFactor;
@@ -540,42 +503,7 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 		#endregion
 
-		#region EnableFatigueNotification 変更通知プロパティ
-
-		public bool EnableFatigueNotification
-		{
-			get { return Settings.Current.EnableFatigueNotification; }
-			set
-			{
-				if (Settings.Current.EnableFatigueNotification != value)
-				{
-					Settings.Current.EnableFatigueNotification = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region CustomSoundVolume 変更通知プロパティ
-
-		public int CustomSoundVolume
-		{
-			get { return Settings.Current.CustomSoundVolume; }
-			set
-			{
-				if (Settings.Current.CustomSoundVolume != value)
-				{
-					Settings.Current.CustomSoundVolume = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
 		public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
-
 
 		public SettingsViewModel()
 		{

@@ -1077,11 +1077,137 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 通信設定.
+        ///   Looks up a localized string similar to ネットワーク.
         /// </summary>
         public static string Settings_Network {
             get {
                 return ResourceManager.GetString("Settings_Network", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to パスワード.
+        /// </summary>
+        public static string Settings_Network_Proxy_Auth_Password {
+            get {
+                return ResourceManager.GetString("Settings_Network_Proxy_Auth_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to プロキシ サーバーにユーザー名とパスワードが必要.
+        /// </summary>
+        public static string Settings_Network_Proxy_Auth_Required {
+            get {
+                return ResourceManager.GetString("Settings_Network_Proxy_Auth_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ユーザー名.
+        /// </summary>
+        public static string Settings_Network_Proxy_Auth_Username {
+            get {
+                return ResourceManager.GetString("Settings_Network_Proxy_Auth_Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 通信設定.
+        /// </summary>
+        public static string Settings_Notifications {
+            get {
+                return ResourceManager.GetString("Settings_Notifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 通知を早める：.
+        /// </summary>
+        public static string Settings_Notifications_AheadOfTime {
+            get {
+                return ResourceManager.GetString("Settings_Notifications_AheadOfTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦これ本体の仕様により、最大 1 分間短縮できます。サーバー時刻とのずれを加味し、40 ～ 50 秒に設定することを推奨します。.
+        /// </summary>
+        public static string Settings_Notifications_AheadOfTime_Description {
+            get {
+                return ResourceManager.GetString("Settings_Notifications_AheadOfTime_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 秒.
+        /// </summary>
+        public static string Settings_Notifications_AheadOfTime_Seconds {
+            get {
+                return ResourceManager.GetString("Settings_Notifications_AheadOfTime_Seconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 建造完了時に通知する.
+        /// </summary>
+        public static string Settings_Notifications_Construction_Enabled {
+            get {
+                return ResourceManager.GetString("Settings_Notifications_Construction_Enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 遠征帰投時に通知する.
+        /// </summary>
+        public static string Settings_Notifications_Expeditions_Enabled {
+            get {
+                return ResourceManager.GetString("Settings_Notifications_Expeditions_Enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊に編成されている艦娘の疲労が回復したら通知する.
+        /// </summary>
+        public static string Settings_Notifications_FleetsMorale {
+            get {
+                return ResourceManager.GetString("Settings_Notifications_FleetsMorale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊に編成されているすべて艦娘のコンディション値が上記の値以上になったときに通知されます。コンディション値は 3 分間で 3 ずつ回復しますが、KanColleViewer 実装の仕様により、通知タイミングは数秒 ～ 最大 3 分程度遅れる可能性があること予めご了承ください。.
+        /// </summary>
+        public static string Settings_Notifications_FleetsMorale_Description {
+            get {
+                return ResourceManager.GetString("Settings_Notifications_FleetsMorale_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ※[動作設定] &gt; [出撃コンディション] から設定できます。.
+        /// </summary>
+        public static string Settings_Notifications_FleetsMorale_Reference {
+            get {
+                return ResourceManager.GetString("Settings_Notifications_FleetsMorale_Reference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 再出撃可能とするコンディション値.
+        /// </summary>
+        public static string Settings_Notifications_FleetsMorale_Threshold {
+            get {
+                return ResourceManager.GetString("Settings_Notifications_FleetsMorale_Threshold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 入渠完了時に通知する.
+        /// </summary>
+        public static string Settings_Notifications_Repair_Enabled {
+            get {
+                return ResourceManager.GetString("Settings_Notifications_Repair_Enabled", resourceCulture);
             }
         }
         
@@ -1095,20 +1221,38 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Give a notification when a fleet&apos;s fatigue as reset. (Not 100% accurate!).
-        /// </summary>
-        public static string Settings_Notify_Fatigue {
-            get {
-                return ResourceManager.GetString("Settings_Notify_Fatigue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to 動作設定.
         /// </summary>
         public static string Settings_Operation {
             get {
                 return ResourceManager.GetString("Settings_Operation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 出撃コンディション.
+        /// </summary>
+        public static string Settings_Operation_SortieCondition {
+            get {
+                return ResourceManager.GetString("Settings_Operation_SortieCondition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ※通常は、間宮アイコンが消灯する 40 か、自然回復上限の 49 に設定します。.
+        /// </summary>
+        public static string Settings_Operation_SortieCondition_Description {
+            get {
+                return ResourceManager.GetString("Settings_Operation_SortieCondition_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊内の全艦のコンディションが次の数値以上になったとき、出撃可能と判断する.
+        /// </summary>
+        public static string Settings_Operation_SortieCondition_Title {
+            get {
+                return ResourceManager.GetString("Settings_Operation_SortieCondition_Title", resourceCulture);
             }
         }
         

@@ -22,7 +22,7 @@
 
 	<StackPanel>
 		<TextBlock Text="{Binding Resources.Settings_Language, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-				   Style="{DynamicResource HeaderTextBlockStyleKey}" />
+				   Style="{DynamicResource SettingsHeaderTextStyleKey}" />
 
 		<metro:PromptComboBox Margin="15,0,0,12"
 							  HorizontalAlignment="Left"
@@ -38,7 +38,7 @@
 				   Margin="0,10,0,0"
 				   Style="{DynamicResource SeparatorRectangleStyleKey}" />
 		<TextBlock Text="{Binding Resources.Settings_Translations, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-				   Style="{DynamicResource HeaderTextBlockStyleKey}"
+				   Style="{DynamicResource SettingsHeaderTextStyleKey}"
 				   Margin="0,10" />
 
 		<CheckBox Content="{Binding Source={x:Static properties:Resources.Settings_Translations_Enable}, Mode=OneWay}" IsChecked="{Binding EnableTranslations}" Height="17" Margin="15,0,0,10"/>
