@@ -840,4 +840,10 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="StateDetail_OnSortie" xml:space="preserve">
     <value>艦隊は出撃中です！</value>
   </data>
+  <data name="Notifications_MoraleRestored" xml:space="preserve">
+    <value>疲労回復完了</value>
+  </data>
+  <data name="Notifications_MoraleRestored_Details" xml:space="preserve">
+    <value>「{0}」に編成されている艦娘の疲労が回復しました。</value>
+  </data>
 </root>

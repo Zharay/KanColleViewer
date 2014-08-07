@@ -565,6 +565,24 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 疲労回復完了.
+        /// </summary>
+        public static string Notifications_MoraleRestored {
+            get {
+                return ResourceManager.GetString("Notifications_MoraleRestored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 「{0}」に編成されている艦娘の疲労が回復しました。.
+        /// </summary>
+        public static string Notifications_MoraleRestored_Details {
+            get {
+                return ResourceManager.GetString("Notifications_MoraleRestored_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to データ.
         /// </summary>
         public static string Overview_Data {

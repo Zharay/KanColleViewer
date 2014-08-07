@@ -116,8 +116,8 @@ namespace Grabacr07.KanColleViewer.Models
 					{
 						PluginHost.Instance.GetNotifier().Show(
 							NotifyType.Rejuvenated,
-							"疲労回復完了",
-							string.Format("「{0}」に編成されている艦娘の疲労が回復しました。", args.FleetName),
+							Resources.Notifications_MoraleRestored,
+							string.Format(Resources.Notifications_MoraleRestored_Details, args.FleetName),
 							() => App.ViewModelRoot.Activate());
 					}
 				};

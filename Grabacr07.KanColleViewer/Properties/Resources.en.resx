@@ -823,7 +823,7 @@ Low: Performance over quality. Ugliest setting.</value>
     <value>Ready to sortie!</value>
   </data>
   <data name="StateDetail_MoraleRecovering" xml:space="preserve">
-    <value>Recovering</value>
+    <value>Resupply needed.</value>
   </data>
   <data name="StateDetail_MoraleRecoveryTimer" xml:space="preserve">
     <value>Morale will be restored in</value>
@@ -833,5 +833,11 @@ Low: Performance over quality. Ugliest setting.</value>
   </data>
   <data name="StateDetail_OnSortie" xml:space="preserve">
     <value>On sortie!</value>
+  </data>
+  <data name="Notifications_MoraleRestored" xml:space="preserve">
+    <value>Morale Restored</value>
+  </data>
+  <data name="Notifications_MoraleRestored_Details" xml:space="preserve">
+    <value>Morale of all girls in fleet {0} has recovered.</value>
   </data>
 </root>
