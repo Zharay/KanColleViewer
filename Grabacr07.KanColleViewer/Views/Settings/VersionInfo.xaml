@@ -80,7 +80,6 @@
 				</metro2:HyperlinkEx>
 
 				<LineBreak />
-				<LineBreak />
 
 				<Run Text="Icon design:" />
 				<metro2:HyperlinkEx Uri="https://twitter.com/Nrtwd/">
@@ -88,16 +87,12 @@
 				</metro2:HyperlinkEx>
 
 				<LineBreak />
-				<LineBreak />
 						
 				<Run Text="Horizontal version and translation:" />
 				<metro2:HyperlinkEx Uri="https://twitter.com/Zharay">
 					<Run Text="@Zharay" />
 				</metro2:HyperlinkEx>
-						
-				<LineBreak />
-
-				<Run Text="Updates for the translated version:" />
+				<Run Text=", " />
 				<metro2:HyperlinkEx Uri="https://twitter.com/Xiatian"><Run Text="@Xiatian" /></metro2:HyperlinkEx>
 
 				<LineBreak />
