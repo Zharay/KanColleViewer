@@ -66,18 +66,19 @@
 				</DataTemplate>
 				<DataTemplate DataType="{x:Type vmFleets:FleetsViewModel}">
 					<StackPanel Orientation="Horizontal"
-								DataContext="{Binding SelectedFleet}"
-								Style="{DynamicResource DefaultTextStyleKey}">
+								DataContext="{Binding SelectedFleet}">
 						<StackPanel.Resources>
 							<Style TargetType="{x:Type TextBlock}">
 								<Setter Property="Foreground"
 										Value="{DynamicResource AccentForegroundBrushKey}" />
-								<Setter Property="FontFamily"
+								<!--<Setter Property="FontFamily"
 										Value="{DynamicResource DefaultFontFamilyKey}" />
 								<Setter Property="FontSize"
-										Value="{DynamicResource DefaultFontSizeKey}" />
+										Value="{DynamicResource DefaultFontSizeKey}" />-->
 								<Setter Property="VerticalAlignment"
 										Value="Center" />
+								<Setter Property="Style"
+										Value="{DynamicResource DefaultTextStyleKey}" />
 							</Style>
 						</StackPanel.Resources>
 
