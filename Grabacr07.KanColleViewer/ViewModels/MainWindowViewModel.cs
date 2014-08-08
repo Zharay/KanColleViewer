@@ -161,7 +161,7 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			});
 
 
-//			_RefreshNavigator = new RelayCommand(Navigator.ReNavigate);
+			_RefreshNavigator = new RelayCommand(Navigator.ReNavigate);
 			this.UpdateMode();
 		}
 

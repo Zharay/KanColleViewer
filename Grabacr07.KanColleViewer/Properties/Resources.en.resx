@@ -662,10 +662,10 @@ Click here to get it.</value>
     <value>Adjust the display size of the game screen.</value>
   </data>
   <data name="Settings_Flash" xml:space="preserve">
-    <value>Flash</value>
+    <value>Adobe® Flash® Settings</value>
   </data>
   <data name="Settings_Flash_Quality" xml:space="preserve">
-    <value>Set Flash Quality:</value>
+    <value>Flash Quality:</value>
   </data>
   <data name="Settings_Flash_Window_ToolTip" xml:space="preserve">
     <value>Opaque: Default (Old IE has no HW accel)
@@ -673,7 +673,7 @@ Direct: Fastest rendering speed (HW accel)
 GPU: Slow! GPU optimization for tablets.</value>
   </data>
   <data name="Settings_Flash_Window" xml:space="preserve">
-    <value>Set Flash Window:</value>
+    <value>Flash Window:</value>
   </data>
   <data name="Settings_Flash_Quality_ToolTip" xml:space="preserve">
     <value>Best: Anti-Aliasing enabled on all images (Slowest)
@@ -693,8 +693,7 @@ Low: Performance over quality. Ugliest setting.</value>
     <value>Opens a link to the latest version of KCV found here.</value>
   </data>
   <data name="Settings_Flash_Message" xml:space="preserve">
-    <value>This works with DMM.com. OSAPI, and API links now!
-[You must reload the game for the changes to take affect.]</value>
+    <value>Affects DMM.com, OSAPI and API links. You must reload the game for the changes to take effect.</value>
   </data>
   <data name="Rank_Admiral" xml:space="preserve">
     <value>Admiral</value>

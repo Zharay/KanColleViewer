@@ -102,7 +102,7 @@
 						<behaviors:ZoomAction />
 					</livet:InteractionMessageTrigger>
 				</i:Interaction.Triggers>
-				<WebBrowser>
+				<WebBrowser Navigated="WebBrowser_Navigated" LoadCompleted="WebBrowser_LoadCompleted" Navigating="WebBrowser_Navigating">
 					<i:Interaction.Behaviors>
 						<behaviors:NavigatorBehavior Navigator="{Binding Navigator}" />
 						<livet:WebBrowserSetStateToControlBehavior Source="{Binding Source={x:Static properties:Settings.Default}, Path=KanColleUrl, Mode=OneTime}"

@@ -38,10 +38,10 @@
 				<DataTemplate DataType="{x:Type vm:StartContentViewModel}" />
 				<DataTemplate DataType="{x:Type vmContents:OverviewViewModel}">
 					<StackPanel Orientation="Horizontal"
-								DataContext="{Binding Content.Fleets.SelectedFleet}">
+								DataContext="{Binding Content.Fleets.SelectedFleet}"
+								Style="{DynamicResource DefaultTextStyleKey}">
 						<StackPanel.Resources>
-							<Style TargetType="{x:Type TextBlock}"
-								   BasedOn="{StaticResource {x:Type TextBlock}}">
+							<Style TargetType="{x:Type TextBlock}">
 								<Setter Property="Foreground"
 										Value="{DynamicResource AccentForegroundBrushKey}" />
 							</Style>
@@ -66,7 +66,8 @@
 				</DataTemplate>
 				<DataTemplate DataType="{x:Type vmFleets:FleetsViewModel}">
 					<StackPanel Orientation="Horizontal"
-								DataContext="{Binding SelectedFleet}">
+								DataContext="{Binding SelectedFleet}"
+								Style="{DynamicResource DefaultTextStyleKey}">
 						<StackPanel.Resources>
 							<Style TargetType="{x:Type TextBlock}">
 								<Setter Property="Foreground"
