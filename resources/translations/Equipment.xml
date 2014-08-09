@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Equipment Version="1.0.7">
+<Equipment Version="1.0.8">
   <Item>
     <JP-Name>12cm単装砲</JP-Name>
     <TR-Name>12cm Naval Gun</TR-Name>
@@ -415,5 +415,41 @@
   <Item>
     <JP-Name>35.6cm連装砲(ダズル迷彩)</JP-Name>
     <TR-Name>35.6cm Twin Gun Mount (Dazzle camo)</TR-Name>
+  </Item>
+  <Item>
+    <JP-Name>試製41cm三連装砲</JP-Name>
+    <TR-Name>Prototype 41cm Triple Gun Mount</TR-Name>
+  </Item>
+  <Item>
+    <JP-Name>Type 13 Air RADAR Kai</JP-Name>
+    <TR-Name></TR-Name>
+  </Item>
+  <Item>
+    <JP-Name>艦隊司令部施設</JP-Name>
+    <TR-Name>Fleet Command Facility</TR-Name>
+  </Item>
+  <Item>
+    <JP-Name>熟練艦載機整備員</JP-Name>
+    <TR-Name>Skilled Carrier-based Aircraft Maintenance Personnel</TR-Name>
+  </Item>
+  <Item>
+    <JP-Name>零戦52型丙(六〇一空)</JP-Name>
+    <TR-Name>Type 52-C Zero Fighter (601 Air Group)</TR-Name>
+  </Item>
+  <Item>
+    <JP-Name>烈風(六〇一空)</JP-Name>
+    <TR-Name>Reppuu (601 Air Group)</TR-Name>
+  </Item>
+  <Item>
+    <JP-Name>彗星(六〇一空)</JP-Name>
+    <TR-Name>Suisei (601 Air Group)</TR-Name>
+  </Item>
+  <Item>
+    <JP-Name>天山(六〇一空)</JP-Name>
+    <TR-Name>Tenzan (601 Air Group)</TR-Name>
+  </Item>
+  <Item>
+    <JP-Name>流星(六〇一空)</JP-Name>
+    <TR-Name>Ryuusei (601 Air Group)</TR-Name>
   </Item>
 </Equipment>

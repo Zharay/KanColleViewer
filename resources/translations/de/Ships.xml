@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Ships Version="1.0.12">
+<Ships Version="1.0.13">
   <Ship>
     <JP-Name>長門</JP-Name>
     <TR-Name>Nagato</TR-Name>
@@ -1231,5 +1231,61 @@
   <Ship>
     <JP-Name>榛名改二</JP-Name>
     <TR-Name>Haruna Kai2</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>磯風</JP-Name>
+    <TR-Name>Isokaze</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>磯風改</JP-Name>
+    <TR-Name>Isokaze Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>大淀</JP-Name>
+    <TR-Name>Ooyodo</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>大淀改</JP-Name>
+    <TR-Name>Ooyodo Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>時津風</JP-Name>
+    <TR-Name>Tokitsukaze</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>時津風改</JP-Name>
+    <TR-Name>Tokitsukaze Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>雲龍</JP-Name>
+    <TR-Name>Unryuu</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>雲龍改</JP-Name>
+    <TR-Name>Unryuu Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>春雨</JP-Name>
+    <TR-Name>Harusame</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>春雨改</JP-Name>
+    <TR-Name>Harusame Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>早霜</JP-Name>
+    <TR-Name>Hayashimo</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>早霜改</JP-Name>
+    <TR-Name>Hayashimo Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>清霜</JP-Name>
+    <TR-Name>Kiyoshimo</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>清霜改</JP-Name>
+    <TR-Name>Kiyoshimo Kai</TR-Name>
   </Ship>
 </Ships>
