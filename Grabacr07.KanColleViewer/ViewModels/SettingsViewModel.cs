@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Net;
 using System.Xml.Linq;
+using Grabacr07.KanColleViewer.Composition;
 using Grabacr07.KanColleViewer.Models;
 using Grabacr07.KanColleViewer.Composition;
 using Grabacr07.KanColleViewer.Properties;
+using Grabacr07.KanColleViewer.ViewModels.Composition;
 using Grabacr07.KanColleViewer.ViewModels.Messages;
 using Grabacr07.KanColleWrapper;
 using Grabacr07.KanColleWrapper.Models;
@@ -549,6 +549,7 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			});
 
 			this.CheckForUpdates();
+			this.ReloadPlugins();
 		}
 
 
