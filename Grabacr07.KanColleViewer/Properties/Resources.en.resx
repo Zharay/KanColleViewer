@@ -848,4 +848,13 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="ShipCatalog_SortieWaters_MI" xml:space="preserve">
     <value>MI</value>
   </data>
+  <data name="ShipCatalog_Operation_AL" xml:space="preserve">
+    <value>Participated in AL</value>
+  </data>
+  <data name="ShipCatalog_Operation_MI" xml:space="preserve">
+    <value>Participated in MI</value>
+  </data>
+  <data name="ShipCatalog_Operation_NeitherALnorMI" xml:space="preserve">
+    <value>Did not participate</value>
+  </data>
 </root>

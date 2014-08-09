@@ -468,17 +468,16 @@
 							Padding="5">
 						<WrapPanel DataContext="{Binding ShipSallyAreaFilter}">
 							<TextBlock Margin="0,2">
-								<Run Text="出撃海域" />
-								<Run Text=":" />
+								<Run Text="{Binding Resources.ShipCatalog_SortieWaters, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" /><Run Text=":" />
 							</TextBlock>
 
-							<CheckBox Content="作戦出撃なし"
+							<CheckBox Content="{Binding Resources.ShipCatalog_Operation_NeitherALnorMI, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 									  IsChecked="{Binding None}"
 									  Margin="10,0" />
-							<CheckBox Content="AL 作戦参加済み"
+							<CheckBox Content="{Binding Resources.ShipCatalog_Operation_AL, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 									  IsChecked="{Binding Aleutian}"
 									  Margin="10,0" />
-							<CheckBox Content="MI 作戦参加済み"
+							<CheckBox Content="{Binding Resources.ShipCatalog_Operation_MI, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 									  IsChecked="{Binding Midway}"
 									  Margin="10,0" />
 						</WrapPanel>

@@ -855,4 +855,13 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="ShipCatalog_SortieWaters_MI" xml:space="preserve">
     <value>MI 作戦</value>
   </data>
+  <data name="ShipCatalog_Operation_AL" xml:space="preserve">
+    <value>AL 作戦参加済み</value>
+  </data>
+  <data name="ShipCatalog_Operation_MI" xml:space="preserve">
+    <value>MI 作戦参加済み</value>
+  </data>
+  <data name="ShipCatalog_Operation_NeitherALnorMI" xml:space="preserve">
+    <value>作戦出撃なし</value>
+  </data>
 </root>

@@ -1626,6 +1626,33 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AL 作戦参加済み.
+        /// </summary>
+        public static string ShipCatalog_Operation_AL {
+            get {
+                return ResourceManager.GetString("ShipCatalog_Operation_AL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MI 作戦参加済み.
+        /// </summary>
+        public static string ShipCatalog_Operation_MI {
+            get {
+                return ResourceManager.GetString("ShipCatalog_Operation_MI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 作戦出撃なし.
+        /// </summary>
+        public static string ShipCatalog_Operation_NeitherALnorMI {
+            get {
+                return ResourceManager.GetString("ShipCatalog_Operation_NeitherALnorMI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 出撃海域.
         /// </summary>
         public static string ShipCatalog_SortieWaters {
