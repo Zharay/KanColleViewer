@@ -20,6 +20,7 @@
 				   xmlns:catalogs="clr-namespace:Grabacr07.KanColleViewer.Views.Catalogs"
 				   xmlns:contentsVm="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Contents"
 				   xmlns:converters="clr-namespace:Grabacr07.KanColleViewer.Views.Converters"
+				   xmlns:models="clr-namespace:Grabacr07.KanColleViewer.Models"
 				   mc:Ignorable="d"
 				   d:DataContext="{d:DesignInstance viewModels:ShipCatalogWindowViewModel}"
 				   Title="{Binding Title}"
@@ -840,7 +841,7 @@
 
 							<GridViewColumn Width="65">
 								<GridViewColumn.Header>
-									<TextBlock Text="出撃海域" />
+									<TextBlock Text="{Binding Resources.ShipCatalog_SortieWaters, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
 									<DataTemplate>
@@ -856,7 +857,7 @@
 														 Value="1">
 												<Setter TargetName="Text"
 														Property="Text"
-														Value="AL 作戦" />
+														Value="{Binding Resources.ShipCatalog_SortieWaters_AL, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 												<Setter TargetName="Border"
 														Property="Background"
 														Value="#FF204080" />
@@ -865,7 +866,7 @@
 														 Value="2">
 												<Setter TargetName="Text"
 														Property="Text"
-														Value="MI 作戦" />
+														Value="{Binding Resources.ShipCatalog_SortieWaters_MI, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 												<Setter TargetName="Border"
 														Property="Background"
 														Value="#FF804020" />

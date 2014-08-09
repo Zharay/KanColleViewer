@@ -846,4 +846,13 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Notifications_MoraleRestored_Details" xml:space="preserve">
     <value>「{0}」に編成されている艦娘の疲労が回復しました。</value>
   </data>
+  <data name="ShipCatalog_SortieWaters" xml:space="preserve">
+    <value>出撃海域</value>
+  </data>
+  <data name="ShipCatalog_SortieWaters_AL" xml:space="preserve">
+    <value>AL 作戦</value>
+  </data>
+  <data name="ShipCatalog_SortieWaters_MI" xml:space="preserve">
+    <value>MI 作戦</value>
+  </data>
 </root>
