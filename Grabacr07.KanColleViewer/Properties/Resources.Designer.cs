@@ -1275,6 +1275,123 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 艦上偵察機.
+        /// </summary>
+        public static string Settings_Operation_LoS_CarrierBasedRecon {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_CarrierBasedRecon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 彩雲、二式艦上偵察機.
+        /// </summary>
+        public static string Settings_Operation_LoS_CarrierBasedRecon_Tooltip {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_CarrierBasedRecon_Tooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (偵察機 × 2) + (電探) + √(装備込みの艦隊索敵値合計 - 偵察機 - 電探).
+        /// </summary>
+        public static string Settings_Operation_LoS_New {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 装備による索敵値が重要とされる場合の計算方法 (推定).
+        /// </summary>
+        public static string Settings_Operation_LoS_New_Desc {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_New_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 偵察機.
+        /// </summary>
+        public static string Settings_Operation_LoS_Recon {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_Recon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 水上爆撃機.
+        /// </summary>
+        public static string Settings_Operation_LoS_SeaplaneBomber {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_SeaplaneBomber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 瑞雲、瑞雲(六三四空)、試製晴嵐.
+        /// </summary>
+        public static string Settings_Operation_LoS_SeaplaneBomber_Tooltip {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_SeaplaneBomber_Tooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 水上偵察機.
+        /// </summary>
+        public static string Settings_Operation_LoS_SeaplaneRecon {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_SeaplaneRecon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 零式水上偵察機、零式水上観測機、九八式水上偵察機(夜偵).
+        /// </summary>
+        public static string Settings_Operation_LoS_SeaplaneRecon_Tooltip {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_SeaplaneRecon_Tooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦娘と装備の索敵値の単純な合計.
+        /// </summary>
+        public static string Settings_Operation_LoS_Simple {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_Simple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KanColleViewer での従来の計算方法.
+        /// </summary>
+        public static string Settings_Operation_LoS_Simple_Description {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_Simple_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊の索敵値の算出に使用する計算式は、以下を使用する.
+        /// </summary>
+        public static string Settings_Operation_LoS_Title {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoS_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 索敵値計算.
+        /// </summary>
+        public static string Settings_Operation_LoSCalculation {
+            get {
+                return ResourceManager.GetString("Settings_Operation_LoSCalculation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 出撃コンディション.
         /// </summary>
         public static string Settings_Operation_SortieCondition {

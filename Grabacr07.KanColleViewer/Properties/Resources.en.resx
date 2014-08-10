@@ -619,23 +619,23 @@
     <value>User</value>
   </data>
   <data name="Updater_Notification_CheckFailed" xml:space="preserve">
-    <value>KCV was unable to check for updates!</value>
+    <value>KCV was unable to check for updates.</value>
   </data>
   <data name="Updater_Notification_NewAppVersion" xml:space="preserve">
-    <value>New Version of KCV is available! 「v{0}」
+    <value>New Version of KCV is available: v{0}!
 Click here to get it.</value>
   </data>
   <data name="Updater_Notification_Title" xml:space="preserve">
     <value>Updater</value>
   </data>
   <data name="Updater_Notification_TransUpdate_Fail" xml:space="preserve">
-    <value>KCV was unable to download the translations!</value>
+    <value>KCV was unable to download the translations.</value>
   </data>
   <data name="Updater_Notification_TransUpdate_Same" xml:space="preserve">
-    <value>Translations are already up-to-date</value>
+    <value>Translations are already up-to-date.</value>
   </data>
   <data name="Updater_Notification_TransUpdate_Success" xml:space="preserve">
-    <value>Translation files have been updated!</value>
+    <value>Translation files have been updated.</value>
   </data>
   <data name="Fleets_AirSuperiorityPotential" xml:space="preserve">
     <value>Air Superiority</value>
@@ -856,5 +856,44 @@ Low: Performance over quality. Ugliest setting.</value>
   </data>
   <data name="ShipCatalog_Operation_NeitherALnorMI" xml:space="preserve">
     <value>Did not participate</value>
+  </data>
+  <data name="Settings_Operation_LoSCalculation" xml:space="preserve">
+    <value>LoS Calculation</value>
+  </data>
+  <data name="Settings_Operation_LoS_CarrierBasedRecon" xml:space="preserve">
+    <value>Carrier-based Recon Aircraft</value>
+  </data>
+  <data name="Settings_Operation_LoS_CarrierBasedRecon_Tooltip" xml:space="preserve">
+    <value>Saiun, Type 2 Recon Aircraft</value>
+  </data>
+  <data name="Settings_Operation_LoS_New" xml:space="preserve">
+    <value>(Recon planes × 2) + (RADAR) + √(Total LoS with Eq. LoS included - Recon planes - RADAR)</value>
+  </data>
+  <data name="Settings_Operation_LoS_New_Desc" xml:space="preserve">
+    <value>Used in cases where equipment LoS is more important.</value>
+  </data>
+  <data name="Settings_Operation_LoS_Recon" xml:space="preserve">
+    <value>Recon Planes</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneBomber" xml:space="preserve">
+    <value>Seaplane Bombers</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneBomber_Tooltip" xml:space="preserve">
+    <value>Zuiun, Zuiun (634 Air Group), Prototype Seiran</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneRecon" xml:space="preserve">
+    <value>Reconnaissance Seaplanes</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneRecon_Tooltip" xml:space="preserve">
+    <value>Type 0 Recon Seaplane, Type 0 Observation Seaplane, Type 98 Recon Seaplane (Night Scout)</value>
+  </data>
+  <data name="Settings_Operation_LoS_Simple" xml:space="preserve">
+    <value>Simple sum of ship and equipment LoS</value>
+  </data>
+  <data name="Settings_Operation_LoS_Simple_Description" xml:space="preserve">
+    <value>The method used in KanColleViewer! prior to version 3.2.</value>
+  </data>
+  <data name="Settings_Operation_LoS_Title" xml:space="preserve">
+    <value>Use the following formula to calculate fleet LoS:</value>
   </data>
 </root>

@@ -864,4 +864,43 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="ShipCatalog_Operation_NeitherALnorMI" xml:space="preserve">
     <value>作戦出撃なし</value>
   </data>
+  <data name="Settings_Operation_LoSCalculation" xml:space="preserve">
+    <value>索敵値計算</value>
+  </data>
+  <data name="Settings_Operation_LoS_CarrierBasedRecon" xml:space="preserve">
+    <value>艦上偵察機</value>
+  </data>
+  <data name="Settings_Operation_LoS_CarrierBasedRecon_Tooltip" xml:space="preserve">
+    <value>彩雲、二式艦上偵察機</value>
+  </data>
+  <data name="Settings_Operation_LoS_New" xml:space="preserve">
+    <value>(偵察機 × 2) + (電探) + √(装備込みの艦隊索敵値合計 - 偵察機 - 電探)</value>
+  </data>
+  <data name="Settings_Operation_LoS_New_Desc" xml:space="preserve">
+    <value>装備による索敵値が重要とされる場合の計算方法 (推定)</value>
+  </data>
+  <data name="Settings_Operation_LoS_Recon" xml:space="preserve">
+    <value>偵察機</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneBomber" xml:space="preserve">
+    <value>水上爆撃機</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneBomber_Tooltip" xml:space="preserve">
+    <value>瑞雲、瑞雲(六三四空)、試製晴嵐</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneRecon" xml:space="preserve">
+    <value>水上偵察機</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneRecon_Tooltip" xml:space="preserve">
+    <value>零式水上偵察機、零式水上観測機、九八式水上偵察機(夜偵)</value>
+  </data>
+  <data name="Settings_Operation_LoS_Simple" xml:space="preserve">
+    <value>艦娘と装備の索敵値の単純な合計</value>
+  </data>
+  <data name="Settings_Operation_LoS_Simple_Description" xml:space="preserve">
+    <value>KanColleViewer での従来の計算方法</value>
+  </data>
+  <data name="Settings_Operation_LoS_Title" xml:space="preserve">
+    <value>艦隊の索敵値の算出に使用する計算式は、以下を使用する</value>
+  </data>
 </root>

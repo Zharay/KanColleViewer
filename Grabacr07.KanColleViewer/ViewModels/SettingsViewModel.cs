@@ -542,6 +542,47 @@ namespace Grabacr07.KanColleViewer.ViewModels
 		#endregion
 
 
+		#region ViewRangeType1 変更通知プロパティ
+
+		private bool _ViewRangeType1;
+
+		public bool ViewRangeType1
+		{
+			get { return this._ViewRangeType1; }
+			set
+			{
+				if (this._ViewRangeType1 != value)
+				{
+					this._ViewRangeType1 = value;
+					this.RaisePropertyChanged();
+					if (value) Settings.Current.KanColleClientSettings.ViewRangeCalcLogic = ViewRangeCalcLogic.Type1;
+				}
+			}
+		}
+
+		#endregion
+
+		#region ViewRangeType2 変更通知プロパティ
+
+		private bool _ViewRangeType2;
+
+		public bool ViewRangeType2
+		{
+			get { return this._ViewRangeType2; }
+			set
+			{
+				if (this._ViewRangeType2 != value)
+				{
+					this._ViewRangeType2 = value;
+					this.RaisePropertyChanged();
+					if (value) Settings.Current.KanColleClientSettings.ViewRangeCalcLogic = ViewRangeCalcLogic.Type2;
+				}
+			}
+		}
+
+		#endregion
+
+
 		public SettingsViewModel()
 		{
 			if (Helper.IsInDesignMode) return;
@@ -584,6 +625,9 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			{
 				(sender, args) => this.RaisePropertyChanged(args.PropertyName),
 			});
+
+			this._ViewRangeType1 = Settings.Current.KanColleClientSettings.ViewRangeCalcLogic == ViewRangeCalcLogic.Type1;
+			this._ViewRangeType2 = Settings.Current.KanColleClientSettings.ViewRangeCalcLogic == ViewRangeCalcLogic.Type2;
 
 			this.CheckForUpdates();
 			this.ReloadPlugins();
