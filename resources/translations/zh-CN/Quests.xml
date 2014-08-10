@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Quests Version="1.0.3">
+<Quests Version="1.0.6">
   <Quest>
     <ID>A1</ID>
     <JP-Name>はじめての「編成」！</JP-Name>
@@ -881,5 +881,26 @@
     <TR-Name>Model Conversion</TR-Name>
     <JP-Detail>「九七式艦攻(友永隊)」搭載空母を秘書艦にした状態で新たに「天山」を2つ廃棄！</JP-Detail>
     <TR-Detail>With an aircraft carrier equipped with Type 97 Torpedo Bomber (Tomonaga Squadron) as your secretary, scrap 2 Tenzans (simultaneously) to obtain a Tenzan Model 12 (Tomonaga Squadron).</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>252</ID>
+    <JP-Name>戦艦「榛名」出撃せよ！</JP-Name>
+    <TR-Name>Deploy a Haruna-led Fleet</TR-Name>
+    <JP-Detail>第二次改装実施した「榛名」を基幹とした艦隊で「南方海域」へ進出、敵艦隊主力を撃滅せよ！</JP-Detail>
+    <TR-Detail>Deploy a fleet with Haruna Kai Ni (榛名改二) as the flagship and up to 5 additional ships to World 5-1 and score an S rank victory against the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>143</ID>
+    <JP-Name>「新型正規空母」を配備せよ！</JP-Name>
+    <TR-Name>Deploy a New Standard Aircraft Carrier</TR-Name>
+    <JP-Detail>雲龍型航空母艦一番艦「雲龍」を第一艦隊機旗艦に配備せよ！</JP-Detail>
+    <TR-Detail>Have Unryuu (雲龍) as your flagship.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>253</ID>
+    <JP-Name>「第六〇一航空隊」出撃せよ！</JP-Name>
+    <TR-Name>Deploy the 601 Air Group</TR-Name>
+    <JP-Detail>雲龍型航空母艦「雲龍改」含む機動部隊で珊瑚島沖に出撃、敵機動部隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Deploy a fleet with Unryuu Kai (雲龍改) as the flagship to World 5-2 and score an S rank victory against the boss.</TR-Detail>
   </Quest>
 </Quests>
