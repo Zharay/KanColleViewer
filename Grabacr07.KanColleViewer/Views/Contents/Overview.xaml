@@ -96,7 +96,7 @@
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="220" />
-				<ColumnDefinition Width="Auto"
+				<ColumnDefinition Width="0.5*"
 								  MinWidth="140" />
 			</Grid.ColumnDefinitions>
 
@@ -167,7 +167,9 @@
 
 										<TextBlock ToolTipService.Placement="Relative"
 												   ToolTipService.HorizontalOffset="-9"
-												   ToolTipService.VerticalOffset="-3">
+												   ToolTipService.VerticalOffset="-3"
+												   TextTrimming="CharacterEllipsis"
+												   TextWrapping="NoWrap">
 											<Run Text="{Binding Ship.Info.Name, Mode=OneWay}"
 												 Style="{DynamicResource EmphaticTextElementStyleKey}" />
 											<LineBreak />
@@ -404,14 +406,26 @@
 						<ItemsControl ItemsSource="{Binding RepairingDocks}">
 							<ItemsControl.ItemTemplate>
 								<DataTemplate>
-									<TextBlock Style="{DynamicResource DefaultTextStyleKey}"
-											   Margin="0,4,0,0">
-										<Run x:Name="ShipName"
-											 Text="{Binding Ship, Mode=OneWay}"
-											 Style="{DynamicResource EmphaticTextElementStyleKey}" />
-										<Run x:Name="Remaining"
-											 Text="{Binding Remaining, StringFormat=- {0}, Mode=OneWay}" />
-									</TextBlock>
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition />
+											<ColumnDefinition Width="auto" />
+										</Grid.ColumnDefinitions>
+										<TextBlock Style="{DynamicResource DefaultTextStyleKey}"
+												   Margin="0,4,0,0"
+												   TextWrapping="NoWrap"
+												   TextTrimming="CharacterEllipsis">
+											<Run x:Name="ShipName"
+												 Text="{Binding Ship, Mode=OneWay}"
+												 Style="{DynamicResource EmphaticTextElementStyleKey}" />
+										</TextBlock>
+										<TextBlock Style="{DynamicResource DefaultTextStyleKey}"
+												   Margin="0,4,0,0"
+												   Grid.Column="1">
+											<Run x:Name="Remaining"
+												 Text="{Binding Remaining, StringFormat={}{0}, Mode=OneWay}" />
+										</TextBlock>
+									</Grid>
 									<DataTemplate.Triggers>
 										<DataTrigger Binding="{Binding State}"
 													 Value="Locked">
@@ -448,14 +462,26 @@
 						<ItemsControl ItemsSource="{Binding BuildingDocks}">
 							<ItemsControl.ItemTemplate>
 								<DataTemplate>
-									<TextBlock Style="{DynamicResource DefaultTextStyleKey}"
-											   Margin="0,4,0,0">
-										<Run x:Name="ShipName"
-											 Text="{Binding Ship, Mode=OneWay}"
-											 Style="{DynamicResource EmphaticTextElementStyleKey}" />
-										<Run x:Name="Remaining"
-											 Text="{Binding Remaining, StringFormat=- {0}, Mode=OneWay}" />
-									</TextBlock>
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition />
+											<ColumnDefinition Width="auto" />
+										</Grid.ColumnDefinitions>
+										<TextBlock Style="{DynamicResource DefaultTextStyleKey}"
+												   Margin="0,4,0,0"
+												   TextWrapping="NoWrap"
+												   TextTrimming="CharacterEllipsis">
+											<Run x:Name="ShipName"
+												 Text="{Binding Ship, Mode=OneWay}"
+												 Style="{DynamicResource EmphaticTextElementStyleKey}" />
+										</TextBlock>
+										<TextBlock Style="{DynamicResource DefaultTextStyleKey}"
+												   Margin="0,4,0,0"
+												   Grid.Column="1">
+											<Run x:Name="Remaining"
+												 Text="{Binding Remaining, StringFormat='{}{0}', Mode=OneWay}" />
+										</TextBlock>
+									</Grid>
 									<DataTemplate.Triggers>
 										<DataTrigger Binding="{Binding Source={x:Static models:Settings.Current}, Path=CanDisplayBuildingShipName}"
 													 Value="False">
