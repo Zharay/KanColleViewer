@@ -412,16 +412,19 @@
 											<ColumnDefinition Width="auto" />
 										</Grid.ColumnDefinitions>
 										<TextBlock Style="{DynamicResource DefaultTextStyleKey}"
-												   Margin="0,4,0,0"
+												   Margin="0,4,5,0"
 												   TextWrapping="NoWrap"
-												   TextTrimming="CharacterEllipsis">
+												   TextTrimming="CharacterEllipsis"
+												   VerticalAlignment="Bottom">
 											<Run x:Name="ShipName"
 												 Text="{Binding Ship, Mode=OneWay}"
 												 Style="{DynamicResource EmphaticTextElementStyleKey}" />
 										</TextBlock>
 										<TextBlock Style="{DynamicResource DefaultTextStyleKey}"
 												   Margin="0,4,0,0"
-												   Grid.Column="1">
+												   Grid.Column="1"
+												   VerticalAlignment="Bottom"
+												   HorizontalAlignment="Right">
 											<Run x:Name="Remaining"
 												 Text="{Binding Remaining, StringFormat={}{0}, Mode=OneWay}" />
 										</TextBlock>
@@ -468,16 +471,19 @@
 											<ColumnDefinition Width="auto" />
 										</Grid.ColumnDefinitions>
 										<TextBlock Style="{DynamicResource DefaultTextStyleKey}"
-												   Margin="0,4,0,0"
+												   Margin="0,4,5,0"
 												   TextWrapping="NoWrap"
-												   TextTrimming="CharacterEllipsis">
+												   TextTrimming="CharacterEllipsis"
+												   VerticalAlignment="Bottom">
 											<Run x:Name="ShipName"
 												 Text="{Binding Ship, Mode=OneWay}"
 												 Style="{DynamicResource EmphaticTextElementStyleKey}" />
 										</TextBlock>
 										<TextBlock Style="{DynamicResource DefaultTextStyleKey}"
 												   Margin="0,4,0,0"
-												   Grid.Column="1">
+												   Grid.Column="1"
+												   VerticalAlignment="Bottom"
+												   HorizontalAlignment="Right">
 											<Run x:Name="Remaining"
 												 Text="{Binding Remaining, StringFormat='{}{0}', Mode=OneWay}" />
 										</TextBlock>
