@@ -903,4 +903,7 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Settings_Operation_LoS_Title" xml:space="preserve">
     <value>艦隊の索敵値の算出に使用する計算式は、以下を使用する</value>
   </data>
+  <data name="Fleets_ViewRange_Equipment" xml:space="preserve">
+    <value>索敵能力</value>
+  </data>
 </root>

@@ -896,4 +896,7 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Settings_Operation_LoS_Title" xml:space="preserve">
     <value>Use the following formula to calculate fleet LoS:</value>
   </data>
+  <data name="Fleets_ViewRange_Equipment" xml:space="preserve">
+    <value>Equipment LoS</value>
+  </data>
 </root>

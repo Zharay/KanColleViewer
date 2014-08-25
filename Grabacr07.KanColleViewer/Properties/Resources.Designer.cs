@@ -403,6 +403,15 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 索敵能力.
+        /// </summary>
+        public static string Fleets_ViewRange_Equipment {
+            get {
+                return ResourceManager.GetString("Fleets_ViewRange_Equipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 司令部.
         /// </summary>
         public static string Homeport_FleetHQ {
