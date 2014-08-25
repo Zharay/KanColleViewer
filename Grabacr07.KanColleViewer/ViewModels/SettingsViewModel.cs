@@ -187,6 +187,43 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 		#endregion
 
+		#region EnableTranslations 変更通知プロパティ
+
+		public bool EnableTranslations
+		{
+			get { return Settings.Current.EnableTranslations; }
+			set
+			{
+				if (Settings.Current.EnableTranslations != value)
+				{
+					Settings.Current.EnableTranslations = value;
+					KanColleClient.Current.Translations.EnableTranslations = value;
+					KanColleClient.Current.Translations.ChangeCulture(this.Culture);
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region EnableAddUntranslated 変更通知プロパティ
+
+		public bool EnableAddUntranslated
+		{
+			get { return Settings.Current.EnableAddUntranslated; }
+			set
+			{
+				if (Settings.Current.EnableAddUntranslated != value)
+				{
+					Settings.Current.EnableAddUntranslated = value;
+					KanColleClient.Current.Translations.EnableAddUntranslated = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
 		#region BrowserZoomFactor 変更通知プロパティ
 
 		private BrowserZoomFactor _BrowserZoomFactor;
@@ -217,6 +254,42 @@ namespace Grabacr07.KanColleViewer.ViewModels
 				{
 					Settings.Current.KanColleClientSettings.EnableLogging = value;
 					KanColleClient.Current.Homeport.Logger.EnableLogging = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region EnableCriticalNotify 変更通知プロパティ
+
+		public bool EnableCriticalNotify
+		{
+			get { return Settings.Current.EnableCriticalNotify; }
+			set
+			{
+				if (Settings.Current.EnableCriticalNotify != value)
+				{
+					Settings.Current.EnableCriticalNotify = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region EnableCriticalAccent 変更通知プロパティ
+
+		public bool EnableCriticalAccent
+		{
+			get { return Settings.Current.EnableCriticalAccent; }
+			set
+			{
+				if (Settings.Current.EnableCriticalAccent != value)
+				{
+					Settings.Current.EnableCriticalAccent = value;
+					if (!Settings.Current.EnableCriticalAccent && App.ViewModelRoot.Mode == Mode.CriticalCondition)
+						App.ViewModelRoot.Mode = Mode.Started;
 					this.RaisePropertyChanged();
 				}
 			}

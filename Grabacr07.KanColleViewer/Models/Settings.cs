@@ -21,7 +21,7 @@ namespace Grabacr07.KanColleViewer.Models
 			"KanColleViewer",
 			"Settings.xml");
 
-		private static readonly string CurrentSettingsVersion = "1.5";
+		private static readonly string CurrentSettingsVersion = "1.6";
 
 		public static Settings Current { get; set; }
 
@@ -70,6 +70,7 @@ namespace Grabacr07.KanColleViewer.Models
 				FlashWindow = "Opaque",
 				CustomSoundVolume = 50,
 				KanColleClientSettings = new KanColleClientSettings(),
+				Culture = "en",
 			};
 		}
 
