@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Quests Version="1.0.6">
+<Quests Version="1.0.7">
   <Quest>
     <ID>A1</ID>
     <JP-Name>はじめての「編成」！</JP-Name>
@@ -916,5 +916,12 @@
     <TR-Name>Deploy the 601 Air Group</TR-Name>
     <JP-Detail>雲龍型航空母艦「雲龍改」含む機動部隊で珊瑚島沖に出撃、敵機動部隊を撃滅せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with Unryuu Kai (雲龍改) as the flagship to World 5-2 and score an S rank victory against the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>141</ID>
+    <JP-Name>再編成「第二航空戦隊」を強化せよ！</JP-Name>
+    <TR-Name>Reorganise the Strengthened 2nd Carrier Division</TR-Name>
+    <JP-Detail>「蒼龍改二」(※旗艦)及び「飛龍改二」を基幹とした二航戦(要駆逐艦2隻)を編成せよ！</JP-Detail>
+    <TR-Detail>Have Souryuu Kai-2 (蒼龍改二) as flagship with Hiryuu Kai-2 (飛龍改二) and 2 destroyers in your fleet.</TR-Detail>
   </Quest>
 </Quests>
