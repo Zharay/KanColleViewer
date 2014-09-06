@@ -71,6 +71,7 @@ namespace Grabacr07.KanColleViewer.Models
 				CustomSoundVolume = 50,
 				KanColleClientSettings = new KanColleClientSettings(),
 				Culture = "en",
+				OrientationHorizontal = false,
 			};
 		}
 
@@ -933,6 +934,24 @@ namespace Grabacr07.KanColleViewer.Models
 				if (this._EnableLogging != value)
 				{
 					this._EnableLogging = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+		#endregion
+
+		#region OrientationHorizontal 変更通知プロパティ
+
+		private bool _OrientationHorizontal;
+
+		public bool OrientationHorizontal
+		{
+			get { return this._OrientationHorizontal; }
+			set
+			{
+				if (this._OrientationHorizontal != value)
+				{
+					this._OrientationHorizontal = value;
 					this.RaisePropertyChanged();
 				}
 			}
