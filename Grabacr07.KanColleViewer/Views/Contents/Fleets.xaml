@@ -108,7 +108,9 @@
 									<TextBlock Grid.Column="2"
 											   Grid.Row="0"
 											   Grid.RowSpan="2"
-											   Margin="4,0,10,0">
+											   Margin="4,0,10,0"
+											   ToolTip="{Binding StatsToolTip, Mode=OneWay}"
+											   ToolTipService.InitialShowDelay="600">											   >
 										<Run Text="{Binding Ship.Info.Name, Mode=OneWay}"
 											 FontSize="22"
 											 Style="{DynamicResource EmphaticTextElementStyleKey}" />
