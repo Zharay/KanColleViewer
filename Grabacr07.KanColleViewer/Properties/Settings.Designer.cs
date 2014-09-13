@@ -93,7 +93,8 @@ namespace Grabacr07.KanColleViewer.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.github.com/Yuubari/KanColleViewer/master/resources/translations/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/ma" +
+            "ster/")]
         public global::System.Uri XMLTransUrl {
             get {
                 return ((global::System.Uri)(this["XMLTransUrl"]));
@@ -102,7 +103,8 @@ namespace Grabacr07.KanColleViewer.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.github.com/Yuubari/KanColleViewer/master/resources/Version.xml")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.githubusercontent.com/Yuubari/KanColleViewer/master/resources/Version" +
+            ".xml")]
         public global::System.Uri KCVUpdateUrl {
             get {
                 return ((global::System.Uri)(this["KCVUpdateUrl"]));
