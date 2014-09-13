@@ -8,26 +8,26 @@
 	<Item>
 		<Name>Equipment</Name>
 		<Version>1.0.8</Version>
-		<URL>https://raw.github.com/Yuubari/KanColleViewer/master/resources/translations/Equipment.xml</URL>
+		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/Equipment.xml</URL>
 	</Item>
 	<Item>
 		<Name>Operations</Name>
 		<Version>1.0.4</Version>
-		<URL>https://raw.github.com/Yuubari/KanColleViewer/master/resources/translations/Operations.xml</URL>
+		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/Operations.xml</URL>
 	</Item>
 	<Item>
 		<Name>Quests</Name>
 		<Version>1.0.6</Version>
-		<URL>https://raw.github.com/Yuubari/KanColleViewer/master/resources/translations/Quests.xml</URL>
+		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/Quests.xml</URL>
 	</Item>
 	<Item>
 		<Name>Ships</Name>
 		<Version>1.0.13</Version>
-		<URL>https://raw.github.com/Yuubari/KanColleViewer/master/resources/translations/Ships.xml</URL>
+		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/Ships.xml</URL>
 	</Item>
 	<Item>
 		<Name>ShipTypes</Name>
 		<Version>1.0.5</Version>
-		<URL>https://raw.github.com/Yuubari/KanColleViewer/master/resources/translations/ShipTypes.xml</URL>
+		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/ShipTypes.xml</URL>
 	</Item>
 </Versions>
