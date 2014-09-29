@@ -1,6 +1,8 @@
 ﻿﻿KanColleViewer! (提督業も忙しい！)
 --
 
+**Old versions (check the Releases section to verify which version is the current) are not (and will not be) supported.**
+
 KCV is a browser utility that makes it easy to play Kantai Collection.
 This is the translation project of the original [KanColleViewer](http://grabacr.net/kancolleviewer)
 
