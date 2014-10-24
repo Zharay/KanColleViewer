@@ -9,7 +9,7 @@ using System.Windows.Navigation;
 using Grabacr07.Desktop.Metro;
 using Grabacr07.KanColleViewer.Properties;
 using MetroRadiance.Core;
-using mshtml;
+using MSHTML;
 
 namespace Grabacr07.KanColleViewer.Views.Behaviors
 {

@@ -9,7 +9,7 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Grabacr07.KanColleViewer.Models;
 using MetroRadiance.Core;
-using mshtml;
+using MSHTML;
 using SHDocVw;
 using IServiceProvider = Grabacr07.KanColleViewer.Win32.IServiceProvider;
 using WebBrowser = System.Windows.Controls.WebBrowser;
