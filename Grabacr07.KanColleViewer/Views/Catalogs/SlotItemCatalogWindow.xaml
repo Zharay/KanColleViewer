@@ -193,9 +193,9 @@
 								</GridViewColumn.CellTemplate>
 							</GridViewColumn>
 
-							<GridViewColumn Width="100">
-								<GridViewColumnHeader Visibility="{Binding ShowStats, Converter={StaticResource BooleanToVisibilityConverterKey}}"
-													  behaviors:GridViewBehaviors.CollapseableColumn="True">
+							<GridViewColumn Width="100" 
+											behaviors:GridViewColumnVisibilityManager.IsVisible="{Binding ShowStats}">
+								<GridViewColumnHeader Visibility="{Binding ShowStats, Converter={StaticResource BooleanToVisibilityConverterKey}}">
 									<TextBlock>
 										<Run Text="Stats" />
 									</TextBlock>

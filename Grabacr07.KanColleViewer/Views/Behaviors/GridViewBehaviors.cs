@@ -44,4 +44,44 @@ namespace Grabacr07.KanColleViewer.Views.Behaviors
 				header.Column.Width = double.NaN;   // "Auto"
 		}
 	}
+	public class GridViewColumnVisibilityManager
+	{
+		static Dictionary<GridViewColumn, DataTemplate> originalCellTemplates = new Dictionary<GridViewColumn, DataTemplate>();
+		static Dictionary<GridViewColumn, double> originalColumnWidths = new Dictionary<GridViewColumn, double>();
+
+		public static bool GetIsVisible(DependencyObject obj)
+		{
+			return (bool)obj.GetValue(IsVisibleProperty);
+		}
+
+		public static void SetIsVisible(DependencyObject obj, bool value)
+		{
+			obj.SetValue(IsVisibleProperty, value);
+		}
+
+		public static readonly DependencyProperty IsVisibleProperty =
+			DependencyProperty.RegisterAttached("IsVisible", typeof(bool), typeof(GridViewColumnVisibilityManager), new UIPropertyMetadata(true, OnIsVisibleChanged));
+
+		private static void OnIsVisibleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+		{
+			GridViewColumn gc = d as GridViewColumn;
+			if (gc == null)
+				return;
+
+			if (GetIsVisible(gc) == false)
+			{
+				originalCellTemplates[gc] = gc.CellTemplate;
+				gc.CellTemplate = null;
+				originalColumnWidths[gc] = gc.Width;
+				gc.Width = 0;
+			}
+			else
+			{
+				if (gc.CellTemplate == null)
+					gc.CellTemplate = originalCellTemplates[gc];
+				if (gc.Width == 0)
+					gc.Width = originalColumnWidths[gc];
+			}
+		}
+	}
 }
