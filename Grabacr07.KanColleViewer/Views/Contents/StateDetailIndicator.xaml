@@ -49,6 +49,15 @@
 								Property="Text"
 								Value="{Binding Resources.StateDetail_IsReady, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 					</DataTrigger>
+					<DataTrigger Binding="{Binding Fleet.IsWounded}"
+								 Value="True">
+						<Setter TargetName="Border"
+								Property="Background"
+								Value="#FFB40000" />
+						<Setter TargetName="Text"
+								Property="Text"
+								Value="{Binding Resources.StateDetail_CriticalDamage, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+					</DataTrigger>
 				</DataTemplate.Triggers>
 			</DataTemplate>
 
