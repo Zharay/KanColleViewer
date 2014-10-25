@@ -21,7 +21,7 @@ namespace Grabacr07.KanColleViewer.Models
 			"KanColleViewer",
 			"Settings.xml");
 
-		private static readonly string CurrentSettingsVersion = "1.6";
+		private static readonly string CurrentSettingsVersion = "1.7";
 
 		public static Settings Current { get; set; }
 
@@ -63,6 +63,7 @@ namespace Grabacr07.KanColleViewer.Models
 				ShipCatalog_RemodelFilter_Both = true,
 				ShipCatalog_ModernFilter_Both = true,
 				ShipCatalog_ShowMoreStats = true,
+				SlotItemCatalog_ShowStats = true,
 				NotifyBuildingCompleted = true,
 				NotifyRepairingCompleted = true,
 				NotifyExpeditionReturned = true,
@@ -861,6 +862,25 @@ namespace Grabacr07.KanColleViewer.Models
 				if (this._ShipCatalog_ShowMoreStats != value)
 				{
 					this._ShipCatalog_ShowMoreStats = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region SlotItemCatalog_ShowStats 変更通知プロパティ
+
+		private bool _SlotItemCatalog_ShowStats;
+
+		public bool SlotItemCatalog_ShowStats
+		{
+			get { return this._SlotItemCatalog_ShowStats; }
+			set
+			{
+				if (this._SlotItemCatalog_ShowStats != value)
+				{
+					this._SlotItemCatalog_ShowStats = value;
 					this.RaisePropertyChanged();
 				}
 			}

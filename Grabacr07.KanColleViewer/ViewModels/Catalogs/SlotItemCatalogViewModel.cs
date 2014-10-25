@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Grabacr07.KanColleWrapper;
 using Grabacr07.KanColleWrapper.Models;
 using Livet;
+using Settings = Grabacr07.KanColleViewer.Models.Settings;
 
 namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 {
@@ -48,6 +49,22 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 
 		#endregion
 
+		#region ShowStats 変更通知プロパティ
+
+		public bool ShowStats
+		{
+			get { return Settings.Current.SlotItemCatalog_ShowStats; }
+			set
+			{
+				if (Settings.Current.SlotItemCatalog_ShowStats != value)
+				{
+					Settings.Current.SlotItemCatalog_ShowStats = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
 
 		public SlotItemCatalogViewModel()
 		{

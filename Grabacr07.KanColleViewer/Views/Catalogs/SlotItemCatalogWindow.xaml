@@ -15,7 +15,9 @@
 				   xmlns:behaviors="clr-namespace:Grabacr07.KanColleViewer.Views.Behaviors"
 				   xmlns:controls="clr-namespace:Grabacr07.KanColleViewer.Views.Controls"
 				   xmlns:contents="clr-namespace:Grabacr07.KanColleViewer.Views.Contents"
+				   xmlns:converters="clr-namespace:Grabacr07.KanColleViewer.Views.Converters"
 				   xmlns:catalogs="clr-namespace:Grabacr07.KanColleViewer.Views.Catalogs"
+				   xmlns:models="clr-namespace:Grabacr07.KanColleViewer.Models"
 				   x:Name="GlowMetroWindow"
 				   mc:Ignorable="d"
 				   d:DataContext="{d:DesignInstance viewModels:SlotItemCatalogViewModel}"
@@ -67,10 +69,29 @@
 		<DockPanel Grid.Row="1">
 			<Border DockPanel.Dock="Top"
 					Margin="8,0">
-				<metro2:CallMethodButton Content="表示の更新"
+				<StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+					<metro2:CallMethodButton Content="{Binding Resources.SlotItemCatalog_Refresh, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 										 Padding="40,6"
 										 MethodName="Update"
 										 HorizontalAlignment="Left" />
+					<Grid VerticalAlignment="Center"
+						  Margin="15,5,5,5">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"
+														  SharedSizeGroup="FilterName" />
+							<ColumnDefinition Width="10" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<WrapPanel VerticalAlignment="Center">
+							<CheckBox IsChecked="{Binding ShowStats, Mode=TwoWay}" />
+						</WrapPanel>
+						<TextBlock Margin="0,2"
+								   Grid.Column="2"
+								   HorizontalAlignment="Right">
+							<Run Text="{Binding Resources.SlotItemCatalog_ShowStats, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+						</TextBlock>
+					</Grid>
+				</StackPanel>
 			</Border>
 
 			<Border BorderBrush="{DynamicResource BorderBrushKey}"
@@ -123,6 +144,7 @@
 								</Setter.Value>
 							</Setter>
 						</Style>
+						<converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterKey" />
 					</ListView.Resources>
 					<ListView.View>
 						<GridView>
@@ -172,11 +194,12 @@
 							</GridViewColumn>
 
 							<GridViewColumn Width="100">
-								<GridViewColumn.Header>
+								<GridViewColumnHeader Visibility="{Binding ShowStats, Converter={StaticResource BooleanToVisibilityConverterKey}}"
+													  behaviors:GridViewBehaviors.CollapseableColumn="True">
 									<TextBlock>
 										<Run Text="Stats" />
 									</TextBlock>
-								</GridViewColumn.Header>
+								</GridViewColumnHeader>
 								<GridViewColumn.CellTemplate>
 									<DataTemplate DataType="{x:Type viewModels:SlotItemViewModel}">
 										<TextBlock Margin="0,4"
