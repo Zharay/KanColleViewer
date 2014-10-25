@@ -712,11 +712,10 @@
 xcopy /Y "$(TargetDir)KanColleViewer.exe.config" "$(SolutionDir)KanColleViewer-Compiled"
 xcopy /Y "$(TargetDir)*.dll" "$(SolutionDir)KanColleViewer-Compiled\lib"
 xcopy /Y /E /I "$(TargetDir)en" "$(SolutionDir)KanColleViewer-Compiled\lib\en"
-xcopy /Y /E /I "$(TargetDir)de\KanColleViewer*.*" "$(SolutionDir)KanColleViewer-Compiled\lib\de"
-xcopy /Y /E /I "$(TargetDir)zh-CN" "$(SolutionDir)KanColleViewer-Compiled\lib\zh-CN"
 xcopy /Y /E /I "$(TargetDir)ko-KR" "$(SolutionDir)KanColleViewer-Compiled\lib\ko-KR"
 xcopy /Y "$(TargetDir)Plugins\*.dll" "$(SolutionDir)KanColleViewer-Compiled\Plugins"
-xcopy /Y /E /I "$(SolutionDir)resources\Translations" "$(SolutionDir)KanColleViewer-Compiled\Translations"
+xcopy /Y /I "$(SolutionDir)resources\Translations\ko-KR\*.xml" "$(SolutionDir)KanColleViewer-Compiled\Translations\ko-KR\"
+xcopy /Y /I "$(SolutionDir)resources\Translations\*.xml" "$(SolutionDir)KanColleViewer-Compiled\Translations"
 xcopy /Y /E /I "$(SolutionDir)resources\Translations" "$(TargetDir)Translations"
 xcopy /Y /E /I "$(SolutionDir)resources\Sounds" "$(SolutionDir)KanColleViewer-Compiled\Sounds"
 xcopy /Y /E /I "$(SolutionDir)resources\Sounds" "$(TargetDir)Sounds"</PostBuildEvent>
