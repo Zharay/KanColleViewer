@@ -45,29 +45,60 @@ namespace Grabacr07.KanColleWrapper.Models
 		#endregion
 
 
+		#region Experience 変更通知プロパティ
+
 		/// <summary>
 		/// 提督経験値を取得します。
 		/// </summary>
+		/// 
+		private int _Experience;
+
 		public int Experience
 		{
-			get { return this.RawData.api_experience; }
+			get { return this._Experience; }
+			set
+			{
+				if (this._Experience != value)
+				{
+					this._Experience = value;
+					this.RaisePropertyChanged();
+					this.RaisePropertyChanged("ExperienceForNexeLevel");
+				}
+			}
 		}
+
+		#endregion
 
 		/// <summary>
 		/// 次のレベルに上がるために必要な提督経験値を取得します。
 		/// </summary>
 		public int ExperienceForNexeLevel
 		{
-			get { return Models.Experience.GetAdmiralExpForNextLevel(this.RawData.api_level, this.RawData.api_experience); }
+			get { return Models.Experience.GetAdmiralExpForNextLevel(this.Level, this.Experience); }
 		}
+
+		#region Level 変更通知プロパティ
 
 		/// <summary>
 		/// 艦隊司令部レベルを取得します。
 		/// </summary>
+
+		private int _Level;
+
 		public int Level
 		{
-			get { return this.RawData.api_level; }
+			get { return this._Level; }
+			set
+			{
+				if (this._Level != value)
+				{
+					this._Level = value;
+					this.RaisePropertyChanged();
+				}
+			}
 		}
+
+		#endregion
 
 		/// <summary>
 		/// 提督のランク名 (元帥, 大将, 中将, ...) を取得します。
@@ -77,15 +108,30 @@ namespace Grabacr07.KanColleWrapper.Models
 			get { return Models.Rank.GetName(this.RawData.api_rank); }
 		}
 
+		#region RankID 変更通知プロパティ
+
 		/// <summary>
 		/// 提督のランクを取得します。
 		/// </summary>
+
+		private int _RankID;
+
 		public int RankID
 		{
 			get { return this.RawData.api_rank; }
+			set
+			{
+				if (this._RankID != value)
+				{
+					this._RankID = value;
+					this.RaisePropertyChanged();
+				}
+			}
 		}
 
-        /// <summary>
+		#endregion
+
+		/// <summary>
 		/// 出撃時の勝利数を取得します。
 		/// </summary>
 		public int SortieWins
@@ -139,6 +185,9 @@ namespace Grabacr07.KanColleWrapper.Models
 			: base(rawData)
 		{
 			this.Comment = this.RawData.api_comment;
+			this.Experience = this.RawData.api_experience;
+			this.Level = this.RawData.api_level;
+			this.RankID = this.RawData.api_rank;
 		}
 
 		public override string ToString()
