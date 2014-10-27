@@ -16,6 +16,9 @@ namespace Grabacr07.KanColleWrapper.Models
 		}
 
 		public SlotItemInfo Info { get; private set; }
+		private bool IsLocked { get { return (this.RawData.api_locked > 0); } }
+		private int Level { get { return this.RawData.api_level; } }
+		public string ItemLevel { get { return "+" + Level.ToString(); } }
 
 		internal SlotItem(kcsapi_slotitem rawData) : base(rawData)
 		{
