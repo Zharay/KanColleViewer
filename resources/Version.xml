@@ -7,7 +7,7 @@
 	</Item>
 	<Item>
 		<Name>Equipment</Name>
-		<Version>1.0.9</Version>
+		<Version>1.0.11</Version>
 		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/Equipment.xml</URL>
 	</Item>
 	<Item>
@@ -22,7 +22,7 @@
 	</Item>
 	<Item>
 		<Name>Ships</Name>
-		<Version>1.0.14</Version>
+		<Version>1.0.15</Version>
 		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/Ships.xml</URL>
 	</Item>
 	<Item>
