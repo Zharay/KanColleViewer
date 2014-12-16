@@ -69,7 +69,7 @@ Change `http://www.dmm.com/netgame/social/application/-/detail/=/app_id=854854/`
   <value>http://www.dmm.com/netgame/social/application/-/detail/=/app_id=854854/</value>
 </setting>
 ```
-to your API link URL, but *make sure you replace `&amp;` with `&amp;amp;`* (this is called an *HTML escape*; `&amp;` has a special meaning in XML and KCV will probably crash if you don't properly escape it).
+to your API link URL, but *make sure you replace `&` with `&amp;`* (this is called an *HTML escape*; `&` has a special meaning in XML and KCV will probably crash if you don't properly escape it).
 
 #### I use API link and the Flash quality settings don't work.
 You must use the game with the DMM site for them to work, or you can make up your own HTML page that embeds the Flash object and make a script for it.
