@@ -3,9 +3,10 @@ This document will attempt to answer some of the questions that keep popping up 
 Any additions are welcome.
 
 ## First things you must always do before reporting any issues:
+
 1. If you are using **Windows 7** and have not updated it to **Service Pack 1** yet, do it.
 2. Update your Microsoft Internet Explorer to *the latest available version*. That means **Internet Explorer 11** as of December 15th, 2014.
-3. Update your .NET Framework to the latest version (4.5.2 as of this writing).
+3. Update your **.NET Framework** to the latest version (**4.5.2** as of this writing: use either [Offline installer](http://www.microsoft.com/en-us/download/details.aspx?id=42642) or [Web Installer](http://www.microsoft.com/en-us/download/details.aspx?id=42643)).
 4. Update KCV to its latest version. Pay attention to the release notes.
 5. If your question is related to translations, update translations to the latest version.
 6. **Do not put KCV under Program Files.** Current English builds store translation XML files inside the program's directory and when located inside Program Files these files cannot be properly saved (because elevation is required). This will be fixed in the future.
@@ -13,6 +14,7 @@ Any additions are welcome.
 ## Frequently Asked Questions
 #### How do I use the region cookie method?
 Do not spam-click the button; instead do the following:
+
 1. Open KCV.
 2. Wait for DMM.com to finish loading; it will most probably be in English.
 3. Click **Set region cookie**.
