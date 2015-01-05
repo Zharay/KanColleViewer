@@ -147,6 +147,7 @@ namespace Grabacr07.KanColleWrapper
 			}
 		}
 
+		/* No longer available in the API
 		private void DropShip(kcsapi_battleresult source)
 		{
 			if (source.api_get_ship == null) return;
@@ -157,7 +158,7 @@ namespace Grabacr07.KanColleWrapper
 			this.droppedItemsCount += target.RawData.api_defeq.Count(x => x != -1);
 			this.RaisePropertyChanged("SlotItemsCount");
 		}
-
+		*/
 
 		private void RaiseSlotItemsChanged()
 		{
