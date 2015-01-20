@@ -30,7 +30,14 @@ This is the default. Tick the **Reveal ship names** checkbox in the **Shipyard**
 #### Is there a way to reload the game without going to **Settings** → **Browser**?
 **Press F5** just like you do in your favourite web browser.
 
-#### Translations aren't working.
+#### I pinned KCV to my taskbar and translations aren't working.
+Right click the pinned button on the taskbar. A context menu will appear with KanColleViewer at the top. Right click that line, it'll open another context menu. Choose Properties in there:
+![Taskbar Screenshot](http://i.koumakan.jp/2015-01-20/1421749535.png)
+Explorer will open the standard shortcut properties window:
+![Properties Screenshot](http://i.koumakan.jp/2015-01-20/1421749669.png)
+Make sure the **Start in:** folder is set to the folder where KCV is.
+
+#### Translations aren't working even though KCV is not pinned or has **Start in** set correctly.
 Try closing KCV, removing the XML files in the translations folder and restarting KCV; it should download translations automatically. If you have that option disabled, download them manually. If this still does not help, you might have permission issues.
 Another approach: open **Windows File Explorer** (NOT Internet Explorer; to start File Explorer you can use the following keyboard shortcut: Windows Logo Key + E) and insert `%APPDATA%\grabacr.net\KanColleViewer\` into its address bar. Delete **Settings.xml** there. Note: this will reset your KCV settings.
 
