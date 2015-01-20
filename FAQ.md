@@ -32,9 +32,13 @@ This is the default. Tick the **Reveal ship names** checkbox in the **Shipyard**
 
 #### I pinned KCV to my taskbar and translations aren't working.
 Right click the pinned button on the taskbar. A context menu will appear with KanColleViewer at the top. Right click that line, it'll open another context menu. Choose Properties in there:
+
 ![Taskbar Screenshot](http://i.koumakan.jp/2015-01-20/1421749535.png)
+
 Explorer will open the standard shortcut properties window:
+
 ![Properties Screenshot](http://i.koumakan.jp/2015-01-20/1421749669.png)
+
 Make sure the **Start in:** folder is set to the folder where KCV is.
 
 #### Translations aren't working even though KCV is not pinned or has **Start in** set correctly.
