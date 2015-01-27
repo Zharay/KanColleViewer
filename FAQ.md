@@ -87,3 +87,5 @@ You must use the game with the DMM site for them to work, or you can make up you
 
 #### How to report an issue?
 You'll need a GitHub account. If the issue in question is not related to translations of quests, ship names, equipment and other in-game strings, use [KCV's issue tracker](https://github.com/Yuubari/KanColleViewer/issues). For everything related to translations of in-game strings use [KCV Localisation issue tracker](https://github.com/KCV-Localisation/KanColleViewer-Translations/issues); this is also the place for submitting new quests although now this isn't needed as they are submitted automatically.
+
+KanColleViewer! automatically generates a crash log file, `error.log`, in its folder. In cases of crashes please attach this file to your report.
