@@ -3,7 +3,7 @@
 
 **Old versions (check the Releases section to verify which version is the current) are not (and will not be) supported.**
 
-KCV is a browser utility that makes it easy to play Kantai Collection.
+KCV is a Windows-only browser utility that makes it easy to play Kantai Collection.
 This is the translation project of the original [KanColleViewer](http://grabacr.net/kancolleviewer)
 
 ##### Main Contributors
