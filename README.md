@@ -26,7 +26,7 @@ All builds can be found in the following links below.
 
 ## Frequently Asked Questions
 
-Refer to the standalone [FAQ](https://github.com/Yuubari/KanColleViewer/blob/master/FAQ.md) if your question is not answered below.
+###Refer to the standalone [FAQ](https://github.com/Yuubari/KanColleViewer/blob/master/FAQ.md) if your question is not answered below.
 
 #### Is KCV safe?
 Yes. You are mainly playing off Internet Explorer (IE). The program itself wraps itself around IE and captures all network traffic coming in and out. It only looks for incoming data and uses that for displaying game information such as ships, expeditions, quests, and so on. **This does not change the game itself in any way**. **KCV does not change the packets in any way**.
@@ -49,7 +49,9 @@ Install [Flash for Internet Explorer](http://get.adobe.com/flashplayer/othervers
 You need to have [.NET Framework 4.5](http://www.microsoft.com/en-us/download/details.aspx?id=30653) installed for your version of Windows. Those on Windows 8 do not have to do this.
 
 #### I'm on Windows XP/Mac/Linux and I want to have fun too!
-Sadly, Microsoft doesn't fully support .NET 4.5. There may be 3rd party ways of getting support for the package, but Microsoft has basically abandoned the XP and other OSs in terms of support. Your only two choices realistically is to either get to Windows 7/8 or use [Logbook](https://github.com/Zharay/logbook) which is another Kancolle project that is being worked on that uses Java and is multi-platform also being worked on by [@Zharay](http://twitter.com/Zharay). It is much simpler, but does an awesome job at what it does.
+Sadly, Microsoft doesn't fully support .NET 4.5 on systems below Windows 7. There may be 3rd party ways of getting support for the package, but Microsoft has basically abandoned the XP and other OSs in terms of support. Your only two choices realistically is to either get to Windows 7/8 or use [Sanaechan Logbook](https://github.com/silfumus/logbook-EN/releases) which is another Kancolle project that is being worked on that uses Java and is multi-platform. It is much simpler, but does an awesome job at what it does.
+
+Regarding non-Windows systems: WPF applications are completely unsupported on OS X, Linux, *BSD and other *NIX systems.
 
 Important note: while Microsoft has announced that they will be open-sourcing the .NET Core Run-time (which means functional run-times for *NIX systems will be soon developed), porting KCV to *NIX/Linux systems (BSD, OS X, Linux) is not currently possible. KCV depends on two Windows x86/x86_64-only components: Livet and Fiddler. Reimplementing these frameworks would take unrealistic amounts of time.
 
