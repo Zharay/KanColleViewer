@@ -85,6 +85,9 @@ to your API link URL, but *make sure you replace `&` with `&amp;`* (this is call
 #### I use API link and the Flash quality settings don't work.
 You must use the game with the DMM site for them to work, or you can make up your own HTML page that embeds the Flash object and make a script for it.
 
+#### KCV crashes randomly on my overclocked PC.
+Some users reported crashes when running in an overclocked environment. Try disabling overclocking.
+
 #### How to report an issue?
 You'll need a GitHub account. If the issue in question is not related to translations of quests, ship names, equipment and other in-game strings, use [KCV's issue tracker](https://github.com/Yuubari/KanColleViewer/issues). For everything related to translations of in-game strings use [KCV Localisation issue tracker](https://github.com/KCV-Localisation/KanColleViewer-Translations/issues); this is also the place for submitting new quests although now this isn't needed as they are submitted automatically.
 
