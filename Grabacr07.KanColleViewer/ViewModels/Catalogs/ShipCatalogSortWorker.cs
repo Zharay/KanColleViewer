@@ -15,19 +15,19 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 		private readonly NoneColumnViewModel noneColumn = new NoneColumnViewModel();
 		private SortableColumnViewModel currentSortTarget;
 
-		public IdColumnViewModel IdColumn { get; private set; }
-		public TypeColumnViewModel TypeColumn { get; private set; }
-		public NameColumnViewModel NameColumn { get; private set; }
-		public LevelColumnViewModel LevelColumn { get; private set; }
-		public ConditionColumnViewModel ConditionColumn { get; private set; }
-		public FirepowerColumnViewModel FirepowerColumn { get; private set; }
-		public TorpedoColumnViewModel TorpedoColumn { get; private set; }
-		public AntiAirColumnViewModel AntiAirColumn { get; private set; }
-		public ArmorColumnViewModel ArmorColumn { get; private set; }
-		public LuckColumnViewModel LuckColumn { get; private set; }
-		public ViewRangeColumnViewModel ViewRangeColumn { get; private set; }
-		public EvasionColumnViewModel EvasionColumn { get; private set; }
-		public AntiSubColumnViewModel AntiSubColumn { get; private set; }
+		public IdColumnViewModel IdColumn { get; }
+		public TypeColumnViewModel TypeColumn { get; }
+		public NameColumnViewModel NameColumn { get; }
+		public LevelColumnViewModel LevelColumn { get; }
+		public ConditionColumnViewModel ConditionColumn { get; }
+		public FirepowerColumnViewModel FirepowerColumn { get; }
+		public TorpedoColumnViewModel TorpedoColumn { get; }
+		public AntiAirColumnViewModel AntiAirColumn { get; }
+		public ArmorColumnViewModel ArmorColumn { get; }
+		public LuckColumnViewModel LuckColumn { get; }
+		public ViewRangeColumnViewModel ViewRangeColumn { get; }
+		public EvasionColumnViewModel EvasionColumn { get; }
+		public AntiSubColumnViewModel AntiSubColumn { get; }
 
 		public ShipCatalogSortWorker()
 		{
