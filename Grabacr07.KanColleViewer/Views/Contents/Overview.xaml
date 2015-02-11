@@ -101,7 +101,7 @@
 			</Grid.ColumnDefinitions>
 
 			<Border VerticalAlignment="Top">
-				<DockPanel DataContext="{Binding Content.Fleets}">
+				<DockPanel DataContext="{Binding Content.Fleets}" d:DataContext="{d:DesignData /SampleData/FleetsViewModelSampleData.xaml}">
 					<ListBox DockPanel.Dock="Top"
 							 ItemsSource="{Binding Fleets}"
 							 SelectedValue="{Binding SelectedFleet, Mode=TwoWay}"
@@ -138,7 +138,9 @@
 
 					<ScrollViewer HorizontalScrollBarVisibility="Auto"
 								  VerticalScrollBarVisibility="Disabled">
-						<ItemsControl ItemsSource="{Binding SelectedFleet.Ships}"
+						<ItemsControl ItemsSource="{Binding Ships}"
+                                      DataContext="{Binding SelectedFleet}"
+                                      d:DataContext="{d:DesignData /SampleData/FleetViewModelSampleData.xaml}"
 									  Background="Transparent"
 									  Grid.IsSharedSizeScope="True">
 							<i:Interaction.Triggers>
