@@ -82,6 +82,16 @@ Change `http://www.dmm.com/netgame/social/application/-/detail/=/app_id=854854/`
 ```
 to your API link URL, but *make sure you replace `&` with `&amp;`* (this is called an *HTML escape*; `&` has a special meaning in XML and KCV will probably crash if you don't properly escape it).
 
+The end result should look kind of like this:
+
+```xml
+<setting name="KanColleUrl" serializeAs="String">
+  <value>http://ip.octets.go.here/kcs/mainD2.swf?api_token=█████████████████&amp;api_starttime=█████████████</value>
+</setting>
+```
+
+There *must be* no quotation marks of any kind. The URL *must be* an absolute URL (in other words, it *must* start with `http://`).
+
 #### I use API link and the Flash quality settings don't work.
 You must use the game with the DMM site for them to work, or you can make up your own HTML page that embeds the Flash object and make a script for it.
 
