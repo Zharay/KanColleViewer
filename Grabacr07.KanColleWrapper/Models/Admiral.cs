@@ -14,9 +14,15 @@ namespace Grabacr07.KanColleWrapper.Models
 	/// </summary>
 	public class Admiral : RawDataWrapper<kcsapi_basic>
 	{
-		public string MemberId => this.RawData.api_member_id;
+		public string MemberId
+		{
+		    get { return this.RawData.api_member_id; }
+		}
 
-	    public string Nickname => this.RawData.api_nickname;
+	    public string Nickname
+	    {
+	        get { return this.RawData.api_nickname; }
+	    }
 
 	    #region Comment 変更通知プロパティ
 
@@ -65,7 +71,10 @@ namespace Grabacr07.KanColleWrapper.Models
 		/// <summary>
 		/// 次のレベルに上がるために必要な提督経験値を取得します。
 		/// </summary>
-		public int ExperienceForNexeLevel => Models.Experience.GetAdmiralExpForNextLevel(this.Level, this.Experience);
+		public int ExperienceForNexeLevel
+	    {
+	        get { return Models.Experience.GetAdmiralExpForNextLevel(this.Level, this.Experience); }
+	    }
 
 		#region Level 変更通知プロパティ
 
@@ -93,7 +102,10 @@ namespace Grabacr07.KanColleWrapper.Models
 		/// <summary>
 		/// 提督のランク名 (元帥, 大将, 中将, ...) を取得します。
 		/// </summary>
-		public string Rank => Models.Rank.GetName(this.RawData.api_rank);
+		public string Rank
+	    {
+	        get { return Models.Rank.GetName(this.RawData.api_rank); }
+	    }
 
 		#region RankID 変更通知プロパティ
 
@@ -121,12 +133,18 @@ namespace Grabacr07.KanColleWrapper.Models
 		/// <summary>
 		/// 出撃時の勝利数を取得します。
 		/// </summary>
-		public int SortieWins => this.RawData.api_st_win;
+		public int SortieWins
+	    {
+	        get { return this.RawData.api_st_win; }
+	    }
 
 	    /// <summary>
 		/// 出撃時の敗北数を取得します。
 		/// </summary>
-		public int SortieLoses => this.RawData.api_st_lose;
+		public int SortieLoses
+	    {
+	        get { return this.RawData.api_st_lose; }
+	    }
 
 	    /// <summary>
 		/// 出撃時の勝率を取得します。
@@ -144,12 +162,18 @@ namespace Grabacr07.KanColleWrapper.Models
 		/// <summary>
 		/// 司令部に所属できる艦娘の最大値を取得します。
 		/// </summary>
-		public int MaxShipCount => this.RawData.api_max_chara;
+		public int MaxShipCount
+		{
+		    get { return this.RawData.api_max_chara; }
+		}
 
 	    /// <summary>
 		/// 司令部が保有できる装備アイテムの最大値を取得します。
 		/// </summary>
-		public int MaxSlotItemCount => this.RawData.api_max_slotitem;
+		public int MaxSlotItemCount
+	    {
+	        get { return this.RawData.api_max_slotitem; }
+	    }
 
 		public void Update()
 		{

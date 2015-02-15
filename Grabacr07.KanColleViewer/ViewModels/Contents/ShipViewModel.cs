@@ -46,7 +46,7 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents
 		public ShipViewModel(Ship ship)
 		{
 			this.Ship = ship;
-			this.SlotItems = ship.SlotItems.Select(i => new SlotItemViewModel(i.Info)).ToList();
+			// this.SlotItems = ship.SlotItems.Select(i => new SlotItemViewModel(i.Info)).ToList();
 		}
 	}
 }
