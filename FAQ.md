@@ -10,6 +10,7 @@ Any additions are welcome.
 4. Update KCV to its latest version. Pay attention to the release notes.
 5. If your question is related to translations, update translations to the latest version.
 6. **Do not put KCV under Program Files.** Current English builds store translation XML files inside the program's directory and when located inside Program Files these files cannot be properly saved (because elevation is required). This will be fixed in the future.
+7. **Any modifications to the .exe.config file are not officially supported.** This file is **not** read by KCV and it has no control over its parsing. The config file is generated at compile time and is read by the .NET Framework. **If KCV crashes with a configuration error in .exe.config, this means you, and only you, are to blame.** KCV ships with a correct configuration file.
 
 ## Frequently Asked Questions
 #### How do I use the region cookie method?
