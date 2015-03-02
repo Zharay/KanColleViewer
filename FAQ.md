@@ -42,6 +42,9 @@ Explorer will open the standard shortcut properties window:
 
 Make sure the **Start in:** folder is set to the folder where KCV is.
 
+#### I made a shortcut for KCV and translations aren't working.
+See the answer above, but instead of the taskbar button's shortcut properties you'll need to right-click your shortcut and choose Properties in that context menu. Look for **Start in:** and make sure it points to the folder with the KCV executable.
+
 #### Translations aren't working even though KCV is not pinned or has **Start in** set correctly.
 Try closing KCV, removing the XML files in the translations folder and restarting KCV; it should download translations automatically. If you have that option disabled, download them manually. If this still does not help, you might have permission issues.
 Another approach: open **Windows File Explorer** (NOT Internet Explorer; to start File Explorer you can use the following keyboard shortcut: Windows Logo Key + E) and insert `%APPDATA%\grabacr.net\KanColleViewer\` into its address bar. Delete **Settings.xml** there. Note: this will reset your KCV settings.
