@@ -396,32 +396,17 @@ namespace Grabacr07.KanColleWrapper.Models
 				this.Luck = new ModernizableStatus(this.Info.RawData.api_luck, this.RawData.api_kyouka[4]);
 			}
 
-			// Minimum removes equipped values.
-			/*
-			int EqAntiSub = 0, EqEvasion = 0, EqLineOfSight = 0;
-
-			foreach (SlotItem item in this.SlotItems)
-			{
-				if (item == null)
-					continue;
-
-				EqAntiSub += item.Info.RawData.api_tais;
-				EqEvasion += item.Info.RawData.api_houk;
-				EqLineOfSight += item.Info.RawData.api_saku;
-			}
-
-			this.AntiSub = new LimitedValue(this.RawData.api_taisen[0], this.RawData.api_taisen[1], this.RawData.api_taisen[0] - EqAntiSub);
-			this.Evasion = new LimitedValue(this.RawData.api_kaihi[0], this.RawData.api_kaihi[1], this.RawData.api_kaihi[0] - EqEvasion);
-			this.LineOfSight = new LimitedValue(this.RawData.api_sakuteki[0], this.RawData.api_sakuteki[1], this.RawData.api_sakuteki[0] - EqLineOfSight);
-			*/
-
 			this.Slots = this.RawData.api_slot
 				.Select(id => this.homeport.Itemyard.SlotItems[id])
 				.Select((t, i) => new ShipSlot(t, this.Info.RawData.api_maxeq.Get(i) ?? 0, this.RawData.api_onslot.Get(i) ?? 0))
 				.ToArray();
 			this.EquippedSlots = this.Slots.Where(x => x.Equipped).ToArray();
-		}
 
+			// Minimum removes equipped values.
+			this.AntiSub = new LimitedValue(this.RawData.api_taisen[0], this.RawData.api_taisen[1], this.RawData.api_taisen[0] - this.EquippedSlots.Sum(s => s.Item.Info.RawData.api_tais));
+			this.Evasion = new LimitedValue(this.RawData.api_kaihi[0], this.RawData.api_kaihi[1], this.RawData.api_kaihi[0] - this.EquippedSlots.Sum(s => s.Item.Info.RawData.api_houk));
+			this.LineOfSight = new LimitedValue(this.RawData.api_sakuteki[0], this.RawData.api_sakuteki[1], this.RawData.api_sakuteki[0] - this.EquippedSlots.Sum(s => s.Item.Info.RawData.api_saku));
+		}
 
 		internal void Charge(int fuel, int bull, int[] onslot)
 		{
