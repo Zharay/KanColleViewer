@@ -12,6 +12,7 @@ using Grabacr07.KanColleViewer.Views;
 using Grabacr07.KanColleWrapper;
 using Livet;
 using MetroRadiance;
+using Microsoft.Win32;
 using AppSettings = Grabacr07.KanColleViewer.Properties.Settings;
 using Settings = Grabacr07.KanColleViewer.Models.Settings;
 
@@ -81,6 +82,16 @@ namespace Grabacr07.KanColleViewer
 			ViewModelRoot = new MainWindowViewModel();
 			this.MainWindow = new MainWindow { DataContext = ViewModelRoot };
 			this.MainWindow.Show();
+
+			// Check if Adobe Flash is installed in Microsoft Explorer
+			if (GetFlashVersion() == "")
+			{
+				MessageBoxResult MB = MessageBox.Show(KanColleViewer.Properties.Resources.System_Flash_Not_Installed_Text, KanColleViewer.Properties.Resources.System_Flash_Not_Installed_Caption, MessageBoxButton.YesNo, MessageBoxImage.Error, MessageBoxResult.Yes);
+				if (MB == MessageBoxResult.Yes) {
+					Process.Start("IExplore.exe", @"http://get.adobe.com/flashplayer/");
+					this.MainWindow.Close();
+				}
+			}
 		}
 
 		protected override void OnExit(ExitEventArgs e)
@@ -116,6 +127,23 @@ ERROR, date = {0}, sender = {1},
 			{
 				Debug.WriteLine(ex);
 			}
+		}
+
+		/// <summary>
+		/// Obtains Adobe Flash Player's ActiveX element version.
+		/// </summary>
+		/// <returns>Empty string if Flash is not installed, otherwise the currently installed version.</returns>
+		private static string GetFlashVersion()
+		{
+			string sVersion = "";
+
+			RegistryKey FlashRK = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Macromedia\FlashPlayerActiveX");
+			if (FlashRK != null)
+			{
+				sVersion = FlashRK.GetValue("Version", "").ToString();
+			}
+
+			return sVersion;
 		}
 	}
 }

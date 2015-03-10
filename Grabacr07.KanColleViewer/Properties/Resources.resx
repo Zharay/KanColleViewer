@@ -912,4 +912,10 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="SlotItemCatalog_ShowStats" xml:space="preserve">
     <value>Show item stats</value>
   </data>
+  <data name="System_Flash_Not_Installed_Caption" xml:space="preserve">
+    <value>Adobe Flash ActiveX Not Found</value>
+  </data>
+  <data name="System_Flash_Not_Installed_Text" xml:space="preserve">
+    <value>Adobe Flash for Microsoft Internet Explorer is required by KCV! but is not installed. Would you like to download and install it now?</value>
+  </data>
 </root>

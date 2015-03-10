@@ -2148,6 +2148,24 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adobe Flash ActiveX Not Found.
+        /// </summary>
+        public static string System_Flash_Not_Installed_Caption {
+            get {
+                return ResourceManager.GetString("System_Flash_Not_Installed_Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adobe Flash for Microsoft Internet Explorer is required by KCV! but is not installed. Would you like to download and install it now?.
+        /// </summary>
+        public static string System_Flash_Not_Installed_Text {
+            get {
+                return ResourceManager.GetString("System_Flash_Not_Installed_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ツール.
         /// </summary>
         public static string Tools {
