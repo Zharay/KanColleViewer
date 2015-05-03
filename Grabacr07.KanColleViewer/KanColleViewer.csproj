@@ -199,9 +199,6 @@
     <Compile Include="ViewModels\Catalogs\ShipTypeViewModel.cs" />
     <Compile Include="ViewModels\Catalogs\ShipCatalogWindowViewModel.cs" />
     <Compile Include="ViewModels\Contents\SlotItemViewModel.cs" />
-    <Compile Include="ViewModels\Contents\Tools\CalculatorViewModel.cs" />
-    <Compile Include="ViewModels\Contents\Tools\RankingsViewModel.cs" />
-    <Compile Include="ViewModels\Contents\Tools\RankingViewModel.cs" />
     <Compile Include="ViewModels\Contents\ShipyardViewModel.cs" />
     <Compile Include="ViewModels\Dev\DebugTabViewModel.cs" />
     <Compile Include="ViewModels\CultureViewModel.cs" />
@@ -250,12 +247,6 @@
     <Compile Include="Views\Settings\Updates.xaml.cs">
       <DependentUpon>Updates.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Tools\Calculator.xaml.cs">
-      <DependentUpon>Calculator.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Tools\Rankings.xaml.cs">
-      <DependentUpon>Rankings.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\BrowserNavigator.xaml.cs">
       <DependentUpon>BrowserNavigator.xaml</DependentUpon>
     </Compile>
@@ -299,6 +290,7 @@
     </Compile>
     <Compile Include="Views\Settings\Language.xaml.cs">
       <DependentUpon>Language.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FleetWindow.xaml.cs">
       <DependentUpon>FleetWindow.xaml</DependentUpon>
     </Compile>
@@ -340,10 +332,6 @@
     <Compile Include="Win32\DVTARGETDEVICE.cs" />
     <Compile Include="Win32\IServiceProvider.cs" />
     <Compile Include="Win32\RECT.cs" />
-    <Page Include="SampleData\RankingsViewModelSampleData.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Styles\Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -469,18 +457,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Tools\Calculator.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Tools\Common.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Tools\Rankings.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\Contents\Tools.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -498,11 +474,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Settings\Common.xaml">
-    <Page Include="Views\FleetWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Settings\Browser.xaml">
+    <Page Include="Views\FleetWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
