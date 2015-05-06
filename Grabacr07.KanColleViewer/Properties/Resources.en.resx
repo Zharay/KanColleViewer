@@ -905,4 +905,91 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="SlotItemCatalog_ShowStats" xml:space="preserve">
     <value>Show item stats</value>
   </data>
+  <data name="Fleets_Speed_Hybrid" xml:space="preserve">
+    <value>Hybrid speed fleet</value>
+  </data>
+  <data name="FleetWindow_AirSuperiority" xml:space="preserve">
+    <value>Air superiority</value>
+  </data>
+  <data name="FleetWindow_LevelAverage" xml:space="preserve">
+    <value>Average level</value>
+  </data>
+  <data name="FleetWindow_LevelTotal" xml:space="preserve">
+    <value>Total level</value>
+  </data>
+  <data name="FleetWindow_LoS" xml:space="preserve">
+    <value>View range</value>
+  </data>
+  <data name="FleetWindow_Status_CombinedNoExpedition" xml:space="preserve">
+    <value>Expedition impossible (combined)</value>
+  </data>
+  <data name="FleetWindow_Status_DamageInsignificant" xml:space="preserve">
+    <value>No significant damage</value>
+  </data>
+  <data name="FleetWindow_Status_DamageTaiha" xml:space="preserve">
+    <value>There are critically damaged ship girls</value>
+  </data>
+  <data name="FleetWindow_Status_DamageTaihaSortie" xml:space="preserve">
+    <value>There are ship girls in danger of sinking!</value>
+  </data>
+  <data name="FleetWindow_Status_Docked" xml:space="preserve">
+    <value>There are docked ship girls</value>
+  </data>
+  <data name="FleetWindow_Status_Expedition" xml:space="preserve">
+    <value>On an expedition</value>
+  </data>
+  <data name="FleetWindow_Status_FatigueTimer" xml:space="preserve">
+    <value>Morale recovers in</value>
+  </data>
+  <data name="FleetWindow_Status_NoDocked" xml:space="preserve">
+    <value>No ship girls are docked</value>
+  </data>
+  <data name="FleetWindow_Status_NoExpedition" xml:space="preserve">
+    <value>Not on an expedition</value>
+  </data>
+  <data name="FleetWindow_Status_NoFatigued" xml:space="preserve">
+    <value>No fatigued ship girls</value>
+  </data>
+  <data name="FleetWindow_Status_NotSortied" xml:space="preserve">
+    <value>Not on sortie</value>
+  </data>
+  <data name="FleetWindow_Status_Resupplied" xml:space="preserve">
+    <value>Resupplied</value>
+  </data>
+  <data name="FleetWindow_Status_ResupplyNeeded" xml:space="preserve">
+    <value>Resupply needed</value>
+  </data>
+  <data name="FleetWindow_Status_Sortied" xml:space="preserve">
+    <value>On sortie!</value>
+  </data>
+  <data name="FleetWindow_Status_SortieNotReady" xml:space="preserve">
+    <value>Not ready to sortie</value>
+  </data>
+  <data name="FleetWindow_Status_SortieReady" xml:space="preserve">
+    <value>Ready to sortie!</value>
+  </data>
+  <data name="FleetWindow_Title" xml:space="preserve">
+    <value>Fleet Details</value>
+  </data>
+  <data name="Ship_Condition_Docked" xml:space="preserve">
+    <value>In dock</value>
+  </data>
+  <data name="Ship_Condition_Healthy" xml:space="preserve">
+    <value>Healthy</value>
+  </data>
+  <data name="Ship_Condition_HealthyDamecon" xml:space="preserve">
+    <value>Healthy (Damecon)</value>
+  </data>
+  <data name="Ship_Condition_Taiha" xml:space="preserve">
+    <value>Critical (Sinkable)</value>
+  </data>
+  <data name="Ship_Condition_TaihaDamecon" xml:space="preserve">
+    <value>Critical (Damecon)</value>
+  </data>
+  <data name="Ship_Condition_Towed" xml:space="preserve">
+    <value>Critical (Towed)</value>
+  </data>
+  <data name="Ship_Condition_Towing" xml:space="preserve">
+    <value>Withdrew (Towing)</value>
+  </data>
 </root>

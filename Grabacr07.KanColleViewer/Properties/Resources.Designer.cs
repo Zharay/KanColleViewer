@@ -376,6 +376,15 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 速度混成艦隊.
+        /// </summary>
+        public static string Fleets_Speed_Hybrid {
+            get {
+                return ResourceManager.GetString("Fleets_Speed_Hybrid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 低速艦隊.
         /// </summary>
         public static string Fleets_Speed_Slow {
@@ -408,6 +417,195 @@ namespace Grabacr07.KanColleViewer.Properties {
         public static string Fleets_ViewRange_Equipment {
             get {
                 return ResourceManager.GetString("Fleets_ViewRange_Equipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 制空戦力.
+        /// </summary>
+        public static string FleetWindow_AirSuperiority {
+            get {
+                return ResourceManager.GetString("FleetWindow_AirSuperiority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 平均レベル.
+        /// </summary>
+        public static string FleetWindow_LevelAverage {
+            get {
+                return ResourceManager.GetString("FleetWindow_LevelAverage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 合計レベル.
+        /// </summary>
+        public static string FleetWindow_LevelTotal {
+            get {
+                return ResourceManager.GetString("FleetWindow_LevelTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 索敵値.
+        /// </summary>
+        public static string FleetWindow_LoS {
+            get {
+                return ResourceManager.GetString("FleetWindow_LoS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 連合艦隊は遠征に参加できません.
+        /// </summary>
+        public static string FleetWindow_Status_CombinedNoExpedition {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_CombinedNoExpedition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊の艦娘に大きなダメージはありません.
+        /// </summary>
+        public static string FleetWindow_Status_DamageInsignificant {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_DamageInsignificant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊に大破した艦娘がいます.
+        /// </summary>
+        public static string FleetWindow_Status_DamageTaiha {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_DamageTaiha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊に大破した艦娘がいます！.
+        /// </summary>
+        public static string FleetWindow_Status_DamageTaihaSortie {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_DamageTaihaSortie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊に入渠中の艦娘がいます.
+        /// </summary>
+        public static string FleetWindow_Status_Docked {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_Docked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊は遠征中です.
+        /// </summary>
+        public static string FleetWindow_Status_Expedition {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_Expedition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 疲労回復まで.
+        /// </summary>
+        public static string FleetWindow_Status_FatigueTimer {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_FatigueTimer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊の艦娘は入渠していません.
+        /// </summary>
+        public static string FleetWindow_Status_NoDocked {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_NoDocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊は遠征中ではありません.
+        /// </summary>
+        public static string FleetWindow_Status_NoExpedition {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_NoExpedition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊の艦娘は疲労していません.
+        /// </summary>
+        public static string FleetWindow_Status_NoFatigued {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_NoFatigued", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊は出撃していません.
+        /// </summary>
+        public static string FleetWindow_Status_NotSortied {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_NotSortied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊は補給済みです.
+        /// </summary>
+        public static string FleetWindow_Status_Resupplied {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_Resupplied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊に未補給の艦娘がいます.
+        /// </summary>
+        public static string FleetWindow_Status_ResupplyNeeded {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_ResupplyNeeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊は出撃中です！.
+        /// </summary>
+        public static string FleetWindow_Status_Sortied {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_Sortied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊の出撃準備は完了していません.
+        /// </summary>
+        public static string FleetWindow_Status_SortieNotReady {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_SortieNotReady", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 出撃準備完了！.
+        /// </summary>
+        public static string FleetWindow_Status_SortieReady {
+            get {
+                return ResourceManager.GetString("FleetWindow_Status_SortieReady", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 艦隊詳細.
+        /// </summary>
+        public static string FleetWindow_Title {
+            get {
+                return ResourceManager.GetString("FleetWindow_Title", resourceCulture);
             }
         }
         
@@ -1721,6 +1919,69 @@ namespace Grabacr07.KanColleViewer.Properties {
         public static string Settings_WindowControl_LocationLeftButton_Sub {
             get {
                 return ResourceManager.GetString("Settings_WindowControl_LocationLeftButton_Sub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 入渠中.
+        /// </summary>
+        public static string Ship_Condition_Docked {
+            get {
+                return ResourceManager.GetString("Ship_Condition_Docked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 健在.
+        /// </summary>
+        public static string Ship_Condition_Healthy {
+            get {
+                return ResourceManager.GetString("Ship_Condition_Healthy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 健在・ダメコン搭載.
+        /// </summary>
+        public static string Ship_Condition_HealthyDamecon {
+            get {
+                return ResourceManager.GetString("Ship_Condition_HealthyDamecon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 大破 (轟沈の可能性あり).
+        /// </summary>
+        public static string Ship_Condition_Taiha {
+            get {
+                return ResourceManager.GetString("Ship_Condition_Taiha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 大破 (ダメコン使用可能).
+        /// </summary>
+        public static string Ship_Condition_TaihaDamecon {
+            get {
+                return ResourceManager.GetString("Ship_Condition_TaihaDamecon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 大破 (退避済み).
+        /// </summary>
+        public static string Ship_Condition_Towed {
+            get {
+                return ResourceManager.GetString("Ship_Condition_Towed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 撤退 (護衛退避).
+        /// </summary>
+        public static string Ship_Condition_Towing {
+            get {
+                return ResourceManager.GetString("Ship_Condition_Towing", resourceCulture);
             }
         }
         

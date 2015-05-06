@@ -918,4 +918,91 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="System_Flash_Not_Installed_Text" xml:space="preserve">
     <value>Adobe Flash for Microsoft Internet Explorer is required by KCV! but is not installed. Would you like to download and install it now?</value>
   </data>
+  <data name="Fleets_Speed_Hybrid" xml:space="preserve">
+    <value>速度混成艦隊</value>
+  </data>
+  <data name="FleetWindow_AirSuperiority" xml:space="preserve">
+    <value>制空戦力</value>
+  </data>
+  <data name="FleetWindow_LevelAverage" xml:space="preserve">
+    <value>平均レベル</value>
+  </data>
+  <data name="FleetWindow_LevelTotal" xml:space="preserve">
+    <value>合計レベル</value>
+  </data>
+  <data name="FleetWindow_LoS" xml:space="preserve">
+    <value>索敵値</value>
+  </data>
+  <data name="FleetWindow_Status_CombinedNoExpedition" xml:space="preserve">
+    <value>連合艦隊は遠征に参加できません</value>
+  </data>
+  <data name="FleetWindow_Status_DamageInsignificant" xml:space="preserve">
+    <value>艦隊の艦娘に大きなダメージはありません</value>
+  </data>
+  <data name="FleetWindow_Status_DamageTaiha" xml:space="preserve">
+    <value>艦隊に大破した艦娘がいます</value>
+  </data>
+  <data name="FleetWindow_Status_DamageTaihaSortie" xml:space="preserve">
+    <value>艦隊に大破した艦娘がいます！</value>
+  </data>
+  <data name="FleetWindow_Status_Docked" xml:space="preserve">
+    <value>艦隊に入渠中の艦娘がいます</value>
+  </data>
+  <data name="FleetWindow_Status_Expedition" xml:space="preserve">
+    <value>艦隊は遠征中です</value>
+  </data>
+  <data name="FleetWindow_Status_FatigueTimer" xml:space="preserve">
+    <value>疲労回復まで</value>
+  </data>
+  <data name="FleetWindow_Status_NoDocked" xml:space="preserve">
+    <value>艦隊の艦娘は入渠していません</value>
+  </data>
+  <data name="FleetWindow_Status_NoExpedition" xml:space="preserve">
+    <value>艦隊は遠征中ではありません</value>
+  </data>
+  <data name="FleetWindow_Status_NoFatigued" xml:space="preserve">
+    <value>艦隊の艦娘は疲労していません</value>
+  </data>
+  <data name="FleetWindow_Status_NotSortied" xml:space="preserve">
+    <value>艦隊は出撃していません</value>
+  </data>
+  <data name="FleetWindow_Status_Resupplied" xml:space="preserve">
+    <value>艦隊は補給済みです</value>
+  </data>
+  <data name="FleetWindow_Status_ResupplyNeeded" xml:space="preserve">
+    <value>艦隊に未補給の艦娘がいます</value>
+  </data>
+  <data name="FleetWindow_Status_Sortied" xml:space="preserve">
+    <value>艦隊は出撃中です！</value>
+  </data>
+  <data name="FleetWindow_Status_SortieNotReady" xml:space="preserve">
+    <value>艦隊の出撃準備は完了していません</value>
+  </data>
+  <data name="FleetWindow_Status_SortieReady" xml:space="preserve">
+    <value>出撃準備完了！</value>
+  </data>
+  <data name="FleetWindow_Title" xml:space="preserve">
+    <value>艦隊詳細</value>
+  </data>
+  <data name="Ship_Condition_Docked" xml:space="preserve">
+    <value>入渠中</value>
+  </data>
+  <data name="Ship_Condition_Healthy" xml:space="preserve">
+    <value>健在</value>
+  </data>
+  <data name="Ship_Condition_HealthyDamecon" xml:space="preserve">
+    <value>健在・ダメコン搭載</value>
+  </data>
+  <data name="Ship_Condition_Taiha" xml:space="preserve">
+    <value>大破 (轟沈の可能性あり)</value>
+  </data>
+  <data name="Ship_Condition_TaihaDamecon" xml:space="preserve">
+    <value>大破 (ダメコン使用可能)</value>
+  </data>
+  <data name="Ship_Condition_Towed" xml:space="preserve">
+    <value>大破 (退避済み)</value>
+  </data>
+  <data name="Ship_Condition_Towing" xml:space="preserve">
+    <value>撤退 (護衛退避)</value>
+  </data>
 </root>
