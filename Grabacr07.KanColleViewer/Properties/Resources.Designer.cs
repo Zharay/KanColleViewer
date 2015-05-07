@@ -358,6 +358,15 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 艦隊詳細.
+        /// </summary>
+        public static string Fleets_Button_Details {
+            get {
+                return ResourceManager.GetString("Fleets_Button_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to レベル.
         /// </summary>
         public static string Fleets_Level {

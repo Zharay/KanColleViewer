@@ -992,4 +992,7 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Ship_Condition_Towing" xml:space="preserve">
     <value>Withdrew (Towing)</value>
   </data>
+  <data name="Fleets_Button_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
 </root>

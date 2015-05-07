@@ -1005,4 +1005,7 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Ship_Condition_Towing" xml:space="preserve">
     <value>撤退 (護衛退避)</value>
   </data>
+  <data name="Fleets_Button_Details" xml:space="preserve">
+    <value>艦隊詳細</value>
+  </data>
 </root>
