@@ -210,7 +210,7 @@
 															   Value="True" />
 												</MultiDataTrigger.Conditions>
 												<Setter Property="Text"
-														Value="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Ship_Condition_Damecon, StringFormat='{}{0}', Mode=OneWay}" />
+														Value="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Ship_Condition_HealthyDamecon, StringFormat='{}{0}', Mode=OneWay}" />
 											</MultiDataTrigger>
 											<MultiDataTrigger>
 												<MultiDataTrigger.Conditions>
@@ -260,7 +260,7 @@
 															   Value="True" />
 												</MultiDataTrigger.Conditions>
 												<Setter Property="Text"
-														Value="入渠中" />
+														Value="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Ship_Condition_Docked, StringFormat='{}{0}', Mode=OneWay}" />
 												<Setter Property="Background"
 														Value="{DynamicResource FleetRepairingBrushKey}" />
 											</MultiDataTrigger>
