@@ -19,6 +19,7 @@ This is the translation project of the original [KanColleViewer](http://grabacr.
 All builds can be found in the following links below.
 
 * [GitHub Releases](https://github.com/Yuubari/KanColleViewer/releases) -- Major revision binaries
+* [KCV Downloads](http://kcv.koumakan.jp/downloads/) -- Yuubari's personal mirror (Paris, France)
 
 ## To Do
 * An update of the horizontal version of KCV — work in progress
