@@ -140,8 +140,7 @@
 
 					<ScrollViewer HorizontalScrollBarVisibility="Auto"
 								  VerticalScrollBarVisibility="Disabled">
-						<ItemsControl ItemsSource="{Binding Ships}"
-                                      DataContext="{Binding SelectedFleet}"
+						<ItemsControl ItemsSource="{Binding SelectedFleet.Ships}"
                                       d:DataContext="{d:DesignData /SampleData/FleetViewModelSampleData.xaml}"
 									  Background="Transparent"
 									  Grid.IsSharedSizeScope="True">
