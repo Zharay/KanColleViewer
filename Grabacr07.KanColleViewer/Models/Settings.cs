@@ -18,7 +18,7 @@ namespace Grabacr07.KanColleViewer.Models
 
 		private static readonly string filePath = Path.Combine(
 			Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-			"grabacr.net",
+			"Smooth and Flat",
 			"KanColleViewer",
 			"Settings.xml");
 
