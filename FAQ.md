@@ -72,9 +72,12 @@ Check if the game works in your system's Internet Explorer and try clearing your
 #### Instead of showing the game, KCV tells me to download something.
 Install [Adobe Flash Player](http://get.adobe.com/flashplayer/).
 
-#### Instead of showing the game I only see a small red cross in the top left corner.
+#### Instead of the game I only see a small red cross in the top left corner.
 Most probably you have Flash disabled in your Add-on settings in Internet Explorer. Click the gear icon on the toolbar (it's on the very right) and choose **Manage Add-ons**; check if Adobe Flash is disabled under the **Toolbars and extensions** category.
 *Important note:* Adobe Flash might not be present in the extension list because Internet Explorer has its own Flash plug-in. If that is the case, try installing Adobe's version.
+
+#### Instead of the game I only see a small red cross in the top left corner.
+You may have ActiveX filtered or disabled in your Internet Explorer settings. Adobe Flash uses ActiveX; disable filtering and/or enable ActiveX in Internet Explorer settings.
 
 #### How to make KCV load my API link automatically?
 Edit `KanColleViewer.exe.config` (or the appropriate configuration file for the horizontal build).
