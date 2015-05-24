@@ -230,6 +230,7 @@
     <Compile Include="Views\Behaviors\SetWindowLocationAction.cs" />
     <Compile Include="Views\Behaviors\TimerBehavior.cs" />
     <Compile Include="Views\Controls\CrossFrameIE.cs" />
+    <Compile Include="Views\Controls\GridViewColumnCollapsible.cs" />
     <Compile Include="Views\Converters\BooleanToWidthConverter.cs" />
     <Compile Include="Views\Contents\StateDetailIndicator.xaml.cs">
       <DependentUpon>StateDetailIndicator.xaml</DependentUpon>

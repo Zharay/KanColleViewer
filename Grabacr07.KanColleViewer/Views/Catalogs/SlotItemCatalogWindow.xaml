@@ -185,14 +185,14 @@
 								</GridViewColumn.CellTemplate>
 							</GridViewColumn>
 
-							<GridViewColumn Width="100" 
-											behaviors:GridViewColumnVisibilityManager.IsVisible="{Binding ShowStats}">
+							<controls:GridViewColumnCollapsible Width="100"
+																Visibility="{Binding ShowStats, Converter={StaticResource BooleanToVisibilityConverterKey}}">
 								<GridViewColumnHeader Visibility="{Binding ShowStats, Converter={StaticResource BooleanToVisibilityConverterKey}}">
 									<TextBlock>
 										<Run Text="Stats" />
 									</TextBlock>
 								</GridViewColumnHeader>
-								<GridViewColumn.CellTemplate>
+								<controls:GridViewColumnCollapsible.CellTemplate>
 									<DataTemplate DataType="{x:Type viewModels:SlotItemCounter}">
 										<TextBlock Margin="0,4"
 												   TextWrapping="Wrap">
@@ -200,8 +200,8 @@
 												 Foreground="{DynamicResource ActiveForegroundBrushKey}" />
 										</TextBlock>
 									</DataTemplate>
-								</GridViewColumn.CellTemplate>
-							</GridViewColumn>
+								</controls:GridViewColumnCollapsible.CellTemplate>
+							</controls:GridViewColumnCollapsible>
 
 							<GridViewColumn Width="650">
 								<GridViewColumn.Header>
