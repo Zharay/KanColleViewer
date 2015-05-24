@@ -185,7 +185,7 @@
 								</GridViewColumn.CellTemplate>
 							</GridViewColumn>
 
-							<!-- <GridViewColumn Width="100" 
+							<GridViewColumn Width="100" 
 											behaviors:GridViewColumnVisibilityManager.IsVisible="{Binding ShowStats}">
 								<GridViewColumnHeader Visibility="{Binding ShowStats, Converter={StaticResource BooleanToVisibilityConverterKey}}">
 									<TextBlock>
@@ -193,7 +193,7 @@
 									</TextBlock>
 								</GridViewColumnHeader>
 								<GridViewColumn.CellTemplate>
-									<DataTemplate DataType="{x:Type viewModels:SlotItemViewModel}">
+									<DataTemplate DataType="{x:Type viewModels:SlotItemCounter}">
 										<TextBlock Margin="0,4"
 												   TextWrapping="Wrap">
 											<Run Text="{Binding Detail, Mode=OneWay}"
@@ -201,7 +201,7 @@
 										</TextBlock>
 									</DataTemplate>
 								</GridViewColumn.CellTemplate>
-							</GridViewColumn> -->
+							</GridViewColumn>
 
 							<GridViewColumn Width="650">
 								<GridViewColumn.Header>
@@ -209,7 +209,7 @@
 										<Border Width="52"
 												BorderThickness="0,0,1,0"
 												BorderBrush="{DynamicResource BorderBrushKey}">
-											<TextBlock Text="Improvement" />
+											<TextBlock Text="★" />
 										</Border>
 										<Border Width="82"
 												BorderThickness="0,0,1,0"
