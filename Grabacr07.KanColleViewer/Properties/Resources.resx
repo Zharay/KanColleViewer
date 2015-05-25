@@ -1008,4 +1008,184 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Fleets_Button_Details" xml:space="preserve">
     <value>艦隊詳細</value>
   </data>
+  <data name="ShipCatalog_Column_AntiAir" xml:space="preserve">
+    <value>対空</value>
+  </data>
+  <data name="ShipCatalog_Column_Armour" xml:space="preserve">
+    <value>装甲</value>
+  </data>
+  <data name="ShipCatalog_Column_ASW" xml:space="preserve">
+    <value>対潜</value>
+  </data>
+  <data name="ShipCatalog_Column_ObtainedID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="ShipCatalog_Column_Condition" xml:space="preserve">
+    <value>Cond.</value>
+  </data>
+  <data name="ShipCatalog_Column_Equipped" xml:space="preserve">
+    <value>装備</value>
+  </data>
+  <data name="ShipCatalog_Column_Evasion" xml:space="preserve">
+    <value>回避</value>
+  </data>
+  <data name="ShipCatalog_Column_Firepower" xml:space="preserve">
+    <value>火力</value>
+  </data>
+  <data name="ShipCatalog_Column_HullCode" xml:space="preserve">
+    <value>艦種</value>
+  </data>
+  <data name="ShipCatalog_Column_Level" xml:space="preserve">
+    <value>レベル</value>
+  </data>
+  <data name="ShipCatalog_Column_Luck" xml:space="preserve">
+    <value>運</value>
+  </data>
+  <data name="ShipCatalog_Column_Name" xml:space="preserve">
+    <value>艦名</value>
+  </data>
+  <data name="ShipCatalog_Column_Torpedo" xml:space="preserve">
+    <value>雷装</value>
+  </data>
+  <data name="ShipCatalog_Column_ViewRange" xml:space="preserve">
+    <value>索敵</value>
+  </data>
+  <data name="ShipCatalog_Sort_Apply" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="ShipCatalog_Sort_Ascending" xml:space="preserve">
+    <value>昇順</value>
+  </data>
+  <data name="ShipCatalog_Sort_Clear" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+  <data name="ShipCatalog_Sort_Descending" xml:space="preserve">
+    <value>降順</value>
+  </data>
+  <data name="ShipCatalog_Sort_Prompt" xml:space="preserve">
+    <value>方法</value>
+  </data>
+  <data name="ShipCatalog_Sort_Subtitle" xml:space="preserve">
+    <value>艦娘を以下の順序で並べ替えます。</value>
+  </data>
+  <data name="ShipCatalog_Sort_Title" xml:space="preserve">
+    <value>並べ替え設定</value>
+  </data>
+  <data name="ShipCatalog_Sort_None" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="ShipCatalog_AdditionalStats" xml:space="preserve">
+    <value>Show additional stats</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls" xml:space="preserve">
+    <value>艦種</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_BB" xml:space="preserve">
+    <value>戦艦</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_CA" xml:space="preserve">
+    <value>重巡・航巡</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_CL" xml:space="preserve">
+    <value>軽巡・雷巡</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_CV" xml:space="preserve">
+    <value>航空母艦</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_DD" xml:space="preserve">
+    <value>駆逐艦</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_Misc" xml:space="preserve">
+    <value>他の</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_SeaplaneBomberCapable" xml:space="preserve">
+    <value>航戦・航巡</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_SelectAll" xml:space="preserve">
+    <value>すべて選択</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_SS" xml:space="preserve">
+    <value>潜水艦</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_All" xml:space="preserve">
+    <value>すべて</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_ExcludeOnExpedition" xml:space="preserve">
+    <value>遠征中の艦を除外する</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Expedition" xml:space="preserve">
+    <value>遠征</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Level" xml:space="preserve">
+    <value>レベル</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Level1" xml:space="preserve">
+    <value>Lv.1</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Level2Up" xml:space="preserve">
+    <value>Lv.2 以上</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Lock" xml:space="preserve">
+    <value>ロック</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_LockedNo" xml:space="preserve">
+    <value>ロックしていない</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_LockedYes" xml:space="preserve">
+    <value>ロックしている</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Modernised" xml:space="preserve">
+    <value>近代化改修</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_ModernisedNo" xml:space="preserve">
+    <value>改修未完</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_ModernisedYes" xml:space="preserve">
+    <value>改修完了</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Remodelled" xml:space="preserve">
+    <value>改造</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_RemodelledNo" xml:space="preserve">
+    <value>改造未完</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_RemodelledYes" xml:space="preserve">
+    <value>改造完了</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Speed" xml:space="preserve">
+    <value>速力</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_SpeedFast" xml:space="preserve">
+    <value>高速</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_SpeedSlow" xml:space="preserve">
+    <value>低速</value>
+  </data>
+  <data name="ShipCatalog_Filter_Reset" xml:space="preserve">
+    <value>Reset Filter Settings</value>
+  </data>
+  <data name="ShipCatalog_Filter_SaveSettings" xml:space="preserve">
+    <value>Save Filter Settings</value>
+  </data>
+  <data name="ShipCatalog_Filter_SaveSettings_ToolTip" xml:space="preserve">
+    <value>Does not include ship types!</value>
+  </data>
+  <data name="ShipCatalog_Filter_Title" xml:space="preserve">
+    <value>フィルター設定</value>
+  </data>
+  <data name="ShipCatalog_SortBy_CatalogID" xml:space="preserve">
+    <value>CatalogID</value>
+  </data>
+  <data name="ShipCatalog_SortBy_Condition" xml:space="preserve">
+    <value>Condition 値</value>
+  </data>
+  <data name="ShipCatalog_SortBy_Experience" xml:space="preserve">
+    <value>次のレベルまでの経験値</value>
+  </data>
+  <data name="ShipCatalog_SortBy_MaxHP" xml:space="preserve">
+    <value>耐久</value>
+  </data>
+  <data name="ShipCatalog_WindowTitle" xml:space="preserve">
+    <value>所属艦娘一覧</value>
+  </data>
 </root>

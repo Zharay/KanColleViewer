@@ -995,4 +995,184 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Fleets_Button_Details" xml:space="preserve">
     <value>Details</value>
   </data>
+  <data name="ShipCatalog_Column_AntiAir" xml:space="preserve">
+    <value>Anti-Air</value>
+  </data>
+  <data name="ShipCatalog_Column_Armour" xml:space="preserve">
+    <value>Armour</value>
+  </data>
+  <data name="ShipCatalog_Column_ASW" xml:space="preserve">
+    <value>ASW</value>
+  </data>
+  <data name="ShipCatalog_Column_ObtainedID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="ShipCatalog_Column_Condition" xml:space="preserve">
+    <value>Cond.</value>
+  </data>
+  <data name="ShipCatalog_Column_Equipped" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="ShipCatalog_Column_Evasion" xml:space="preserve">
+    <value>Evasion</value>
+  </data>
+  <data name="ShipCatalog_Column_Firepower" xml:space="preserve">
+    <value>Firepower</value>
+  </data>
+  <data name="ShipCatalog_Column_HullCode" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ShipCatalog_Column_Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="ShipCatalog_Column_Luck" xml:space="preserve">
+    <value>Luck</value>
+  </data>
+  <data name="ShipCatalog_Column_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ShipCatalog_Column_Torpedo" xml:space="preserve">
+    <value>Torpedo</value>
+  </data>
+  <data name="ShipCatalog_Column_ViewRange" xml:space="preserve">
+    <value>LoS</value>
+  </data>
+  <data name="ShipCatalog_Sort_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="ShipCatalog_Sort_Ascending" xml:space="preserve">
+    <value>Asc.</value>
+  </data>
+  <data name="ShipCatalog_Sort_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="ShipCatalog_Sort_Descending" xml:space="preserve">
+    <value>Desc.</value>
+  </data>
+  <data name="ShipCatalog_Sort_Prompt" xml:space="preserve">
+    <value>Choose…</value>
+  </data>
+  <data name="ShipCatalog_Sort_Subtitle" xml:space="preserve">
+    <value>Sort the list in the following order:</value>
+  </data>
+  <data name="ShipCatalog_Sort_Title" xml:space="preserve">
+    <value>Sorting</value>
+  </data>
+  <data name="ShipCatalog_Sort_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ShipCatalog_AdditionalStats" xml:space="preserve">
+    <value>Show additional stats</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls" xml:space="preserve">
+    <value>Hull Classification</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_BB" xml:space="preserve">
+    <value>Battleships</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_CA" xml:space="preserve">
+    <value>Heavy Cruisers</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_CL" xml:space="preserve">
+    <value>Light Cruisers</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_CV" xml:space="preserve">
+    <value>Fleet Carriers</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_DD" xml:space="preserve">
+    <value>Destroyers</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_Misc" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_SeaplaneBomberCapable" xml:space="preserve">
+    <value>Aviation Ships</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_SelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="ShipCatalog_Filter_Hulls_SS" xml:space="preserve">
+    <value>Submarines</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_ExcludeOnExpedition" xml:space="preserve">
+    <value>Exclude ships on expeditions</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Expedition" xml:space="preserve">
+    <value>Expedition</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Level1" xml:space="preserve">
+    <value>Lv. 1</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Level2Up" xml:space="preserve">
+    <value>Lv. 2 and up</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Lock" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_LockedNo" xml:space="preserve">
+    <value>Not locked</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_LockedYes" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Modernised" xml:space="preserve">
+    <value>Modernisation</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_ModernisedNo" xml:space="preserve">
+    <value>Not maxed</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_ModernisedYes" xml:space="preserve">
+    <value>Maxed</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Remodelled" xml:space="preserve">
+    <value>Remodels</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_RemodelledNo" xml:space="preserve">
+    <value>Not remodelled</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_RemodelledYes" xml:space="preserve">
+    <value>Remodelled</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_Speed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_SpeedFast" xml:space="preserve">
+    <value>Fast</value>
+  </data>
+  <data name="ShipCatalog_Filter_Misc_SpeedSlow" xml:space="preserve">
+    <value>Slow</value>
+  </data>
+  <data name="ShipCatalog_Filter_Reset" xml:space="preserve">
+    <value>Reset Filter Settings</value>
+  </data>
+  <data name="ShipCatalog_Filter_SaveSettings" xml:space="preserve">
+    <value>Save Filter Settings</value>
+  </data>
+  <data name="ShipCatalog_Filter_SaveSettings_ToolTip" xml:space="preserve">
+    <value>Does not include ship types!</value>
+  </data>
+  <data name="ShipCatalog_Filter_Title" xml:space="preserve">
+    <value>Filter and Settings</value>
+  </data>
+  <data name="ShipCatalog_SortBy_CatalogID" xml:space="preserve">
+    <value>Catalog ID</value>
+  </data>
+  <data name="ShipCatalog_SortBy_Condition" xml:space="preserve">
+    <value>Morale</value>
+  </data>
+  <data name="ShipCatalog_SortBy_Experience" xml:space="preserve">
+    <value>Experience</value>
+  </data>
+  <data name="ShipCatalog_SortBy_MaxHP" xml:space="preserve">
+    <value>Maximum HP</value>
+  </data>
+  <data name="ShipCatalog_WindowTitle" xml:space="preserve">
+    <value>Ship Girl Roster</value>
+  </data>
 </root>

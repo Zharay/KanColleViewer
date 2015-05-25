@@ -7,6 +7,7 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Threading.Tasks;
 using Grabacr07.KanColleViewer.ViewModels.Contents;
+using Grabacr07.KanColleViewer.Properties;
 using Grabacr07.KanColleWrapper;
 using Livet.EventListeners;
 using Settings = Grabacr07.KanColleViewer.Models.Settings;
@@ -175,7 +176,7 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 
 		public ShipCatalogWindowViewModel()
 		{
-			this.Title = "Ship Girl Roster";
+			this.Title = Resources.ShipCatalog_WindowTitle;
 			this.IsOpenFilterSettings = true;
 
 			this.SortWorker = new ShipCatalogSortWorker();
