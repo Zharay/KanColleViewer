@@ -1188,4 +1188,7 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="ShipCatalog_WindowTitle" xml:space="preserve">
     <value>所属艦娘一覧</value>
   </data>
+  <data name="SlotItemCatalog_WindowTitle" xml:space="preserve">
+    <value>所有装備一覧</value>
+  </data>
 </root>

@@ -2697,6 +2697,15 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 所有装備一覧.
+        /// </summary>
+        public static string SlotItemCatalog_WindowTitle {
+            get {
+                return ResourceManager.GetString("SlotItemCatalog_WindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to キャッシュの削除.
         /// </summary>
         public static string StartContent_ClearCacheButton {

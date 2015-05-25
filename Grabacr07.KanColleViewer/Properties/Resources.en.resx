@@ -1175,4 +1175,7 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="ShipCatalog_WindowTitle" xml:space="preserve">
     <value>Ship Girl Roster</value>
   </data>
+  <data name="SlotItemCatalog_WindowTitle" xml:space="preserve">
+    <value>Equipment Roster</value>
+  </data>
 </root>

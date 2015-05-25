@@ -7,6 +7,7 @@ using System.Reactive.Subjects;
 using System.Threading.Tasks;
 using Grabacr07.KanColleWrapper;
 using Grabacr07.KanColleWrapper.Models;
+using Grabacr07.KanColleViewer.Properties;
 using Livet;
 using Settings = Grabacr07.KanColleViewer.Models.Settings;
 
@@ -73,7 +74,7 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 
 		public SlotItemCatalogViewModel()
 		{
-			this.Title = "所有装備一覧";
+			this.Title = Resources.SlotItemCatalog_WindowTitle;
 
 			var listener = this.updateSource
 				.Do(_ => this.IsReloading = true)
