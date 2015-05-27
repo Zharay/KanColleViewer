@@ -38,15 +38,17 @@ namespace Grabacr07.KanColleWrapper.Models
 					case ShipTypeId.Submarine:
 						return 0.5;
 					case ShipTypeId.HeavyCruiser:
-					case ShipTypeId.RepairShip:
+					case ShipTypeId.AerialCruiser:
 					case ShipTypeId.FastBattleship:
 					case ShipTypeId.LightAircraftCarrier:
+					case ShipTypeId.SubmarineTender:
 						return 1.5;
 					case ShipTypeId.Battleship:
 					case ShipTypeId.Superdreadnought:
 					case ShipTypeId.AerialBattleship:
 					case ShipTypeId.AircraftCarrier:
 					case ShipTypeId.ArmoredAircraftCarrier:
+					case ShipTypeId.RepairShip:
 						return 2;
 					default:
 						return 1;
