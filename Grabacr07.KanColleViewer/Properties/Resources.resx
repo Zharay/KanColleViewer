@@ -1191,4 +1191,7 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="SlotItemCatalog_WindowTitle" xml:space="preserve">
     <value>所有装備一覧</value>
   </data>
+  <data name="Stats_RemodelLevel" xml:space="preserve">
+    <value>Next Remodel</value>
+  </data>
 </root>

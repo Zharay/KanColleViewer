@@ -2922,6 +2922,15 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next Remodel.
+        /// </summary>
+        public static string Stats_RemodelLevel {
+            get {
+                return ResourceManager.GetString("Stats_RemodelLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sight Rng.
         /// </summary>
         public static string Stats_SightRange {

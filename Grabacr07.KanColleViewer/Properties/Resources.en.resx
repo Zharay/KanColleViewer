@@ -1178,4 +1178,7 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="SlotItemCatalog_WindowTitle" xml:space="preserve">
     <value>Equipment Roster</value>
   </data>
+  <data name="Stats_RemodelLevel" xml:space="preserve">
+    <value>Next Remodel</value>
+  </data>
 </root>

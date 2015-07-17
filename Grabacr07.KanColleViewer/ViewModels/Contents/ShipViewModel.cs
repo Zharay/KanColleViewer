@@ -33,7 +33,9 @@ namespace Grabacr07.KanColleViewer.ViewModels.Contents
 				string AddDetail = "";
 				if (this.Ship.Info.UntranslatedName != "")
 					AddDetail += this.Ship.Info.UntranslatedName + "\n";
-				AddDetail += string.Format("{0}: {1} ({2})\n", Resources.Stats_Firepower, this.Ship.Firepower.Current, (this.Ship.Firepower.IsMax ? @"MAX" : "+" + (this.Ship.Firepower.Max - this.Ship.Firepower.Current).ToString()));
+				if (this.Ship.Info.NextRemodelingLevel != null)
+					AddDetail += string.Format("{0}: Lv. {1}\n", Resources.Stats_RemodelLevel, this.Ship.Info.NextRemodelingLevel);
+                AddDetail += string.Format("{0}: {1} ({2})\n", Resources.Stats_Firepower, this.Ship.Firepower.Current, (this.Ship.Firepower.IsMax ? @"MAX" : "+" + (this.Ship.Firepower.Max - this.Ship.Firepower.Current).ToString()));
 				AddDetail += string.Format("{0}: {1} ({2})\n", Resources.Stats_Torpedo, this.Ship.Torpedo.Current, (this.Ship.Torpedo.IsMax ? @"MAX" : "+" + (this.Ship.Torpedo.Max - this.Ship.Torpedo.Current).ToString()));
 				AddDetail += string.Format("{0}: {1} ({2})\n", Resources.Stats_AntiAir, this.Ship.AA.Current, (this.Ship.AA.IsMax ? @"MAX" : "+" + (this.Ship.AA.Max - this.Ship.AA.Current).ToString()));
 				AddDetail += string.Format("{0}: {1} ({2})\n", Resources.Stats_Armor, this.Ship.Armer.Current, (this.Ship.Armer.IsMax ? @"MAX" : "+" + (this.Ship.Armer.Max - this.Ship.Armer.Current).ToString()));
