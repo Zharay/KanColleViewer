@@ -13,10 +13,12 @@
 				   xmlns:viewModels="clr-namespace:Grabacr07.KanColleViewer.ViewModels"
 				   xmlns:behaviors="clr-namespace:Grabacr07.KanColleViewer.Views.Behaviors"
 				   xmlns:controls="clr-namespace:Grabacr07.KanColleViewer.Views.Controls"
+				   xmlns:models="clr-namespace:Grabacr07.KanColleViewer.Models"
 				   mc:Ignorable="d"
 				   d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel}"
 				   Style="{DynamicResource MetroDialogStyleKey}"
-				   Title="EXIT KanColleViewer"
+				   Background="{DynamicResource ThemeBrushKey}"
+				   Title="{Binding Resources.ExitDialogTitle, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 				   WindowStartupLocation="CenterScreen"
 				   SizeToContent="Height">
 	<Grid>
@@ -25,11 +27,12 @@
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 
-		<TextBlock Text="「KanColleViewer!」 will close. Are you sure?"
+		<TextBlock Text="{Binding Resources.ExitDialogConfirm, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 				   FontSize="13"
 				   Foreground="{DynamicResource ActiveForegroundBrushKey}"
 				   Margin="10,0"
-				   HorizontalAlignment="Left" />
+				   HorizontalAlignment="Left"
+				   VerticalAlignment="Center"/>
 
 		<StackPanel Grid.Row="1"
 					Orientation="Horizontal"
@@ -39,11 +42,22 @@
 			<metro2:CallMethodButton Content="OK"
 									 MinWidth="100"
 									 Padding="20,5"
-									 Margin="12,0,0,0" />
+									 Margin="12,0,0,0" 
+									 MethodName="ForceClose" />
 			<metro2:CallMethodButton Content="Cancel"
 									 MinWidth="100"
 									 Padding="20,5"
-									 Margin="12,0,0,0" />
+									 Margin="12,0,0,0">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Click">
+						<livet:WindowInteractionMessageAction>
+							<livet:DirectInteractionMessage>
+								<livet:WindowActionMessage />
+							</livet:DirectInteractionMessage>
+						</livet:WindowInteractionMessageAction>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</metro2:CallMethodButton>
 		</StackPanel>
 	</Grid>
 </metro:MetroWindow>

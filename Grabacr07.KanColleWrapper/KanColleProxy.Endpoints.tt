@@ -22,18 +22,33 @@
 		"/kcsapi/api_get_member/kdock",
 		"/kcsapi/api_get_member/material",
 		"/kcsapi/api_get_member/questlist",
-		"/kcsapi/api_req_sortie/battleresult",
+		"/kcsapi/api_get_member/ship_deck",
+		"/kcsapi/api_req_battle_midnight/battle",
 		"/kcsapi/api_req_hensei/change",
+		"/kcsapi/api_req_hokyu/charge",
+		"/kcsapi/api_req_kaisou/powerup",
 		"/kcsapi/api_req_kousyou/getship",
 		"/kcsapi/api_req_kousyou/createitem",
 		"/kcsapi/api_req_kousyou/createship",
 		"/kcsapi/api_req_kousyou/createship_speedchange",
 		"/kcsapi/api_req_kousyou/destroyship",
 		"/kcsapi/api_req_kousyou/destroyitem2",
+		"/kcsapi/api_req_kousyou/remodel_slotlist",
+		"/kcsapi/api_req_kousyou/remodel_slotlist_detail",
+		"/kcsapi/api_req_kousyou/remodel_slot",
 		"/kcsapi/api_req_nyukyo/start",
 		"/kcsapi/api_req_nyukyo/speedchange",
-		"/kcsapi/api_req_hokyu/charge",
-		"/kcsapi/api_req_kaisou/powerup",
+		"/kcsapi/api_req_map/start",
+		"/kcsapi/api_req_member/updatedeckname",
+		"/kcsapi/api_req_member/updatecomment",
+		"/kcsapi/api_req_mission/result",
+		"/kcsapi/api_req_sortie/battle",
+		"/kcsapi/api_req_sortie/battleresult",
+		"/kcsapi/api_req_hensei/combined",
+		"/kcsapi/api_req_combined_battle/battle",
+		"/kcsapi/api_req_combined_battle/airbattle",
+		"/kcsapi/api_req_combined_battle/battleresult",
+		"/kcsapi/api_req_combined_battle/goback_port",
 	};
 #>
 // 
@@ -46,13 +61,12 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Fiddler;
+// ReSharper disable InconsistentNaming
 
 namespace Grabacr07.KanColleWrapper
 {
 	partial class KanColleProxy
 	{
-		// ReSharper disable InconsistentNaming
-
 <#
 	foreach (var endpoint in endpoints)
 	{	
@@ -75,22 +89,5 @@ namespace Grabacr07.KanColleWrapper
 <#
 	}
 #>
-		// ReSharper restore InconsistentNaming
 	}
 }
-
-<#+
-	private class Node
-	{
-		public string Name { get; private set; }
-		public List<string> Methods { get; private set; }
-		public List<Node> Children { get; private set; }
-
-		public Node(string name)
-		{
-			this.Name = name;
-			this.Methods = new List<string>();
-			this.Children = new List<Node>();
-		}
-	}
-#>

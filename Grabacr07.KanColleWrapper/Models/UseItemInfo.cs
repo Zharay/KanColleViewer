@@ -15,15 +15,15 @@ namespace Grabacr07.KanColleWrapper.Models
 	{
 		public int Id
 		{
-			get { return this.RawData.api_id; }
+		    get { return this.RawData.api_id; }
 		}
 
-		public string Name
-		{
-			get { return this.RawData.api_name; }
-		}
+	    public string Name
+	    {
+	        get { return this.RawData.api_name; }
+	    }
 
-		internal UseItemInfo(kcsapi_mst_useitem rawData) : base(rawData) { }
+	    internal UseItemInfo(kcsapi_mst_useitem rawData) : base(rawData) { }
 
 		public override string ToString()
 		{

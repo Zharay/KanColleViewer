@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 namespace Grabacr07.KanColleWrapper.Models.Raw
 {
 	// ReSharper disable InconsistentNaming
+
 	public class kcsapi_basic
 	{
 		public string api_member_id { get; set; }
@@ -40,6 +41,8 @@ namespace Grabacr07.KanColleWrapper.Models.Raw
 		public int api_firstflag { get; set; }
 		public int api_tutorial_progress { get; set; }
 		public int[] api_pvp { get; set; }
+		public int api_medals { get; set; }
+		public int api_large_dock { get; set; }
 	}
 	// ReSharper restore InconsistentNaming
 }

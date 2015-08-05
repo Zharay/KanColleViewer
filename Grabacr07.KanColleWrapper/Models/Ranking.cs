@@ -53,7 +53,7 @@ namespace Grabacr07.KanColleWrapper.Models
 
         public override string ToString()
         {
-            return string.Format("NickName = {0}", this.Id, this.NickName);
+            return string.Format("NickName = {0}", this.NickName);
         }
     }
 }

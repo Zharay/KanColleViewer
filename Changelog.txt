@@ -1,6 +1,143 @@
-========================
+﻿========================
 	KCV Change Log
 ========================
+
+v3.8.2 r556 - 5/29/2015
+	* Fix ship count don't update when drop same ship type
+	* Web browser size auto stretch when not in game
+	* Some back-end changes
+
+v3.8.1 r555 - 5/24/2015
+	* Fix orientation startup
+
+v3.8.1 r554 - 5/24/2015
+	* Fix loading forever when startup
+	* Update ship number realtime
+
+v3.8.1 r552 - 5/19/2015
+	* Fix fleet state doesn't update when sortie
+	* Add pagination for log viewer
+
+v3.8.0 r551 - 5/18/2015
+	* Fix for 2015/05/18 update
+
+v3.7.0 r550 - 5/18/2015
+	* Change FleetWindow's layout
+	* Add Large-sized Flying Boat icon
+	* Check version in another thread
+	* Update EventMapHpViewer plugin
+	* Add setting to enable exit dialog
+	* Remove korean and deutsch localization
+	* Remove ships lock filter
+	* Fix flash quality setting
+	* Some other fixs
+
+v3.7.0β r544 - 4/29/2015
+	* Fix bug: Evacuation Indicator not show correctly
+	* Plugin MapHP viewer
+	* Ships lock filter
+
+v3.7.0β r543 - 3/29/2015
+	* LogViewer plugin
+	* Show fleet state in overview panel
+	* Fix security bug
+
+v3.7.0β r542 - 3/27/2015
+	* Show level of equipment
+	* Sort options in ships list
+	* Fleet details window
+	* You can change position of browser (top, bottom, left, right)
+	* Equip tooltip have more details (level, number of fighters)
+
+v3.6.1 r531 - 3/1/2015
+	* Add Lookout icon
+	* Improvement sort in ship catalog
+	* Fix bugs
+
+v3.6.0 r530 - 2/15/2015
+	* New formula to calculate LoS
+	* Improvement performance
+	* Fix bugs
+
+v3.5.1 r525 - 2/14/2015
+	* Support negative stats
+	* Fix error when use surface combined
+	* Fix japanese translation
+	* Show retreat indicator & fix critical notify when use retreat function
+
+v3.5.0 r522 - 2/8/2015
+	* Add icon for rocket launcher
+	* Fix bug don't show drop when use combined fleet
+	* Update calculator plugin
+	* Chinese translation thank @kookxiang
+
+v3.4.0 r520 - 1/14/2015
+	* Support use other's translation
+
+v3.4.0 r519 - 12/3/2014
+	* Add AntiAircraftFireDirector icon
+
+v3.4.0 r518 - 11/4/2014
+	* Fix Quest translate wrong when there are 2 or more quests with the same title
+	* Show Improvement Materials instead of Instant repair in homeport
+	* Show item's level when hover item's name (if item improved)
+	* Show items that ship is equipping when hover ship's name in item catalog
+
+v3.4.0 r515 - 10/18/2014
+	* Show new dropped ship in shipyard
+	* Fix bugs
+
+v3.4.0 r514 - 10/15/2014
+	* Fix alway show slow fleet
+	* Fix crash when sort by id in ship list
+
+v3.4.0 r513 - 9/27/2014
+	* Fix for 2014/09/26 update
+	* Restraint D&D for WebBrowser
+	* Fix when there are no mission
+	
+v3.3.0 r512 - 9/12/2014
+	* Add monthly quests group
+	* Special quest that appear at special day are regarded as daily quests
+	* Fix translate (mixed english and japanese when change language to japanese languages)
+	* Fix language isn't changed when change language
+	* Mute and capture button become bigger
+	* Use Segoe font instead of Meiryo
+	* Fix some other bugs
+
+v3.3.0 r509 - 9/8/2014
+	* Fix ranking plugins
+	* Fix repair time calculator
+
+v3.3.0 r508 - 8/29/2014
+	* Remove function support event
+	* Change icon of menu
+	* Change icon of orientation mode
+	* Fix critical notify
+	* Fix bugs
+
+v3.3.0 r507 - 8/26/2014
+	* Add Fleet COmmand Facility icon
+	* Save & restore windows size when changing orientation mode
+	* Fix some bugs
+
+
+v3.3.0 r506 - 8/22/2014
+Note: 	Setting have been reset with this version!
+		KanColleViewer.exe.config must be updated!
+		Please review them.
+Changelog:
+   * Change color to orange when sortie.
+   * User can interaction sortie condition.
+   * Construction and Repair docks have been merged.
+   * Add deverlopment table
+   * Operation filtering for ship list. (MI/AL operation)
+   * A new LoS calculation formula with emphasis on equipment LoS
+   * Add orientation mode
+   * Change some UI layout
+   * Support expedition translate
+   * Implement lastest version from original version
+   * Fix bugs
 
 v2.6.0 β r461 - 4/30/2014
 	* Facility repair timing has been fixed up to how they should be: (1) they only show

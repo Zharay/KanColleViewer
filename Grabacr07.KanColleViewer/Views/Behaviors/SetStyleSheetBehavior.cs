@@ -54,19 +54,19 @@ namespace Grabacr07.KanColleViewer.Views.Behaviors
 
 			var dpi = this.AssociatedObject.GetSystemDpi() ?? Dpi.Default;
 
-			var window = Window.GetWindow(this.AssociatedObject);
-			//if (window != null && window.WindowState == WindowState.Normal)
-			//{
-			//	window.SizeToContent = SizeToContent.Width;
-			//}
+            var window = Application.Current.MainWindow;
+			if (window != null && window.WindowState == WindowState.Normal)
+			{
+                window.SizeToContent = SizeToContent.WidthAndHeight;
+			}
 
 			this.AssociatedObject.Width = 800 / dpi.ScaleX;
 			this.AssociatedObject.Height = 480 / dpi.ScaleY;
 
-			if (window != null)
-			{
-				window.Width = this.AssociatedObject.Width;
-			}
+// 			if (window != null)
+// 			{
+// 				window.Width = this.AssociatedObject.Width;
+// 			}
 		}
 	}
 }

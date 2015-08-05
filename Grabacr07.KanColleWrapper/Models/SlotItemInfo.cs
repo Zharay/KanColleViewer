@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grabacr07.KanColleWrapper.Globalization;
 using Grabacr07.KanColleWrapper.Internal;
 using Grabacr07.KanColleWrapper.Models.Raw;
 
@@ -14,6 +15,7 @@ namespace Grabacr07.KanColleWrapper.Models
 	/// </summary>
 	public class SlotItemInfo : RawDataWrapper<kcsapi_mst_slotitem>, IIdentifiable
 	{
+		private SlotItemType? type;
 		private SlotItemIconType? iconType;
 		private int? categoryId;
 
@@ -24,18 +26,17 @@ namespace Grabacr07.KanColleWrapper.Models
 
 		public string Name
 		{
-			get
-			{
-				return KanColleClient.Current.Translations.GetTranslation(this.RawData.api_name, TranslationType.Equipment, this.RawData);
-			}
-		}
+            get { return KanColleClient.Current.Translations.GetTranslation(this.RawData.api_name, TranslationType.Equipment, this.RawData); }
+        }
 
 		public string UntranslatedName
 		{
-			get
-			{
-				return (this.RawData.api_name != this.Name ? this.RawData.api_name : "");
-			}
+			get { return this.RawData.api_name; }
+		}
+
+		public SlotItemType Type
+		{
+			get { return this.type ?? (SlotItemType)(this.type = (SlotItemType)(this.RawData.api_type.Get(2) ?? 0)); }
 		}
 
 		public SlotItemIconType IconType
@@ -63,8 +64,10 @@ namespace Grabacr07.KanColleWrapper.Models
 		{
 			get
 			{
-				var type = this.RawData.api_type.Get(2);
-				return type.HasValue && (type == 6 || type == 7 || type == 8 || type == 11);
+				return this.Type == SlotItemType.艦上戦闘機
+					|| this.Type == SlotItemType.艦上攻撃機
+					|| this.Type == SlotItemType.艦上爆撃機
+					|| this.Type == SlotItemType.水上爆撃機;
 			}
 		}
 
@@ -128,6 +131,45 @@ namespace Grabacr07.KanColleWrapper.Models
 			get { return this.RawData.api_leng; }
 		}
 
+		public string AllStats
+		{
+			get
+			{
+				List<string> details = new List<string>();
+
+				if (this.Firepower != 0) details.Add(this.StatFormat(this.Firepower, Resources.Stats_Firepower));
+				if (this.AA != 0) details.Add(this.StatFormat(this.AA, Resources.Stats_AntiAir));
+				if (this.Torpedo != 0) details.Add(this.StatFormat(this.Torpedo, Resources.Stats_Torpedo));
+				if (this.AntiSub != 0) details.Add(this.StatFormat(this.AntiSub, Resources.Stats_AntiSub));
+				if (this.SightRange != 0) details.Add(this.StatFormat(this.SightRange, Resources.Stats_SightRange));
+				if (this.Speed != 0) details.Add(this.StatFormat(this.Speed, Resources.Stats_Speed));
+				if (this.Armor != 0) details.Add(this.StatFormat(this.Armor, Resources.Stats_Armor));
+				if (this.Health != 0) details.Add(this.StatFormat(this.Health, Resources.Stats_Health));
+				if (this.Luck != 0) details.Add(this.StatFormat(this.Luck, Resources.Stats_Luck));
+				if (this.Evasion != 0) details.Add(this.StatFormat(this.Evasion, Resources.Stats_Evasion));
+				if (this.Accuracy != 0) details.Add(this.StatFormat(this.Accuracy, Resources.Stats_Accuracy));
+				if (this.DiveBomb != 0) details.Add(this.StatFormat(this.DiveBomb, Resources.Stats_DiveBomb));
+				if (this.AttackRange > 0) details.Add(string.Format(" {1}({0})", this.AttackRange, Resources.Stats_AttackRange));
+
+				return String.Join("\n", details);
+			}
+		}
+
+		public bool IsNumerable
+		{
+			get
+			{
+				return this.Type == SlotItemType.艦上偵察機
+					|| this.Type == SlotItemType.艦上戦闘機
+					|| this.Type == SlotItemType.艦上攻撃機
+					|| this.Type == SlotItemType.艦上爆撃機
+					|| this.Type == SlotItemType.水上偵察機
+					|| this.Type == SlotItemType.水上爆撃機
+					|| this.Type == SlotItemType.オートジャイロ
+					|| this.Type == SlotItemType.対潜哨戒機
+					|| this.Type == SlotItemType.大型飛行艇;
+			}
+		}
 
 		internal SlotItemInfo(kcsapi_mst_slotitem rawData) : base(rawData) { }
 
@@ -136,9 +178,14 @@ namespace Grabacr07.KanColleWrapper.Models
 			return string.Format("ID = {0}, Name = \"{1}\", Type = {{{2}}}", this.Id, this.Name, this.RawData.api_type.ToString(", "));
 		}
 
+		private string StatFormat(int stat, string name)
+		{
+			return String.Format(" {0:+#;-#} {1}", stat, name);
+		}
+
 		#region static members
 
-		private static readonly SlotItemInfo dummy = new SlotItemInfo(new kcsapi_mst_slotitem()
+		private static SlotItemInfo dummy = new SlotItemInfo(new kcsapi_mst_slotitem()
 		{
 			api_id = 0,
 			api_name = "？？？",

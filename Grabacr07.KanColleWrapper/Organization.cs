@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Grabacr07.KanColleWrapper.Internal;
 using Grabacr07.KanColleWrapper.Models;
 using Grabacr07.KanColleWrapper.Models.Raw;
 using Livet;
+using System.Collections.ObjectModel;
 
 namespace Grabacr07.KanColleWrapper
 {
@@ -15,6 +17,10 @@ namespace Grabacr07.KanColleWrapper
 	public class Organization : NotificationObject
 	{
 		private readonly Homeport homeport;
+
+		private readonly List<int> evacuatedShipsIds = new List<int>();
+		private readonly List<int> towShipIds = new List<int>();
+		public ObservableCollection<DroppedShip> DroppedShips { get; private set; }
 
 		#region Ships 変更通知プロパティ
 
@@ -60,6 +66,48 @@ namespace Grabacr07.KanColleWrapper
 
 		#endregion
 
+		#region Combined 変更通知プロパティ
+
+		private bool _Combined;
+
+		/// <summary>
+		/// 第一・第二艦隊による連合艦隊が編成されているかどうかを示す値を取得または設定します。
+		/// </summary>
+		public bool Combined
+		{
+			get { return this._Combined; }
+			set
+			{
+				if (this._Combined != value)
+				{
+					this._Combined = value;
+					this.Combine(value);
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region CombinedFleet 変更通知プロパティ
+
+		private CombinedFleet _CombinedFleet;
+
+		public CombinedFleet CombinedFleet
+		{
+			get { return this._CombinedFleet; }
+			set
+			{
+				if (this._CombinedFleet != value)
+				{
+					this._CombinedFleet = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
 
 		public Organization(Homeport parent, KanColleProxy proxy)
 		{
@@ -67,6 +115,7 @@ namespace Grabacr07.KanColleWrapper
 
 			this.Ships = new MemberTable<Ship>();
 			this.Fleets = new MemberTable<Fleet>();
+			this.DroppedShips = new ObservableCollection<DroppedShip>();
 
 			proxy.api_get_member_ship.TryParse<kcsapi_ship2[]>().Subscribe(x => this.Update(x.Data));
 			proxy.api_get_member_ship2.TryParse<kcsapi_ship2[]>().Subscribe(x =>
@@ -82,12 +131,19 @@ namespace Grabacr07.KanColleWrapper
 
 			proxy.api_get_member_deck.TryParse<kcsapi_deck[]>().Subscribe(x => this.Update(x.Data));
 			proxy.api_get_member_deck_port.TryParse<kcsapi_deck[]>().Subscribe(x => this.Update(x.Data));
+			proxy.api_get_member_ship_deck.TryParse<kcsapi_ship_deck>().Subscribe(x => this.Update(x.Data));
 
 			proxy.api_req_hensei_change.TryParse().Subscribe(this.Change);
 			proxy.api_req_hokyu_charge.TryParse<kcsapi_charge>().Subscribe(x => this.Charge(x.Data));
 			proxy.api_req_kaisou_powerup.TryParse<kcsapi_powerup>().Subscribe(this.Powerup);
 			proxy.api_req_kousyou_getship.TryParse<kcsapi_kdock_getship>().Subscribe(x => this.GetShip(x.Data));
 			proxy.api_req_kousyou_destroyship.TryParse<kcsapi_destroyship>().Subscribe(this.DestoryShip);
+			proxy.api_req_member_updatedeckname.TryParse().Subscribe(this.UpdateFleetName);
+
+			proxy.api_req_hensei_combined.TryParse<kcsapi_hensei_combined>()
+				.Subscribe(x => this.Combined = x.Data.api_combined != 0);
+
+			this.SubscribeSortieSessions(proxy);
 		}
 
 
@@ -99,6 +155,30 @@ namespace Grabacr07.KanColleWrapper
 			return this.Fleets.Select(x => x.Value).SingleOrDefault(x => x.Ships.Any(s => s.Id == shipId));
 		}
 
+		private void UpdateFleetName(SvData data)
+		{
+			if (data == null || !data.IsSuccess) return;
+
+			try
+			{
+				var fleet = this.Fleets[int.Parse(data.Request["api_deck_id"])];
+				var name = data.Request["api_name"];
+
+				fleet.Name = name;
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine("艦隊名の変更に失敗しました: {0}", ex);
+			}
+		}
+
+		private void RaiseShipsChanged()
+		{
+			this.RaisePropertyChanged("Ships");
+		}
+
+
+		#region 母港 / 艦隊編成 (Update / Change)
 
 		/// <summary>
 		/// 指定した <see cref="kcsapi_ship2"/> 型の配列を使用して、<see cref="Ships"/> プロパティ値を更新します。
@@ -115,12 +195,18 @@ namespace Grabacr07.KanColleWrapper
 					target.Update(ship);
 
 					var fleet = this.GetFleet(target.Id);
-					if (fleet != null) fleet.Calculate();
+					if (fleet != null) fleet.State.Calculate();
 				}
 			}
 			else
 			{
 				this.Ships = new MemberTable<Ship>(source.Select(x => new Ship(this.homeport, x)));
+
+				if (KanColleClient.Current.IsInSortie)
+				{
+					foreach (var id in this.evacuatedShipsIds) this.Ships[id].Situation |= ShipSituation.Evacuation;
+					foreach (var id in this.towShipIds) this.Ships[id].Situation |= ShipSituation.Tow;
+				}
 			}
 		}
 
@@ -140,7 +226,7 @@ namespace Grabacr07.KanColleWrapper
 			}
 			else
 			{
-				this.Fleets.ForEach(x => x.Value.Dispose());
+				foreach (var fleet in this.Fleets) fleet.Value.SafeDispose();
 				this.Fleets = new MemberTable<Fleet>(source.Select(x => new Fleet(this.homeport, x)));
 			}
 		}
@@ -191,6 +277,19 @@ namespace Grabacr07.KanColleWrapper
 			}
 		}
 
+
+		private void Combine(bool combine)
+		{
+			this.CombinedFleet.SafeDispose();
+			this.CombinedFleet = combine
+				? new CombinedFleet(this.homeport, this.Fleets.OrderBy(x => x.Key).Select(x => x.Value).Take(2).ToArray())
+				: null;
+		}
+
+		#endregion
+
+		#region 補給 / 近代化改修 (Charge / Powerup)
+
 		private void Charge(kcsapi_charge source)
 		{
 			Fleet fleet = null;	// 補給した艦が所属している艦隊。艦隊をまたいで補給はできないので、必ず 1 つに絞れる
@@ -208,7 +307,11 @@ namespace Grabacr07.KanColleWrapper
 				}
 			}
 
-			if (fleet != null) fleet.UpdateStatus();
+			if (fleet != null)
+			{
+				fleet.State.Update();
+				fleet.State.Calculate();
+			}
 		}
 
 		private void Powerup(SvData<kcsapi_powerup> svd)
@@ -225,11 +328,18 @@ namespace Grabacr07.KanColleWrapper
 					.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
 					.Select(int.Parse)
 					.Where(x => this.Ships.ContainsKey(x))
-					.Select(x => this.Ships[x]);
+					.Select(x => this.Ships[x])
+					.ToArray();
 
 				// (改修に使った艦娘のこと item って呼ぶのどうなの…)
 
-				this.Ships = new MemberTable<Ship>(this.Ships.Select(kvp => kvp.Value).Except(items));
+				foreach (var x in items)
+				{
+					this.homeport.Itemyard.RemoveFromShip(x);
+					this.Ships.Remove(x);
+				}
+
+				this.RaiseShipsChanged();
 				this.Update(svd.Data.api_deck);
 			}
 			catch (Exception ex)
@@ -238,9 +348,16 @@ namespace Grabacr07.KanColleWrapper
 			}
 		}
 
+		#endregion
+
+		#region 工廠 (Get / Destroy)
+
 		private void GetShip(kcsapi_kdock_getship source)
 		{
-			this.Ships = new MemberTable<Ship>(this.Ships.Select(kvp => kvp.Value).Concat(new[] { new Ship(this.homeport, source.api_ship) }));
+			this.homeport.Itemyard.AddFromDock(source);
+
+			this.Ships.Add(new Ship(this.homeport, source.api_ship));
+			this.RaiseShipsChanged();
 		}
 
 		private void DestoryShip(SvData<kcsapi_destroyship> svd)
@@ -250,7 +367,10 @@ namespace Grabacr07.KanColleWrapper
 				var ship = this.Ships[int.Parse(svd.Request["api_ship_id"])];
 				if (ship != null)
 				{
-					this.Ships = new MemberTable<Ship>(this.Ships.Select(kvp => kvp.Value).Except(new[] { ship }));
+					this.homeport.Itemyard.RemoveFromShip(ship);
+
+					this.Ships.Remove(ship);
+					this.RaiseShipsChanged();
 				}
 			}
 			catch (Exception ex)
@@ -258,5 +378,132 @@ namespace Grabacr07.KanColleWrapper
 				System.Diagnostics.Debug.WriteLine("解体による更新に失敗しました: {0}", ex);
 			}
 		}
+
+		#endregion
+
+		#region 出撃 (Sortie / Homing / Escape)
+
+		private void SubscribeSortieSessions(KanColleProxy proxy)
+		{
+			proxy.ApiSessionSource
+				.SkipUntil(proxy.api_req_map_start.TryParse().Do(this.Sortie))
+				.TakeUntil(proxy.api_port)
+				.Finally(this.Homing)
+				.Repeat()
+				.Subscribe();
+
+			int[] evacuationOfferedShipIds = null;
+			int[] towOfferedShipIds = null;
+
+			proxy.api_req_combined_battle_battleresult
+				.TryParse<kcsapi_combined_battle_battleresult>()
+				.Where(x => x.Data.api_escape != null)
+				.Select(x => x.Data)
+				.Subscribe(x =>
+				{
+					if (this.CombinedFleet == null) return;
+					var ships = this.CombinedFleet.Fleets.SelectMany(f => f.Ships).ToArray();
+					evacuationOfferedShipIds = x.api_escape.api_escape_idx.Select(idx => ships[idx - 1].Id).ToArray();
+					towOfferedShipIds = x.api_escape.api_tow_idx.Select(idx => ships[idx - 1].Id).ToArray();
+				});
+			proxy.api_req_combined_battle_goback_port
+				.Subscribe(_ =>
+				{
+					if (KanColleClient.Current.IsInSortie
+						&& evacuationOfferedShipIds != null
+						&& evacuationOfferedShipIds.Length >= 1
+						&& towOfferedShipIds != null
+						&& towOfferedShipIds.Length >= 1)
+					{
+						this.evacuatedShipsIds.Add(evacuationOfferedShipIds[0]);
+						this.towShipIds.Add(towOfferedShipIds[0]);
+					}
+				});
+			proxy.api_get_member_ship_deck
+				.Subscribe(_ =>
+				{
+					evacuationOfferedShipIds = null;
+					towOfferedShipIds = null;
+				});
+			proxy.api_req_sortie_battleresult.TryParse<kcsapi_battleresult>().Subscribe(x => this.DropShip(x.Data));
+			proxy.api_req_combined_battle_battleresult.TryParse<kcsapi_combined_battle_battleresult>().Subscribe(x =>
+			{
+				this.DropShip(x.Data);
+			});
+
+		}
+
+
+		private void Sortie(SvData data)
+		{
+			if (data == null || !data.IsSuccess) return;
+
+			try
+			{
+				var id = int.Parse(data.Request["api_deck_id"]);
+				var fleet = this.Fleets[id];
+				fleet.Sortie();
+
+				if (this.Combined && id == 1) this.Fleets[2].Sortie();
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine("艦隊の出撃を検知できませんでした: {0}", ex);
+			}
+		}
+
+		private void Homing()
+		{
+			this.evacuatedShipsIds.Clear();
+			this.towShipIds.Clear();
+			this.DroppedShips.Clear();
+
+			foreach (var ship in this.Ships.Values)
+			{
+				if (ship.Situation.HasFlag(ShipSituation.Evacuation)) ship.Situation &= ~ShipSituation.Evacuation;
+				if (ship.Situation.HasFlag(ShipSituation.Tow)) ship.Situation &= ~ShipSituation.Tow;
+			}
+
+			foreach (var target in this.Fleets.Values)
+			{
+				target.Homing();
+			}
+		}
+
+		private void Update(kcsapi_ship_deck source)
+		{
+			if (source.api_ship_data != null)
+			{
+				foreach (var ship in source.api_ship_data)
+				{
+					var target = this.Ships[ship.api_id];
+					target.Update(ship);
+				}
+			}
+
+			if (source.api_deck_data != null)
+			{
+				foreach (var deck in source.api_deck_data)
+				{
+					var target = this.Fleets[deck.api_id];
+					target.Update(deck);
+				}
+			}
+		}
+
+		private void DropShip(kcsapi_battleresult source)
+		{
+			if (source.api_get_ship == null) return;
+
+			this.DroppedShips.Add(new DroppedShip(source.api_get_ship));
+		}
+
+		private void DropShip(kcsapi_combined_battle_battleresult source)
+		{
+			if (source.api_get_ship == null) return;
+
+			this.DroppedShips.Add(new DroppedShip(source.api_get_ship));
+		}
+		#endregion
 	}
 }

@@ -5,9 +5,6 @@
     <Setting Name="LocalProxyPort" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">37564</Value>
     </Setting>
-    <Setting Name="KanColleUrl" Type="System.Uri" Scope="Application">
-      <Value Profile="(Default)">http://www.dmm.com/netgame/social/application/-/detail/=/app_id=854854/</Value>
-    </Setting>
     <Setting Name="OverrideStyleSheet" Type="System.String" Scope="Application">
       <Value Profile="(Default)">body {
     margin:0;
@@ -34,81 +31,63 @@
     display: none !important;
 }</Value>
     </Setting>
-    <Setting Name="UIContentHight" Type="System.Double" Scope="Application">
-      <Value Profile="(Default)">333</Value>
+    <Setting Name="UIContentWidth" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">480</Value>
     </Setting>
     <Setting Name="FeatureBrowserEmulation" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">8000</Value>
     </Setting>
-    <Setting Name="XMLTransUrl" Type="System.Uri" Scope="Application">
-      <Value Profile="(Default)">https://raw.github.com/Zharay/KanColleViewer/master/resources/translations/</Value>
-    </Setting>
-    <Setting Name="KCVUpdateUrl" Type="System.Uri" Scope="Application">
-      <Value Profile="(Default)">https://raw.github.com/Zharay/KanColleViewer/master/resources/Version.xml</Value>
-    </Setting>
     <Setting Name="FlashQualityJS" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">var flashQuality = function () {{
-    for (var objs = document.embeds, i = objs.length - 1; i &gt;= 0; i--) {{
-        		
-        var embedElem = document.createElement('embed');
-        var parentElem = objs[i].parentNode;
-        embedElem.setAttribute('quality', '{0}');
-        embedElem.setAttribute('wmode', '{1}');
-        embedElem.setAttribute('type', 'application/x-shockwave-flash');
-        embedElem.setAttribute('id', objs[i].getAttribute('id'));
-        embedElem.setAttribute('width', objs[i].getAttribute('width'));
-        embedElem.setAttribute('height', objs[i].getAttribute('height'));
-        embedElem.setAttribute('src', objs[i].getAttribute('src'));
-        embedElem.setAttribute('bgcolor', objs[i].getAttribute('bgcolor'));
-        embedElem.setAttribute('allowScriptAccess', objs[i].getAttribute('allowScriptAccess'));
-        embedElem.setAttribute('base', objs[i].getAttribute('base'));
-        parentElem.removeChild(objs[i]);
-        parentElem.appendChild(embedElem);
-    }}
-    
-    for (objs = document.getElementsByTagName('object'), i = objs.length - 1; i &gt;= 0; i--) {{
-        var embedElem = document.createElement('embed');
-        var parentElem = objs[i].parentNode;
-        embedElem.setAttribute('quality', '{0}');
-        embedElem.setAttribute('wmode', '{1}');
-        embedElem.setAttribute('id', objs[i].getAttribute('id'));
-        embedElem.setAttribute('type', 'application/x-shockwave-flash'); 
-        embedElem.setAttribute('width', objs[i].getAttribute('width'));
-        embedElem.setAttribute('height', objs[i].getAttribute('height'));       
-        
-        for (var c = objs[i].childNodes, j = c.length - 1, set = false; j &gt;= 0; j--) {{
-            if ((c[j].tagName == 'PARAM') &amp;&amp; (c[j].getAttribute('name').toLowerCase() == 'src'))
-                embedElem.setAttribute('src', c[j].getAttribute('value'));
-            else if ((c[j].tagName == 'PARAM') &amp;&amp; (c[j].getAttribute('name').toLowerCase() == 'movie'))
-                embedElem.setAttribute('src', c[j].getAttribute('value'));
-            else if ((c[j].tagName == 'PARAM') &amp;&amp; (c[j].getAttribute('name').toLowerCase() == 'bgcolor'))
-                embedElem.setAttribute('bgcolor', c[j].getAttribute('value'));
-            else if ((c[j].tagName == 'PARAM') &amp;&amp; (c[j].getAttribute('name').toLowerCase() == 'allowscriptaccess'))
-                embedElem.setAttribute('allowScriptAccess', c[j].getAttribute('value'));
-            else if ((c[j].tagName == 'PARAM') &amp;&amp; (c[j].getAttribute('name').toLowerCase() == 'base'))
-                embedElem.setAttribute('base', c[j].getAttribute('value'));
-        }}
-        
-        parentElem.removeChild(objs[i]);
-        parentElem.appendChild(embedElem);
-    }}
-}};
+      <Value Profile="(Default)">function kcsFlash_StartFlash(worldServerAddr)
+{{
+    // Flash パラメータを設定する。
+    var flashParams =
+    {{
+        "id"                : "externalswf",
+        "width"             : "800",
+        "height"            : "480",
+        "wmode"             : "{1}",
+        "quality"           : "{0}",
+        "bgcolor"           : "#000000",
+        "allowScriptAccess" : "always"
+    }};
 
-var TimedInject = setInterval(function () {{
-    CheckChange();
-}}, 100);
+    // Flash の貼り付けに失敗した場合のメッセージを設定する。
+    document.getElementById("flashWrap").innerHTML = ConstMessageInfo.InstallFlashMessage;
 
-function CheckChange() {{
-    if (document.getElementById('flashWrap').innerHTML.length &gt; 10) {{
-        flashQuality();
-        clearInterval(TimedInject);
-    }}
-    else if (!document.getElementById('flashWrap'))
-        clearInterval(TimedInject);
+    // Flash をページに貼り付ける。
+    gadgets.flash.embedFlash(
+        worldServerAddr + ConstURLInfo.MainFlashURL + "?api_token=" + flashInfo.apiToken + 
+                                  "&amp;amp;api_starttime=" + flashInfo.apiStartTime,
+        document.getElementById("flashWrap"),
+        6,
+        flashParams
+    );
+
+    // サンクスページ用フラッシュのエリアの高さを変更する。
+    document.getElementById("adFlashWrap").style.height = "0px";
+
+    // ワールド選択用フラッシュのエリアの高さを変更する。
+    document.getElementById("wsFlashWrap").style.height = "0px";
+
+    // ゲーム用フラッシュのエリアのエリアの高さを変更する。
+    document.getElementById("flashWrap").style.height = "480px";
+
+    // ガジェットの高さを調整する。
+    gadgets.window.adjustHeight(ConstGadgetInfo.height);
 }}</Value>
     </Setting>
-    <Setting Name="FlashEmbed" Type="System.String" Scope="User">
+    <Setting Name="FlashEmbed" Type="System.String" Scope="Application">
       <Value Profile="(Default)">&lt;embed id="KCVGenerated" width="800" height="480" wmode="{1}" quality="{0}" bgcolor="#000" allowScriptAccess="always" type="application/x-shockwave-flash" src="{2}"&gt;</Value>
+    </Setting>
+    <Setting Name="KCVUpdateUrl" Type="System.Uri" Scope="Application">
+      <Value Profile="(Default)">http://yuyuvn.github.io/KanColleViewer/resources/Version.xml</Value>
+    </Setting>
+    <Setting Name="KCVUpdateTransUrl" Type="System.Uri" Scope="Application">
+      <Value Profile="(Default)">http://yuyuvn.github.io/KanColleViewer/resources/Version.xml</Value>
+    </Setting>
+    <Setting Name="KanColleUrl" Type="System.Uri" Scope="Application">
+      <Value Profile="(Default)">http://www.dmm.com/netgame_s/kancolle/</Value>
     </Setting>
   </Settings>
 </SettingsFile>

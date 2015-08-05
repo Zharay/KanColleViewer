@@ -29,7 +29,7 @@ namespace Grabacr07.KanColleViewer.Views.Contents
 			this.Filter += (sender, args) =>
 			{
 				var quest = args.Item as QuestViewModel;
-				args.Accepted = quest != null && quest.Type == this.Type;
+				args.Accepted = quest != null && (quest.Type2 == this.Type);
 			};
 		}
 	}

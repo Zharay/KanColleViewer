@@ -15,12 +15,13 @@ namespace Grabacr07.KanColleWrapper
 {
 	public class Translations : NotificationObject
 	{
-		private XDocument ShipsXML;
-		private XDocument ShipTypesXML;
-		private XDocument EquipmentXML;
-		private XDocument OperationsXML;
-		private XDocument QuestsXML;
-		private string CurrentCulture;
+		private XDocument shipsXml;
+		private XDocument shipTypesXml;
+		private XDocument equipmentXml;
+		private XDocument operationsXml;
+		private XDocument questsXml;
+		private XDocument expeditionsXml;
+		private string currentCulture;
 
 		public bool EnableTranslations { get; set; }
 		public bool EnableAddUntranslated { get; set; }
@@ -31,12 +32,12 @@ namespace Grabacr07.KanColleWrapper
 
 		public string EquipmentVersion
 		{
-			get { return _EquipmentVersion; }
+			get { return this._EquipmentVersion; }
 			set
 			{
-				if (_EquipmentVersion != value)
+				if (this._EquipmentVersion != value)
 				{
-					_EquipmentVersion = value;
+					this._EquipmentVersion = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -50,12 +51,12 @@ namespace Grabacr07.KanColleWrapper
 
 		public string OperationsVersion
 		{
-			get { return _OperationsVersion; }
+			get { return this._OperationsVersion; }
 			set
 			{
-				if (_OperationsVersion != value)
+				if (this._OperationsVersion != value)
 				{
-					_OperationsVersion = value;
+					this._OperationsVersion = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -69,12 +70,12 @@ namespace Grabacr07.KanColleWrapper
 
 		public string QuestsVersion
 		{
-			get { return _QuestsVersion; }
+			get { return this._QuestsVersion; }
 			set
 			{
-				if (_QuestsVersion != value)
+				if (this._QuestsVersion != value)
 				{
-					_QuestsVersion = value;
+					this._QuestsVersion = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -88,12 +89,12 @@ namespace Grabacr07.KanColleWrapper
 
 		public string ShipsVersion
 		{
-			get { return _ShipsVersion; }
+			get { return this._ShipsVersion; }
 			set
 			{
-				if (_ShipsVersion != value)
+				if (this._ShipsVersion != value)
 				{
-					_ShipsVersion = value;
+					this._ShipsVersion = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -107,12 +108,12 @@ namespace Grabacr07.KanColleWrapper
 
 		public string ShipTypesVersion
 		{
-			get { return _ShipTypesVersion; }
+			get { return this._ShipTypesVersion; }
 			set
 			{
-				if (_ShipTypesVersion != value)
+				if (this._ShipTypesVersion != value)
 				{
-					_ShipTypesVersion = value;
+					this._ShipTypesVersion = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -120,17 +121,37 @@ namespace Grabacr07.KanColleWrapper
 
 		#endregion
 
+        #region ExpeditionsVersion 変更通知プロパティ
+
+        private string _ExpeditionsVersion;
+
+        public string ExpeditionsVersion
+        {
+            get { return this._ExpeditionsVersion; }
+            set
+            {
+                if (this._ExpeditionsVersion != value)
+                {
+	                this._ExpeditionsVersion = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        #endregion
+
 		internal Translations()
 		{
 			try
 			{
-				if (File.Exists("Translations\\Ships.xml")) ShipsXML = XDocument.Load("Translations\\Ships.xml");
-				if (File.Exists("Translations\\ShipTypes.xml")) ShipTypesXML = XDocument.Load("Translations\\ShipTypes.xml");
-				if (File.Exists("Translations\\Equipment.xml")) EquipmentXML = XDocument.Load("Translations\\Equipment.xml");
-				if (File.Exists("Translations\\Operations.xml")) OperationsXML = XDocument.Load("Translations\\Operations.xml");
-				if (File.Exists("Translations\\Quests.xml")) QuestsXML = XDocument.Load("Translations\\Quests.xml");
+				if (File.Exists("Translations\\Ships.xml")) this.shipsXml = XDocument.Load("Translations\\Ships.xml");
+				if (File.Exists("Translations\\ShipTypes.xml")) this.shipTypesXml = XDocument.Load("Translations\\ShipTypes.xml");
+				if (File.Exists("Translations\\Equipment.xml")) this.equipmentXml = XDocument.Load("Translations\\Equipment.xml");
+				if (File.Exists("Translations\\Operations.xml")) this.operationsXml = XDocument.Load("Translations\\Operations.xml");
+				if (File.Exists("Translations\\Quests.xml")) this.questsXml = XDocument.Load("Translations\\Quests.xml");
+                if (File.Exists("Translations\\Expeditions.xml")) this.expeditionsXml = XDocument.Load("Translations\\Expeditions.xml");
 
-				GetVersions();
+				this.GetVersions();
 			}
 			catch (Exception ex)
 			{
@@ -138,136 +159,174 @@ namespace Grabacr07.KanColleWrapper
 			}
 		}
 
-		public void ChangeCulture(string Culture)
+		public void ChangeCulture(string culture)
 		{
-			CurrentCulture = Culture == "en-US" || Culture == "en" ? "" : (Culture + "\\");
+			this.currentCulture = culture == "en-US" || culture == "en" ? "" : (culture == "ja-JP" || culture == "ja" ? "ja-JP" : (culture + "\\"));
 
-			ShipsXML = null;
-			ShipTypesXML = null;
-			EquipmentXML = null;
-			OperationsXML = null;
-			QuestsXML = null;
+			this.shipsXml = null;
+			this.shipTypesXml = null;
+			this.equipmentXml = null;
+			this.operationsXml = null;
+			this.questsXml = null;
+			this.expeditionsXml = null;
 
-			if (!EnableTranslations || CurrentCulture == "ja-JP")
+			if (!this.EnableTranslations || this.currentCulture == "ja-JP")
+			{
+				this.RaisePropertyChanged("CurrentCulture");
 				return;
+			}
 
 			try
 			{
 				if (!Directory.Exists("Translations")) Directory.CreateDirectory("Translations");
-				if (!Directory.Exists("Translations\\" + CurrentCulture)) Directory.CreateDirectory("Translations\\" + CurrentCulture);
-				if (File.Exists("Translations\\" + CurrentCulture + "Ships.xml")) ShipsXML = XDocument.Load("Translations\\" + CurrentCulture + "Ships.xml");
-				if (File.Exists("Translations\\" + CurrentCulture + "ShipTypes.xml")) ShipTypesXML = XDocument.Load("Translations\\" + CurrentCulture + "ShipTypes.xml");
-				if (File.Exists("Translations\\" + CurrentCulture + "Equipment.xml")) EquipmentXML = XDocument.Load("Translations\\" + CurrentCulture + "Equipment.xml");
-				if (File.Exists("Translations\\" + CurrentCulture + "Operations.xml")) OperationsXML = XDocument.Load("Translations\\" + CurrentCulture + "Operations.xml");
-				if (File.Exists("Translations\\" + CurrentCulture + "Quests.xml")) QuestsXML = XDocument.Load("Translations\\" + CurrentCulture + "Quests.xml");
+				if (File.Exists("Translations\\Ships.xml")) this.shipsXml = XDocument.Load("Translations\\Ships.xml");
+				if (File.Exists("Translations\\ShipTypes.xml")) this.shipTypesXml = XDocument.Load("Translations\\ShipTypes.xml");
+				if (File.Exists("Translations\\Equipment.xml")) this.equipmentXml = XDocument.Load("Translations\\Equipment.xml");
+				if (File.Exists("Translations\\Operations.xml")) this.operationsXml = XDocument.Load("Translations\\Operations.xml");
+				if (File.Exists("Translations\\Quests.xml")) this.questsXml = XDocument.Load("Translations\\Quests.xml");
+                if (File.Exists("Translations\\Expeditions.xml")) this.expeditionsXml = XDocument.Load("Translations\\Expeditions.xml");
 
-				GetVersions();
+				this.GetVersions();
 			}
 			catch (Exception ex)
 			{
 				Debug.WriteLine(ex);
 			}
+
+			this.RaisePropertyChanged("CurrentCulture");
 		}
 
 		private void GetVersions()
 		{
-			if (ShipsXML != null)
-				ShipsVersion = ShipsXML.Root.Attribute("Version").Value;
-			else
-				ShipsVersion = "0.0.0";
-			if (ShipTypesXML != null)
-				ShipTypesVersion = ShipTypesXML.Root.Attribute("Version").Value;
-			else
-				ShipTypesVersion = "0.0.0";
-			if (EquipmentXML != null)
-				EquipmentVersion = EquipmentXML.Root.Attribute("Version").Value;
-			else
-				EquipmentVersion = "0.0.0";
-			if (OperationsXML != null)
-				OperationsVersion = OperationsXML.Root.Attribute("Version").Value;
-			else
-				OperationsVersion = "0.0.0";
-			if (QuestsXML != null)
-				QuestsVersion = QuestsXML.Root.Attribute("Version").Value;
-			else
-				QuestsVersion = "0.0.0";
+			// ReSharper disable PossibleNullReferenceException
+			try
+			{
+				this.ShipsVersion = this.shipsXml.Root.Attribute("Version").Value;
+			}
+			catch (NullReferenceException)
+			{
+				this.ShipsVersion = "0.0.0";
+			}
+
+			try
+			{
+				this.ShipTypesVersion = this.shipTypesXml.Root.Attribute("Version").Value;
+			}
+			catch (NullReferenceException)
+			{
+				this.ShipTypesVersion = "0.0.0";
+			}
+
+			try
+			{
+				this.EquipmentVersion = this.equipmentXml.Root.Attribute("Version").Value;
+			}
+			catch (NullReferenceException)
+			{
+				this.EquipmentVersion = "0.0.0";
+			}
+
+			try
+			{
+				this.OperationsVersion = this.operationsXml.Root.Attribute("Version").Value;
+			}
+			catch (NullReferenceException)
+			{
+				this.OperationsVersion = "0.0.0";
+			}
+
+			try
+			{
+				this.QuestsVersion = this.questsXml.Root.Attribute("Version").Value;
+			}
+			catch (NullReferenceException)
+			{
+				this.QuestsVersion = "0.0.0";
+			}
+
+			try
+			{
+				this.ExpeditionsVersion = this.expeditionsXml.Root.Attribute("Version").Value;
+			}
+			catch (NullReferenceException)
+			{
+				this.ExpeditionsVersion = "0.0.0";
+			}
+			// ReSharper restore PossibleNullReferenceException
 		}
 
-		private IEnumerable<XElement> GetTranslationList(TranslationType Type)
+		private IEnumerable<XElement> GetTranslationList(TranslationType type)
 		{
-			switch(Type)
+			switch(type)
 			{
 				case TranslationType.Ships:
-					if (ShipsXML != null) 
-						return ShipsXML.Descendants("Ship");
+					if (this.shipsXml != null) 
+						return this.shipsXml.Descendants("Ship");
 					break;
 				case TranslationType.ShipTypes:
-					if (ShipTypesXML != null) 
-						return ShipTypesXML.Descendants("Type");
+					if (this.shipTypesXml != null) 
+						return this.shipTypesXml.Descendants("Type");
 					break;
 				case TranslationType.Equipment:
-					if (EquipmentXML != null) 
-						return EquipmentXML.Descendants("Item");
+					if (this.equipmentXml != null) 
+						return this.equipmentXml.Descendants("Item");
 					break;
 				case TranslationType.OperationMaps:
-					if (OperationsXML != null) 
-						return OperationsXML.Descendants("Map");
+					if (this.operationsXml != null) 
+						return this.operationsXml.Descendants("Map");
 					break;
 				case TranslationType.OperationSortie:
-					if (OperationsXML != null) 
-						return OperationsXML.Descendants("Sortie");
+					if (this.operationsXml != null) 
+						return this.operationsXml.Descendants("Sortie");
 					break;
 				case TranslationType.Quests:
 				case TranslationType.QuestTitle:
 				case TranslationType.QuestDetail:
-					if (QuestsXML != null) 
-						return QuestsXML.Descendants("Quest");
+					if (this.questsXml != null) 
+						return this.questsXml.Descendants("Quest");
 					break;
+                case TranslationType.Expeditions:
+                case TranslationType.ExpeditionTitle:
+                case TranslationType.ExpeditionDetail:
+                    if (this.expeditionsXml != null)
+                        return this.expeditionsXml.Descendants("Expedition");
+                    break;
 			}
 
 			return null;
 		}
 
-		public string GetTranslation(string JPString, TranslationType Type, Object RawData, int ID = -1)
+		public string GetTranslation(string jpString, TranslationType type, Object rawData, int id = -1)
 		{
-			if (!EnableTranslations || CurrentCulture == "ja-JP")
-				return JPString;
+			if (!this.EnableTranslations || this.currentCulture == "ja-JP")
+				return jpString;
 
 			try
 			{
-				IEnumerable<XElement> TranslationList = GetTranslationList(Type);
+				IEnumerable<XElement> translationList = this.GetTranslationList(type);
 
-				if (TranslationList == null)
+				if (translationList == null)
 				{
-					AddTranslation(RawData, Type);
-					return JPString;
+					this.AddTranslation(rawData, type);
+					return jpString;
 				}
 
-				string JPChildElement = "JP-Name";
-				string TRChildElement = "TR-Name";
+				string jpChildElement = "JP-Name";
+				string trChildElement = "TR-Name";
 
-				if (Type == TranslationType.QuestDetail)
+				if (type == TranslationType.QuestDetail || type == TranslationType.ExpeditionDetail)
 				{
-					JPChildElement = "JP-Detail";
-					TRChildElement = "TR-Detail";
+					jpChildElement = "JP-Detail";
+					trChildElement = "TR-Detail";
 				}
 
-				IEnumerable<XElement> FoundTranslation = TranslationList.Where(b => b.Element(JPChildElement).Value.Equals(JPString));
-
-				foreach (XElement el in FoundTranslation)
+				string translate = jpString;
+				if (this.GetTranslation(jpString, translationList, jpChildElement, trChildElement, id, ref translate))
 				{
-// #if DEBUG
-// 					if (ID >= 0 && el.Element("ID") != null && Convert.ToInt32(el.Element("ID").Value) == ID)
-// 						Debug.WriteLine(string.Format("Translation: {0,-20} {1,-20} {2}", JPString, el.Element(TRChildElement).Value, ID));
-// #endif
-					if (ID >= 0 && el.Element("ID") != null && Convert.ToInt32(el.Element("ID").Value) == ID)
-						return el.Element(TRChildElement).Value;
-					else if (ID < 0)
-						return el.Element(TRChildElement).Value;
-
+					return translate;
 				}
 #if DEBUG
-				Debug.WriteLine(string.Format("Can't find Translation: {0,-20} {1}", JPString, ID));
+				Debug.WriteLine("Can't find Translation: {0,-20} {1}", jpString, id);
 #endif
 			}
 			catch (Exception ex)
@@ -275,166 +334,367 @@ namespace Grabacr07.KanColleWrapper
 				Debug.WriteLine(ex);
 			}
 
-			AddTranslation(RawData, Type);
+			this.AddTranslation(rawData, type);
 
-			return JPString;
+			return jpString;
 		}
 
-		public void AddTranslation(Object RawData, TranslationType Type)
+		public bool GetTranslation(string jpString, IEnumerable<XElement> translationList, String jpChildElement, String trChildElement, int id , ref string translate)
 		{
-			if (RawData == null || !EnableAddUntranslated)
-				return;
+			// ReSharper disable once PossibleMultipleEnumeration
+			IEnumerable<XElement> foundTranslation = translationList.Where(el =>
+			{
+				try
+				{
+					// ReSharper disable PossibleNullReferenceException
+					if (el.Element(jpChildElement).Value.Equals(jpString)) return true;
+					if (el.Attribute("mode") != null)
+					{
+						if (el.Attribute("mode").Value.Equals("suffix"))
+						{
+							int sl = el.Element(jpChildElement).Value.Length;
+							if (jpString.Length > sl)
+							{
+								if (el.Element(jpChildElement).Value.Equals(jpString.Substring(jpString.Length - sl))) return true;
+							}
+						}
+					}
+					// ReSharper restore PossibleNullReferenceException
+				}
+				catch
+				{
+					return false;
+				}
+				return false;
+			});
 
+			bool foundWrongId = false;
+			int n;
+			foreach (XElement el in foundTranslation)
+			{
+				// #if DEBUG
+				// 					if (ID >= 0 && el.Element("ID") != null && Convert.ToInt32(el.Element("ID").Value) == ID)
+				// 						Debug.WriteLine(string.Format("Translation: {0,-20} {1,-20} {2}", JPString, el.Element(TRChildElement).Value, ID));
+				// #endif
+
+				if (el.Attribute("mode") != null && !el.Attribute("mode").Value.Equals("normal"))
+				{
+					if (el.Attribute("mode").Value.Equals("suffix"))
+					{
+						try
+						{
+							// ReSharper disable PossibleNullReferenceException
+							string t = jpString.Substring(0, jpString.Length - el.Element(jpChildElement).Value.Length);
+							// ReSharper disable once PossibleMultipleEnumeration
+							if (this.GetTranslation(t, translationList, jpChildElement, trChildElement, -1, ref t))
+							{
+								if ((el.Attribute("suffixType") != null) && el.Attribute("suffixType").Value.Equals("pre")) translate = el.Element(trChildElement).Value + t;
+								else translate = t + el.Element(trChildElement).Value;
+								return true;
+							}
+							// ReSharper restore PossibleNullReferenceException
+						}
+						catch (NullReferenceException)
+						{
+							
+						}
+					}
+					continue;
+				}
+
+				try
+				{
+					// ReSharper disable PossibleNullReferenceException
+					if (id >= 0)
+					{
+						if (!Int32.TryParse(el.Element("ID").Value, out n))
+						{
+							foundWrongId = true;
+							translate = el.Element(trChildElement).Value;
+						}
+						else
+						{
+							if (id >= 0 && el.Element("ID") != null && Convert.ToInt32(el.Element("ID").Value) == id)
+							{
+								translate = el.Element(trChildElement).Value;
+								return true;
+							}
+						}
+					}
+					else
+					{
+						translate = el.Element(trChildElement).Value;
+						return true;
+					}
+					// ReSharper restore PossibleNullReferenceException
+				}
+				catch (NullReferenceException)
+				{
+					
+				}
+			}
+
+			if (foundWrongId)
+			{
+				// #if DEBUG
+				// 					Debug.WriteLine(string.Format("Wrong ID: {0,-20} {1,-20} {2}", JPString, translate, ID));
+				// #endif
+				return true;
+			}
+						
+			return false;
+		}
+
+		public void AddTranslation(Object rawData, TranslationType type)
+		{
+			if (rawData == null || !this.EnableAddUntranslated)
+				return;
+            
 			try
 			{
-				switch (Type)
+				switch (type)
 				{
 					case TranslationType.Ships:
-						if (ShipsXML == null)
+						if (this.shipsXml == null)
 						{
-							ShipsXML = new XDocument();
-							ShipsXML.Add(new XElement("Ships"));
-							ShipsXML.Root.SetAttributeValue("Version", "0.0.0");
-							ShipsVersion = "0.0.0";
+							this.shipsXml = new XDocument();
+							this.shipsXml.Add(new XElement("Ships"));
+							// ReSharper disable once PossibleNullReferenceException
+							this.shipsXml.Root.SetAttributeValue("Version", "0.0.0");
+							this.ShipsVersion = "0.0.0";
 						}
 
-						kcsapi_mst_ship ShipData = RawData as kcsapi_mst_ship;
+						kcsapi_mst_ship shipData = rawData as kcsapi_mst_ship;
 
-						if (ShipData == null)
+						if (shipData == null)
 							return;
 
-						ShipsXML.Root.Add(new XElement("Ship",
-							new XElement("JP-Name", ShipData.api_name),
-							new XElement("TR-Name", ShipData.api_name)
+						// ReSharper disable once PossibleNullReferenceException
+						this.shipsXml.Root.Add(new XElement("Ship",
+							new XElement("JP-Name", shipData.api_name),
+							new XElement("TR-Name", shipData.api_name)
 						));
 
-						ShipsXML.Save("Translations\\" + CurrentCulture + "Ships.xml");
+						this.shipsXml.Save("Translations\\Ships.xml");
 						break;
 
 					case TranslationType.ShipTypes:
-						if (ShipTypesXML == null)
+						if (this.shipTypesXml == null)
 						{
-							ShipTypesXML = new XDocument();
-							ShipTypesXML.Add(new XElement("ShipTypes"));
-							ShipTypesXML.Root.SetAttributeValue("Version", "0.0.0");
-							ShipTypesVersion = "0.0.0";
+							this.shipTypesXml = new XDocument();
+							this.shipTypesXml.Add(new XElement("ShipTypes"));
+							// ReSharper disable once PossibleNullReferenceException
+							this.shipTypesXml.Root.SetAttributeValue("Version", "0.0.0");
+							this.ShipTypesVersion = "0.0.0";
 						}
 
-						kcsapi_mst_stype TypeData = RawData as kcsapi_mst_stype;
+						kcsapi_mst_stype typeData = rawData as kcsapi_mst_stype;
 
-						if (TypeData == null)
+						if (typeData == null)
 							return;
 
-						ShipTypesXML.Root.Add(new XElement("Type",
-							new XElement("ID", TypeData.api_id),
-							new XElement("JP-Name", TypeData.api_name),
-							new XElement("TR-Name", TypeData.api_name)
+						// ReSharper disable once PossibleNullReferenceException
+						this.shipTypesXml.Root.Add(new XElement("Type",
+							new XElement("ID", typeData.api_id),
+							new XElement("JP-Name", typeData.api_name),
+							new XElement("TR-Name", typeData.api_name)
 							));
 
-						ShipTypesXML.Save("Translations\\" + CurrentCulture + "ShipTypes.xml");
+						this.shipTypesXml.Save("Translations\\ShipTypes.xml");
 						break;
 
 					case TranslationType.Equipment:
-						if (EquipmentXML == null)
+						if (this.equipmentXml == null)
 						{
-							EquipmentXML = new XDocument();
-							EquipmentXML.Add(new XElement("Equipment"));
-							EquipmentXML.Root.SetAttributeValue("Version", "0.0.0");
-							EquipmentVersion = "0.0.0";
+							this.equipmentXml = new XDocument();
+							this.equipmentXml.Add(new XElement("Equipment"));
+							// ReSharper disable once PossibleNullReferenceException
+							this.equipmentXml.Root.SetAttributeValue("Version", "0.0.0");
+							this.EquipmentVersion = "0.0.0";
 						}
 
-						kcsapi_mst_slotitem EqiupData = RawData as kcsapi_mst_slotitem;
+						kcsapi_mst_slotitem eqiupData = rawData as kcsapi_mst_slotitem;
 
-						if (EqiupData == null)
+						if (eqiupData == null)
 							return;
 
-						EquipmentXML.Root.Add(new XElement("Item",
-							new XElement("JP-Name", EqiupData.api_name),
-							new XElement("TR-Name", EqiupData.api_name)
+						// ReSharper disable once PossibleNullReferenceException
+						this.equipmentXml.Root.Add(new XElement("Item",
+							new XElement("JP-Name", eqiupData.api_name),
+							new XElement("TR-Name", eqiupData.api_name)
 							));
 
-						EquipmentXML.Save("Translations\\" + CurrentCulture + "Equipment.xml");
+						this.equipmentXml.Save("Translations\\Equipment.xml");
 						break;
 
 					case TranslationType.OperationMaps:
 					case TranslationType.OperationSortie:
-						if (OperationsXML == null)
+						if (this.operationsXml == null)
 						{
-							OperationsXML = new XDocument();
-							OperationsXML.Add(new XElement("Operations"));
-							OperationsXML.Root.SetAttributeValue("Version", "0.0.0");
-							OperationsVersion = "0.0.0";
+							this.operationsXml = new XDocument();
+							this.operationsXml.Add(new XElement("Operations"));
+							// ReSharper disable once PossibleNullReferenceException
+							this.operationsXml.Root.SetAttributeValue("Version", "0.0.0");
+							this.OperationsVersion = "0.0.0";
 						}
 
-						kcsapi_battleresult OperationsData = RawData as kcsapi_battleresult;
+						kcsapi_battleresult operationsData = rawData as kcsapi_battleresult;
 
-						if (OperationsData == null)
+						if (operationsData == null)
 							return;
 
-						if (Type == TranslationType.OperationMaps)
+						if (type == TranslationType.OperationMaps)
 						{
-							OperationsXML.Root.Add(new XElement("Map",
-								new XElement("JP-Name", OperationsData.api_quest_name),
-								new XElement("TR-Name", OperationsData.api_quest_name)
+							// ReSharper disable once PossibleNullReferenceException
+							this.operationsXml.Root.Add(new XElement("Map",
+								new XElement("JP-Name", operationsData.api_quest_name),
+								new XElement("TR-Name", operationsData.api_quest_name)
 								));
 						}
 						else
 						{
-							OperationsXML.Root.Add(new XElement("Sortie",
-								new XElement("JP-Name", OperationsData.api_enemy_info.api_deck_name),
-								new XElement("TR-Name", OperationsData.api_enemy_info.api_deck_name)
+							// ReSharper disable once PossibleNullReferenceException
+							this.operationsXml.Root.Add(new XElement("Sortie",
+								new XElement("JP-Name", operationsData.api_enemy_info.api_deck_name),
+								new XElement("TR-Name", operationsData.api_enemy_info.api_deck_name)
 								));
 						}
 
-						OperationsXML.Save("Translations\\" + CurrentCulture + "Operations.xml");
+						this.operationsXml.Save("Translations\\Operations.xml");
 						break;
 
 					case TranslationType.Quests:
 					case TranslationType.QuestTitle:
 					case TranslationType.QuestDetail:
-						if (QuestsXML == null)
+						if (this.questsXml == null)
 						{
-							QuestsXML = new XDocument();
-							QuestsXML.Add(new XElement("Quests"));
-							QuestsXML.Root.SetAttributeValue("Version", "0.0.0");
-							QuestsVersion = "0.0.0";
+							this.questsXml = new XDocument();
+							this.questsXml.Add(new XElement("Quests"));
+							// ReSharper disable once PossibleNullReferenceException
+							this.questsXml.Root.SetAttributeValue("Version", "0.0.0");
+							this.QuestsVersion = "0.0.0";
 						}
 
-						kcsapi_quest QuestData = RawData as kcsapi_quest;
+						kcsapi_quest questData = rawData as kcsapi_quest;
 
-						if (QuestData == null)
+						if (questData == null)
 							return;
 
-						IEnumerable<XElement> FoundTranslationDetail = QuestsXML.Descendants("Quest").Where(b => b.Element("JP-Detail").Value.Equals(QuestData.api_detail));
-						IEnumerable<XElement> FoundTranslationTitle = QuestsXML.Descendants("Quest").Where(b => b.Element("JP-Name").Value.Equals(QuestData.api_title));
+						IEnumerable<XElement> foundTranslation = this.questsXml.Descendants("Quest").Where(
+							b => b.Element("ID") != null && b.Element("JP-Name") != null && b.Element("JP-Detail") != null && b.Element("ID").Value.Equals(questData.api_no.ToString())
+						);
 
-						// Check the current list for any errors and fix them before writing a whole new element.
-						if (Type == TranslationType.QuestTitle && FoundTranslationDetail != null && FoundTranslationDetail.Any())
+						// ReSharper disable PossibleMultipleEnumeration
+						if (foundTranslation.Any())
 						{
-							// The title is wrong, but the detail is right. Fix the title.
-							foreach (XElement el in FoundTranslationDetail)
-								el.Element("JP-Name").Value = QuestData.api_title;
-
-						}
-						else if (Type == TranslationType.QuestDetail && FoundTranslationTitle != null && FoundTranslationTitle.Any())
-						{
-							// We found an existing detail, the title must be broken. Fix it.
-							foreach (XElement el in FoundTranslationTitle)
-								el.Element("JP-Detail").Value = QuestData.api_detail;
+							foreach (XElement el in foundTranslation)
+							{
+								if (el.Element("JP-Name") == null) el.Add(new XElement("JP-Name", questData.api_title));
+								else el.Element("JP-Name").Value = questData.api_title;
+								if (el.Element("JP-Detail") == null) el.Add(new XElement("JP-Detail", questData.api_detail));
+								else el.Element("JP-Detail").Value = questData.api_detail;
+							}
 						}
 						else
 						{
-							// The quest doesn't exist at all. Add it.
-							QuestsXML.Root.Add(new XElement("Quest",
-								new XElement("ID", QuestData.api_no),
-								new XElement("JP-Name", QuestData.api_title),
-								new XElement("TR-Name", QuestData.api_title),
-								new XElement("JP-Detail", QuestData.api_detail),
-								new XElement("TR-Detail", QuestData.api_detail)
-								));
-						}
+							int n;
+							bool needAdd = true;
+							IEnumerable<XElement> foundTranslationDetail = this.questsXml.Descendants("Quest").Where(b => b.Element("JP-Detail").Value.Equals(questData.api_detail));
+							IEnumerable<XElement> foundTranslationTitle = this.questsXml.Descendants("Quest").Where(b => b.Element("JP-Name").Value.Equals(questData.api_title));
 
-						QuestsXML.Save("Translations\\" + CurrentCulture + "Quests.xml");
+							// Check the current list for any errors and fix them before writing a whole new element.
+							if (type == TranslationType.QuestTitle && foundTranslationDetail.Any())
+							{
+								// The title is wrong, but the detail is right. Fix the title.
+								foreach (XElement el in foundTranslationDetail)
+								{
+									if (!Int32.TryParse(el.Element("ID").Value, out n))
+									{
+										if (el.Element("JP-Name") == null) el.Add(new XElement("JP-Name", questData.api_title));
+										else el.Element("JP-Name").Value = questData.api_title;
+										needAdd = false;
+									}
+								}
+
+							}
+							else if (type == TranslationType.QuestDetail && foundTranslationTitle.Any())
+							{
+								// We found an existing detail, the title must be broken. Fix it.
+								foreach (XElement el in foundTranslationTitle)
+								{
+									if (!Int32.TryParse(el.Element("ID").Value, out n))
+									{
+										if (el.Element("JP-Detail") == null) el.Add(new XElement("JP-Detail", questData.api_detail));
+										else el.Element("JP-Detail").Value = questData.api_detail;
+										needAdd = false;
+									}
+								}									
+							}
+							
+							if (needAdd)
+							{
+								// The quest doesn't exist at all. Add it.
+								// ReSharper disable once PossibleNullReferenceException
+								this.questsXml.Root.Add(new XElement("Quest",
+									new XElement("ID", questData.api_no),
+									new XElement("JP-Name", questData.api_title),
+									new XElement("TR-Name", questData.api_title),
+									new XElement("JP-Detail", questData.api_detail),
+									new XElement("TR-Detail", questData.api_detail)
+									));
+							}
+						}
+						// ReSharper restore PossibleMultipleEnumeration
+
+						this.questsXml.Save("Translations\\Quests.xml");
+						break;
+                    case TranslationType.Expeditions:
+                    case TranslationType.ExpeditionTitle:
+                    case TranslationType.ExpeditionDetail:
+                        if (this.expeditionsXml == null)
+                        {
+	                        this.expeditionsXml = new XDocument();
+	                        this.expeditionsXml.Add(new XElement("Expeditions"));
+	                        // ReSharper disable once PossibleNullReferenceException
+	                        this.expeditionsXml.Root.SetAttributeValue("Version", "0.0.0");
+	                        this.ExpeditionsVersion = "0.0.0";
+                        }
+
+                        kcsapi_mission expeditionData = rawData as kcsapi_mission;
+
+                        if (expeditionData == null)
+							return;
+
+                        IEnumerable<XElement> foundTranslationExpedition = this.expeditionsXml.Descendants("Expedition").Where(b => b.Element("ID").Value.Equals(expeditionData.api_id.ToString()));
+                        
+                        // Check the current list for any errors and fix them before writing a whole new element.
+						// ReSharper disable PossibleMultipleEnumeration
+						if (foundTranslationExpedition.Any())
+                        {
+							foreach (var el in foundTranslationExpedition)
+							{
+								if (el.Element("JP-Name") == null) el.Add(new XElement("JP-Name", expeditionData.api_name));
+								else el.Element("JP-Name").Value = expeditionData.api_name;
+								if (el.Element("JP-Detail") == null) el.Add(new XElement("JP-Detail", expeditionData.api_details));
+								else el.Element("JP-Detail").Value = expeditionData.api_details;
+							}
+
+                        }
+                        else
+                        {
+                            // The quest doesn't exist at all. Add it.
+	                        // ReSharper disable once PossibleNullReferenceException
+	                        this.expeditionsXml.Root.Add(new XElement("Expedition",
+                                new XElement("ID", expeditionData.api_id),
+                                new XElement("JP-Name", expeditionData.api_name),
+                                new XElement("TR-Name", expeditionData.api_name),
+                                new XElement("JP-Detail", expeditionData.api_details),
+                                new XElement("TR-Detail", expeditionData.api_details)
+                                ));
+                        }
+
+						this.expeditionsXml.Save("Translations\\Expeditions.xml");
+						// ReSharper restore PossibleMultipleEnumeration
 						break;
 				}
 			}
@@ -443,6 +703,5 @@ namespace Grabacr07.KanColleWrapper
 				Debug.WriteLine(ex);
 			}
 		}
-
 	}
 }

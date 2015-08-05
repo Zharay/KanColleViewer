@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Fiddler;
+using Grabacr07.KanColleWrapper.Globalization;
 using Grabacr07.KanColleWrapper.Internal;
 using Grabacr07.KanColleWrapper.Models.Raw;
 
@@ -21,7 +22,10 @@ namespace Grabacr07.KanColleWrapper.Models
 											185, 190, 195, 200, 205, 210, 225, 230, 235, 240, 245, 250, 255, 260, 265, 280, 285, 290, 295, 300,
 											305, 310, 315, 320, 325, 330, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395, 400, 405, 420,
 											425, 430, 435, 440, 445, 450, 455, 460, 465, 470, 475, 480, 485, 490, 505, 510, 515, 520, 525, 530,
-											535, 540, 545, 550, 555, 560, 565, 570, 575, 580, 585, 600, 605, 610, 615, 620, 652, 630, 635, 635};
+											535, 540, 545, 550, 555, 560, 565, 570, 575, 580, 585, 600, 605, 610, 615, 620, 652, 630, 635, 635,
+											650, 655, 660, 665, 670, 675, 680, 685, 690, 695, 700, 705, 710, 715, 720, 725, 730, 735, 740, 745,
+											750, 755, 760, 765, 770, 775, 780, 785, 790, 795, 800, 805, 810, 815, 820, 825, 830, 835, 840, 845,
+											850, 855, 860, 865, 870, 875, 880, 885, 890, 895, 900, 905, 910, 915};
 
 		/// <summary>
 		/// この艦娘を識別する ID を取得します。
@@ -73,6 +77,7 @@ namespace Grabacr07.KanColleWrapper.Models
 			get { return this.RawData.api_exp.Get(1) ?? 0; }
 		}
 
+
 		#region HP 変更通知プロパティ
 
 		private LimitedValue _HP;
@@ -87,6 +92,15 @@ namespace Grabacr07.KanColleWrapper.Models
 			{
 				this._HP = value;
 				this.RaisePropertyChanged();
+
+				if (value.IsHeavilyDamage())
+				{
+					this.Situation |= ShipSituation.HeavilyDamaged;
+				}
+				else
+				{
+					this.Situation &= ~ShipSituation.HeavilyDamaged;
+				}
 			}
 		}
 
@@ -227,6 +241,72 @@ namespace Grabacr07.KanColleWrapper.Models
 
 		#endregion
 
+		public string AllStats
+		{
+			get
+			{
+				string details = "";
+				details += string.Format("{0}: {1} ({2})\n", Resources.Stats_Firepower, this.Firepower.Current, (this.Firepower.IsMax ? @"MAX" : "+" + (this.Firepower.Max - this.Firepower.Current).ToString()));
+				details += string.Format("{0}: {1} ({2})\n", Resources.Stats_Torpedo, this.Torpedo.Current, (this.Torpedo.IsMax ? @"MAX" : "+" + (this.Torpedo.Max - this.Torpedo.Current).ToString()));
+				details += string.Format("{0}: {1} ({2})\n", Resources.Stats_AntiAir, this.AA.Current, (this.AA.IsMax ? @"MAX" : "+" + (this.AA.Max - this.AA.Current).ToString()));
+				details += string.Format("{0}: {1} ({2})\n", Resources.Stats_Armor, this.Armer.Current, (this.Armer.IsMax ? @"MAX" : "+" + (this.Armer.Max - this.Armer.Current).ToString()));
+				details += string.Format("{0}: {1} ({2})", Resources.Stats_Luck, this.Luck.Current, (this.Luck.IsMax ? @"MAX" : "+" + (this.Luck.Max - this.Luck.Current).ToString()));
+
+				return details;
+			}
+		}
+
+		public string RepairTime
+		{
+			get
+			{
+				if (!this.IsDamaged)
+					return "OK";
+
+				// Only need to show Facility time when they are not the same time and if the ship is lightly damaged
+				return string.Format(Resources.Ship_RepairDockToolTip, this.RepairDockTime)
+					+ (this.IsLightlyDamaged && this.RepairFacilityTime != this.RepairDockTime ? "\n" + string.Format(Resources.Ship_RepairFacilityToolTip, this.RepairFacilityTime) : "");
+			}
+		}
+
+		#region Slots 変更通知プロパティ
+
+		private ShipSlot[] _Slots;
+
+		public ShipSlot[] Slots
+		{
+			get { return this._Slots; }
+			set
+			{
+				if (this._Slots != value)
+				{
+					this._Slots = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region EquippedSlots 変更通知プロパティ
+
+		private ShipSlot[] _EquippedSlots;
+
+		public ShipSlot[] EquippedSlots
+		{
+			get { return this._EquippedSlots; }
+			set
+			{
+				if (this._EquippedSlots != value)
+				{
+					this._EquippedSlots = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
 
 		/// <summary>
 		/// 装備によるボーナスを含めた索敵ステータス値を取得します。
@@ -274,23 +354,13 @@ namespace Grabacr07.KanColleWrapper.Models
 		{
 			get { return ConditionTypeHelper.ToConditionType(this.RawData.api_cond); }
 		}
-
+		
 		/// <summary>
-		/// For visually generated elements. "[Lv.00]   Name"
+		/// この艦が出撃した海域を識別する整数値を取得します。
 		/// </summary>
-		public string LvName
+		public int SallyArea
 		{
-			get { return "[Lv." + this.Level + "]  \t" + this.Info.Name; }
-		}
-
-		/// <summary>
-		/// For visually generated elements. 
-		/// "Name           [Lv.00]"
-		/// "Long Name      [Lv.00]"    
-		/// </summary>
-		public string NameLv
-		{
-			get { return string.Format("{0, -20} [Lv.{1}]", this.Info.Name, this.Level); }
+			get { return this.RawData.api_sally_area; }
 		}
 
 		/// <summary>
@@ -300,7 +370,7 @@ namespace Grabacr07.KanColleWrapper.Models
 		{
 			get
 			{
-				return TimeSpan.FromSeconds(Math.Floor((this.HP.Maximum - this.HP.Current) * BaseRepairTime[Math.Min(this.Level, 99)] * this.Info.ShipType.RepairMultiplier) + 30).ToString();
+				return TimeSpan.FromSeconds(Math.Floor((this.HP.Maximum - this.HP.Current) * this.BaseRepairTime[Math.Min(this.Level, 150)] * this.Info.ShipType.RepairMultiplier) + 30).ToString();
 			}
 		}
 
@@ -309,10 +379,10 @@ namespace Grabacr07.KanColleWrapper.Models
 			get
 			{
 				// Time it takes to heal 1HP
-				double MinDockTime = Math.Floor(BaseRepairTime[Math.Min(this.Level, 99)] * this.Info.ShipType.RepairMultiplier) + 30;
+				double minDockTime = Math.Floor(this.BaseRepairTime[Math.Min(this.Level, 150)] * this.Info.ShipType.RepairMultiplier) + 30;
 
-				if (MinDockTime < 1200)
-					return RepairDockTime;
+				if (minDockTime < 1200)
+					return this.RepairDockTime;
 					
 				return TimeSpan.FromMinutes((this.HP.Maximum - this.HP.Current) * 20).ToString();
 			}
@@ -333,31 +403,26 @@ namespace Grabacr07.KanColleWrapper.Models
 			get { return (this.HP.Current / (double)this.HP.Maximum) <= 0.25; }
 		}
 
-		public SlotItem[] SlotItems { get; private set; }
 
-		#region OnSlot 変更通知プロパティ
+		#region Status 変更通知プロパティ
 
-		private int[] _OnSlot;
+		private ShipSituation situation;
 
-		/// <summary>
-		/// 各装備スロットの艦載機数を取得します。
-		/// </summary>
-		public int[] OnSlot
+		public ShipSituation Situation
 		{
-			get { return this._OnSlot; }
-			private set
+			get { return this.situation; }
+			set
 			{
-				if (this._OnSlot != value)
+				if (this.situation != value)
 				{
-					this._OnSlot = value;
+					this.situation = value;
 					this.RaisePropertyChanged();
 				}
 			}
 		}
 
 		#endregion
-
-
+        
 		internal Ship(Homeport parent, kcsapi_ship2 rawData)
 			: base(rawData)
 		{
@@ -383,25 +448,37 @@ namespace Grabacr07.KanColleWrapper.Models
 				this.Luck = new ModernizableStatus(this.Info.RawData.api_luck, this.RawData.api_kyouka[4]);
 			}
 
-			this.SlotItems = this.RawData.api_slot.Select(id => this.homeport.SlotItems[id]).Where(x => x != null).ToArray();
-			this.OnSlot = this.RawData.api_onslot;
+			this.Slots = this.RawData.api_slot
+				.Select(id => this.homeport.Itemyard.SlotItems[id])
+				.Select((t, i) => new ShipSlot(t, this.Info.RawData.api_maxeq.Get(i) ?? 0, this.RawData.api_onslot.Get(i) ?? 0))
+				.ToArray();
+			this.EquippedSlots = this.Slots.Where(x => x.Equipped).ToArray();
+
+			if (this.EquippedSlots.Any(x => x.Item.Info.Type == SlotItemType.応急修理要員))
+			{
+				this.Situation |= ShipSituation.DamageControlled;
+			}
+			else
+			{
+				this.Situation &= ~ShipSituation.DamageControlled;
+			}
 
 			// Minimum removes equipped values.
-			int EqAntiSub = 0, EqEvasion = 0, EqLineOfSight = 0;
+			int eqAntiSub = 0, eqEvasion = 0, eqLineOfSight = 0;
 
-			foreach (SlotItem item in this.SlotItems)
+			foreach (ShipSlot item in this.EquippedSlots)
 			{
 				if (item == null)
 					continue;
 
-				EqAntiSub += item.Info.RawData.api_tais;
-				EqEvasion += item.Info.RawData.api_houk;
-				EqLineOfSight += item.Info.RawData.api_saku;
+				eqAntiSub += item.Item.Info.RawData.api_tais;
+				eqEvasion += item.Item.Info.RawData.api_houk;
+				eqLineOfSight += item.Item.Info.RawData.api_saku;
 			}
 
-			this.AntiSub = new LimitedValue(this.RawData.api_taisen[0], this.RawData.api_taisen[1], this.RawData.api_taisen[0] - EqAntiSub);
-			this.Evasion = new LimitedValue(this.RawData.api_kaihi[0], this.RawData.api_kaihi[1], this.RawData.api_kaihi[0] - EqEvasion);
-			this.LineOfSight = new LimitedValue(this.RawData.api_sakuteki[0], this.RawData.api_sakuteki[1], this.RawData.api_sakuteki[0] - EqLineOfSight);
+			this.AntiSub = new LimitedValue(this.RawData.api_taisen[0], this.RawData.api_taisen[1], this.RawData.api_taisen[0] - eqAntiSub);
+			this.Evasion = new LimitedValue(this.RawData.api_kaihi[0], this.RawData.api_kaihi[1], this.RawData.api_kaihi[0] - eqEvasion);
+			this.LineOfSight = new LimitedValue(this.RawData.api_sakuteki[0], this.RawData.api_sakuteki[1], this.RawData.api_sakuteki[0] - eqLineOfSight);
 		}
 
 
@@ -409,7 +486,7 @@ namespace Grabacr07.KanColleWrapper.Models
 		{
 			this.Fuel = this.Fuel.Update(fuel);
 			this.Bull = this.Bull.Update(bull);
-			this.OnSlot = onslot;
+			for (var i = 0; i < this.Slots.Length; i++) this.Slots[i].Current = onslot.Get(i) ?? 0;
 		}
 
 		internal void Repair()

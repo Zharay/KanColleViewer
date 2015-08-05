@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ShipTypes Version="1.0.3">
+<ShipTypes Version="1.0.7">
   <Type>
     <ID>1</ID>
     <JP-Name>海防艦</JP-Name>
@@ -43,7 +43,7 @@
   <Type>
     <ID>8</ID>
     <JP-Name>戦艦</JP-Name>
-    <TR-Name>Fast BB</TR-Name>
+    <TR-Name>FBB</TR-Name>
   </Type>
   <Type>
     <ID>10</ID>
@@ -83,7 +83,7 @@
   <Type>
     <ID>17</ID>
     <JP-Name>揚陸艦</JP-Name>
-    <TR-Name>LSD</TR-Name>
+    <TR-Name>LHA</TR-Name>
   </Type>
   <Type>
     <ID>18</ID>
@@ -94,5 +94,15 @@
     <ID>19</ID>
     <JP-Name>工作艦</JP-Name>
     <TR-Name>AR</TR-Name>
+  </Type>
+  <Type>
+    <ID>20</ID>
+    <JP-Name>潜水母艦</JP-Name>
+    <TR-Name>AS</TR-Name>
+  </Type>
+  <Type>
+    <ID>21</ID>
+    <JP-Name>練習巡洋艦</JP-Name>
+    <TR-Name>CT</TR-Name>
   </Type>
 </ShipTypes>

@@ -11,6 +11,8 @@ using Livet;
 using Livet.EventListeners;
 using Livet.Messaging.Windows;
 using MetroRadiance;
+using Livet.Messaging;
+using Setting = Grabacr07.KanColleViewer.Models.Settings;
 
 namespace Grabacr07.KanColleViewer.ViewModels
 {
@@ -21,13 +23,13 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 		public NavigatorViewModel Navigator { get; private set; }
 		public SettingsViewModel Settings { get; private set; }
-
+		
 		#region RefreshNavigator
 
 		private ICommand _RefreshNavigator;
 		public ICommand  RefreshNavigator
 		{
-			get { return _RefreshNavigator; }
+			get { return this._RefreshNavigator; }
 		}
 
 		#endregion
@@ -53,10 +55,9 @@ namespace Grabacr07.KanColleViewer.ViewModels
 						StatusService.Current.Set(Properties.Resources.StatusBar_Ready);
 						ThemeService.Current.ChangeAccent(Accent.Blue);
 						if (KanColleClient.Current.Homeport != null)
-							KanColleClient.Current.Homeport.Logger.EnableLogging = Settings.EnableLogging;
+							KanColleClient.Current.Homeport.Logger.EnableLogging = this.Settings.EnableLogging;
 						break;
 					case Mode.InSortie:
-						// 今後の実装にご期待ください
 						ThemeService.Current.ChangeAccent(Accent.Orange);
 						break;
 					case Mode.CriticalCondition:
@@ -144,6 +145,24 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 		#endregion
 
+		#region CanClose 変更通知プロパティ
+
+		private bool _CanClose;
+
+		public bool CanClose
+		{
+			get { return this._CanClose; }
+			set
+			{
+				if (this._CanClose != value)
+				{
+					this._CanClose = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
 
 		public MainWindowViewModel()
 		{
@@ -157,12 +176,20 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			});
 			this.CompositeDisposable.Add(new PropertyChangedEventListener(KanColleClient.Current)
 			{
-				{ () => KanColleClient.Current.IsStarted, (sender, args) => this.Mode = Mode.Started },
+				{ () => KanColleClient.Current.IsStarted, (sender, args) => this.UpdateMode() },
+				{ () => KanColleClient.Current.IsInSortie, (sender, args) => this.UpdateMode() },
 			});
 
-			this.Mode = Mode.NotStarted;
+			this.UpdateCloseConfirm();
+			this.CompositeDisposable.Add(new PropertyChangedEventListener(Setting.Current)
+			{
+				{ "CloseConfirm", (sender, args) => this.UpdateCloseConfirm() },
+				{ "CloseConfirmOnlyInSortie", (sender, args) => this.UpdateCloseConfirm() },
+			});
 
-			_RefreshNavigator = new RelayCommand(Navigator.ReNavigate);
+
+			this._RefreshNavigator = new RelayCommand(this.Navigator.ReNavigate);
+			this.UpdateMode();
 		}
 
 		public void TakeScreenshot()
@@ -187,5 +214,35 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			this.Messenger.Raise(new WindowActionMessage(WindowAction.Active, "Window/Activate"));
 		}
 
+
+		private void UpdateMode()
+		{
+			this.Mode = KanColleClient.Current.IsStarted
+				? KanColleClient.Current.IsInSortie
+					? Mode.InSortie
+					: Mode.Started
+				: Mode.NotStarted;
+			this.UpdateCloseConfirm();
+		}
+
+		private void UpdateCloseConfirm()
+		{
+			this.CanClose = !Setting.Current.CloseConfirm;
+			if (Setting.Current.CloseConfirmOnlyInSortie)
+			{
+				if (this.Mode != Mode.InSortie) this.CanClose = true;
+			}
+		}
+
+		public void Close()
+		{
+			this.Messenger.Raise(new TransitionMessage(this, "Show/ExitDialog"));
+		}
+
+		public void ForceClose()
+		{
+			this.CanClose = true;
+			this.Messenger.Raise(new WindowActionMessage(WindowAction.Close, "Window/Close"));
+		}
 	}
 }

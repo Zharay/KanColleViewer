@@ -27,13 +27,14 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 		public ShipModernizeFilter ShipModernizeFilter { get; private set; }
 		public ShipRemodelingFilter ShipRemodelingFilter { get; private set; }
 		public ShipExpeditionFilter ShipExpeditionFilter { get; private set; }
+		public ShipSallyAreaFilter ShipSallyAreaFilter { get; private set; }
 
 		public bool CheckAllShipTypes
 		{
 			get { return this.ShipTypes.All(x => x.IsSelected); }
 			set
 			{
-				this.ShipTypes.ForEach(x => x.Set(value));
+				foreach (var type in this.ShipTypes) type.Set(value);
 				this.Update();
 			}
 		}
@@ -57,18 +58,37 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 
 		#endregion
 
-		#region IsOpenSettings 変更通知プロパティ
+		#region IsOpenFilterSettings 変更通知プロパティ
 
-		private bool _IsOpenSettings;
+		private bool _IsOpenFilterSettings;
 
-		public bool IsOpenSettings
+		public bool IsOpenFilterSettings
 		{
-			get { return this._IsOpenSettings; }
+			get { return this._IsOpenFilterSettings; }
 			set
 			{
-				if (this._IsOpenSettings != value)
+				if (this._IsOpenFilterSettings != value)
 				{
-					this._IsOpenSettings = value;
+					this._IsOpenFilterSettings = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region IsOpenSortSettings 変更通知プロパティ
+
+		private bool _IsOpenSortSettings;
+
+		public bool IsOpenSortSettings
+		{
+			get { return this._IsOpenSortSettings; }
+			set
+			{
+				if (this._IsOpenSortSettings != value)
+				{
+					this._IsOpenSortSettings = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -155,8 +175,8 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 
 		public ShipCatalogWindowViewModel()
 		{
-			this.Title = "Ship Girl Roster";
-			this.IsOpenSettings = true;
+            this.Title = Properties.Resources.ShipCatalog_Title;
+			this.IsOpenFilterSettings = true;
 
 			this.SortWorker = new ShipCatalogSortWorker();
 
@@ -174,9 +194,12 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 			this.ShipModernizeFilter = new ShipModernizeFilter(this.Update);
 			this.ShipRemodelingFilter = new ShipRemodelingFilter(this.Update);
 			this.ShipExpeditionFilter = new ShipExpeditionFilter(this.Update);
+			this.ShipSallyAreaFilter = new ShipSallyAreaFilter(this.Update);
 
 			this.updateSource
 				.Do(_ => this.IsReloading = true)
+				// ☟ 連続で艦種選択できるように猶予を設けるつもりだったけど、
+				// 　 ソートだけしたいケースとかだと遅くてイラ壁なので迷う
 				.Throttle(TimeSpan.FromMilliseconds(7.0))
 				.Do(_ => this.UpdateCore())
 				.Subscribe(_ => this.IsReloading = false);
@@ -199,17 +222,6 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 			this.updateSource.OnNext(Unit.Default);
 		}
 
-		public void Update(ShipCatalogSortTarget sortTarget)
-		{
-			this.SortWorker.SetTarget(sortTarget, false);
-			this.Update();
-		}
-		public void UpdateReverse(ShipCatalogSortTarget sortTarget)
-		{
-			this.SortWorker.SetTarget(sortTarget, true);
-			this.Update();
-		}
-
 		private void UpdateCore()
 		{
 			var list = this.homeport.Organization.Ships
@@ -220,7 +232,8 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 				.Where(this.ShipSpeedFilter.Predicate)
 				.Where(this.ShipModernizeFilter.Predicate)
 				.Where(this.ShipRemodelingFilter.Predicate)
-				.Where(this.ShipExpeditionFilter.Predicate);
+				.Where(this.ShipExpeditionFilter.Predicate)
+				.Where(this.ShipSallyAreaFilter.Predicate);
 
 			this.Ships = this.SortWorker.Sort(list)
 				.Select((x, i) => new ShipViewModel(i + 1, x))
@@ -230,7 +243,13 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 
 		public void SetShipType(int[] ids)
 		{
-			this.ShipTypes.ForEach(x => x.Set(ids.Any(id => x.Id == id)));
+			foreach (var type in this.ShipTypes) type.Set(ids.Any(id => type.Id == id));
+			this.Update();
+		}
+
+		public void Sort(SortableColumn column)
+		{
+			this.SortWorker.SetFirst(column);
 			this.Update();
 		}
 

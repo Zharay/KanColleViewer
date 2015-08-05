@@ -11,105 +11,157 @@ using Livet;
 
 namespace Grabacr07.KanColleWrapper
 {
-	public class KanColleClient : NotificationObject
-	{
-		#region singleton
+    public class KanColleClient : NotificationObject
+    {
+        #region singleton
 
-		private static readonly KanColleClient current = new KanColleClient();
+        private static KanColleClient current = new KanColleClient();
 
-		public static KanColleClient Current
-		{
-			get { return current; }
-		}
+        public static KanColleClient Current
+        {
+            get { return current; }
+        }
 
-		#endregion
+        #endregion
 
+        /// <summary>
+        /// 艦これの通信をフックするプロキシを取得します。
+        /// </summary>
+        public KanColleProxy Proxy { get; private set; }
 
-		/// <summary>
-		/// 艦これの通信をフックするプロキシを取得します。
-		/// </summary>
-		public KanColleProxy Proxy { get; private set; }
+        /// <summary>
+        /// ユーザーに依存しないマスター情報を取得します。
+        /// </summary>
+        public Master Master { get; private set; }
 
-		/// <summary>
-		/// ユーザーに依存しないマスター情報を取得します。
-		/// </summary>
-		public Master Master { get; private set; }
-
-		/// <summary>
-		/// 母港の情報を取得します。
-		/// </summary>
-		public Homeport Homeport { get; private set; }
+        /// <summary>
+        /// 母港の情報を取得します。
+        /// </summary>
+        public Homeport Homeport { get; private set; }
 
 		/// <summary>
 		/// Application update notifications and downloads.
 		/// </summary>
 		public Updater Updater { get; private set; }
-
 		/// <summary>
 		/// Translation engine for ships, equipment, quests, and sorties.
 		/// </summary>
 		public Translations Translations { get; private set; }
+        #region IsStarted 変更通知プロパティ
 
-		#region IsStarted 変更通知プロパティ
+        private bool _IsStarted;
 
-		private bool _IsStarted;
+        /// <summary>
+        /// 艦これが開始されているかどうかを示す値を取得します。
+        /// </summary>
+        public bool IsStarted
+        {
+            get { return this._IsStarted; }
+            set
+            {
+                if (this._IsStarted != value)
+                {
+                    this._IsStarted = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
 
-		/// <summary>
-		/// 艦これが開始されているかどうかを示す値を取得します。
-		/// </summary>
-		public bool IsStarted
-		{
-			get { return this._IsStarted; }
-			set
-			{
-				if (this._IsStarted != value)
-				{
-					this._IsStarted = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
+        #endregion
 
-		#endregion
+        #region IsInSortie 変更通知プロパティ
+
+        private bool _IsInSortie;
+
+        /// <summary>
+        /// 艦隊が出撃中かどうかを示す値を取得します。
+        /// </summary>
+        public bool IsInSortie
+        {
+            get { return this._IsInSortie; }
+            private set
+            {
+                if (this._IsInSortie != value)
+                {
+                    this._IsInSortie = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region Settings 変更通知プロパティ
+
+        private KanColleClientSettings _Settings;
+
+        public KanColleClientSettings Settings
+        {
+            get { return this._Settings ?? (this._Settings = new KanColleClientSettings()); }
+            set
+            {
+                if (this._Settings != value)
+                {
+                    this._Settings = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        #endregion
 
 
-		private KanColleClient()
-		{
-			var proxy = new KanColleProxy();
-			var basic = proxy.api_get_member_basic.TryParse<kcsapi_basic>().FirstAsync().ToTask();
-			var kdock = proxy.api_get_member_kdock.TryParse<kcsapi_kdock[]>().FirstAsync().ToTask();
-			var sitem = proxy.api_get_member_slot_item.TryParse<kcsapi_slotitem[]>().FirstAsync().ToTask();
+        private KanColleClient()
+        {
+            this.Initialieze();
+
+            var start = this.Proxy.api_req_map_start;
+            var end = this.Proxy.api_port;
+
+            this.Proxy.ApiSessionSource
+                .SkipUntil(start.Do(_ => this.IsInSortie = true))
+                .TakeUntil(end)
+                .Finally(() => this.IsInSortie = false)
+                .Repeat()
+                .Subscribe();
+        }
+
+
+        public void Initialieze()
+        {
+            var proxy = this.Proxy ?? (this.Proxy = new KanColleProxy());
+            var basic = proxy.api_get_member_basic.TryParse<kcsapi_basic>().FirstAsync().ToTask();
+            var kdock = proxy.api_get_member_kdock.TryParse<kcsapi_kdock[]>().FirstAsync().ToTask();
+            var sitem = proxy.api_get_member_slot_item.TryParse<kcsapi_slotitem[]>().FirstAsync().ToTask();
 
 			this.Updater = new Updater();
 			this.Translations = new Translations();
 
-			proxy.api_start2.FirstAsync().Subscribe(async session =>
-			{
-				var timeout = Task.Delay(TimeSpan.FromSeconds(20));
-				var canInitialize = await Task.WhenAny(new Task[] { basic, kdock, sitem }.WhenAll(), timeout) != timeout;
+            proxy.api_start2.FirstAsync().Subscribe(async session =>
+            {
+                var timeout = Task.Delay(TimeSpan.FromSeconds(20));
+                var canInitialize = await Task.WhenAny(new Task[] { basic, kdock, sitem }.WhenAll(), timeout) != timeout;
 
-				// タイムアウト仕掛けてるのは、今後のアップデートで basic, kdock, slot_item のいずれかが来なくなったときに
-				// 起動できなくなる (IsStarted を true にできなくなる) のを防ぐため
-				// -----
-				// ま、そんな規模の変更があったらそもそもまともに動作せんだろうがな ☝(◞‸◟)☝ 野良ツールはつらいよ
+                // タイムアウト仕掛けてるのは、今後のアップデートで basic, kdock, slot_item のいずれかが来なくなったときに
+                // 起動できなくなる (IsStarted を true にできなくなる) のを防ぐため
+                // -----
+                // ま、そんな規模の変更があったらそもそもまともに動作せんだろうがな ☝(◞‸◟)☝ 野良ツールはつらいよ
 
-				SvData<kcsapi_start2> svd;
-				if (!SvData.TryParse(session, out svd)) return;
+                SvData<kcsapi_start2> svd;
+                if (!SvData.TryParse(session, out svd)) return;
 
-				this.Master = new Master(svd.Data);
-				this.Homeport = new Homeport(proxy);
+                this.Master = new Master(svd.Data);
+                if (this.Homeport == null) this.Homeport = new Homeport(proxy);
 
-				if (canInitialize)
-				{
-					this.Homeport.UpdateAdmiral((await basic).Data);
-					this.Homeport.UpdateSlotItems((await sitem).Data);
-					this.Homeport.Dockyard.Update((await kdock).Data);
-				}
+                if (canInitialize)
+                {
+                    this.Homeport.UpdateAdmiral((await basic).Data);
+                    this.Homeport.Itemyard.Update((await sitem).Data);
+                    this.Homeport.Dockyard.Update((await kdock).Data);
+                }
 
-					this.IsStarted = true;
-				});
-
-			this.Proxy = proxy;
-		}
-	}
+                this.IsStarted = true;
+            });
+        }
+    }
 }

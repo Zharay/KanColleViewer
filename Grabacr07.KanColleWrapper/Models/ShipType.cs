@@ -21,10 +21,7 @@ namespace Grabacr07.KanColleWrapper.Models
 
 		public string Name
 		{
-			get
-			{
-				return KanColleClient.Current.Translations.GetTranslation(RawData.api_name, TranslationType.ShipTypes, this.RawData, this.Id);
-			}
+			get { return KanColleClient.Current.Translations.GetTranslation(RawData.api_name, TranslationType.ShipTypes, this.RawData, this.Id); }
 		}
 
 		public int SortNumber
@@ -34,27 +31,7 @@ namespace Grabacr07.KanColleWrapper.Models
 
 		public double RepairMultiplier
 		{
-			get
-			{
-				switch ((ShipTypeId)this.Id)
-				{
-					case ShipTypeId.Submarine:
-						return 0.5;
-					case ShipTypeId.HeavyCruiser:
-					case ShipTypeId.RepairShip:
-					case ShipTypeId.FastBattleship:
-					case ShipTypeId.LightAircraftCarrier:
-						return 1.5;
-					case ShipTypeId.Battleship:
-					case ShipTypeId.Superdreadnought:
-					case ShipTypeId.AerialBattleship:
-					case ShipTypeId.AircraftCarrier:
-					case ShipTypeId.ArmoredAircraftCarrier:
-						return 2;
-					default:
-						return 1;
-				}
-			}
+			get { return this.RawData.api_scnt * 0.5; } 
 		}
 
 		public ShipType(kcsapi_mst_stype rawData) : base(rawData) { }
@@ -66,7 +43,7 @@ namespace Grabacr07.KanColleWrapper.Models
 
 		#region static members
 
-		private static readonly ShipType dummy = new ShipType(new kcsapi_mst_stype
+		private static ShipType dummy = new ShipType(new kcsapi_mst_stype
 		{
 			api_id = 999,
 			api_sortno = 999,

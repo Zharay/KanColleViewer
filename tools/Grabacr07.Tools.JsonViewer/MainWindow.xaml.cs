@@ -28,6 +28,7 @@ namespace Grabacr07.Tools.JsonViewer
 			var target = this.TextBox.Text;
 			if (!string.IsNullOrEmpty(target))
 			{
+				target = target.Replace("&quot;", "\"");
 				var obj = DynamicJson.Parse(target);
 			}
 			// ↖ ここにブレークポイントを仕掛けよう

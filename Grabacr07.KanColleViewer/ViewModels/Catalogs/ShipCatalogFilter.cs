@@ -7,6 +7,8 @@ using Grabacr07.KanColleWrapper;
 using Grabacr07.KanColleWrapper.Models;
 using Livet;
 using Settings = Grabacr07.KanColleViewer.Models.Settings;
+using Livet.EventListeners;
+using Grabacr07.KanColleWrapper.Globalization;
 
 namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 {
@@ -236,8 +238,8 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 		public override bool Predicate(Ship ship)
 		{
 			if (this.Both) return true;
-			if (this.Fast && ship.Info.Speed == Speed.Fast) return true;
-			if (this.Low && ship.Info.Speed == Speed.Low) return true;
+			if (this.Fast && ship.Info.Speed == ShipSpeed.Fast) return true;
+			if (this.Low && ship.Info.Speed == ShipSpeed.Low) return true;
 
 			return false;
 		}
@@ -423,6 +425,92 @@ namespace Grabacr07.KanColleViewer.ViewModels.Catalogs
 			this.shipIds = new HashSet<int>(fleets
 				.Where(x => x.Value.Expedition.IsInExecution)
 				.SelectMany(x => x.Value.Ships.Select(s => s.Id)));
+		}
+	}
+
+	public class ShipSallyAreaFilter : ShipCatalogFilter
+	{
+		#region None 変更通知プロパティ
+
+		private bool _None;
+
+		public bool None
+		{
+			get { return this._None; }
+			set
+			{
+				if (this._None != value)
+				{
+					this._None = value;
+					this.RaisePropertyChanged();
+					this.Update();
+				}
+			}
+		}
+
+		#endregion
+
+		public IReadOnlyCollection<SallyAreaViewModel> Areas { get; private set; }
+
+
+		public ShipSallyAreaFilter(Action updateAction) : base(updateAction)
+		{
+			this.None = true;
+			// event only
+			//this.Areas = SallyArea.Areas.Select(x => new SallyAreaViewModel(x, updateAction)).ToList();
+
+			this.Areas = null;
+		}
+
+		public override bool Predicate(Ship ship)
+		{
+			// event only
+			//if (this.None && ship.SallyArea == 0) return true;
+			//return this.Areas.Any(x => x.IsSelected && x.Area.Id == ship.SallyArea);
+
+			return true;
+		}
+	}
+
+	public class SallyAreaViewModel : ViewModel
+	{
+		public ISallyArea Area { get; set; }
+
+		private Action action;
+
+		#region Selected 変更通知プロパティ
+
+		private bool _IsSelected;
+
+		public bool IsSelected
+		{
+			get { return this._IsSelected; }
+			set
+			{
+				if (this._IsSelected != value)
+				{
+					this._IsSelected = value;
+					if (this.action != null) this.action();
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		public SallyAreaViewModel(ISallyArea area, Action updateAction)
+		{
+			this.Area = area;
+			this.IsSelected = true;
+			this.action = updateAction;
+
+			this.CompositeDisposable.Add(new PropertyChangedEventListener(ResourceService.Current)
+			{
+				(sender, args) =>
+				{
+					this.RaisePropertyChanged("Area");
+				},
+			});
 		}
 	}
 }

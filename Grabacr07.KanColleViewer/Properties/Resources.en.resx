@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -172,13 +172,13 @@
     <value>Individual Dock Settings</value>
   </data>
   <data name="Dockyard_ShipName" xml:space="preserve">
-    <value>Ship In Progress</value>
+    <value>Ship</value>
   </data>
   <data name="Dockyard_TimeComplete" xml:space="preserve">
-    <value>Completion Time</value>
+    <value>ETA</value>
   </data>
   <data name="Dockyard_TimeRemaining" xml:space="preserve">
-    <value>Remaining Time</value>
+    <value>Remaining</value>
   </data>
   <data name="Dockyard_Unused" xml:space="preserve">
     <value>Empty</value>
@@ -261,9 +261,6 @@
   <data name="MessageBar_ReSortie_Separator" xml:space="preserve">
     <value>, </value>
   </data>
-  <data name="MessageBar_ReSortie_Wounded" xml:space="preserve">
-    <value>are heavily damaged</value>
-  </data>
   <data name="Quests" xml:space="preserve">
     <value>Quests</value>
   </data>
@@ -271,7 +268,7 @@
     <value>Active Quests</value>
   </data>
   <data name="Quests_Daily" xml:space="preserve">
-    <value>Daily Quests</value>
+    <value>Daily</value>
   </data>
   <data name="Quests_Notice" xml:space="preserve">
     <value>※ The indicators (50%, 80%) mirror in-game indicators. Enemy fleet kills, successful expeditions, etc are not actively counted.</value>
@@ -280,22 +277,7 @@
     <value>Please open the in-game Quests menu to populate the Quest list.</value>
   </data>
   <data name="Quests_Weekly" xml:space="preserve">
-    <value>Weekly Quests</value>
-  </data>
-  <data name="Quest_Detail_Untaken" xml:space="preserve">
-    <value>Please visit all of the quest pages.</value>
-  </data>
-  <data name="Quest_Progress_50" xml:space="preserve">
-    <value> 50% </value>
-  </data>
-  <data name="Quest_Progress_80" xml:space="preserve">
-    <value> 80% </value>
-  </data>
-  <data name="Quest_State_Accomplished" xml:space="preserve">
-    <value> Complete </value>
-  </data>
-  <data name="Quest_Title_Untaken" xml:space="preserve">
-    <value>(Unknown quest)</value>
+    <value>Weekly</value>
   </data>
   <data name="Repairyard" xml:space="preserve">
     <value>Repair</value>
@@ -316,22 +298,16 @@
     <value>Individual Dock Settings</value>
   </data>
   <data name="Repairyard_ShipName" xml:space="preserve">
-    <value>Docked Ship</value>
+    <value>Ship</value>
   </data>
   <data name="Repairyard_TimeComplete" xml:space="preserve">
-    <value>Completion</value>
+    <value>ETA</value>
   </data>
   <data name="Repairyard_TimeRemaining" xml:space="preserve">
     <value>Remaining</value>
   </data>
   <data name="Reparyard_Unused" xml:space="preserve">
     <value>Empty</value>
-  </data>
-  <data name="ReSortie_NotificationMessage" xml:space="preserve">
-    <value>All ships in 「{0}」 have fully recovered from fatigue.</value>
-  </data>
-  <data name="ReSortie_NotificationMessage_Title" xml:space="preserve">
-    <value>Fatigue Recovery Completed</value>
   </data>
   <data name="Screenshot_Failed" xml:space="preserve">
     <value>Screenshot save failed: </value>
@@ -364,7 +340,7 @@
     <value>Network</value>
   </data>
   <data name="Settings_Operation" xml:space="preserve">
-    <value>Behaviour</value>
+    <value>Sortie</value>
   </data>
   <data name="Settings_Other" xml:space="preserve">
     <value>Other</value>
@@ -430,10 +406,16 @@
     <value>Browser cache cleared</value>
   </data>
   <data name="StartContent_Introduction1" xml:space="preserve">
-    <value>「提督業も忙しい！」は、艦これを遊びやすくするためのツールです。</value>
+    <value>KanColleViewer is a tool to play Kantai Collection.</value>
   </data>
   <data name="StartContent_Welcom" xml:space="preserve">
     <value>Welcome</value>
+  </data>
+  <data name="Fleets_AirSuperiorityPotential" xml:space="preserve">
+    <value>Air Superiority</value>
+  </data>
+  <data name="Fleets_Average" xml:space="preserve">
+    <value>Average</value>
   </data>
   <data name="StatusBar_NotStarted" xml:space="preserve">
     <value>Waiting for KanColle to start</value>
@@ -441,17 +423,29 @@
   <data name="StatusBar_Ready" xml:space="preserve">
     <value>Ready</value>
   </data>
+  <data name="Fleets_Speed_Fast" xml:space="preserve">
+    <value>Fast Fleet</value>
+  </data>
+  <data name="Fleets_Speed_Slow" xml:space="preserve">
+    <value>Slow Fleet</value>
+  </data>
   <data name="ZoomAction_OutOfRange" xml:space="preserve">
     <value>{0}% zoom is not supported.</value>
   </data>
   <data name="ZoomAction_ZoomFailed" xml:space="preserve">
     <value>Zoom Failed: {0}</value>
   </data>
-  <data name="Rankings" xml:space="preserve">
-    <value>Rankings</value>
+  <data name="Fleets_Level" xml:space="preserve">
+    <value>Level</value>
   </data>
-  <data name="Rankings_RankingsList" xml:space="preserve">
-    <value>Current Rankings</value>
+  <data name="Fleets_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="ZoomFactorSelector" xml:space="preserve">
+    <value>Game screen size</value>
+  </data>
+  <data name="ZoomFactorSelector_Tooltip" xml:space="preserve">
+    <value>Adjust the display size of the game screen.</value>
   </data>
   <data name="Settings_Logging" xml:space="preserve">
     <value>Logging</value>
@@ -459,8 +453,14 @@
   <data name="Settings_Logging_Enable" xml:space="preserve">
     <value>Log drops and crafting results to file</value>
   </data>
+  <data name="Fleets_ViewRange" xml:space="preserve">
+    <value>Total LoS</value>
+  </data>
   <data name="StartContent_SetRegionCookieButton" xml:space="preserve">
     <value>Set Region Cookie</value>
+  </data>
+  <data name="MessageBar_ReSortie_Wounded" xml:space="preserve">
+    <value>are heavily damaged</value>
   </data>
   <data name="StartContent_SetRegionCookieMessage" xml:space="preserve">
     <value>Cookie has been set</value>
@@ -477,59 +477,17 @@
   <data name="StartContent_SetRegionCookieToolTip" xml:space="preserve">
     <value>Make sure DMM.com is set to Japanese (日本語)</value>
   </data>
-  <data name="Stats_Accuracy" xml:space="preserve">
-    <value>Accuracy</value>
+  <data name="Notifications_CriticalCondition" xml:space="preserve">
+    <value>{0} has a ship is in critical condition!</value>
   </data>
-  <data name="Stats_AntiAir" xml:space="preserve">
-    <value>Anti-Air</value>
-  </data>
-  <data name="Stats_AntiSub" xml:space="preserve">
-    <value>Anti-Sub</value>
-  </data>
-  <data name="Stats_Armor" xml:space="preserve">
-    <value>Armor</value>
-  </data>
-  <data name="Stats_DiveBomb" xml:space="preserve">
-    <value>Dive Bomb</value>
-  </data>
-  <data name="Stats_Evasion" xml:space="preserve">
-    <value>Evasion</value>
-  </data>
-  <data name="Stats_Firepower" xml:space="preserve">
-    <value>Firepower</value>
-  </data>
-  <data name="Stats_Health" xml:space="preserve">
-    <value>Health</value>
-  </data>
-  <data name="Stats_Luck" xml:space="preserve">
-    <value>Luck</value>
-  </data>
-  <data name="Stats_SightRange" xml:space="preserve">
-    <value>Range</value>
-  </data>
-  <data name="Stats_Speed" xml:space="preserve">
-    <value>Speed</value>
-  </data>
-  <data name="Stats_Torpedo" xml:space="preserve">
-    <value>Torpedo</value>
-  </data>
-  <data name="Stats_AttackRange" xml:space="preserve">
-    <value>Attack Rng</value>
-  </data>
-  <data name="ReSortie_CriticalConditionMessage" xml:space="preserve">
-    <value>「{0}」 in {1} is in critical condition!</value>
-  </data>
-  <data name="ReSortie_CriticalConditionMessage_Title" xml:space="preserve">
+  <data name="Notifications_CriticalCondition_Title" xml:space="preserve">
     <value>Critical Ship Warning</value>
   </data>
-  <data name="Settings_Accent_CriticalCondition" xml:space="preserve">
-    <value>Change window color when a ship is in critical condition</value>
-  </data>
-  <data name="Settings_FleetCondition" xml:space="preserve">
-    <value>Fleet Condition</value>
-  </data>
-  <data name="Settings_Notify_CriticalCondition" xml:space="preserve">
+  <data name="Settings_Notifications_CriticalCondition" xml:space="preserve">
     <value>Give a notification for ships in critical condition</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="Settings_Updates" xml:space="preserve">
     <value>Updates</value>
@@ -556,116 +514,32 @@
     <value>Download Translations</value>
   </data>
   <data name="Settings_Updates_UpdateTransBtn_ToolTip" xml:space="preserve">
-    <value>Downloads translations only for selected UI language!</value>
-  </data>
-  <data name="Tools_Calculator" xml:space="preserve">
-    <value>Calculator</value>
-  </data>
-  <data name="Tools_Calculator_CurrentLevel" xml:space="preserve">
-    <value>Current Level</value>
-  </data>
-  <data name="Tools_Calculator_Flagship" xml:space="preserve">
-    <value>Flagship</value>
-  </data>
-  <data name="Tools_Calculator_ListPrompt" xml:space="preserve">
-    <value>Select a Ship Girl</value>
-  </data>
-  <data name="Tools_Calculator_Map" xml:space="preserve">
-    <value>Map</value>
-  </data>
-  <data name="Tools_Calculator_MVP" xml:space="preserve">
-    <value>MVP</value>
-  </data>
-  <data name="Tools_Calculator_RemainingExp" xml:space="preserve">
-    <value>Remaining</value>
-  </data>
-  <data name="Tools_Calculator_Result" xml:space="preserve">
-    <value>Result</value>
-  </data>
-  <data name="Tools_Calculator_SortieExp" xml:space="preserve">
-    <value>Sortie Exp</value>
-  </data>
-  <data name="Tools_Calculator_TargetLevel" xml:space="preserve">
-    <value>Target Level</value>
-  </data>
-  <data name="Tools_Rankings" xml:space="preserve">
-    <value>Rankings</value>
-  </data>
-  <data name="Tools_Rankings_Comment" xml:space="preserve">
-    <value>Comment</value>
-  </data>
-  <data name="Tools_Rankings_Experience" xml:space="preserve">
-    <value>Experience</value>
-  </data>
-  <data name="Tools_Rankings_Level" xml:space="preserve">
-    <value>Level</value>
-  </data>
-  <data name="Tools_Rankings_Page" xml:space="preserve">
-    <value>Page:</value>
-  </data>
-  <data name="Tools_Rankings_Rank" xml:space="preserve">
-    <value>Rank</value>
-  </data>
-  <data name="Tools_Rankings_RankingsList" xml:space="preserve">
-    <value>Current Rankings</value>
-  </data>
-  <data name="Tools_Rankings_Rate" xml:space="preserve">
-    <value>Rate</value>
-  </data>
-  <data name="Tools_Rankings_TotalRanked" xml:space="preserve">
-    <value>Total Ranked:</value>
-  </data>
-  <data name="Tools_Rankings_User" xml:space="preserve">
-    <value>User</value>
+    <value>Downloads new translations</value>
   </data>
   <data name="Updater_Notification_CheckFailed" xml:space="preserve">
-    <value>KCV was unable to check for updates!</value>
+    <value>KCV was unable to check for updates.</value>
+  </data>
+  <data name="Updater_Notification_TransUpdate_Success" xml:space="preserve">
+    <value>Translation files have been updated.</value>
   </data>
   <data name="Updater_Notification_NewAppVersion" xml:space="preserve">
-    <value>New Version of KCV is available! 「v{0}」
+    <value>New Version of KCV is available: v{0}!
 Click here to get it.</value>
   </data>
   <data name="Updater_Notification_Title" xml:space="preserve">
     <value>Updater</value>
   </data>
   <data name="Updater_Notification_TransUpdate_Fail" xml:space="preserve">
-    <value>KCV was unable to download the translations!</value>
+    <value>KCV was unable to download the translations.</value>
   </data>
   <data name="Updater_Notification_TransUpdate_Same" xml:space="preserve">
-    <value>Translations are already up-to-date</value>
-  </data>
-  <data name="Updater_Notification_TransUpdate_Success" xml:space="preserve">
-    <value>Translation files have been updated!</value>
-  </data>
-  <data name="Fleets_AirSuperiorityPotential" xml:space="preserve">
-    <value>Air Superiority</value>
-  </data>
-  <data name="Fleets_Average" xml:space="preserve">
-    <value>Average</value>
-  </data>
-  <data name="Fleets_Level" xml:space="preserve">
-    <value>Level</value>
-  </data>
-  <data name="Fleets_Speed_Fast" xml:space="preserve">
-    <value>Fast Fleet</value>
-  </data>
-  <data name="Fleets_Speed_Slow" xml:space="preserve">
-    <value>Slow Fleet</value>
-  </data>
-  <data name="Fleets_Total" xml:space="preserve">
-    <value>Total</value>
-  </data>
-  <data name="ZoomFactorSelector" xml:space="preserve">
-    <value>Game screen size</value>
-  </data>
-  <data name="ZoomFactorSelector_Tooltip" xml:space="preserve">
-    <value>Adjust the display size of the game screen.</value>
+    <value>Translations are already up-to-date.</value>
   </data>
   <data name="Settings_Flash" xml:space="preserve">
-    <value>Flash</value>
+    <value>Adobe® Flash® Settings</value>
   </data>
   <data name="Settings_Flash_Quality" xml:space="preserve">
-    <value>Set Flash Quality:</value>
+    <value>Flash Quality:</value>
   </data>
   <data name="Settings_Flash_Window_ToolTip" xml:space="preserve">
     <value>Opaque: Default (Old IE has no HW accel)
@@ -673,7 +547,7 @@ Direct: Fastest rendering speed (HW accel)
 GPU: Slow! GPU optimization for tablets.</value>
   </data>
   <data name="Settings_Flash_Window" xml:space="preserve">
-    <value>Set Flash Window:</value>
+    <value>Flash Window:</value>
   </data>
   <data name="Settings_Flash_Quality_ToolTip" xml:space="preserve">
     <value>Best: Anti-Aliasing enabled on all images (Slowest)
@@ -683,20 +557,637 @@ Medium: Average Performance
 AutoLow: Will emphasize speed when needed
 Low: Performance over quality. Ugliest setting.</value>
   </data>
-  <data name="Fleets_ViewRange" xml:space="preserve">
-    <value>Total LoS</value>
-  </data>
   <data name="Settings_Updates_GetKCVBtn" xml:space="preserve">
     <value>Get Latest KCV</value>
   </data>
   <data name="Settings_Updates_GetKCVBtn_ToolTip" xml:space="preserve">
     <value>Opens a link to the latest version of KCV found here.</value>
   </data>
-  <data name="Settings_Notify_Fatigue" xml:space="preserve">
-    <value>Give a notification when a fleet's fatigue as reset.</value>
+  <data name="Settings_CustomSound" xml:space="preserve">
+    <value>Custom Sound Notifications</value>
+  </data>
+  <data name="Settings_CustomSound_Volume" xml:space="preserve">
+    <value>Volume</value>
   </data>
   <data name="Settings_Flash_Message" xml:space="preserve">
-    <value>This works with DMM.com. OSAPI, and API links now!
-[You must reload the game for the changes to take affect.]</value>
+    <value>Affects DMM.com, OSAPI and API links. You must reload the game for the changes to take effect.</value>
+  </data>
+  <data name="Ship_RepairDockToolTip" xml:space="preserve">
+    <value>Dock: {0}</value>
+  </data>
+  <data name="Ship_RepairFacilityToolTip" xml:space="preserve">
+    <value>Facility: {0}</value>
+  </data>
+  <data name="Settings_UI" xml:space="preserve">
+    <value>UI Setting</value>
+  </data>
+  <data name="Settings_UI_Icon" xml:space="preserve">
+    <value>Use menu icon</value>
+  </data>
+  <data name="Rank_Admiral" xml:space="preserve">
+    <value>Admiral</value>
+  </data>
+  <data name="Rank_Captain" xml:space="preserve">
+    <value>Captain</value>
+  </data>
+  <data name="Rank_Commander" xml:space="preserve">
+    <value>Commander</value>
+  </data>
+  <data name="Rank_Lieutenant" xml:space="preserve">
+    <value>Lieutenant</value>
+  </data>
+  <data name="Rank_Lieutenant_Commander" xml:space="preserve">
+    <value>Lt. Commander</value>
+  </data>
+  <data name="Rank_Marshal_Admiral" xml:space="preserve">
+    <value>Marshal Admiral</value>
+  </data>
+  <data name="Rank_Novice_Commander" xml:space="preserve">
+    <value>Novice Commander</value>
+  </data>
+  <data name="Rank_Novice_Lieutenant" xml:space="preserve">
+    <value>Novice Lieutenant</value>
+  </data>
+  <data name="Rank_Rear_Admiral" xml:space="preserve">
+    <value>Rear-Admiral</value>
+  </data>
+  <data name="Rank_Vice_Admiral" xml:space="preserve">
+    <value>Vice-Admiral</value>
+  </data>
+  <data name="Settings_Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="Settings_Notifications_AheadOfTime" xml:space="preserve">
+    <value>Notify ahead of time by</value>
+  </data>
+  <data name="Settings_Notifications_AheadOfTime_Description" xml:space="preserve">
+    <value>Recommended: 40-50 seconds. Specifies the server time deviation, up to 1 minute depending on various factors.</value>
+  </data>
+  <data name="Settings_Notifications_AheadOfTime_Seconds" xml:space="preserve">
+    <value>sec.</value>
+  </data>
+  <data name="Settings_Notifications_Construction_Enabled" xml:space="preserve">
+    <value>When construction completes</value>
+  </data>
+  <data name="Settings_Notifications_Expeditions_Enabled" xml:space="preserve">
+    <value>When expeditions finish</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale" xml:space="preserve">
+    <value>Notify when a fleet recovers from fatigue</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale_Description" xml:space="preserve">
+    <value>Notifies when the morale of every ship girl in a fleet reaches this threshold. Morale increases by 3 every 3 minutes, but due to the way the API works the notification might appear earlier than needed.</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale_Reference" xml:space="preserve">
+    <value>※ Can be set in Operation Settings, Sortie morale threshold.</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale_Threshold" xml:space="preserve">
+    <value>Morale threshold</value>
+  </data>
+  <data name="Settings_Notifications_Repair_Enabled" xml:space="preserve">
+    <value>When repairs finish</value>
+  </data>
+  <data name="Settings_Operation_SortieCondition" xml:space="preserve">
+    <value>Sortie condition</value>
+  </data>
+  <data name="Settings_Operation_SortieCondition_Description" xml:space="preserve">
+    <value>※Value must be within the range of 40 and 49. (Default: 40)</value>
+  </data>
+  <data name="Settings_Operation_SortieCondition_Title" xml:space="preserve">
+    <value>Minimum fleet condition to be considered ready for sorties.</value>
+  </data>
+  <data name="Settings_Network_Proxy_Auth_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Settings_Network_Proxy_Auth_Required" xml:space="preserve">
+    <value>Proxy server requires authorization</value>
+  </data>
+  <data name="Settings_Network_Proxy_Auth_Username" xml:space="preserve">
+    <value>User name</value>
+  </data>
+  <data name="Overview_Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="Overview_EquipmentList" xml:space="preserve">
+    <value>Eq. List</value>
+  </data>
+  <data name="Overview_ShipList" xml:space="preserve">
+    <value>Ship List</value>
+  </data>
+  <data name="Shipyard" xml:space="preserve">
+    <value>Shipyard</value>
+  </data>
+  <data name="Shipyard_ConstructionDock" xml:space="preserve">
+    <value>Construction</value>
+  </data>
+  <data name="Shipyard_Development" xml:space="preserve">
+    <value>Development / Drop</value>
+  </data>
+  <data name="Shipyard_Development_Result_Failure" xml:space="preserve">
+    <value>Failure</value>
+  </data>
+  <data name="Shipyard_Development_Result_None" xml:space="preserve">
+    <value>No results</value>
+  </data>
+  <data name="Shipyard_Development_Result_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="Shipyard_RepairDock" xml:space="preserve">
+    <value>Repairs</value>
+  </data>
+  <data name="Ship_Repairing" xml:space="preserve">
+    <value>Repairing</value>
+  </data>
+  <data name="StateDetail_CriticalDamage" xml:space="preserve">
+    <value>Some of your girls are critically damaged.</value>
+  </data>
+  <data name="StateDetail_EmptyFleet" xml:space="preserve">
+    <value>There are no ships in this fleet.</value>
+  </data>
+  <data name="StateDetail_IsReady" xml:space="preserve">
+    <value>Ready to sortie!</value>
+  </data>
+  <data name="StateDetail_MoraleRecovering" xml:space="preserve">
+    <value>Morale recovered</value>
+  </data>
+  <data name="StateDetail_MoraleRecoveryTimer" xml:space="preserve">
+    <value>Morale will be restored in</value>
+  </data>
+  <data name="StateDetail_OnExpedition" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="StateDetail_OnSortie" xml:space="preserve">
+    <value>On sortie!</value>
+  </data>
+  <data name="Notifications_MoraleRestored" xml:space="preserve">
+    <value>Morale Restored</value>
+  </data>
+  <data name="Notifications_MoraleRestored_Details" xml:space="preserve">
+    <value>Morale of all girls in fleet {0} has recovered.</value>
+  </data>
+  <data name="ShipCatalog_SortieWaters" xml:space="preserve">
+    <value>Operation</value>
+  </data>
+  <data name="ShipCatalog_Operation_AL" xml:space="preserve">
+    <value>Participated in AL</value>
+  </data>
+  <data name="ShipCatalog_Operation_MI" xml:space="preserve">
+    <value>Participated in MI</value>
+  </data>
+  <data name="ShipCatalog_Operation_NotLocked" xml:space="preserve">
+    <value>Did not participate</value>
+  </data>
+  <data name="Settings_Operation_LoSCalculation" xml:space="preserve">
+    <value>LoS Calculation</value>
+  </data>
+  <data name="Settings_Operation_LoS_CarrierBasedRecon" xml:space="preserve">
+    <value>Carrier-based Recon Aircraft</value>
+  </data>
+  <data name="Settings_Operation_LoS_CarrierBasedRecon_Tooltip" xml:space="preserve">
+    <value>Saiun, Type 2 Recon Aircraft</value>
+  </data>
+  <data name="Settings_Operation_LoS_New" xml:space="preserve">
+    <value>(Recon planes × 2) + (RADAR) + √(Total LoS with Eq. LoS included - Recon planes - RADAR)</value>
+  </data>
+  <data name="Settings_Operation_LoS_New_Desc" xml:space="preserve">
+    <value>Used in cases where equipment LoS is more important.</value>
+  </data>
+  <data name="Settings_Operation_LoS_Recon" xml:space="preserve">
+    <value>Recon Planes</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneBomber" xml:space="preserve">
+    <value>Seaplane Bombers</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneBomber_Tooltip" xml:space="preserve">
+    <value>Zuiun, Zuiun (634 Air Group), Prototype Seiran</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneRecon" xml:space="preserve">
+    <value>Reconnaissance Seaplanes</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneRecon_Tooltip" xml:space="preserve">
+    <value>Type 0 Recon Seaplane, Type 0 Observation Seaplane, Type 98 Recon Seaplane (Night Scout)</value>
+  </data>
+  <data name="Settings_Operation_LoS_Simple" xml:space="preserve">
+    <value>Simple sum of ship and equipment LoS</value>
+  </data>
+  <data name="Settings_Operation_LoS_Simple_Description" xml:space="preserve">
+    <value>The method used in KanColleViewer! prior to version 3.2.</value>
+  </data>
+  <data name="Settings_Operation_LoS_Title" xml:space="preserve">
+    <value>Use the following formula to calculate fleet LoS:</value>
+  </data>
+  <data name="Settings_Updates_CheckUpdatesBtn_ToolTip" xml:space="preserve">
+    <value>Check lastest translations version</value>
+  </data>
+  <data name="StateDetail_Repairing" xml:space="preserve">
+    <value>There are ships currently docked for repairs.</value>
+  </data>
+  <data name="StateDetail_ShortSupply" xml:space="preserve">
+    <value>There are ships need resupplying.</value>
+  </data>
+  <data name="Quests_Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="CommonCatalog_GeneratingList" xml:space="preserve">
+    <value>Generating list…</value>
+  </data>
+  <data name="CommonCatalog_Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Quests_NoQuest" xml:space="preserve">
+    <value>There are no current missions.</value>
+  </data>
+  <data name="Settings_Notifications_ActiveNotificationPlugin" xml:space="preserve">
+    <value>Active notification plugins</value>
+  </data>
+  <data name="Settings_Notifications_NotificationPlugin" xml:space="preserve">
+    <value>Notification plugin</value>
+  </data>
+  <data name="Settings_Updates_Option" xml:space="preserve">
+    <value>Update options</value>
+  </data>
+  <data name="ShipCatalog_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="ShipCatalog_AntiAir" xml:space="preserve">
+    <value>Anti-Air</value>
+  </data>
+  <data name="ShipCatalog_AntiSub" xml:space="preserve">
+    <value>AntiSub</value>
+  </data>
+  <data name="ShipCatalog_Armor" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="ShipCatalog_Equips" xml:space="preserve">
+    <value>Equips</value>
+  </data>
+  <data name="ShipCatalog_Evasion" xml:space="preserve">
+    <value>Evasion</value>
+  </data>
+  <data name="ShipCatalog_ExcludeShipOnExpedition" xml:space="preserve">
+    <value>Exclude ships on expeditions</value>
+  </data>
+  <data name="ShipCatalog_ExcludeShiptype" xml:space="preserve">
+    <value>Does not include ship types!</value>
+  </data>
+  <data name="ShipCatalog_Expedition" xml:space="preserve">
+    <value>Expedition</value>
+  </data>
+  <data name="ShipCatalog_Fast" xml:space="preserve">
+    <value>Fast</value>
+  </data>
+  <data name="ShipCatalog_FilterSettings" xml:space="preserve">
+    <value>Filter &amp; Settings</value>
+  </data>
+  <data name="ShipCatalog_Firepower" xml:space="preserve">
+    <value>Firepower</value>
+  </data>
+  <data name="ShipCatalog_Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="ShipCatalog_Level1" xml:space="preserve">
+    <value>Lv.1</value>
+  </data>
+  <data name="ShipCatalog_Level2Up" xml:space="preserve">
+    <value>Lv.2 and up</value>
+  </data>
+  <data name="ShipCatalog_Lock" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="ShipCatalog_Locked" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="ShipCatalog_LoS" xml:space="preserve">
+    <value>LoS</value>
+  </data>
+  <data name="ShipCatalog_Luck" xml:space="preserve">
+    <value>Luck</value>
+  </data>
+  <data name="ShipCatalog_Modernization" xml:space="preserve">
+    <value>Modernization</value>
+  </data>
+  <data name="ShipCatalog_ModernizationComplete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="ShipCatalog_ModernizationIncomplete" xml:space="preserve">
+    <value>Incomplete</value>
+  </data>
+  <data name="ShipCatalog_Name" xml:space="preserve">
+    <value>Ship Name</value>
+  </data>
+  <data name="ShipCatalog_RemodelIncomplete" xml:space="preserve">
+    <value>Incomplete</value>
+  </data>
+  <data name="ShipCatalog_Remodel" xml:space="preserve">
+    <value>Remodels</value>
+  </data>
+  <data name="ShipCatalog_RemodelComplete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="ShipCatalog_ResetFilterSettings" xml:space="preserve">
+    <value>Reset Filters</value>
+  </data>
+  <data name="ShipCatalog_SaveFilterSettings" xml:space="preserve">
+    <value>Save Filter Settings</value>
+  </data>
+  <data name="ShipCatalog_SelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="ShipCatalog_ShipType" xml:space="preserve">
+    <value>Ship Types</value>
+  </data>
+  <data name="ShipCatalog_ShowAdditionalShipStats" xml:space="preserve">
+    <value>Show Additional Ship Stats</value>
+  </data>
+  <data name="ShipCatalog_Slow" xml:space="preserve">
+    <value>Slow</value>
+  </data>
+  <data name="ShipCatalog_Speed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="ShipCatalog_Torpedo" xml:space="preserve">
+    <value>Torpedo</value>
+  </data>
+  <data name="ShipCatalog_Unlocked" xml:space="preserve">
+    <value>Unlocked</value>
+  </data>
+  <data name="SlotItemCatalog_EqipName" xml:space="preserve">
+    <value>Eq. Name</value>
+  </data>
+  <data name="SlotItemCatalog_EquippedShipGirls" xml:space="preserve">
+    <value>Equipped Ship Girls</value>
+  </data>
+  <data name="SlotItemCatalog_Extra" xml:space="preserve">
+    <value>Extra</value>
+  </data>
+  <data name="SlotItemCatalog_Owned" xml:space="preserve">
+    <value>Owned</value>
+  </data>
+  <data name="SlotItemCatalog_Stats" xml:space="preserve">
+    <value>Stats</value>
+  </data>
+  <data name="Shipyard_Drop" xml:space="preserve">
+    <value>Drop</value>
+  </data>
+  <data name="Homeport_ImprovementMaterial" xml:space="preserve">
+    <value>Remodel Kits:</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Settings_Updates_ForceUpdateTransBtn" xml:space="preserve">
+    <value>Force download</value>
+  </data>
+  <data name="Settings_Updates_ForceUpdateTransBtn_ToolTip" xml:space="preserve">
+    <value>Download all translatations without check version!</value>
+  </data>
+  <data name="Settings_Browser_ResetZoom_Pre" xml:space="preserve">
+    <value>Return game to </value>
+  </data>
+  <data name="Settings_Browser_ResetZoomDescription" xml:space="preserve">
+    <value>(when zoomed incorrectly)</value>
+  </data>
+  <data name="Settings_Browser_ZoomDescription" xml:space="preserve">
+    <value>You can change the display size of the game (IE) with the zoom button at the top of the window. Screenshots are not affected by this setting and will always be taken at 100% scale.</value>
+  </data>
+  <data name="Settings_Browser_ResetZoom_Suf" xml:space="preserve">
+    <value>% scale</value>
+  </data>
+  <data name="Browser_GoBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Browser_GoForward" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="Browser_ReNavigate" xml:space="preserve">
+    <value>Reload (F5)</value>
+  </data>
+  <data name="Browser_URLTip" xml:space="preserve">
+    <value>Enter the URL and press ENTER.</value>
+  </data>
+  <data name="ShipCatalog_Title" xml:space="preserve">
+    <value>Ship Girl Roster</value>
+  </data>
+  <data name="SlotItemCatalog_Title" xml:space="preserve">
+    <value>Equipment List</value>
+  </data>
+  <data name="Overview_ConstructionDock" xml:space="preserve">
+    <value>Construction</value>
+  </data>
+  <data name="Overview_RepairDock" xml:space="preserve">
+    <value>Repairs</value>
+  </data>
+  <data name="StartContent_Introduction2" xml:space="preserve">
+    <value>This program uses Internet Explorer (IE) and does not change the communication to the servers, extract from Flash, nor use macro cheats.</value>
+  </data>
+  <data name="StartContent_Introduction3" xml:space="preserve">
+    <value>If you keep getting in game errors, please delete IE&apos;s cache. If this does not improve, check whether Flash works on IE.</value>
+  </data>
+  <data name="StartContent_Introduction4" xml:space="preserve">
+    <value>This program is updated often. Please check below for updates.</value>
+  </data>
+  <data name="ShipCatalog_ShipType_AircraftCarriers" xml:space="preserve">
+    <value>Aircraft Carriers</value>
+  </data>
+  <data name="ShipCatalog_ShipType_AviationShips" xml:space="preserve">
+    <value>Aviation Ship</value>
+  </data>
+  <data name="ShipCatalog_ShipType_Battleships" xml:space="preserve">
+    <value>Battleships</value>
+  </data>
+  <data name="ShipCatalog_ShipType_Destroyers" xml:space="preserve">
+    <value>Destroyers</value>
+  </data>
+  <data name="ShipCatalog_ShipType_HeavyCruisers" xml:space="preserve">
+    <value>Heavy Cruisers</value>
+  </data>
+  <data name="ShipCatalog_ShipType_LightCruisers" xml:space="preserve">
+    <value>Light Cruisers</value>
+  </data>
+  <data name="ShipCatalog_ShipType_Others" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="ShipCatalog_ShipType_Submarines" xml:space="preserve">
+    <value>Submarines</value>
+  </data>
+  <data name="Ship_Retreat" xml:space="preserve">
+    <value>Retreat</value>
+  </data>
+  <data name="ShipCatalog_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="ShipCatalog_Condition" xml:space="preserve">
+    <value>Condition</value>
+  </data>
+  <data name="ShipCatalog_ExpForNextLevel" xml:space="preserve">
+    <value>Exp for next level</value>
+  </data>
+  <data name="ShipCatalog_HP" xml:space="preserve">
+    <value>HP</value>
+  </data>
+  <data name="ShipCatalog_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ShipCatalog_Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="ShipCatalog_SortSettings" xml:space="preserve">
+    <value>Sorting options</value>
+  </data>
+  <data name="ShipCatalog_SortSettings_Ascending" xml:space="preserve">
+    <value>ASC</value>
+  </data>
+  <data name="ShipCatalog_SortSettings_Descending" xml:space="preserve">
+    <value>DESC</value>
+  </data>
+  <data name="ShipCatalog_SortSettings_Description" xml:space="preserve">
+    <value>Arrange the ship in the following orders.</value>
+  </data>
+  <data name="ShipCatalog_SortSettings_SortCriteria" xml:space="preserve">
+    <value>Sort criteria</value>
+  </data>
+  <data name="SlotItemCatalog_Improvement" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="SlotItemCatalog_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="FleetDetail_AirSuperiorityPotential" xml:space="preserve">
+    <value>Air Superiority</value>
+  </data>
+  <data name="FleetDetail_AverageLevel" xml:space="preserve">
+    <value>Average Level</value>
+  </data>
+  <data name="FleetDetail_LoSValue" xml:space="preserve">
+    <value>LOS</value>
+  </data>
+  <data name="FleetDetail_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="FleetDetail_Title" xml:space="preserve">
+    <value>Fleet Details</value>
+  </data>
+  <data name="FleetDetail_TotalLevel" xml:space="preserve">
+    <value>Total Level</value>
+  </data>
+  <data name="Fleets_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Fleets_Speed_Mixed" xml:space="preserve">
+    <value>Mixed Speed Fleet</value>
+  </data>
+  <data name="Ship_Healthy" xml:space="preserve">
+    <value>Healthy</value>
+  </data>
+  <data name="Ship_HealthyDamageControlled" xml:space="preserve">
+    <value>Healthy (has damcon)</value>
+  </data>
+  <data name="Ship_HeavilyDamaged" xml:space="preserve">
+    <value>Heavily damaged (may sink)</value>
+  </data>
+  <data name="Ship_HeavilyDamaged_CanUseDamcon" xml:space="preserve">
+    <value>Heavily damaged (can use damcon)</value>
+  </data>
+  <data name="Ship_HeavilyDamaged_Retreated" xml:space="preserve">
+    <value>Heavily damaged (Retreated)</value>
+  </data>
+  <data name="Ship_Retreated" xml:space="preserve">
+    <value>Retreated (Escort)</value>
+  </data>
+  <data name="StateDetail_Fatigued" xml:space="preserve">
+    <value>Morale will be restored in</value>
+  </data>
+  <data name="StateDetail_HeavilyDamaged" xml:space="preserve">
+    <value>Fleet has heavily damaged ship</value>
+  </data>
+  <data name="StateDetail_NotFatigued" xml:space="preserve">
+    <value>There aren&apos;t ship in fleet that is fatigued</value>
+  </data>
+  <data name="StateDetail_NotHeavilyDamaged" xml:space="preserve">
+    <value>Fleet doesn&apos;t have heavily damaged ship</value>
+  </data>
+  <data name="StateDetail_NotOnExpedition" xml:space="preserve">
+    <value>Fleet is not on expedition</value>
+  </data>
+  <data name="StateDetail_NotOnShortSupply" xml:space="preserve">
+    <value>There aren&apos;t ship in fleet that need resupplying</value>
+  </data>
+  <data name="StateDetail_NotOnSortie" xml:space="preserve">
+    <value>Fleet is not on sortie</value>
+  </data>
+  <data name="StateDetail_NotReady" xml:space="preserve">
+    <value>Fleet is not ready</value>
+  </data>
+  <data name="StateDetail_NotRepairing" xml:space="preserve">
+    <value>There aren&apos;t ship in fleet that is repairing</value>
+  </data>
+  <data name="StateDetail_OnExpeditionDetail" xml:space="preserve">
+    <value>Fleet is on</value>
+  </data>
+  <data name="StateDetail_OnShortSupply" xml:space="preserve">
+    <value>There are ships in fleet that need resupplying</value>
+  </data>
+  <data name="StateDetail_Ready" xml:space="preserve">
+    <value>Fleet is ready to sortie!</value>
+  </data>
+  <data name="FleetDetail_DayCombat" xml:space="preserve">
+    <value>Day combat</value>
+  </data>
+  <data name="FleetDetail_NightBattleCutin" xml:space="preserve">
+    <value>Night battle Cut-in</value>
+  </data>
+  <data name="Fleet_Combined" xml:space="preserve">
+    <value>Combined Fleet</value>
+  </data>
+  <data name="ShipCatalog_LOS_description" xml:space="preserve">
+    <value>LOS value is include equip&apos;s stats</value>
+  </data>
+  <data name="StateDetail_CanNotDoExpedition" xml:space="preserve">
+    <value>Combined fleet can&apos;t do expedition</value>
+  </data>
+  <data name="Settings_Browser_HorizontalPosition" xml:space="preserve">
+    <value>Horizontal mode</value>
+  </data>
+  <data name="Settings_Browser_HorizontalPosition_Description" xml:space="preserve">
+    <value>Position of browser when orientation mode is horizontal</value>
+  </data>
+  <data name="Settings_Browser_Position" xml:space="preserve">
+    <value>Browser Position</value>
+  </data>
+  <data name="Settings_Browser_VerticalPosition" xml:space="preserve">
+    <value>Vertical mode</value>
+  </data>
+  <data name="Settings_Browser_VerticalPosition_Description" xml:space="preserve">
+    <value>Position of browser when orientation mode is vertical</value>
+  </data>
+  <data name="Settings_Orientation" xml:space="preserve">
+    <value>Orientation mode</value>
+  </data>
+  <data name="FleetDetatils_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ShipCatalog_CustomSort" xml:space="preserve">
+    <value>Game&apos;s sort</value>
+  </data>
+  <data name="ExitDialogConfirm" xml:space="preserve">
+    <value>「KanColleViewer!」 will close. Are you sure?</value>
+  </data>
+  <data name="ExitDialogTitle" xml:space="preserve">
+    <value>EXIT KanColleViewer</value>
+  </data>
+  <data name="Settings_ExitConfirm" xml:space="preserve">
+    <value>Exit Confirm Dialog</value>
+  </data>
+  <data name="Settings_ExitConfirmOnlyWhenInSortie" xml:space="preserve">
+    <value>Only show dialog when in sortie</value>
+  </data>
+  <data name="Settings_ExitConfirmOption" xml:space="preserve">
+    <value>Show confirm dialog when close Kancolleviewer</value>
+  </data>
+  <data name="Settings_ChangeOrientationMode" xml:space="preserve">
+    <value>Change Orientation Mode</value>
+  </data>
+  <data name="Settings_Flash_Enable" xml:space="preserve">
+    <value>Change flash settings</value>
   </data>
 </root>

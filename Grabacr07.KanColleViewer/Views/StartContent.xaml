@@ -25,6 +25,7 @@
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceDictionary Source="Settings/Common.xaml" />
+				<ResourceDictionary Source="../Themes/Converters.xaml" />
 			</ResourceDictionary.MergedDictionaries>
 
 			<Style x:Key="TabLikeRadioButtonStyleKey"
@@ -111,64 +112,60 @@
 		</ResourceDictionary>
 	</UserControl.Resources>
 
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="*" />
-		</Grid.RowDefinitions>
 
-		<Border ClipToBounds="True"
-				Width="{Binding ElementName=WebBrowser, Path=Width}">
-			<views:BrowserNavigator Margin="6,-5,6,10"
-									VerticalAlignment="Top"/>
-		</Border>
+	<Border
+					BorderThickness="1,1,0,0"
+					BorderBrush="{DynamicResource BackgroundBrushKey}"
+					DataContext="{Binding Source={x:Static root:App.ViewModelRoot}, Path=Settings}">
+		<ScrollViewer VerticalScrollBarVisibility="Disabled"
+					  HorizontalScrollBarVisibility="Auto"
+					  PanningMode="Both">
+			<ScrollViewer VerticalScrollBarVisibility="Auto"
+						  PanningMode="Both">
+				<ScrollViewer.MaxWidth>
+					<MultiBinding Converter="{StaticResource MaxConverter}">
+						<Binding RelativeSource="{RelativeSource AncestorType={x:Type ScrollContentPresenter}}" Path="ActualWidth" Mode="OneWay"/>
+						<Binding Source="{x:Static properties:Settings.Default}" Path="UIContentWidth" Mode="OneWay"/>
+					</MultiBinding>
+				</ScrollViewer.MaxWidth>
+				<TabControl 
+								HorizontalAlignment="Stretch"
+								Style="{StaticResource VerticalTabControlStyleKey}">
+					<TabControl.Resources>
+						<Style x:Key="TabHeaderTextStyleKey"
+								   TargetType="{x:Type TextBlock}"
+								   BasedOn="{StaticResource {x:Type TextBlock}}">
+							<Setter Property="Foreground"
+										Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Foreground}" />
+							<Setter Property="Margin"
+										Value="12,0" />
+							<Setter Property="FontSize"
+										Value="14" />
+						</Style>
+					</TabControl.Resources>
+					<TabItem DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type views:StartContent}}, Path=DataContext}">
+						<TabItem.Header>
+							<TextBlock Text="{Binding Resources.Information, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+										   Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Foreground}"
+										   Margin="12,0"
+										   FontSize="14" />
+						</TabItem.Header>
 
-		<Grid Grid.Row="1">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="*" />
-			</Grid.ColumnDefinitions>
+						<Grid Margin="10,9">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
 
-			<StackPanel Margin="0,8,10,8"
-						TextOptions.TextFormattingMode="Ideal">
-				<RadioButton x:Name="InformationTab"
-							 Style="{StaticResource TabLikeRadioButtonStyleKey}"
-							 IsChecked="True">
-					<TextBlock Text="Information"
-							   FontSize="18"
-							   Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}, Path=Foreground}" />
-				</RadioButton>
-				<RadioButton x:Name="SettingsTab"
-							 Style="{StaticResource TabLikeRadioButtonStyleKey}">
-					<TextBlock Text="Settings"
-							   FontSize="18"
-							   Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}, Path=Foreground}" />
-				</RadioButton>
-			</StackPanel>
-
-			<Grid Grid.Column="1"
-				  Margin="0,8,0,0"
-				  Visibility="{Binding ElementName=InformationTab, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="Auto" />
-					<ColumnDefinition Width="*" />
-				</Grid.ColumnDefinitions>
-
-				<controls:AppIcon Grid.Column="1"
+							<controls:AppIcon Grid.Column="1"
 								  Background="Transparent"
 								  Height="200"
 								  HorizontalAlignment="Right"
 								  VerticalAlignment="Bottom"
 								  Margin="0,0,30,-4"
 								  Opacity="0.25" />
-
-				<Border Grid.Column="0"
-						BorderBrush="{DynamicResource BorderBrushKey}"
-						BorderThickness="1,0,1,0">
-					<ScrollViewer VerticalScrollBarVisibility="Auto"
-								  Padding="10,0,20,14">
-						<StackPanel Margin="0,-9,0,0">
-							<TextBlock>
+							<StackPanel DataContext="{Binding Source={x:Static root:App.ViewModelRoot}, Path=Settings}">
+								<TextBlock>
 								<Run Text="{Binding Source={x:Static root:App.ProductInfo}, Path=Title, Mode=OneWay}"
 									 FontFamily="Segoe UI Light"
 									 FontSize="30"
@@ -176,16 +173,16 @@
 								<LineBreak />
 								<Run Text="{Binding Source={x:Static root:App.ProductInfo}, Path=Product, Mode=OneWay}"
 									 FontSize="16" />
-							</TextBlock>
+								</TextBlock>
 
-							<TextBlock Margin="0,8,0,0">
+								<TextBlock Margin="0,8,0,0">
 								<Run Text="{Binding Source={x:Static root:App.ProductInfo}, Path=VersionString, StringFormat=Version {0}, Mode=OneWay}"
 									 FontFamily="Segoe UI Light"
 									 FontSize="20"
 									 Foreground="{DynamicResource ActiveForegroundBrushKey}" />
-							</TextBlock>
+								</TextBlock>
 
-							<metro2:CallMethodButton Content="{Binding Resources.Settings_Updates_GetKCVBtn, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+								<metro2:CallMethodButton Content="{Binding Resources.Settings_Updates_GetKCVBtn, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 													 ToolTip="{Binding Resources.Settings_Updates_GetKCVBtn_ToolTip, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 													 MethodName="GetLatestKCV"
 													 Visibility="{Binding IsUpdateAvailable, Converter={StaticResource BooleanToVsibilityConverterKey}}"
@@ -194,34 +191,34 @@
 													 Margin="0,12,0,0"
 													 SnapsToDevicePixels="True" />
 
-							<Rectangle Height="1"
+								<Rectangle Height="1"
 									   Margin="0,12"
 									   Style="{DynamicResource SeparatorRectangleStyleKey}" />
 
-							<TextBlock FontFamily="Segoe UI"
+								<TextBlock FontFamily="Segoe UI"
 									   Margin="0,0,0,8">
 								<Run Text="Author / Developer:" />
 								<metro2:HyperlinkEx Uri="https://twitter.com/Grabacr07">
 									<Run Text="@Grabacr07" />
 								</metro2:HyperlinkEx>
-							</TextBlock>
+								</TextBlock>
 
-							<TextBlock FontFamily="Segoe UI">
+								<TextBlock FontFamily="Segoe UI">
 								<Run Text="Horizontal / Translation:" />
 								<metro2:HyperlinkEx Uri="https://twitter.com/Zharay">
 									<Run Text="@Zharay" />
 								</metro2:HyperlinkEx>
-							</TextBlock>
+								</TextBlock>
 
-							<TextBlock FontFamily="Segoe UI"
+								<TextBlock FontFamily="Segoe UI"
 									   Margin="0,6,0,0">
 								<Run Text="Icon design:" />
 								<metro2:HyperlinkEx Uri="https://twitter.com/Nrtwd/">
 									<Run Text="@Nrtwd" />
 								</metro2:HyperlinkEx>
-							</TextBlock>
+								</TextBlock>
 
-							<TextBlock FontFamily="Segoe UI">
+								<TextBlock FontFamily="Segoe UI">
 								<Run Text="Localization" />
 								<Run Text="(English)"
 									 FontSize="10" />
@@ -229,18 +226,18 @@
 								<metro2:HyperlinkEx Uri="https://twitter.com/southrop113">
 									<Run Text="@southrop113" />
 								</metro2:HyperlinkEx>
-							</TextBlock>
+								</TextBlock>
 
-							<Rectangle Height="1"
+								<Rectangle Height="1"
 									   Margin="0,12"
 									   Style="{DynamicResource SeparatorRectangleStyleKey}" />
 
-							<TextBlock FontFamily="Segoe UI"
+								<TextBlock FontFamily="Segoe UI"
 									   TextWrapping="Wrap">
 								<Run Text="{Binding Source={x:Static root:App.ProductInfo}, Path=Copyright, Mode=OneWay}" />
-							</TextBlock>
+								</TextBlock>
 
-							<TextBlock FontFamily="Segoe UI"
+								<TextBlock FontFamily="Segoe UI"
 									   Margin="0,10,0,0"
 									   TextWrapping="Wrap">
 								<Run Text="{Binding Source={x:Static root:App.ProductInfo}, Path=Product, Mode=OneWay}" />
@@ -253,54 +250,54 @@
 								<metro2:HyperlinkEx Uri="https://github.com/Grabacr07/KanColleViewer/blob/master/LICENSE.txt">
 									<Run Text="The MIT License." />
 								</metro2:HyperlinkEx>
-							</TextBlock>
-						</StackPanel>
-					</ScrollViewer>
-				</Border>
+								</TextBlock>
+							</StackPanel>
 
-				<Rectangle x:Name="Dummy"
+							<Rectangle x:Name="Dummy"
 						   Grid.Column="1" />
 
-				<Border Grid.Column="1">
-					<FlowDocumentScrollViewer Padding="0,-18,0,0">
-						<FlowDocument FontSize="12"
+							<Border Grid.Column="1">
+								<FlowDocumentScrollViewer Padding="0,0,0,0" VerticalScrollBarVisibility="Auto">
+									<FlowDocument FontSize="12"
 									  Foreground="{DynamicResource ForegroundBrushKey}"
 									  FontFamily="Meiryo UI"
 									  TextAlignment="Left">
-							<Paragraph>
-								<Run Foreground="White"
+										<Paragraph>
+											<Run Foreground="White"
 									 FontSize="20"
-									 Text="Welcome" />
-							</Paragraph>
-							<Paragraph>
-								<Run Text="KanColleViewer is a tool to play Kantai Collection." />
-								<LineBreak />
-								<Run Text="This program uses Internet Explorer (IE) and does not change the communication to the servers, extract from Flash, nor use macro cheats." />
-							</Paragraph>
-							<Paragraph>
-								<Run Text="If you keep getting in game errors, please delete IE's cache. If this does not improve, check whether Flash works on IE." />
-							</Paragraph>
-							<Table>
-								<Table.Columns>
-									<TableColumn/>
-									<TableColumn/>
-								</Table.Columns>
-								
-								<TableRowGroup>
-									<TableRow>
-										<TableCell>
-											<BlockUIContainer>
-												<metro2:CallMethodButton Content="{Binding DeleteInternetCacheButtonContent}"
+									 Text="{Binding Resources.StartContent_Welcom, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+										</Paragraph>
+										<Paragraph>
+											<Run Text="{Binding Resources.StartContent_Introduction1, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+											<LineBreak />
+											<Run Text="{Binding Resources.StartContent_Introduction2, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+										</Paragraph>
+										<Paragraph>
+											<Run Text="{Binding Resources.StartContent_Introduction3, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+										</Paragraph>
+										<Table>
+											<Table.Columns>
+												<TableColumn/>
+												<TableColumn/>
+											</Table.Columns>
+
+											<TableRowGroup>
+												<TableRow>
+													<TableCell>
+														<BlockUIContainer>
+															<metro2:CallMethodButton Content="{Binding DeleteInternetCacheButtonContent}"
 																		 MethodName="DeleteInternetCache"
 																		 IsEnabled="{Binding CanDeleteInternetCache}"
 																		 HorizontalAlignment="Center"
 																		 Padding="30,5"
 																		 SnapsToDevicePixels="True" />
-											</BlockUIContainer>
-										</TableCell>
-										<TableCell>
-											<BlockUIContainer>
-												<metro2:CallMethodButton Content="{Binding SetRegionCookieButtonContent}"
+														</BlockUIContainer>
+													</TableCell>
+												</TableRow>
+												<TableRow>
+													<TableCell>
+														<BlockUIContainer>
+															<metro2:CallMethodButton Content="{Binding SetRegionCookieButtonContent}"
 																		 MethodName="SetRegionCookie"
 																		 IsEnabled="{Binding CanSetRegionCookie}"
 																		 HorizontalAlignment="Center"
@@ -308,125 +305,109 @@
 																		 SnapsToDevicePixels="True"
 																		 ToolTip="{Binding Resources.StartContent_SetRegionCookieToolTip, Source={x:Static models:ResourceService.Current}}"
 																		 ToolTipService.ShowOnDisabled="True"/>
-											</BlockUIContainer>
-										</TableCell> 
-									</TableRow>
-								</TableRowGroup>
-							</Table>
-							<BlockUIContainer>
-								<Rectangle Height="1"
+														</BlockUIContainer>
+													</TableCell>
+												</TableRow>
+											</TableRowGroup>
+										</Table>
+										<BlockUIContainer>
+											<Rectangle Height="1"
 										   Style="{DynamicResource SeparatorRectangleStyleKey}"
 										   SnapsToDevicePixels="True" />
-							</BlockUIContainer>
-							
-							<Paragraph>
-								<Run Text="This program is updated often. Please check below for updates." />
-								<LineBreak />
-								<LineBreak />
-								<Run Text="Project home:" />
-								<metro2:HyperlinkEx Uri="http://grabacr.net/kancolleviewer">
-									<Run Text="http://grabacr.net/kancolleviewer" />
-								</metro2:HyperlinkEx>
-								<LineBreak />
-								<Run Text="English Project:" />
-								<metro2:HyperlinkEx Uri="https://github.com/Zharay/KanColleViewer">
-									<Run Text="https://github.com/Zharay/KanColleViewer" />
-								</metro2:HyperlinkEx>
-							</Paragraph>
-						</FlowDocument>
-					</FlowDocumentScrollViewer>
-				</Border>
-			</Grid>
+										</BlockUIContainer>
 
-
-			<Border Grid.Column="1"
-					BorderThickness="1,1,0,0"
-					BorderBrush="{DynamicResource BackgroundBrushKey}"
-					Margin="0,8,0,0"
-					DataContext="{Binding Source={x:Static root:App.ViewModelRoot}, Path=Settings}"
-					Visibility="{Binding ElementName=SettingsTab, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
-				<ScrollViewer VerticalScrollBarVisibility="Auto">
-					<TabControl Width="640"
-								HorizontalAlignment="Left"
-								Style="{StaticResource TabControlStyleKey}">
-						<TabItem>
-							<TabItem.Header>
-								<TextBlock Text="{Binding Resources.Settings_BrowserControl, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+										<Paragraph>
+											<Run Text="{Binding Resources.StartContent_Introduction4, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+											<LineBreak />
+											<LineBreak />
+											<Run Text="Project home:" />
+											<metro2:HyperlinkEx Uri="http://grabacr.net/kancolleviewer">
+												<Run Text="grabacr.net" />
+											</metro2:HyperlinkEx>
+											<LineBreak />
+											<Run Text="English Project (continued):" />
+											<metro2:HyperlinkEx Uri="https://github.com/yuyuvn/KanColleViewer">
+												<Run Text="Clicia's fork" />
+											</metro2:HyperlinkEx>
+										</Paragraph>
+									</FlowDocument>
+								</FlowDocumentScrollViewer>
+							</Border>
+						</Grid>
+					</TabItem>
+					<TabItem>
+						<TabItem.Header>
+							<TextBlock Text="{Binding Resources.Settings_BrowserControl, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 										   Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Foreground}"
 										   Margin="12,0"
 										   FontSize="14" />
-							</TabItem.Header>
+						</TabItem.Header>
 
-							<settings:Browser Margin="10,9" />
-						</TabItem>
-						<TabItem>
-							<TabItem.Header>
-								<TextBlock Text="{Binding Resources.Settings_Window, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+						<settings:Browser Margin="10,9" />
+					</TabItem>
+					<TabItem>
+						<TabItem.Header>
+							<TextBlock Text="{Binding Resources.Settings_Window, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+										   Style="{DynamicResource TabHeaderTextStyleKey}" />
+						</TabItem.Header>
+						<settings:Window Margin="10,9" />
+					</TabItem>
+
+					<TabItem>
+						<TabItem.Header>
+							<TextBlock Text="{Binding Resources.Settings_Operation, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+										   Style="{DynamicResource TabHeaderTextStyleKey}" />
+						</TabItem.Header>
+						<settings:Operation Margin="10,9" />
+					</TabItem>
+
+					<TabItem>
+						<TabItem.Header>
+							<TextBlock Text="{Binding Resources.Settings_Notifications, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+										   Style="{DynamicResource TabHeaderTextStyleKey}" />
+						</TabItem.Header>
+						<settings:Notification Margin="10,9" />
+					</TabItem>
+
+					<TabItem>
+						<TabItem.Header>
+							<TextBlock Text="{Binding Resources.Settings_Network, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+										   Style="{DynamicResource TabHeaderTextStyleKey}" />
+						</TabItem.Header>
+						<settings:Network Margin="10,9" />
+					</TabItem>
+
+					<TabItem>
+						<TabItem.Header>
+							<TextBlock Text="{Binding Resources.Settings_Language, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 										   Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Foreground}"
 										   Margin="12,0"
 										   FontSize="14" />
-							</TabItem.Header>
+						</TabItem.Header>
 
-							<settings:Window Margin="10,9" />
-						</TabItem>
+						<settings:Language Margin="10,9" />
+					</TabItem>
 
-						<TabItem>
-							<TabItem.Header>
-								<TextBlock Text="{Binding Resources.Settings_Operation, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+					<TabItem>
+						<TabItem.Header>
+							<TextBlock Text="{Binding Resources.Settings_Other, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+										   Style="{DynamicResource TabHeaderTextStyleKey}" />
+						</TabItem.Header>
+						<settings:Others Margin="10,9" />
+					</TabItem>
+
+					<TabItem>
+						<TabItem.Header>
+							<TextBlock Text="{Binding Resources.Settings_Updates, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 										   Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Foreground}"
 										   Margin="12,0"
 										   FontSize="14" />
-							</TabItem.Header>
+						</TabItem.Header>
 
-							<settings:Operation Margin="10,9" />
-						</TabItem>
-
-						<TabItem>
-							<TabItem.Header>
-								<TextBlock Text="{Binding Resources.Settings_Network, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-										   Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Foreground}"
-										   Margin="12,0"
-										   FontSize="14" />
-							</TabItem.Header>
-
-							<settings:Network Margin="10,9" />
-						</TabItem>
-
-						<TabItem>
-							<TabItem.Header>
-								<TextBlock Text="{Binding Resources.Settings_Language, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-										   Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Foreground}"
-										   Margin="12,0"
-										   FontSize="14" />
-							</TabItem.Header>
-
-							<settings:Language Margin="10,9" />
-						</TabItem>
-
-						<TabItem>
-							<TabItem.Header>
-								<TextBlock Text="{Binding Resources.Settings_Other, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-										   Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Foreground}"
-										   Margin="12,0"
-										   FontSize="14" />
-							</TabItem.Header>
-
-							<settings:Others Margin="10,9" />
-						</TabItem>
-
-						<TabItem>
-							<TabItem.Header>
-								<TextBlock Text="{Binding Resources.Settings_Updates, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-										   Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Foreground}"
-										   Margin="12,0"
-										   FontSize="14" />
-							</TabItem.Header>
-
-							<settings:Updates Margin="10,9" />
-						</TabItem>
-					</TabControl>
-				</ScrollViewer>
-			</Border>
-		</Grid>
-	</Grid>
+						<settings:Updates Margin="10,9" />
+					</TabItem>
+				</TabControl>
+			</ScrollViewer>
+		</ScrollViewer>
+	</Border>
 </UserControl>

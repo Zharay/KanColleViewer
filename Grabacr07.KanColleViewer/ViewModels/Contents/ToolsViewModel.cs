@@ -1,60 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using Grabacr07.KanColleViewer.ViewModels.Contents.Tools;
+using Grabacr07.KanColleViewer.Composition;
+using Grabacr07.KanColleViewer.Properties;
+using Grabacr07.KanColleViewer.ViewModels.Composition;
+using Grabacr07.KanColleWrapper;
 using Livet;
 
 namespace Grabacr07.KanColleViewer.ViewModels.Contents
 {
-    public class ToolsViewModel : TabItemViewModel
-    {
-        public CalculatorViewModel Calculator { get; private set; }
-        public RankingsViewModel Rankings { get; private set; }
+	public class ToolsViewModel : TabItemViewModel
+	{        
+		public override string Name
+		{
+			get { return Resources.Tools; }
+			protected set { throw new NotImplementedException(); }
+		}
 
-        public IList<TabItemViewModel> TabItems { get; private set; }
 
-        #region SelectedItem 変更通知プロパティ
+		#region Items 変更通知プロパティ
 
-        private TabItemViewModel _SelectedItem;
+		private List<ToolViewModel> _Tools;
 
-        public TabItemViewModel SelectedItem
-        {
-            get { return this._SelectedItem; }
-            set
-            {
-                if (this._SelectedItem != value)
-                {
-                    this._SelectedItem = value;
-                    this.RaisePropertyChanged();
+		public List<ToolViewModel> Tools
+		{
+			get { return this._Tools; }
+			set
+			{
+				if (this._Tools != value)
+				{
+					this._Tools = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
 
-                    App.ViewModelRoot.StatusBar = value;
-                }
-            }
-        }
+		#endregion
 
-        #endregion
+		#region SelectedTool 変更通知プロパティ
 
-        public override string Name
-        {
-            get { return "Tools"; }
-            protected set { throw new NotImplementedException(); }
-        }
+		private ToolViewModel _SelectedTool;
 
-        public ToolsViewModel()
-        {
-            this.Calculator = new CalculatorViewModel();
-            this.Rankings = new RankingsViewModel();
+		public ToolViewModel SelectedTool
+		{
+			get { return this._SelectedTool; }
+			set
+			{
+				if (this._SelectedTool != value)
+				{
+					this._SelectedTool = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
 
-            this.TabItems = new List<TabItemViewModel> 
-            {
-                this.Calculator,
-                this.Rankings,
-            };
+		#endregion
 
-            this.SelectedItem = this.TabItems.FirstOrDefault();
-        }
 
-    }
+		public ToolsViewModel()
+		{
+			this.Tools = new List<ToolViewModel>(PluginHost.Instance.Tools.Select(x => new ToolViewModel(x)));
+			this.SelectedTool = this.Tools.FirstOrDefault();
+		}
+	}
 }

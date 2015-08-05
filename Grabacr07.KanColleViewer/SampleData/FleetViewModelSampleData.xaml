@@ -32,28 +32,44 @@
 						</Models:ShipInfo>
 					</Models:Ship.Info>
 
-					<Models:Ship.SlotItems>
-						<Models:SlotItem>
-							<Models:SlotItem.Info>
-								<Models:SlotItemInfo IconType="MainCanonHeavy" />
-							</Models:SlotItem.Info>
-						</Models:SlotItem>
-						<Models:SlotItem>
-							<Models:SlotItem.Info>
-								<Models:SlotItemInfo IconType="MainCanonHeavy" />
-							</Models:SlotItem.Info>
-						</Models:SlotItem>
-						<Models:SlotItem>
-							<Models:SlotItem.Info>
-								<Models:SlotItemInfo IconType="Rader" />
-							</Models:SlotItem.Info>
-						</Models:SlotItem>
-						<Models:SlotItem>
-							<Models:SlotItem.Info>
-								<Models:SlotItemInfo IconType="DamageControl" />
-							</Models:SlotItem.Info>
-						</Models:SlotItem>
-					</Models:Ship.SlotItems>
+					<Models:Ship.EquippedSlots>
+						<Models:ShipSlot>
+							<Models:ShipSlot.Item>
+								<Models:SlotItem>
+									<Models:SlotItem.Info>
+										<Models:SlotItemInfo IconType="MainCanonHeavy" />
+									</Models:SlotItem.Info>
+								</Models:SlotItem>
+							</Models:ShipSlot.Item>
+						</Models:ShipSlot>
+						<Models:ShipSlot>
+							<Models:ShipSlot.Item>
+								<Models:SlotItem>
+									<Models:SlotItem.Info>
+										<Models:SlotItemInfo IconType="MainCanonHeavy" />
+									</Models:SlotItem.Info>
+								</Models:SlotItem>
+							</Models:ShipSlot.Item>
+						</Models:ShipSlot>
+						<Models:ShipSlot>
+							<Models:ShipSlot.Item>
+								<Models:SlotItem>
+									<Models:SlotItem.Info>
+										<Models:SlotItemInfo IconType="Rader" />
+									</Models:SlotItem.Info>
+								</Models:SlotItem>
+							</Models:ShipSlot.Item>
+						</Models:ShipSlot>
+						<Models:ShipSlot>
+							<Models:ShipSlot.Item>
+								<Models:SlotItem>
+									<Models:SlotItem.Info>
+										<Models:SlotItemInfo IconType="DamageControl" />
+									</Models:SlotItem.Info>
+								</Models:SlotItem>
+							</Models:ShipSlot.Item>
+						</Models:ShipSlot>
+					</Models:Ship.EquippedSlots>
 
 					<Models:Ship.HP>
 						<Models:LimitedValue Minimum="0"
@@ -101,6 +117,7 @@
 					</Models:Ship.Torpedo>
 				</Models:Ship>
 			</contents:ShipViewModel.Ship>
+			
 		</contents:ShipViewModel>
 
 
@@ -130,29 +147,45 @@
 						</Models:ShipInfo>
 					</Models:Ship.Info>
 
-					<Models:Ship.SlotItems>
-						<Models:SlotItem>
-							<Models:SlotItem.Info>
-								<Models:SlotItemInfo IconType="DiveBomber" />
-							</Models:SlotItem.Info>
-						</Models:SlotItem>
-						<Models:SlotItem>
-							<Models:SlotItem.Info>
-								<Models:SlotItemInfo IconType="TorpedoBomber" />
-							</Models:SlotItem.Info>
-						</Models:SlotItem>
-						<Models:SlotItem>
-							<Models:SlotItem.Info>
-								<Models:SlotItemInfo IconType="Fighter" />
-							</Models:SlotItem.Info>
-						</Models:SlotItem>
-						<Models:SlotItem>
-							<Models:SlotItem.Info>
-								<Models:SlotItemInfo IconType="ReconPlane" />
-							</Models:SlotItem.Info>
-						</Models:SlotItem>
-					</Models:Ship.SlotItems>
-
+					<Models:Ship.EquippedSlots>
+						<Models:ShipSlot>
+							<Models:ShipSlot.Item>
+								<Models:SlotItem>
+									<Models:SlotItem.Info>
+										<Models:SlotItemInfo IconType="DiveBomber" />
+									</Models:SlotItem.Info>
+								</Models:SlotItem>
+							</Models:ShipSlot.Item>
+						</Models:ShipSlot>
+						<Models:ShipSlot>
+							<Models:ShipSlot.Item>
+								<Models:SlotItem>
+									<Models:SlotItem.Info>
+										<Models:SlotItemInfo IconType="TorpedoBomber" />
+									</Models:SlotItem.Info>
+								</Models:SlotItem>
+							</Models:ShipSlot.Item>
+						</Models:ShipSlot>
+						<Models:ShipSlot>
+							<Models:ShipSlot.Item>
+								<Models:SlotItem>
+									<Models:SlotItem.Info>
+										<Models:SlotItemInfo IconType="Fighter" />
+									</Models:SlotItem.Info>
+								</Models:SlotItem>
+							</Models:ShipSlot.Item>
+						</Models:ShipSlot>
+						<Models:ShipSlot>
+							<Models:ShipSlot.Item>
+								<Models:SlotItem>
+									<Models:SlotItem.Info>
+										<Models:SlotItemInfo IconType="ReconPlane" />
+									</Models:SlotItem.Info>
+								</Models:SlotItem>
+							</Models:ShipSlot.Item>
+						</Models:ShipSlot>
+					</Models:Ship.EquippedSlots>
+					
 					<Models:Ship.HP>
 						<Models:LimitedValue Minimum="0"
 											 Maximum="69"
@@ -347,6 +380,9 @@
 												   Max="12"
 												   Upgraded="55" />
 					</Models:Ship.Torpedo>
+					<Models:Ship.Situation>
+						Repair
+					</Models:Ship.Situation>
 				</Models:Ship>
 			</contents:ShipViewModel.Ship>
 		</contents:ShipViewModel>
@@ -421,6 +457,9 @@
 												   Max="12"
 												   Upgraded="55" />
 					</Models:Ship.Torpedo>
+					<Models:Ship.Situation>
+						Tow
+					</Models:Ship.Situation>
 				</Models:Ship>
 			</contents:ShipViewModel.Ship>
 		</contents:ShipViewModel>
@@ -495,13 +534,15 @@
 												   Max="12"
 												   Upgraded="55" />
 					</Models:Ship.Torpedo>
+					<Models:Ship.Situation>
+						Evacuation
+					</Models:Ship.Situation>
 				</Models:Ship>
 			</contents:ShipViewModel.Ship>
 		</contents:ShipViewModel>
 
 	</fleets:FleetViewModel.Ships>
-	<fleets:FleetViewModel.State>
-		<Livet:ViewModel>
-		</Livet:ViewModel>
-	</fleets:FleetViewModel.State>
+	<fleets:FleetViewModel.QuickStateView>
+		<Livet:ViewModel />
+	</fleets:FleetViewModel.QuickStateView>
 </fleets:FleetViewModel>

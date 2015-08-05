@@ -56,6 +56,21 @@ namespace Grabacr07.KanColleWrapper.Models
         /// <summary>
         /// Quest title translations only
         /// </summary>
-        QuestTitle = 9
+        QuestTitle = 9,
+
+        /// <summary>
+        /// Expedition translation list
+        /// </summary>
+        Expeditions = 10,
+
+        /// <summary>
+        /// Expedition detail translations only
+        /// </summary>
+        ExpeditionDetail = 11,
+
+        /// <summary>
+        /// Expedition title translations only
+        /// </summary>
+        ExpeditionTitle = 12,
     }
 }

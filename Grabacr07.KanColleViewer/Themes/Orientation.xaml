@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:models="clr-namespace:Grabacr07.KanColleViewer.Models"
+					xmlns:properties="clr-namespace:Grabacr07.KanColleViewer.Properties"
+					xmlns:metro="http://schemes.grabacr.net/winfx/2014/controls"
+					xmlns:metro2="clr-namespace:Grabacr07.Desktop.Metro.Controls;assembly=Desktop.Metro">
+	<Style x:Key="BroswerDockOrientation">
+		<Setter Property="DockPanel.Dock" Value="{Binding Source={x:Static models:Settings.Current}, Path=BrowserVerticalPosition}"/>
+		<Style.Triggers>
+			<DataTrigger Binding="{Binding Source={x:Static models:Settings.Current}, Path=Orientation.Mode}" Value="Horizontal">
+				<Setter Property="DockPanel.Dock" Value="{Binding Source={x:Static models:Settings.Current}, Path=BrowserHorizontalPosition}"/>
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style x:Key="DockOrientation">
+		<Setter Property="DockPanel.Dock" Value="Top"/>
+		<Style.Triggers>
+			<DataTrigger Binding="{Binding Source={x:Static models:Settings.Current}, Path=Orientation.Mode}" Value="Horizontal">
+				<Setter Property="DockPanel.Dock" Value="Left"/>
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style x:Key="DockOrientationFlip">
+		<Setter Property="DockPanel.Dock" Value="Left"/>
+		<Style.Triggers>
+			<DataTrigger Binding="{Binding Source={x:Static models:Settings.Current}, Path=Orientation.Mode}" Value="Horizontal">
+				<Setter Property="DockPanel.Dock" Value="Top"/>
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style x:Key="ControlVertical"
+		   TargetType="{x:Type FrameworkElement}">
+		<Setter Property="Visibility" Value="Visible"/>
+		<Style.Triggers>
+			<DataTrigger Binding="{Binding Source={x:Static models:Settings.Current}, Path=Orientation.Mode}" Value="Horizontal">
+				<Setter Property="Visibility" Value="Collapsed"/>
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style x:Key="ControlHorizontal"
+		   TargetType="{x:Type FrameworkElement}">
+		<Setter Property="Visibility" Value="Visible"/>
+		<Style.Triggers>
+			<DataTrigger Binding="{Binding Source={x:Static models:Settings.Current}, Path=Orientation.Mode}" Value="Vertical">
+				<Setter Property="Visibility" Value="Collapsed"/>
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+</ResourceDictionary>

@@ -1,4 +1,4 @@
-﻿#################
+#################
 ## Eclipse
 #################
 
@@ -90,6 +90,9 @@ ipch/
 *.psess
 *.vsp
 *.vspx
+
+# Visual Studio 2015
+*.sln.ide/
 
 # Guidance Automation Toolkit
 *.gpState
@@ -215,3 +218,5 @@ pip-log.txt
 .mr.developer.cfg
 /KanColleViewer-Compiled
 /*.rar
+
+*.orig

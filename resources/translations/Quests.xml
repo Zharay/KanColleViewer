@@ -1,767 +1,760 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Quests Version="1.0.1">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Quests Version="1.1.22">
   <Quest>
-    <ID>A1</ID>
+    <ID>101</ID>
     <JP-Name>はじめての「編成」！</JP-Name>
     <TR-Name>First Formation!</TR-Name>
-    <JP-Detail>2隻以上の艦で編成される「艦隊」を編成せよ！</JP-Detail>
+    <JP-Detail>２隻以上の艦で編成される「艦隊」を編成せよ！</JP-Detail>
     <TR-Detail>Have 2 ships in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A2</ID>
+    <ID>102</ID>
     <JP-Name>「駆逐隊」を編成せよ！</JP-Name>
     <TR-Name>Form a Destroyer Squadron!</TR-Name>
-    <JP-Detail>駆逐艦4隻以上で編成される「駆逐隊」を編成せよ！</JP-Detail>
+    <JP-Detail>駆逐艦４隻以上で編成される「駆逐隊」を編成せよ！</JP-Detail>
     <TR-Detail>Have 4 DD in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A3</ID>
+    <ID>103</ID>
     <JP-Name>「水雷戦隊」を編成せよ！</JP-Name>
     <TR-Name>Form a Torpedo Squadron!</TR-Name>
     <JP-Detail>軽巡洋艦を旗艦とし、数隻の駆逐艦で構成される「水雷戦隊」を編成せよ！</JP-Detail>
     <TR-Detail>Have a CL as a flagship and 5 DD in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A4</ID>
-    <JP-Name>6隻編成の艦隊を編成せよ！</JP-Name>
+    <ID>104</ID>
+    <JP-Name>６隻編成の艦隊を編成せよ！</JP-Name>
     <TR-Name>Form a Six Ship Fleet!</TR-Name>
     <JP-Detail>全6隻で構成される主力艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have 6 ships in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A5</ID>
-    <JP-Name>軽巡2隻を擁する隊を編成せよ！</JP-Name>
+    <ID>105</ID>
+    <JP-Name>軽巡２隻を擁する隊を編成せよ！</JP-Name>
     <TR-Name>Form a Squadron with Two CL!</TR-Name>
-    <JP-Detail>軽巡洋艦2隻を擁する高速艦隊を編成せよ！</JP-Detail>
+    <JP-Detail>軽巡洋艦２隻を擁する高速艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have 2 CL in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A6</ID>
-    <JP-Name>第2艦隊を編成せよ！</JP-Name>
+    <ID>115</ID>
+    <JP-Name>第２艦隊を編成せよ！</JP-Name>
     <TR-Name>Form the Second Fleet!</TR-Name>
-    <JP-Detail>二つ目の艦隊、第2艦隊の旗艦を指定して、第2艦隊を編成せよ！</JP-Detail>
+    <JP-Detail>二つ目の艦隊、第２艦隊の旗艦を指定して、第2艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have a flagship in your second fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A7</ID>
+    <ID>106</ID>
     <JP-Name>「重巡戦隊」を編成せよ！</JP-Name>
     <TR-Name>Form a Heavy Cruiser Squadron!</TR-Name>
     <JP-Detail>重巡洋艦２隻を擁する重巡艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have 2 CA in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A8</ID>
-    <JP-Name>「天龍」型軽巡姉妹の全2艦を編成せよ！</JP-Name>
+    <ID>108</ID>
+    <JP-Name>「天龍」型軽巡姉妹の全２艦を編成せよ！</JP-Name>
     <TR-Name>Form the Tenryuu-class!</TR-Name>
     <JP-Detail>天龍型軽巡洋艦「天龍」「龍田」を同一艦隊に配属せよ！</JP-Detail>
     <TR-Detail>Have Tenryuu (天龍) and Tatsuta (龍田) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A9</ID>
+    <ID>116</ID>
     <JP-Name>「水上機母艦」を配備せよ！</JP-Name>
     <TR-Name>Ready a Seaplane Carrier!</TR-Name>
     <JP-Detail>多数の水上偵察機を運用する「水上機母艦」を艦隊に配備せよ！</JP-Detail>
     <TR-Detail>Have an AV in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A10</ID>
+    <ID>120</ID>
     <JP-Name>「第六駆逐隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Destroyer Division 6!</TR-Name>
     <JP-Detail>「暁」「響」「雷」「電」4隻による第六駆逐隊を編成せよ！</JP-Detail>
-    <TR-Detail>Have ONLY Akasuki (暁), Hibiki (響), Inazuma (雷) and Ikazuchi (電) in your main fleet.</TR-Detail>
+    <TR-Detail>Have ONLY Akatsuki (暁), Hibiki (響), Inazuma (雷) and Ikazuchi (電) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A11</ID>
-    <JP-Name>第2艦隊で空母機動部隊を編成せよ！</JP-Name>
+    <ID>117</ID>
+    <JP-Name>第２艦隊で空母機動部隊を編成せよ！</JP-Name>
     <TR-Name>Form a Carrier Task Force in the Second Fleet!</TR-Name>
     <JP-Detail>第2艦隊に空母を配備して、空母機動部隊を編成せよ！</JP-Detail>
     <TR-Detail>Have a CV/CVL and 3 DD in your second fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A12</ID>
-    <JP-Name>空母機動部隊を編成せよ！</JP-Name>
+    <ID>107</ID>
+    <JP-Name>「空母機動部隊」を編成せよ！</JP-Name>
     <TR-Name>Form a Carrier Task Force!</TR-Name>
     <JP-Detail>空母1隻以上を旗艦とし、その護衛艦艇と共に、空母機動部隊を編成せよ！</JP-Detail>
     <TR-Detail>Have a CV/CVL as a flagship and 3 DD in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A13</ID>
+    <ID>113</ID>
     <JP-Name>戦艦と重巡による主力艦隊を編成せよ！</JP-Name>
     <TR-Name>Form the Main Fleet with BB and CA!</TR-Name>
     <JP-Detail>戦艦1隻以上、重巡2隻以上を主力とした水上打撃艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have a BB and 2 CA in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A14</ID>
-    <JP-Name>「川内」型軽巡姉妹の全3艦を編成せよ！</JP-Name>
+    <ID>109</ID>
+    <JP-Name>「川内」型軽巡姉妹の全３艦を編成せよ！</JP-Name>
     <TR-Name>Form the Sendai-class!</TR-Name>
     <JP-Detail>川内型軽巡洋艦、「川内」「神通」「那珂」を同一艦隊に編成せよ！</JP-Detail>
     <TR-Detail>Have Sendai (川内), Jintsuu (神通) and Naka (那珂) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A15</ID>
-    <JP-Name>「妙高」型重巡姉妹の全4隻を編成せよ！</JP-Name>
+    <ID>110</ID>
+    <JP-Name>「妙高」型重巡姉妹の全４隻を編成せよ！</JP-Name>
     <TR-Name>Form the Myoukou-class!</TR-Name>
     <JP-Detail>妙高型重巡洋艦「妙高」「那智」「足柄」「羽黒」を同一艦隊に配属せよ！</JP-Detail>
     <TR-Detail>Have Myoukou (妙高), Nachi (那智), Ashigara (足柄) and Haguro (羽黒) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A16</ID>
+    <ID>118</ID>
     <JP-Name>「金剛」型による高速戦艦部隊を編成せよ！</JP-Name>
     <TR-Name>Form the Kongou-class!</TR-Name>
-    <JP-Detail>金剛型戦艦「金剛」「比叡」「榛名」「霧島」全4隻の高速戦艦を集中配備せよ！</JP-Detail>
+    <JP-Detail>金剛型戦艦「金剛」「比叡」「榛名」「霧島」全４隻の高速戦艦を集中配備せよ！</JP-Detail>
     <TR-Detail>Have Kongou (金剛), Hiei (比叡), Haruna (榛名) and Kirishima (霧島) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A17</ID>
+    <ID>111</ID>
     <JP-Name>「扶桑」型戦艦姉妹の全２隻を編成せよ！</JP-Name>
     <TR-Name>Form the Fusou-class!</TR-Name>
     <JP-Detail>扶桑型戦艦「扶桑」「山城」を同一艦隊に配属せよ！</JP-Detail>
     <TR-Detail>Have Fusou (扶桑) and Yamashiro (山城) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A18</ID>
+    <ID>112</ID>
     <JP-Name>「伊勢」型戦艦姉妹の全２隻を編成せよ！</JP-Name>
     <TR-Name>Form the Ise-class!</TR-Name>
     <JP-Detail>伊勢型戦艦「伊勢」「日向」を同一艦隊に配属せよ！</JP-Detail>
     <TR-Detail>Have Ise (伊勢) and Hyuuga (日向) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A19</ID>
+    <ID>114</ID>
     <JP-Name>「南雲機動部隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Nagumo Task Force!</TR-Name>
     <JP-Detail>一航戦「赤城」「加賀」二航戦「飛龍」「蒼龍」からなる第一機動部隊を編成せよ！</JP-Detail>
     <TR-Detail>Have ONLY Akagi (赤城), Kaga (加賀), Hiryuu (飛龍) and Souryuu (蒼龍) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A20</ID>
+    <ID>119</ID>
     <JP-Name>「三川艦隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Mikawa Fleet!</TR-Name>
     <JP-Detail>「鳥海」「青葉」「加古」「古鷹」「天龍」を含む高速艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have Choukai (鳥海), Aoba (青葉), Kako (加古), Furutaka (古鷹), Tenryuu (天龍) and a FAST speed ship in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A21</ID>
+    <ID>121</ID>
     <JP-Name>「第四戦隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Cruiser Division 4!</TR-Name>
     <JP-Detail>「愛宕」「高雄」「鳥海」「摩耶」を基幹とした第四戦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have Atago (愛宕), Takao (高雄), Choukai (鳥海) and Maya (摩耶) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A22</ID>
+    <ID>122</ID>
     <JP-Name>「西村艦隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Nishimura Fleet!</TR-Name>
     <JP-Detail>「扶桑」「山城」「最上」「時雨」を基幹とした西村艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have Fusou (扶桑), Yamashiro (山城), Mogami (最上) and Shigure (時雨) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A23</ID>
+    <ID>123</ID>
     <JP-Name>「第五航空戦隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Carrier Division 5!</TR-Name>
     <JP-Detail>「翔鶴」「瑞鶴」を基幹とし、駆逐艦2隻を加えた第五航空戦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have Shoukaku (翔鶴), Zuikaku (瑞鶴) and 2 DD in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A24</ID>
+    <ID>124</ID>
     <JP-Name>新「三川艦隊」を編成せよ！</JP-Name>
     <TR-Name>Form the New Mikawa Fleet!</TR-Name>
     <JP-Detail>「鳥海」「青葉」「衣笠」「加古」「古鷹」「天龍」からなる三川艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have Choukai (鳥海), Aoba (青葉), Kinugasa (衣笠), Kako (加古), Furutaka (古鷹) and Tenryuu (天龍) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A25</ID>
+    <ID>125</ID>
     <JP-Name>潜水艦隊を編成せよ！</JP-Name>
     <TR-Name>Form a Submarine Fleet!</TR-Name>
     <JP-Detail>伊号潜水艦2隻からなる潜水艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have 2 SS in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A26</ID>
+    <ID>126</ID>
     <JP-Name>航空水上打撃艦隊を編成せよ！</JP-Name>
     <TR-Name>Form a Naval Aviation Strike Fleet!</TR-Name>
     <JP-Detail>航空戦艦2隻と航空巡洋艦2隻を基幹とする艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have 2 BBV and 2 CAV in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A27</ID>
+    <ID>127</ID>
     <JP-Name>中規模潜水艦隊を編成せよ！</JP-Name>
     <TR-Name>Form a Medium-Sized Submarine Fleet!</TR-Name>
     <JP-Detail>伊号潜水艦3隻以上からなる潜水艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have 3 SS in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A28</ID>
+    <ID>128</ID>
     <JP-Name>「第六戦隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Cruiser Division 6!</TR-Name>
     <JP-Detail>「古鷹」「加古」「青葉」「衣笠」を基幹とした第六戦隊を編成せよ！</JP-Detail>
     <TR-Detail>Have Furutaka (古鷹), Kako(加古), Aoba (青葉) and Kinugasa (衣笠) in your main fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A29</ID>
-    <JP-Name>「第5艦隊」を編成せよ！</JP-Name>
+    <ID>129</ID>
+    <JP-Name>「第五艦隊」を編成せよ！</JP-Name>
     <TR-Name>Form the 5th Fleet!</TR-Name>
     <JP-Detail>「那智」「足柄」「多摩」「木曾」を中核とした「第五艦隊」を編成せよ！</JP-Detail>
     <TR-Detail>Have Nachi (那智), Ashigara (足柄), Tama (多摩), and Kiso (木曾) in your fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A30</ID>
-    <JP-Name>「第1水雷戦隊」を編成せよ！</JP-Name>
+    <ID>130</ID>
+    <JP-Name>「第一水雷戦隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Torpedo Squadron 1!</TR-Name>
-    <JP-Detail>「阿武隈」「曙」「潮」「霞」「不知火」を中核とした「第1水雷戦隊」を編成せよ！</JP-Detail>
+    <JP-Detail>「阿武隈」「曙」「潮」「霞」「不知火」を中核とした「第一水雷戦隊」を編成せよ！</JP-Detail>
     <TR-Detail>Have Abukuma (阿武隈), Akebono (曙), Ushio (潮), Kasumi (霞) and Shiranui (不知火) in your fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A31</ID>
+    <ID>131</ID>
     <JP-Name>「第八駆逐隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Destroyer Division 8!</TR-Name>
     <JP-Detail>「朝潮」「満潮」「大潮」「荒潮」4隻による第八駆逐隊を編成せよ！</JP-Detail>
     <TR-Detail>Have Asashio (朝潮), Michishio (満潮), Ooshio (大潮) and Arashio (荒潮) in your fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A32</ID>
+    <ID>132</ID>
     <JP-Name>「第十八駆逐隊」を編成せよ！</JP-Name>
     <TR-Name>Form the Destroyer Division 18!</TR-Name>
     <JP-Detail>「霞」「霰」「陽炎」「不知火」4隻による第十八駆逐隊を編成せよ！</JP-Detail>
     <TR-Detail>Have ONLY Kasumi (霞), Arare (霰), Kagerou (陽炎) and Shiranui (不知火) in your fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>A33</ID>
+    <ID>133</ID>
     <JP-Name>「第三十駆逐隊(第一次)」を編成せよ！</JP-Name>
     <TR-Name>Form the Destroyer Division 30 (Gen-1)!</TR-Name>
     <JP-Detail>「睦月」「如月」「弥生」「望月」4隻による第三十駆逐隊(第一次)を編成せよ！</JP-Detail>
     <TR-Detail>Have ONLY Mutsuki (睦月), Kisaragi (如月), Yayoi (弥生) and Mochizuki (望月) in your fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B1</ID>
+    <ID>202</ID>
     <JP-Name>はじめての「出撃」！</JP-Name>
     <TR-Name>First Sortie!</TR-Name>
     <JP-Detail>艦隊を出撃させ、敵艦隊と交戦せよ！</JP-Detail>
     <TR-Detail>Deploy your main fleet on a combat mission.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B2</ID>
+    <ID>203</ID>
     <JP-Name>鎮守府正面海域を護れ！</JP-Name>
     <TR-Name>Protect the Seas of Chinju-Fu!</TR-Name>
     <JP-Detail>鎮守府正面海域に艦隊を出撃させ、敵艦の跋梁を阻止せよ！</JP-Detail>
     <TR-Detail>Deploy to World 1-1 and clear the stage.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B3</ID>
-    <JP-Name>第2艦隊、出撃せよ！</JP-Name>
+    <ID>215</ID>
+    <JP-Name>第２艦隊、出撃せよ！</JP-Name>
     <TR-Name>Second Fleet Sortie!</TR-Name>
-    <JP-Detail>新たに編成した「第2艦隊」を出撃せよ！</JP-Detail>
+    <JP-Detail>新たに編成した「第２艦隊」を出撃せよ！</JP-Detail>
     <TR-Detail>Deploy your 2nd Fleet on a combat mission.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B4</ID>
+    <ID>204</ID>
     <JP-Name>南西諸島沖に出撃せよ！</JP-Name>
     <TR-Name>Sortie to the Coast of Nansei Islands!</TR-Name>
     <JP-Detail>南西諸島沖に艦隊を出撃させ、敵艦隊と交戦せよ！</JP-Detail>
     <TR-Detail>Deploy to World 1-2 and clear the stage.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B5</ID>
+    <ID>205</ID>
     <JP-Name>接近する「敵前衛艦隊」を迎撃せよ！</JP-Name>
     <TR-Name>Intercept Approaching Enemy Vanguard Fleet!</TR-Name>
     <JP-Detail>南西諸島沖に接近する「敵前衛艦隊」を捕捉、これを撃滅せよ！</JP-Detail>
     <TR-Detail>Deploy to World 1-2 after defeating its boss and clear the stage.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B6</ID>
+    <ID>206</ID>
     <JP-Name>「水雷戦隊」で出撃せよ！</JP-Name>
     <TR-Name>Sortie the Torpedo Squadron!</TR-Name>
     <JP-Detail>軽巡洋艦1隻を旗艦とし、複数の駆逐艦からなる水雷戦隊で出撃せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with a CL as flagship and 3 DD as escorts.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B7</ID>
+    <ID>207</ID>
     <JP-Name>「重巡洋艦」を出撃させよ！</JP-Name>
     <TR-Name>Sortie a Heavy Cruiser!</TR-Name>
     <JP-Detail>重巡洋艦を旗艦とした艦隊を編成、これを出撃させよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with a CA as its flagship.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B8</ID>
+    <ID>208</ID>
     <JP-Name>「戦艦」を出撃させよ！</JP-Name>
     <TR-Name>Sortie a Battleship!</TR-Name>
     <JP-Detail>海上の覇者、戦艦を旗艦とした艦隊を編成、これを出撃させよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with a BB as its flagship. BBV don't count.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B9</ID>
+    <ID>209</ID>
     <JP-Name>「空母機動部隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie a Carrier Task Force!</TR-Name>
     <JP-Detail>空母1隻とその護衛艦艇で構成した空母機動部隊を出撃させよ！</JP-Detail>
     <TR-Detail>Deply a fleet with CV(L) as flagship and 5 DD/CL/AV for the escorts.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B10</ID>
+    <ID>217</ID>
     <JP-Name>敵空母を撃沈せよ！</JP-Name>
     <TR-Name>Sink Enemy Carrier!</TR-Name>
     <JP-Detail>敵機動部隊を捕捉し、これを邀撃、敵空母を轟沈せよ！</JP-Detail>
     <TR-Detail>Sink an enemy aircraft carrier.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B11</ID>
+    <ID>219</ID>
     <JP-Name>「三川艦隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie the Mikawa Fleet!</TR-Name>
     <JP-Detail>新編成した「三川艦隊」で出撃せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with Choukai, Aoba, Kako, Furutaka, Tenryuu and a FAST speed ship.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B12</ID>
+    <ID>222</ID>
     <JP-Name>「第六駆逐隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie the Destroyer Division 6!</TR-Name>
     <JP-Detail>「暁」「響」「雷」「電」による第六駆逐隊、出撃せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with ONLY Akatsuki, Hibiki, Inazuma, and Ikazuchi.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B13</ID>
+    <ID>223</ID>
     <JP-Name>「第四戦隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie the Cruiser Division 4!</TR-Name>
     <JP-Detail>「愛宕」「高雄」「鳥海」「摩耶」を基幹とする第四戦隊で、バシー島沖の敵を撃滅せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with Atago, Takao, Choukai, Maya and any 2 ships. Score a victory against World 2-2 Boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B14</ID>
+    <ID>224</ID>
     <JP-Name>「西村艦隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie the Nishimura Fleet!</TR-Name>
     <JP-Detail>「扶桑」「山城」「最上」「時雨」を基幹とする西村艦隊で、オリョール海の敵を撃滅せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with Fusou, Yamashiro, Mogami, Shigure and any 2 ships. Score a victory against World 2-3 Boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B15</ID>
+    <ID>225</ID>
     <JP-Name>「第五航空戦隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie the Carrier Division 5!</TR-Name>
     <JP-Detail>「翔鶴」「瑞鶴」を基幹とする第五航空戦隊で、北方海域モーレイ海の敵を撃滅せよ！</JP-Detail>
-    <TR-Detail>Deploy a fleet with Shokaku, Zuikaku and any 4 ships. Score a victory against World 3-1 Boss.</TR-Detail>
+    <TR-Detail>Deploy a fleet with Shoukaku, Zuikaku and any 4 ships. Score a victory against World 3-1 Boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B16</ID>
+    <ID>227</ID>
     <JP-Name>新「三川艦隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie the New Mikawa Fleet!</TR-Name>
     <JP-Detail>完全編成した「三川艦隊」をもって、オリョール海の敵を撃滅せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with Choukai, Aoba, Kinugasa, Kako, Furutaka and Tenryuu. Score a victory against World 2-3 Boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B17</ID>
+    <ID>231</ID>
     <JP-Name>「潜水艦隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie a Submarine Fleet!</TR-Name>
     <JP-Detail>伊号潜水艦2隻からなる潜水艦隊でオリョール海の敵を撃滅せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with 2 SS and 4 additional ships. Score a victory against World 2-3 Boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B18</ID>
+    <ID>232</ID>
     <JP-Name>「航空水上打撃艦隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie a Naval Aviation Strike Fleet!</TR-Name>
     <JP-Detail>航空戦艦2隻と航空巡洋艦2隻を基幹とする艦隊でカレー洋の制海権を握れ！</JP-Detail>
     <TR-Detail>Deploy a fleet with 2 BBV, 2 CAV and 2 additional ships. Score a victory against World 4-2 Boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B19</ID>
+    <ID>233</ID>
     <JP-Name>「第六戦隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie the Cruiser Division 6!</TR-Name>
     <JP-Detail>編成した「第六戦隊」をもって出撃し、オリョール海の敵を撃滅「完全勝利」せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with Furutaka, Kako, Kinugasa, Aoba and 2 additional ships. Score a S RATING victory or higher against World 2-3 Boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B20</ID>
+    <ID>239</ID>
     <JP-Name>「第八駆逐隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie the Destroyer Division 8!</TR-Name>
     <JP-Detail>編成した「第八駆逐隊」を含む艦隊で出撃し、オリョール海の敵を撃滅せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with Asashio, Michishio, Ooshio, Arashio and 2 additional ships. Score a victory against World 2-3 Boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B21</ID>
+    <ID>240</ID>
     <JP-Name>「第十八駆逐隊」出撃せよ！</JP-Name>
     <TR-Name>Sortie the Destroyer Division 18!</TR-Name>
     <JP-Detail>編成した「第十八駆逐隊」を含む艦隊で出撃し、北方海域モーレイ海の敵を撃滅せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with Kasumi, Arare, Kagerou, Shiranui and 2 additional ships. Score a victory against World 3-1 Boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B22</ID>
+    <ID>244</ID>
     <JP-Name>「第三十駆逐隊(第一次)」出撃せよ！</JP-Name>
     <TR-Name>Sortie the Destroyer Division 30 (Gen-1)!</TR-Name>
     <JP-Detail>「第三十駆逐隊(第一次)」を含む艦隊で出撃し、キス島沖の主力艦隊と交戦せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet with Mutsuki, Kisaragi, Yayoi, Mochizuki and 2 DD. Score a victory against World 3-2 Boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bd1</ID>
+    <ID>201</ID>
     <JP-Name>敵艦隊を撃破せよ！</JP-Name>
     <TR-Name>Daily Sortie 1</TR-Name>
     <JP-Detail>艦隊を出撃させ、敵艦隊を捕捉、これを撃滅せよ！</JP-Detail>
     <TR-Detail>Defeat an enemy fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bd2</ID>
+    <ID>216</ID>
     <JP-Name>敵艦隊主力を撃滅せよ！</JP-Name>
     <TR-Name>Daily Sortie 2</TR-Name>
     <JP-Detail>艦隊を出撃させ、敵艦隊「主力」を捕捉！これを撃滅せよ！</JP-Detail>
     <TR-Detail>Defeat the flagship of an enemy fleet.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bd3</ID>
+    <ID>210</ID>
     <JP-Name>敵艦隊を10回邀撃せよ！</JP-Name>
     <TR-Name>Daily Sortie 3</TR-Name>
     <JP-Detail>艦隊全力出撃！遊弋する敵艦隊を10回邀撃せよ！</JP-Detail>
     <TR-Detail>Defeat 10 enemy fleets.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bd4</ID>
+    <ID>211</ID>
     <JP-Name>敵空母を３隻撃沈せよ！</JP-Name>
     <TR-Name>Daily Sortie 4</TR-Name>
     <JP-Detail>艦隊の脅威となる敵空母群。これを捕捉撃滅し、3隻轟沈せよ！</JP-Detail>
     <TR-Detail>Sink 3 enemy aircraft carriers.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bd5</ID>
+    <ID>218</ID>
     <JP-Name>敵補給艦を3隻撃沈せよ！</JP-Name>
     <TR-Name>Daily Sortie 5</TR-Name>
     <JP-Detail>艦隊を出撃させ、敵補給艦を捕捉、これを撃滅せよ！</JP-Detail>
     <TR-Detail>Sink 3 enemy transport ships.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bd6</ID>
+    <ID>212</ID>
     <JP-Name>敵輸送船団を叩け！</JP-Name>
     <TR-Name>Daily Sortie 6</TR-Name>
     <JP-Detail>敵の輸送船5隻以上を撃沈し、敵の補給路を寸断せよ！</JP-Detail>
     <TR-Detail>Sink 5 enemy transport ships.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bd7</ID>
+    <ID>226</ID>
     <JP-Name>南西諸島海域の制海権を握れ！</JP-Name>
     <TR-Name>Daily Sortie 7</TR-Name>
     <JP-Detail>艦隊を南西諸島海域に全力出撃させ、多数の敵艦隊「主力」群を捕捉、撃滅せよ！</JP-Detail>
     <TR-Detail>Defeat 5 bosses in World 2.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bd8</ID>
+    <ID>230</ID>
     <JP-Name>敵潜水艦を制圧せよ！</JP-Name>
     <TR-Name>Daily Sortie 8</TR-Name>
     <JP-Detail>対潜能力の充実した艦隊で出撃、敵潜水艦狩りを実施せよ！</JP-Detail>
     <TR-Detail>Sink 6 enemy submarines.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bw1</ID>
+    <ID>214</ID>
     <JP-Name>あ号作戦</JP-Name>
     <TR-Name>Weekly Sortie 1</TR-Name>
     <JP-Detail>1週間の全力出撃を行い、可能な限り多くの敵艦隊を捕捉、これを迎撃せよ！</JP-Detail>
     <TR-Detail>Deploy your fleet 36 times, encounter 24 bosses, defeat 12 bosses and get 6 Perfect S RATING victories.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bw2</ID>
+    <ID>220</ID>
     <JP-Name>い号作戦</JP-Name>
     <TR-Name>Weekly Sortie 2</TR-Name>
     <JP-Detail>有力な母艦航空隊で1週間の全力出撃を行い、可能な限り多くの敵空母を撃滅せよ！</JP-Detail>
     <TR-Detail>Sink 20 aircraft carriers.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bw3</ID>
+    <ID>213</ID>
     <JP-Name>海上通商破壊作戦</JP-Name>
     <TR-Name>Weekly Sortie 3</TR-Name>
     <JP-Detail>1週間で敵輸送船を20隻以上撃沈せよ！</JP-Detail>
     <TR-Detail>Sink 20 transport ships.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bw4</ID>
+    <ID>221</ID>
     <JP-Name>ろ号作戦</JP-Name>
     <TR-Name>Weekly Sortie 4</TR-Name>
     <JP-Detail>1週間の全力出撃を行い、敵輸送船団を捕捉・撃滅、敵の補給路を寸断せよ！</JP-Detail>
     <TR-Detail>Sink 50 transport ships.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bw5</ID>
+    <ID>228</ID>
     <JP-Name>海上護衛戦</JP-Name>
     <TR-Name>Weekly Sortie 5</TR-Name>
     <JP-Detail>有力な対潜能力を持つ海上護衛隊によって、可能な限り多くの敵潜水艦を撃滅せよ！</JP-Detail>
     <TR-Detail>Sink 15 submarines.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bw6</ID>
+    <ID>229</ID>
     <JP-Name>敵東方艦隊を撃滅せよ！</JP-Name>
     <TR-Name>Weekly Sortie 6</TR-Name>
     <JP-Detail>西方海域に出撃し、敵東方艦隊の主力を捕捉、これを撃滅せよ！</JP-Detail>
     <TR-Detail>Defeat 12 bosses in World 4.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bw7</ID>
+    <ID>241</ID>
     <JP-Name>敵北方艦隊主力を撃滅せよ！</JP-Name>
     <TR-Name>Weekly Sortie 7</TR-Name>
     <JP-Detail>北方海域の深部に出撃し、敵北方艦隊の主力艦隊を捕捉、これを撃滅せよ！</JP-Detail>
-    <TR-Detail>Defeat 5 bosses in World 3-3 and 3-4. </TR-Detail>
+    <TR-Detail>Defeat 5 bosses in World 3-3, 3-4 or 3-5. </TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bw8</ID>
+    <ID>242</ID>
     <JP-Name>敵東方中枢艦隊を撃破せよ！</JP-Name>
     <TR-Name>Weekly Sortie 8</TR-Name>
     <JP-Detail>西方海域カスガダマ島沖に出撃し、敵東方中枢艦隊を捕捉、これを撃破せよ！</JP-Detail>
     <TR-Detail>Defeat a boss in World 4-4.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>Bw9</ID>
+    <ID>243</ID>
     <JP-Name>南方海域珊瑚諸島沖の制空権を握れ！</JP-Name>
     <TR-Name>Weekly Sortie 9</TR-Name>
     <JP-Detail>南方海域珊瑚諸島沖に出撃し、敵機動部隊本体を捕捉撃滅、これに完全勝利せよ！</JP-Detail>
     <TR-Detail>Defeat 2 bosses in World 5-2 with S RATING victory or higher.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>C1</ID>
+    <ID>301</ID>
     <JP-Name>はじめての「演習」！</JP-Name>
     <TR-Name>First Exercise!</TR-Name>
     <JP-Detail>他の提督(プレイヤー)の艦隊と「演習」を行おう！</JP-Detail>
     <TR-Detail>Challenge another fleet in practice mode.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>C2</ID>
+    <ID>303</ID>
     <JP-Name>「演習」で練度向上！</JP-Name>
     <TR-Name>Daily Exercises 1</TR-Name>
     <JP-Detail>本日中に他の司令官の艦隊に対して3回「演習」を挑もう！</JP-Detail>
     <TR-Detail>Challenge 3 other fleets in practice mode within the same day.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>C3</ID>
+    <ID>304</ID>
     <JP-Name>「演習」で他提督を圧倒せよ！</JP-Name>
     <TR-Name>Daily Exercises 2</TR-Name>
     <JP-Detail>本日中に他の司令官の艦隊との「演習」で5回以上「勝利」をおさめよう！</JP-Detail>
     <TR-Detail>Get 5 victories in practice mode within the same day.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>C4</ID>
+    <ID>302</ID>
     <JP-Name>大規模演習</JP-Name>
     <TR-Name>Weekly Exercises</TR-Name>
     <JP-Detail>今週中に「演習」で他の提督の艦隊に対して20回「勝利」しよう！</JP-Detail>
     <TR-Detail>Get 20 victories in practice mode within the same week.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>D1</ID>
+    <ID>401</ID>
     <JP-Name>はじめての「遠征」！</JP-Name>
     <TR-Name>First Expedition</TR-Name>
     <JP-Detail>艦隊を「遠征」に出発させよう！</JP-Detail>
     <TR-Detail>Perform an expedition.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>D2</ID>
+    <ID>402</ID>
     <JP-Name>「遠征」を３回成功させよう！</JP-Name>
     <TR-Name>Daily Expeditions 1</TR-Name>
     <JP-Detail>本日中に「遠征」３回成功させよう！</JP-Detail>
     <TR-Detail>Perform 3 successful expeditions within the same day.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>D3</ID>
+    <ID>403</ID>
     <JP-Name>「遠征」を１０回成功させよう！</JP-Name>
     <TR-Name>Daily Expeditions 2</TR-Name>
     <JP-Detail>本日中に「遠征」10回成功させよう！</JP-Detail>
     <TR-Detail>Perform 10 successful expeditions within the same day.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>D4</ID>
+    <ID>404</ID>
     <JP-Name>大規模遠征作戦、発令！</JP-Name>
     <TR-Name>Weekly Expeditions</TR-Name>
     <JP-Detail>今週中に「遠征」30回成功させよう！</JP-Detail>
     <TR-Detail>Perform 30 successful expeditions within the same week.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>D5</ID>
+    <ID>405</ID>
     <JP-Name>第一次潜水艦派遣作戦</JP-Name>
     <TR-Name>The First Submarine Operation</TR-Name>
     <JP-Detail>はじめての潜水艦派遣作戦を成功させよう！</JP-Detail>
     <TR-Detail>Complete Expedition 30.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>D6</ID>
+    <ID>406</ID>
     <JP-Name>第二次潜水艦派遣作戦</JP-Name>
     <TR-Name>The Second Submarine Operation</TR-Name>
     <JP-Detail>第２次潜水艦派遣作戦を成功させよう！</JP-Detail>
     <TR-Detail>Complete Expedition 30 one more time.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>D7</ID>
+    <ID>408</ID>
     <JP-Name>潜水艦派遣作戦による技術入手の継続！</JP-Name>
     <TR-Name>Continuation of Submarine Operations</TR-Name>
     <JP-Detail>第3次及び第4次潜水艦派遣作戦を成功させ、他国製技術の導入に努めよ！</JP-Detail>
     <TR-Detail>Complete Expedition 30 two more times.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>E1</ID>
+    <ID>501</ID>
     <JP-Name>はじめての「補給」！</JP-Name>
     <TR-Name>First Supply</TR-Name>
     <JP-Detail>補給は大事です！燃料・弾薬を艦に「補給」しよう！</JP-Detail>
     <TR-Detail>Resupply a ship.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>E2</ID>
+    <ID>502</ID>
     <JP-Name>はじめての「入渠」！</JP-Name>
     <TR-Name>First Docking</TR-Name>
     <JP-Detail>戦闘で傷ついた艦を「入渠」させて修理して、次の出撃に備えよう！</JP-Detail>
     <TR-Detail>Repair a ship.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>E3</ID>
+    <ID>503</ID>
     <JP-Name>艦隊大整備！</JP-Name>
     <TR-Name>Daily Repairs</TR-Name>
     <JP-Detail>各艦隊から整備が必要な艦を5隻以上ドック入りさせ、大規模な整備をしよう！</JP-Detail>
     <TR-Detail>Repair 5 ships.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>E4</ID>
+    <ID>504</ID>
     <JP-Name>艦隊酒保祭り！</JP-Name>
     <TR-Name>Daily Resupplies</TR-Name>
     <JP-Detail>艦隊酒保祭り！各艦に延べ15回以上の補給を実施しよう！</JP-Detail>
     <TR-Detail>Resupply your ships 15 times.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>F1</ID>
+    <ID>601</ID>
     <JP-Name>はじめての「建造」！</JP-Name>
     <TR-Name>First Construction</TR-Name>
     <JP-Detail>「工廠」で鋼材などの資材を使って新しい艦を「建造」しよう！</JP-Detail>
     <TR-Detail>Craft a ship.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>F2</ID>
+    <ID>602</ID>
     <JP-Name>はじめての「開発」！</JP-Name>
     <TR-Name>First Development</TR-Name>
     <JP-Detail>「工廠」でボーキサイトなどの資材を使って新しい装備アイテムを「開発」しよう！</JP-Detail>
     <TR-Detail>Craft a piece of equipment.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>F3</ID>
+    <ID>603</ID>
     <JP-Name>はじめての「解体」！</JP-Name>
     <TR-Name>First Dismantlement</TR-Name>
     <JP-Detail>「工廠」で不要な艦を「解体」してみよう！</JP-Detail>
     <TR-Detail>Dismantle a ship.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>F4</ID>
+    <ID>604</ID>
     <JP-Name>はじめての「廃棄」！</JP-Name>
     <TR-Name>First Disposal</TR-Name>
     <JP-Detail>「工廠」で不要な装備アイテムを「廃棄」してみよう！</JP-Detail>
     <TR-Detail>Scrap a piece of equipment.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>F5</ID>
+    <ID>605</ID>
     <JP-Name>新装備「開発」指令</JP-Name>
     <TR-Name>Daily Equipment Development 1</TR-Name>
     <JP-Detail>「工廠」で装備アイテムを新たに「開発」しよう(失敗もOK)！</JP-Detail>
     <TR-Detail>Craft a piece of equipment. (Failures are OK)</TR-Detail>
   </Quest>
   <Quest>
-    <ID>F6</ID>
+    <ID>606</ID>
     <JP-Name>新造艦「建造」指令</JP-Name>
     <TR-Name>Daily Ship Construction 1</TR-Name>
     <JP-Detail>「工廠」で艦娘を本日中に新たに「建造」しよう！</JP-Detail>
     <TR-Detail>Craft a ship.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>F7</ID>
+    <ID>607</ID>
     <JP-Name>装備「開発」集中強化！</JP-Name>
     <TR-Name>Daily Development 2</TR-Name>
     <JP-Detail>「工廠」で装備アイテムを本日中に3回「開発」しよう(失敗もOK)！</JP-Detail>
     <TR-Detail>Craft 3 pieces of equipment. (Failures are OK)</TR-Detail>
   </Quest>
   <Quest>
-    <ID>F8</ID>
+    <ID>608</ID>
     <JP-Name>艦娘「建造」艦隊強化！</JP-Name>
     <TR-Name>Daily Construction 2</TR-Name>
     <JP-Detail>艦隊強化のため、「工廠」で艦娘を本日中に3隻「建造」しよう！</JP-Detail>
     <TR-Detail>Craft 3 ships.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>F9</ID>
+    <ID>609</ID>
     <JP-Name>軍縮条約対応！</JP-Name>
     <TR-Name>Daily Dismantlement</TR-Name>
     <JP-Detail>少し艦隊規模が大きくなりすぎました！「工廠」で不要な艦を2隻「解体」してください！</JP-Detail>
     <TR-Detail>Scrap 2 ships.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>F10</ID>
+    <ID>610</ID>
     <JP-Name>「大型艦建造」の準備！(その弐)</JP-Name>
     <TR-Name>Preparation for LCS (Part 2)</TR-Name>
     <JP-Detail>大型艦建造の準備をします！「工廠」で装備アイテムを4回「廃棄」してみてください！</JP-Detail>
     <TR-Detail>Scrap equipment 4 times.</TR-Detail>
   </Quest>
-    <Quest>
-    <ID>F11</ID>
-    <JP-Name>輸送用ドラム缶の準備</JP-Name>
-    <TR-Name>Preparation for Transport Drum Canisters</TR-Name>
-    <JP-Detail>「工廠」で装備アイテムを3回「廃棄」して、輸送用ドラム缶を準備します。</JP-Detail>
-    <TR-Detail>Scrap equipment 3 times.</TR-Detail>
-  </Quest>
-    <Quest>
-    <ID>F12</ID>
+  <Quest>
+    <ID>613</ID>
     <JP-Name>資源の再利用</JP-Name>
     <TR-Name>Weekly Dismantlement</TR-Name>
     <JP-Detail>「工廠」で余剰の装備アイテムをなるべく多く「廃棄」して、鋼材の再利用に努めよう！</JP-Detail>
     <TR-Detail>Scrap equipment 24 times.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>G1</ID>
+    <ID>701</ID>
     <JP-Name>はじめての「近代化改修」！</JP-Name>
     <TR-Name>First Modernization</TR-Name>
     <JP-Detail>任意の艦を近代化改修(合成)して、強化せよ！</JP-Detail>
     <TR-Detail>Perform a successful modernization.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>G2</ID>
+    <ID>702</ID>
     <JP-Name>艦の「近代化改修」を実施せよ！</JP-Name>
     <TR-Name>Daily Modernization</TR-Name>
     <JP-Detail>近代化改修を実施して、２回以上これを成功させよ！</JP-Detail>
     <TR-Detail>Perform 2 successful modernizations within the same day.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>G3</ID>
+    <ID>703</ID>
     <JP-Name>「近代化改修」を進め、戦備を整えよ！</JP-Name>
     <TR-Name>Weekly Modernization</TR-Name>
     <JP-Detail>一週間の間に、近代化改修を１5回成功させよ！</JP-Detail>
     <TR-Detail>Perform 15 successful modernizations within the same week.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>G4</ID>
+    <ID>704</ID>
     <JP-Name>「大型艦建造」の準備！(その壱)</JP-Name>
     <TR-Name>Preparation for LSC (Part 1)</TR-Name>
     <JP-Detail>大型艦/新型艦建造のための準備を行う。任意の艦で近代化改修を4回成功させよ！</JP-Detail>
     <TR-Detail>Perform 4 successful modernizations.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>WF01</ID>
+    <ID>611</ID>
     <JP-Name>式の準備！(その壱)</JP-Name>
     <TR-Name>In Preparation of Love! (Part 1)</TR-Name>
     <JP-Detail>式の準備をします！「工廠」で装備アイテムを2回「廃棄」して身の回りの整理を！</JP-Detail>
-    <TR-Detail>Scrap equipment 2 times to show your love!.</TR-Detail>
+    <TR-Detail>Scrap equipment 2 times to show your love!</TR-Detail>
   </Quest>
   <Quest>
-    <ID>WC01</ID>
+    <ID>306</ID>
     <JP-Name>式の準備！(その弐)</JP-Name>
     <TR-Name>In Preparation of Love! (Part 2)</TR-Name>
     <JP-Detail>本日中に「演習」で2回以上「勝利」をおさめ、式への気持ちを整理しよう！</JP-Detail>
     <TR-Detail>Show your love by getting 2 victories in practice mode!</TR-Detail>
   </Quest>
   <Quest>
-    <ID>WA01</ID>
+    <ID>134</ID>
     <JP-Name>式の準備！(その参)</JP-Name>
     <TR-Name>In Preparation of Love! (Part 3)</TR-Name>
     <JP-Detail>第一艦隊旗艦に練度の高い(Lv.90以上～99以下)艦娘を配備して気持ちを整理せよ！</JP-Detail>
     <TR-Detail>Organize your feelings and deploy your fleet with a high level flagship (Lv.90~99)!</TR-Detail>
   </Quest>
   <Quest>
-    <ID>WB01</ID>
+    <ID>245</ID>
     <JP-Name>式の準備！(最終)</JP-Name>
     <TR-Name>In Preparation of Love! (Final)</TR-Name>
     <JP-Detail>練度の高い(Lv.90以上～99以下）第一艦隊旗艦で出撃し、オリョール海の暁に勝利を刻め！</JP-Detail>
     <TR-Detail>Deploy a fleet with a high level (Lv.90~99) flagship to 2-3 obtain an S victory or higher against the boss.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>WA02</ID>
+    <ID>135</ID>
     <JP-Name>新たなる旅立ち！</JP-Name>
     <TR-Name>Journey Anew!</TR-Name>
     <JP-Detail>第一艦隊旗艦に強い絆を結んだLv.100以上の艦娘を配備した6隻の艦隊を編成せよ！</JP-Detail>
     <TR-Detail>Organize a fleet of 6 ships with your newly bonded ship of Lv.100 or more as flagship!</TR-Detail>
   </Quest>
   <Quest>
-    <ID>WB02</ID>
+    <ID>246</ID>
     <JP-Name>二人でする初めての任務！</JP-Name>
     <TR-Name>Your First Mission Together!</TR-Name>
     <JP-Detail>強い絆を結んだ艦娘を旗艦とした第一艦隊でリランカ島へ出撃、敵中枢を撃滅せよ！</JP-Detail>
-    <TR-Detail>Deploy a fleet to 4-3 with a bonded ship of Lv.100 or more as flagship and score an S vectory or higher against the boss.</TR-Detail>
+    <TR-Detail>Deploy a fleet to 4-3 with a bonded ship of Lv.100 or more as flagship and score an S victory or higher against the boss.</TR-Detail>
   </Quest>
   <Quest>
     <ID>612</ID>
@@ -788,20 +781,27 @@
     <ID>411</ID>
     <JP-Name>南方への鼠輸送を継続実施せよ！</JP-Name>
     <TR-Name>Weekly Expedition 3</TR-Name>
-    <JP-Detail>今週中に「東京急行」系遠征を継続的に実施、同種作戦を7回成功せさよう！</JP-Detail>
+    <JP-Detail>今週中に「東京急行」系遠征を継続的に実施、同種作戦を7回成功させよう！</JP-Detail>
     <TR-Detail>Complete expedition 37 or 38 a total of 7 times in a week</TR-Detail>
   </Quest>
   <Quest>
-    <ID>D12</ID>
+    <ID>412</ID>
+    <JP-Name>航空火力艦の運用を強化せよ！</JP-Name>
+    <TR-Name>Strengthen the Operation of the BBV</TR-Name>
+    <JP-Detail>航空戦艦運用演習」を実施し、航空火力艦の運用の強化に努めよ！</JP-Detail>
+    <TR-Detail>Complete expedition 23.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>413</ID>
     <JP-Name>(続)航空火力艦の運用を強化せよ！</JP-Name>
     <TR-Name>Strengthen the Operation of the BBV (Cont.)</TR-Name>
     <JP-Detail>「航空戦艦運用演習」を継続実施し、航空火力艦の運用の強化に引き続き努めよ！</JP-Detail>
     <TR-Detail>Complete expedition 23 four more times.</TR-Detail>
   </Quest>
   <Quest>
-    <ID>B22</ID>
-    <JP-Name>「第三十駆逐隊（第一次）」出撃せよ！</JP-Name>
-    <TR-Name>Deploy the 13th Destroyer Fleet</TR-Name>
+    <ID>244</ID>
+    <JP-Name>「第三十駆逐隊(第一次)」出撃せよ！</JP-Name>
+    <TR-Name>Deploy the 30th Destroyer Fleet</TR-Name>
     <JP-Detail>「第三十駆逐隊(第一次)」を含む艦隊で出撃しキス島沖の主力艦隊と交戦せよ！</JP-Detail>
     <TR-Detail>Deploy a fleet that consists of Mutsuki (睦月), Kisaragi (如月), Yayoi (弥生), Mochizuki (望月) and up to 2 additional DDs to world 3-2 and encounter the boss.</TR-Detail>
   </Quest>
@@ -811,5 +811,488 @@
     <TR-Name>Sortie an aviation battleship fleet!</TR-Name>
     <JP-Detail>航空戦艦2隻を基幹とする艦隊で、西方海域カスガダマ島の敵勢力を撃破せよ！</JP-Detail>
     <TR-Detail>Have 2 BBV ships in your main fleet and score a victory against World 4-4 Boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>248</ID>
+    <JP-Name>「第三十駆逐隊」対潜哨戒！</JP-Name>
+    <TR-Name>Deploy Destroyer Division 30 (2nd Gen.)</TR-Name>
+    <JP-Detail>「第三十駆逐隊(第二次)」は直ちに抜錨！鎮守府正面の対潜哨戒を実施せよ！</JP-Detail>
+    <TR-Detail>Consists of Mutsuki, Yayoi, Uzuki, and Mochizuki. You MUST deploy to World 1-5, and encounter the boss node (at least C rank needed - D rank or below doesn't count).</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>136</ID>
+    <JP-Name>「第三十駆逐隊(第二次)」を編成せよ！</JP-Name>
+    <TR-Name>Form the 30th Destroyer Fleet (Gen.2)</TR-Name>
+    <JP-Detail>「睦月」「弥生」「卯月」「望月」4隻による第三十駆逐隊(第二次)を編成せよ！</JP-Detail>
+    <TR-Detail>Have only Mutsuki (睦月), Yayoi (弥生), Uzuki (卯月) and Mochizuki (望月) in your fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>137</ID>
+    <JP-Name>「第五戦隊」を編成せよ！</JP-Name>
+    <TR-Name>Form the 5th Fleet</TR-Name>
+    <JP-Detail>「妙高」「那智」「羽黒」を基幹とした第五戦隊を編成せよ！</JP-Detail>
+    <TR-Detail>Have Myoukou (妙高), Nachi (那智) and Haguro (羽黒) in your fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>138</ID>
+    <JP-Name>新編「第二航空戦隊」を編成せよ！</JP-Name>
+    <TR-Name>Form the new Carrier Division 2</TR-Name>
+    <JP-Detail>「飛龍改二」(※旗艦)及び「蒼龍」を基幹とした二航戦(要駆逐艦2隻)を編成せよ！</JP-Detail>
+    <TR-Detail>Have Hiryu kai2 (飛龍改二), Soryu (蒼龍) and 2 DD in your main fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>139</ID>
+    <JP-Name>潜水艦隊「第六艦隊」を編成せよ！</JP-Name>
+    <TR-Name>Form the 6th Submarine Tender Fleet</TR-Name>
+    <JP-Detail>「潜水母艦」と複数の潜水艦(4隻以上)からなる潜水艦隊「第六艦隊」を編成せよ！</JP-Detail>
+    <TR-Detail>Have an AS and 4 or more SS in your main fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>249</ID>
+    <JP-Name>「第五戦隊」出撃せよ！</JP-Name>
+    <TR-Name>Monthly Sortie 1</TR-Name>
+    <JP-Detail>「第五戦隊」は沖ノ島沖の戦闘哨戒を実施、敵艦隊主力を捕捉、これを撃滅せよ！</JP-Detail>
+    <TR-Detail>Deploy a fleet that consists of Myoukou (妙高), Nachi  (那智) and Haguro (羽黒). Score a S rank victory against World 2-5 Boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>250</ID>
+    <JP-Name>新編「第二航空戦隊」出撃せよ！</JP-Name>
+    <TR-Name>Deploy the new Carrier Division 2</TR-Name>
+    <JP-Detail>新編「二航戦」を基幹とした艦隊で、珊瑚諸島沖に出撃、敵機動部隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Deploy a fleet that consists of Hiryu kai2 (飛龍改二) as flagship, Soryu (蒼龍) and 2 DD and 2 other ship. Score a S rank victory against World 5-2 Boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>614</ID>
+    <JP-Name>機種転換</JP-Name>
+    <TR-Name>Convert model</TR-Name>
+    <JP-Detail>「九七式艦攻(友永隊)」搭載空母を秘書艦にした状態で新たに「天山」を2つ廃棄！</JP-Detail>
+    <TR-Detail>Set a CV equiped a Type 97 Torpedo Bomber (Tomonaga Squadron) as flagship then scrap Tenzan 2 times.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>140</ID>
+    <JP-Name>新型電探を配備せよ！</JP-Name>
+    <TR-Name>Deploy the new radar!</TR-Name>
+    <JP-Detail>新型電探運用試験のため、第一艦隊の旗艦に「妙高改二」を配備せよ！</JP-Detail>
+    <TR-Detail>Have Myoukou Kai-2 in your fleet as flagship</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>141</ID>
+    <JP-Name>再編成「第二航空戦隊」を強化せよ！</JP-Name>
+    <TR-Name>Form the Elite Second Carrier Division</TR-Name>
+    <JP-Detail>「蒼龍改二」(※旗艦)及び「飛龍改二」を基幹とした二航戦(要駆逐艦2隻)を編成せよ！</JP-Detail>
+    <TR-Detail>Have Souryuu Kai2 (蒼龍改二) as flagship with Hiryuu Kai2 (飛龍改二) and 2 destroyers in your fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>251</ID>
+    <JP-Name>精鋭「第二航空戦隊」抜錨せよ！</JP-Name>
+    <TR-Name>Deploy the Elite Second Carrier Division</TR-Name>
+    <JP-Detail>錬成を終え再編成「二航戦」を基幹とした艦隊で、敵リランカ島を空襲、破砕せよ！</JP-Detail>
+    <TR-Detail>Consist of Souryuu Kai-2 as flagship, Hiryuu Kai-2 and 2 DD's. You may add up to 2 additional ships. You MUST deploy to world 4-3, and obtain an S rank victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>615</ID>
+    <JP-Name>機種転換</JP-Name>
+    <TR-Name>Convert model</TR-Name>
+    <JP-Detail>「九九式艦爆(江草隊)」搭載空母を秘書艦にした状態で新たに「彗星」を2つ廃棄！</JP-Detail>
+    <TR-Detail>Have flagship equipped with Type 99 Dive Bomber (Egusa Squadron), then scrap 2 Suisei (Comet)</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>616</ID>
+    <JP-Name>機種転換</JP-Name>
+    <TR-Name>Convert model</TR-Name>
+    <JP-Detail>「零戦52型丙(六〇一空)」搭載空母を秘書艦にした状態で新たに「烈風」を2つ廃棄！</JP-Detail>
+    <TR-Detail>Have flagship equipped with Zero Fighter Type 52 Type C (601 Air Group), then scrap 2 Reppuu (Strong Gale)</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>252</ID>
+    <JP-Name>戦艦「榛名」出撃せよ！</JP-Name>
+    <TR-Name>Sortie the battleship Haruna!</TR-Name>
+    <JP-Detail>第二次改装実施した「榛名」を基幹とした艦隊で「南方海域」へ進出、敵艦隊主力を撃滅せよ！</JP-Detail>
+    <TR-Detail>Consist of Haruna Kai2 as flagship. You may add up to 5 additional ships. You MUST deploy to world 5-1, and obtain an S rank victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>142</ID>
+    <JP-Name>精鋭「第三戦隊」全艦集結せよ！</JP-Name>
+    <TR-Name>Gathering the third battleship fleet!</TR-Name>
+    <JP-Detail>第二次改装を完了した改装金剛型高速戦艦4隻を集結させよ！</JP-Detail>
+    <TR-Detail>Have all four Kongou-class Kai2 in your main fleet. </TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>143</ID>
+    <JP-Name>「新型正規空母」を配備せよ！</JP-Name>
+    <TR-Name>Form the new aircraft carrier class!</TR-Name>
+    <JP-Detail>雲龍型航空母艦一番艦「雲龍」を第一艦隊機旗艦に配備せよ！</JP-Detail>
+    <TR-Detail>Have Unryuu (雲龍) in your fleet as flagship!</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>253</ID>
+    <JP-Name>「第六〇一航空隊」出撃せよ！</JP-Name>
+    <TR-Name>Deploy the 601st Naval Air Group!</TR-Name>
+    <JP-Detail>雲龍型航空母艦「雲龍改」含む機動部隊で珊瑚島沖に出撃、敵機動部隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Consist of Unryuu Kai. You may add up to 5 additional ships. You MUST deploy to world 5-2, and obtain an S rank victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>254</ID>
+    <JP-Name>「軽空母」戦隊、出撃せよ！</JP-Name>
+    <TR-Name>Deploy the light carrier fleet!</TR-Name>
+    <JP-Detail>軽空母1～2隻、軽巡1隻、駆逐艦3～4隻の艦隊でカムラン半島の敵を撃滅せよ！</JP-Detail>
+    <TR-Detail>Requires 1~2 CVL, 1 CL and 3~4 DD. Obtain victory at the boss node. (CLTs won't count.) </TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>255</ID>
+    <JP-Name>「水雷戦隊」バシー島沖緊急展開</JP-Name>
+    <TR-Name>Bashi Islands emergency development! Deploy a Torpedo Squadron and sortie to the 2-2.</TR-Name>
+    <JP-Detail>軽巡を旗艦とした水雷戦隊(軽巡最大2隻他駆逐艦)でバシー島沖の敵を撃滅せよ！</JP-Detail>
+    <TR-Detail>Requires 1~2 CL and 4~5 DD with a CL as the flagship. Obtain victory at the boss node.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>617</ID>
+    <JP-Name>「伊良湖」の準備</JP-Name>
+    <TR-Name>Prepair for Ira lake</TR-Name>
+    <JP-Detail>「工廠」で不要な装備アイテムをいくつか「廃棄」して、新型給糧艦召喚の準備をしましょう！</JP-Detail>
+    <TR-Detail>Scrap equipment 10 times.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>256</ID>
+    <JP-Name>「潜水艦隊」出撃せよ！</JP-Name>
+    <TR-Name>Monthly Sortie 2</TR-Name>
+    <JP-Detail>潜水艦戦力を中核とした艦隊で中部海域哨戒線へ反復出撃、敵戦力を漸減せよ！</JP-Detail>
+    <TR-Detail>You MUST deploy to world 6-1, and obtain an S rank victory at the boss three times.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>257</ID>
+    <JP-Name>「水雷戦隊」南西へ！</JP-Name>
+    <TR-Name>Monthly Sortie 3</TR-Name>
+    <JP-Detail>軽巡旗艦の水雷戦隊(軽巡最大3隻他駆逐艦)を急派、南西諸島防衛線で敵を撃滅せよ！</JP-Detail>
+    <TR-Detail>Requires 1~3 CL, the rest must be DDs. Flagship must be a CL. You MUST deploy to world 1-4, and obtain an S rank victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>144</ID>
+    <JP-Name>主力戦艦部隊「第二戦隊」を編成せよ！</JP-Name>
+    <TR-Name>Organize the main battleship force: "The 2nd Squadron"!</TR-Name>
+    <JP-Detail>長門型2隻及び扶桑型2隻の計4隻の主力戦艦からなる第二戦隊を編成せよ！</JP-Detail>
+    <TR-Detail>Have Nagato, Mutsu, Fusou and Yamashiro in your main fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>145</ID>
+    <JP-Name>戦艦を主力とした水上打撃部隊を編成せよ！</JP-Name>
+    <TR-Name>Organize the main battleship ship force!</TR-Name>
+    <JP-Detail>大和型・長門型・伊勢型・扶桑型のいずれか3隻と軽巡1隻他の水上打撃部隊を配備せよ！</JP-Detail>
+    <TR-Detail>Have 3 slow Battleship and 1 Light Cruiser in your main fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>258</ID>
+    <JP-Name>「第二戦隊」抜錨！</JP-Name>
+    <TR-Name>Sortie the 2nd Squadron!</TR-Name>
+    <JP-Detail>「第二戦隊」を基幹とした艦隊でカレー洋に進出、反復出撃により敵海上兵力を撃破せよ！</JP-Detail>
+    <TR-Detail>Must have Nagato, Mutsu, Fusou, Yamashiro in your fleet you can add 2 more ships and gain S-rank at 4-2 boss 2 times.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>260</ID>
+    <JP-Name>「戦艦部隊」北方海域に突入せよ！</JP-Name>
+    <TR-Name>Sortie the Battleship Squadron in the Northern Waters!</TR-Name>
+    <JP-Detail>戦艦2隻と直援軽空母1隻(正規空母無し)基幹の艦隊で北方AL海域に突入、敵を撃滅せよ！</JP-Detail>
+    <TR-Detail>Requires 2 BB and 1 CVL you can add 3 more ships and gain S-rank at 3-5 boss. MUST ONLY HAVE 1 CVL adding CV or more CVL will not work. Adding BBV will also not work.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>259</ID>
+    <JP-Name>「水上打撃部隊」南方へ！</JP-Name>
+    <TR-Name>Monthly Sortie 4</TR-Name>
+    <JP-Detail>戦艦3隻軽巡1隻他を基幹とした水上打撃部隊で南方海域へ進出、敵艦隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Requires 3 Slow BB and 1 CL you can add 2 more ships. Deploy to world 5-1 and obtain an S rank victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>146</ID>
+    <JP-Name>改修工廠を準備せよ！</JP-Name>
+    <TR-Name>Prepair for Improvement Arsenal!</TR-Name>
+    <JP-Detail>第一艦隊の旗艦に工作艦「明石」を配備、改修工廠の準備を実施せよ！</JP-Detail>
+    <TR-Detail>Have Akashi (明石) as flagship in your main fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>147</ID>
+    <JP-Name>「西村艦隊」を再編成せよ！</JP-Name>
+    <TR-Name>Organize the Nishimura Fleet!</TR-Name>
+    <JP-Detail>「扶桑」「山城」「最上」「時雨」「満潮」を基幹とした西村艦隊を編成せよ！</JP-Detail>
+    <TR-Detail>Have Fusou, Yamashiro, Mogami, Shigure, Michishio in your main fleet</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>618</ID>
+    <JP-Name>はじめての「装備改修」！</JP-Name>
+    <TR-Name>First equipment modernization</TR-Name>
+    <JP-Detail>「改修工廠」で「装備」を改修してみましょう！明石さん、お願いします！</JP-Detail>
+    <TR-Detail>Do equipment modernization 1 time</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>619</ID>
+    <JP-Name>装備の改修強化</JP-Name>
+    <TR-Name>Daily equipment modernization</TR-Name>
+    <JP-Detail>「改修工廠」で「装備」の改修強化に努めます。</JP-Detail>
+    <TR-Detail>Do equipment modernization 1 time</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>262</ID>
+    <JP-Name>「西村艦隊」南方海域へ進出せよ！</JP-Name>
+    <TR-Name>Deploy the Nishimura Fleet</TR-Name>
+    <JP-Detail>「西村艦隊」を南方海域に進出させ、敵主力艦隊へ突入、これを撃滅せよ！</JP-Detail>
+    <TR-Detail>Consists of Fusou, Michishio, Mogami, Shigure, and Yamashiro. You may add up to one additional ship. You MUST deploy to World 5-1, and obtain an S-rank victory at the boss node</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>261</ID>
+    <JP-Name>海上輸送路の安全確保に努めよ！</JP-Name>
+    <TR-Name>Weekly Sortie 10</TR-Name>
+    <JP-Detail>鎮守府正面の対潜哨戒を反復実施し、安全な海上輸送路を確保せよ！</JP-Detail>
+    <TR-Detail>Sortie to 1-5 and get at least A-rank at the boss node 3 times.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>414</ID>
+    <JP-Name>遠洋潜水艦作戦を実施せよ！</JP-Name>
+    <TR-Name>Carry out the deep sea submarine fleet!</TR-Name>
+    <JP-Detail>「遠洋潜水艦作戦」を実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！</JP-Detail>
+    <TR-Detail>Complete Expedition 39</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>415</ID>
+    <JP-Name>遠洋潜水艦作戦の成果を拡大せよ！</JP-Name>
+    <TR-Name>Let's keep the deep sea submarine fleet's good result rolling!</TR-Name>
+    <JP-Detail>「遠洋潜水艦作戦」を継続実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！</JP-Detail>
+    <TR-Detail>Complete Expedition 39 two more times</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>263</ID>
+    <JP-Name>「第六戦隊」南西海域へ出撃せよ！</JP-Name>
+    <TR-Name>Deploy the Sixth Squadron!</TR-Name>
+    <JP-Detail>「古鷹」「加古」「青葉」「衣笠」を基幹とした「第六戦隊」で、沖ノ島沖の敵艦隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Consists of Furutaka, Kako, Aoba, and Kinugasa. You may add up to two additional ships. You MUST deploy to World 2-5, and obtain an S-rank victory at the boss node.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>265</ID>
+    <JP-Name>海上護衛強化月間</JP-Name>
+    <TR-Name>Monthly Sortie 5</TR-Name>
+    <JP-Detail>鎮守府正面海域の対潜哨戒を強化し、敵潜水艦を制圧、安全な海上輸送体制を確立せよ！</JP-Detail>
+    <TR-Detail>Dispatch a fleet to 1-5. You must reach the boss and achieve A-rank victory or above 10 times.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>264</ID>
+    <JP-Name>「空母機動部隊」西へ！</JP-Name>
+    <TR-Name>Monthly Sortie 6</TR-Name>
+    <JP-Detail>航空母艦2隻(随伴駆逐艦2隻)を基幹とする空母機動艦隊で、カレー洋の敵艦隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Dispatch a fleet consisting of 2 CV, 2 DD and additional 2 ships to 4-2. You must reach the boss and achieve S-rank Victory.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>148</ID>
+    <JP-Name>軽快な「水上反撃部隊」を編成せよ！</JP-Name>
+    <TR-Name>Organize a light surface counterattack fleet</TR-Name>
+    <JP-Detail>駆逐艦「霞」を旗艦とした重巡「足柄」及び軽巡1隻駆逐艦4隻の水上挺身部隊を編成せよ！</JP-Detail>
+    <TR-Detail>Have 1 CA 1 CL 4 DD in your main fleet. Flagship must be Kasumi, CA must be Ashigara.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>266</ID>
+    <JP-Name>「水上反撃部隊」突入せよ！</JP-Name>
+    <TR-Name>Monthly Sortie 7</TR-Name>
+    <JP-Detail>駆逐艦を旗艦とした重巡1隻軽巡1隻駆逐艦4隻からなる水上挺身部隊、沖ノ島沖に突入せよ！</JP-Detail>
+    <TR-Detail>Consists of 1 CA 1 CL 4 DD. You MUST deploy to World 2-5, and obtain an S-Rank victory at the boss node. Flagship MUST be DD.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>149</ID>
+    <JP-Name>「第十一駆逐隊」を編成せよ！</JP-Name>
+    <TR-Name>Organize the 11th Destroyer Division!</TR-Name>
+    <JP-Detail>特I型駆逐艦「吹雪」「白雪」「初雪」「叢雲」4隻による第十一駆逐隊を編成せよ！</JP-Detail>
+    <TR-Detail>Form a Fleet with the 4 Special-Class Destroyers: Fubuki, Shirayuki, Hatsuyuki and Murakumo.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>150</ID>
+    <JP-Name>「第二一駆逐隊」を編成せよ！他</JP-Name>
+    <TR-Name>Organize the 21st Destroyer Division! Other</TR-Name>
+    <JP-Detail>「初春」「子日」「若葉」「初霜」4隻による「第二一駆逐隊」を編成せよ！</JP-Detail>
+    <TR-Detail>Form a fleet consisting of Hatsuharu, Nenohi, Wakaba and Hatsushimo.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>267</ID>
+    <JP-Name>「第十一駆逐隊」出撃せよ！</JP-Name>
+    <TR-Name>Deploy the 11th Destroyer Division!</TR-Name>
+    <JP-Detail>「第十一駆逐隊」を含む艦隊で出撃し、オリョール海の敵を撃破せよ！</JP-Detail>
+    <TR-Detail>Deploy Fubuki, Shirayuki, Hatsuyuki, Murakumo and up to two wildcards to 2-3 and score a victory at the boss node.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>268</ID>
+    <JP-Name>「第十一駆逐隊」対潜哨戒！</JP-Name>
+    <TR-Name>Send the 11th Destroyer Division on ASW patrolling!</TR-Name>
+    <JP-Detail>「第十一駆逐隊」を含む艦隊で鎮守府正面へ展開、対潜哨戒を実施せよ！</JP-Detail>
+    <TR-Detail>Deploy Fubuki, Shirayuki, Hatsuyuki and Murakumo to 1-5 and get at least a C-Rank at the boss node.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>269</ID>
+    <JP-Name>「第二一駆逐隊」出撃せよ！</JP-Name>
+    <TR-Name>Sortie the 21st Destroyer Division</TR-Name>
+    <JP-Detail>「第二一駆逐隊」を含む艦隊で出撃し、北方海域モーレイ海の敵を撃滅せよ！</JP-Detail>
+    <TR-Detail>Deploy a fleet consisting of Hatsuharu, Nenohi, Wakaba, Hatsushimo and up to two wildcards to 3-1 and get an S-Rank at the boss node.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>151</ID>
+    <JP-Name>「第二二駆逐隊」を編成せよ！</JP-Name>
+    <TR-Name>Organize the 22nd Destroyer Division! </TR-Name>
+    <JP-Detail>「皐月」「文月」「長月」他1隻計駆逐艦4隻による第二二駆逐隊を編成せよ！</JP-Detail>
+    <TR-Detail>Have only Satsuki, Fumizuki, Nagatsuki and 1 more DD in your main fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>271</ID>
+    <JP-Name>「那智戦隊」抜錨せよ！</JP-Name>
+    <TR-Name>Deploy the Nachi Squadron!</TR-Name>
+    <JP-Detail>旗艦「那智」及び「初霜」「霞(かすみ)」「潮」「曙」他1隻の艦隊でバシー島沖の敵を殲滅せよ！</JP-Detail>
+    <TR-Detail>Consists of Nachi as the flagship, Hatsushimo, Kasumi, Ushio and Akebono. You may add another ship. You MUST deploy to World 2-2, and obtain an S-rank victory at the boss node.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>270</ID>
+    <JP-Name>「第二二駆逐隊」出撃せよ！</JP-Name>
+    <TR-Name>Deploy the 22nd Destroyer Division! </TR-Name>
+    <JP-Detail>「第二二駆逐隊」を含む艦隊で南西諸島防衛線に出撃、敵主力艦隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Consists of Satsuki, Fumizuki, Nagatsuki and one additional DD. You may add up to two other ships. You MUST deploy to World 1-4, and obtain an S-rank victory at the boss node.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>416</ID>
+    <JP-Name>防空射撃演習を実施せよ！</JP-Name>
+    <TR-Name>Implement anti-air shooting exercises!</TR-Name>
+    <JP-Detail>「防空射撃演習」を複数回実施し、艦隊の防空能力を高めよ！</JP-Detail>
+    <TR-Detail>Complete Expedition 6 three times.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>272</ID>
+    <JP-Name>「改装防空重巡」出撃せよ！</JP-Name>
+    <TR-Name>Sortie the remodeled Air-Defence Heavy Cruiser!</TR-Name>
+    <JP-Detail>摩耶改または摩耶改二及び軽巡1駆逐2隻を含む艦隊でオリョール海の敵艦隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Consists of Maya Kai or Kai2, 2 DD, 1 CL. You may add up to two other ships. Deploy to world 2-3 and obtain an S rank victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>417</ID>
+    <JP-Name>囮機動部隊支援作戦を実施せよ！</JP-Name>
+    <TR-Name>Implement the decoy task force support strategy!</TR-Name>
+    <JP-Detail>「囮機動部隊支援作戦」を実施し、これを成功させよ！</JP-Detail>
+    <TR-Detail>Complete Expedition 15 once</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>152</ID>
+    <JP-Name>「三川艦隊」を新編、突入準備せよ！</JP-Name>
+    <TR-Name>Reform the Mikawa fleet!</TR-Name>
+    <JP-Detail>第一艦隊において、「鳥海改ニ」を旗艦とする「三川艦隊」を編成せよ！</JP-Detail>
+    <TR-Detail>Have Choukai Kai2 as the flagship, and 5 out of Aoba, Kinugasa, Kako, Furutaka, Yuubari and Tenryuu in the fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>274</ID>
+    <JP-Name>「第六駆逐隊」対潜哨戒なのです！</JP-Name>
+    <TR-Name>Destroyer Division 6 Anti-submarine Patrol nanodesu!</TR-Name>
+    <JP-Detail>「第六駆逐隊」を含む艦隊で鎮守府正面へ展開、対潜哨戒を実施せよ！</JP-Detail>
+    <TR-Detail>Deploy a fleet with ONLY Akatsuki, Hibiki, Inazuma, and Ikazuchi to world 1-5 and obtain an C rank or better at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>307</ID>
+    <JP-Name>艦隊の練度向上に努めよ！</JP-Name>
+    <TR-Name>Practice to improve fleet!</TR-Name>
+    <JP-Detail>作戦前に艦隊の練度向上を図る！本日中に「演習」で3回以上「勝利」をおさめよう！</JP-Detail>
+    <TR-Detail>Get 3 victories in practice mode within the same day.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>273</ID>
+    <JP-Name>新編「三川艦隊」ソロモン方面へ！</JP-Name>
+    <TR-Name>Mikawa Fleet to the Solomon Seas!</TR-Name>
+    <JP-Detail>第一艦隊に編成した「三川艦隊」を南方海域に進出させ、同方面の敵艦隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Deploy a fleet with Choukai Kai2 as the flagship, and 5 out of Aoba, Kinugasa, Kako, Furutaka, Yuubari and Tenryuu to world 5-1 and obtain an S victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>275</ID>
+    <JP-Name>抜錨！「第十八戦隊」</JP-Name>
+    <TR-Name>Sortie! Cruiser Division 18</TR-Name>
+    <JP-Detail>「天龍」「龍田」を基幹戦力とした「第十八戦隊」で出撃し、オリョール海の敵主力を撃滅せよ！</JP-Detail>
+    <TR-Detail>Deploy a fleet with Tenryuu, Tatsuta, and 2 or more other ships to world 2-3 and obtain an S victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>153</ID>
+    <JP-Name>「第十八戦隊」を新編成せよ！</JP-Name>
+    <TR-Name>Form the 18th Fleet!</TR-Name>
+    <JP-Detail>軽巡洋艦「天龍」「龍田」を基幹戦力とした「第十八戦隊」を4隻以上で新編成せよ！</JP-Detail>
+    <TR-Detail>Have Tenryuu, Tatsuta, and 2 or more other ships in the fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>418</ID>
+    <JP-Name>観艦式予行を実施せよ！</JP-Name>
+    <TR-Name>Implement the Naval Review rehearsal!</TR-Name>
+    <JP-Detail>観艦式を実施する。予行として「観艦式予行」を複数回実施し、これを2回成功させよ！</JP-Detail>
+    <TR-Detail>Complete expedition 7 twice.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>419</ID>
+    <JP-Name>観艦式を敢行せよ！</JP-Name>
+    <TR-Name>Do the Naval Review!</TR-Name>
+    <JP-Detail>練度の高い艦隊で観艦式本番を実施する。「観艦式」を実施し、これを成功させよ！</JP-Detail>
+    <TR-Detail>Complete expedition 8 once.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>308</ID>
+    <JP-Name>演習を強化、艦隊の練度向上に努めよ！</JP-Name>
+    <TR-Name>Strengthen the practice battles, increase the fleet's experience!</TR-Name>
+    <JP-Detail>艦隊のさらなる練度向上を図る！本日中に「演習」で4回以上「勝利」をおさめよう！</JP-Detail>
+    <TR-Detail>Get 4 victories in practice mode within the same day.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>154</ID>
+    <JP-Name>海上突入部隊を編成せよ！</JP-Name>
+    <TR-Name>Form the surface attack fleet!</TR-Name>
+    <JP-Detail>戦艦「比叡」「霧島」軽巡「長良」駆逐艦「暁」「雷」「電」による海上突入部隊を編成せよ！</JP-Detail>
+    <TR-Detail>Have Hiei, Kirishima, Nagara, Akatsuki, Ikazuchi, Inazuma in the fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>155</ID>
+    <JP-Name>新編「第六駆逐隊」を編成せよ！</JP-Name>
+    <TR-Name>Form the new Destroyer Division 6!</TR-Name>
+    <JP-Detail>「暁改二」を旗艦とした「響」「雷」「電」4隻による第六駆逐隊を編成せよ！</JP-Detail>
+    <TR-Detail>Have ONLY Akatsuki kai2 as flagship, and Hibiki, Ikazuchi, Inazuma in the fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>277</ID>
+    <JP-Name>「第六駆逐隊」対潜哨戒を徹底なのです！</JP-Name>
+    <TR-Name>Complete Destroyer Division 6 Anti-Submarine Mission!</TR-Name>
+    <JP-Detail>「第六駆逐隊」を含む艦隊で鎮守府正面で対潜哨戒を実施、敵潜水艦部隊を痛打せよ！</JP-Detail>
+    <TR-Detail>Deploy a fleet with Akatsuki kai2 as flagship, and Hibiki, Ikazuchi, Inazuma to world 1-5 and obtain an A victory or better at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>276</ID>
+    <JP-Name>海上突入部隊、進発せよ！</JP-Name>
+    <TR-Name>Sortie the surface attack fleet!</TR-Name>
+    <JP-Detail>「比叡」「霧島」「長良」「暁」「雷」「電」の艦隊で、南方海域進出作戦を実施、敵を撃滅せ</JP-Detail>
+    <TR-Detail>Deploy a fleet with Hiei, Kirishima, Nagara, Akatsuki, Ikazuchi, Inazuma to world 5-1 and obtain an S victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>156</ID>
+    <JP-Name>「第一水雷戦隊」北方突入準備！</JP-Name>
+    <TR-Name>First Torpedo Squadron Northern Invasion Preparation!</TR-Name>
+    <JP-Detail>「阿武隈」を旗艦として「響」「初霜」「若葉」「五月雨」「島風」による一水戦を編成せよ！</JP-Detail>
+    <TR-Detail>Have Abukuma as flagship with Hibiki(Hibiki/Верный), Hatsushimo, Wakaba, Samidare and Shimakaze in your main fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>278</ID>
+    <JP-Name>「第一水雷戦隊」ケ号作戦、突入せよ！</JP-Name>
+    <TR-Name>First Torpedo Squadron Operation Ke, Sortie!</TR-Name>
+    <JP-Detail>北方突入準備を完了した「一水戦」で北方キス島に突入！包囲網を破り、友軍を救出せよ！</JP-Detail>
+    <TR-Detail>Sortie Abukuma as flagship with Hibiki(Hibiki/Верный), Hatsushimo, Wakaba, Samidare and Shimakaze to World 3-2 and obtain a victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>157</ID>
+    <JP-Name>「第一水雷戦隊」北方再突入準備！</JP-Name>
+    <TR-Name>First Torpedo Squadron Northern Invasion 2nd Attack Preparation!</TR-Name>
+    <JP-Detail>「阿武隈改二」を旗艦として「響」「夕雲」「長波」「秋雲」「島風」の一水戦を再編成せよ！</JP-Detail>
+    <TR-Detail>Have Abukuma Kai-2 as flagship with Hibiki(Hibiki/Верный), Yuugumo, Naganami, Akigumo and Shimakaze in your main fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>279</ID>
+    <JP-Name>「第一水雷戦隊」北方ケ号作戦、再突入！</JP-Name>
+    <TR-Name>First Torpedo Squadron 2nd Operation Ke, Sortie!</TR-Name>
+    <JP-Detail>北方再突入準備の新編「一水戦」で北方キス島に再突入を敢行、同撤収作戦を完遂せよ！</JP-Detail>
+    <TR-Detail>Sortie Abukuma Kai-2 as flagship with Hibiki(Hibiki/Верный), Yuugumo, Naganami, Akigumo and Shimakaze to World 3-2 and obtain a S victory at the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>309</ID>
+    <JP-Name>北方再突入に備え、練度向上に努めよ！</JP-Name>
+    <TR-Name>In preparation for the 2nd attack, increase experience! </TR-Name>
+    <JP-Detail>艦隊再突入に備え、艦隊練度向上を図る！本日中に「演習」で4回以上「勝利」せよ！</JP-Detail>
+    <TR-Detail>Get 4 victories in Exercises within the same day.</TR-Detail>
   </Quest>
 </Quests>

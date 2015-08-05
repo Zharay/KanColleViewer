@@ -1,0 +1,1247 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Common_Implement_Oncoming" xml:space="preserve">
+    <value>※近期實裝預定</value>
+  </data>
+  <data name="Common_Notifications_Disable" xml:space="preserve">
+    <value>不通知</value>
+  </data>
+  <data name="Common_Notifications_NotImplemented" xml:space="preserve">
+    <value>(尚未實裝)</value>
+  </data>
+  <data name="Common_Notifications_Title" xml:space="preserve">
+    <value>通知設定</value>
+  </data>
+  <data name="Common_Notifications_Windows8" xml:space="preserve">
+    <value>(Windows 8 以上)</value>
+  </data>
+  <data name="Common_ShipGirl" xml:space="preserve">
+    <value>艦娘</value>
+  </data>
+  <data name="Debug" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="Debug_NotificationMessage" xml:space="preserve">
+    <value>這是測試通知。</value>
+  </data>
+  <data name="Debug_NotificationMessage_Title" xml:space="preserve">
+    <value>測試</value>
+  </data>
+  <data name="Dockyard" xml:space="preserve">
+    <value>建造</value>
+  </data>
+  <data name="Dockyard_Complete" xml:space="preserve">
+    <value>完成！</value>
+  </data>
+  <data name="Dockyard_Display_Reveal" xml:space="preserve">
+    <value>顯示建造中的艦娘名</value>
+  </data>
+  <data name="Dockyard_Display_Title" xml:space="preserve">
+    <value>顯示設定</value>
+  </data>
+  <data name="Dockyard_Locked" xml:space="preserve">
+    <value>鎖定中</value>
+  </data>
+  <data name="Dockyard_NotificationMessage" xml:space="preserve">
+    <value>工廠第 {0} 渠的{1}已經建造完成了。</value>
+  </data>
+  <data name="Dockyard_NotificationMessage_Title" xml:space="preserve">
+    <value>建造完成</value>
+  </data>
+  <data name="Dockyard_Notifications_Enable" xml:space="preserve">
+    <value>建造完成時顯示通知</value>
+  </data>
+  <data name="Dockyard_Notifications_Individual" xml:space="preserve">
+    <value>各別設定每個渠</value>
+  </data>
+  <data name="Dockyard_ShipName" xml:space="preserve">
+    <value>建造中的艦娘</value>
+  </data>
+  <data name="Dockyard_TimeComplete" xml:space="preserve">
+    <value>完成的時間</value>
+  </data>
+  <data name="Dockyard_TimeRemaining" xml:space="preserve">
+    <value>距離建造完成還有</value>
+  </data>
+  <data name="Dockyard_Unused" xml:space="preserve">
+    <value>未使用</value>
+  </data>
+  <data name="Expedition" xml:space="preserve">
+    <value>遠征</value>
+  </data>
+  <data name="Expedition_NoExpedition" xml:space="preserve">
+    <value>該艦隊沒有在遠征中。</value>
+  </data>
+  <data name="Expedition_NotificationMessage" xml:space="preserve">
+    <value>「{0}」遠征回來了。</value>
+  </data>
+  <data name="Expedition_NotificationMessage_Title" xml:space="preserve">
+    <value>遠征完成</value>
+  </data>
+  <data name="Expedition_Notifications_Enable" xml:space="preserve">
+    <value>遠征返回時顯示通知</value>
+  </data>
+  <data name="Expedition_Notifications_Individual" xml:space="preserve">
+    <value>各別設定每個艦隊</value>
+  </data>
+  <data name="Expedition_TimeComplete" xml:space="preserve">
+    <value>結束時間</value>
+  </data>
+  <data name="Expedition_TimeRemaining" xml:space="preserve">
+    <value>距離艦隊返回還有</value>
+  </data>
+  <data name="Fleets" xml:space="preserve">
+    <value>艦隊</value>
+  </data>
+  <data name="Homeport_FleetHQ" xml:space="preserve">
+    <value>司令部</value>
+  </data>
+  <data name="Homeport_InstantBuild" xml:space="preserve">
+    <value>高速建造材:</value>
+  </data>
+  <data name="Homeport_InstantRepair" xml:space="preserve">
+    <value>高速修復材:</value>
+  </data>
+  <data name="Homeport_NoOfEquipment" xml:space="preserve">
+    <value>擁有的裝備:</value>
+  </data>
+  <data name="Homeport_NoOfShips" xml:space="preserve">
+    <value>擁有的艦娘:</value>
+  </data>
+  <data name="IntegratedView" xml:space="preserve">
+    <value>概觀</value>
+  </data>
+  <data name="MessageBar_Expedition" xml:space="preserve">
+    <value>這個艦隊正在遠征中。</value>
+  </data>
+  <data name="MessageBar_Expedition_TimeCompletion" xml:space="preserve">
+    <value> 完成時間:</value>
+  </data>
+  <data name="MessageBar_Expedition_TimeRemaining" xml:space="preserve">
+    <value> 距離返回還有:</value>
+  </data>
+  <data name="MessageBar_Repairing" xml:space="preserve">
+    <value>艦隊中有正在入渠的艦娘。 完成時間: {0:MM/dd HH\:mm} 距離完成還有: {1}:{2:mm\:ss}</value>
+  </data>
+  <data name="MessageBar_Repairing_Null" xml:space="preserve">
+    <value>艦隊中有正在入渠的艦娘。</value>
+  </data>
+  <data name="MessageBar_ReSortie_BadCondition" xml:space="preserve">
+    <value>疲勞中的艦娘</value>
+  </data>
+  <data name="MessageBar_ReSortie_CanNotReSortie" xml:space="preserve">
+    <value>艦隊中有{0}。</value>
+  </data>
+  <data name="MessageBar_ReSortie_CanReSortie" xml:space="preserve">
+    <value>可以出擊！</value>
+  </data>
+  <data name="MessageBar_ReSortie_LackForResources" xml:space="preserve">
+    <value>未補給的艦娘</value>
+  </data>
+  <data name="MessageBar_ReSortie_Remaining" xml:space="preserve">
+    <value>距離再次安全出擊還要:</value>
+  </data>
+  <data name="MessageBar_ReSortie_Separator" xml:space="preserve">
+    <value>、</value>
+  </data>
+  <data name="MessageBar_ReSortie_Wounded" xml:space="preserve">
+    <value>中破以上的艦娘</value>
+  </data>
+  <data name="Quests" xml:space="preserve">
+    <value>任務</value>
+  </data>
+  <data name="Quests_CurrentQuestList" xml:space="preserve">
+    <value>現在進行中的任務</value>
+  </data>
+  <data name="Quests_Daily" xml:space="preserve">
+    <value>每日任務</value>
+  </data>
+  <data name="Quests_Notice" xml:space="preserve">
+    <value>※任務進度 (50 %, 80 %) 和遊戲中顯示的相同。它不會對敵方艦隊的擊破數和遠征的成功數做計算。</value>
+  </data>
+  <data name="Quests_Untaken" xml:space="preserve">
+    <value>請打開遊戲中的 [任務 (クエスト)] 畫面，以取得任務訊息。</value>
+  </data>
+  <data name="Quests_Weekly" xml:space="preserve">
+    <value>每週任務</value>
+  </data>
+  <data name="Quest_Detail_Untaken" xml:space="preserve">
+    <value>請瀏覽所有的任務頁面。</value>
+  </data>
+  <data name="Quest_Progress_50" xml:space="preserve">
+    <value> 50 % </value>
+  </data>
+  <data name="Quest_Progress_80" xml:space="preserve">
+    <value> 80 % </value>
+  </data>
+  <data name="Quest_State_Accomplished" xml:space="preserve">
+    <value> 完成 </value>
+  </data>
+  <data name="Quest_Title_Untaken" xml:space="preserve">
+    <value>(未知的任務)</value>
+  </data>
+  <data name="Repairyard" xml:space="preserve">
+    <value>入渠</value>
+  </data>
+  <data name="Repairyard_Locked" xml:space="preserve">
+    <value>鎖定中</value>
+  </data>
+  <data name="Repairyard_NotificationMessage" xml:space="preserve">
+    <value>入渠第 {0} 渠的「{1}」已經整備完成了。</value>
+  </data>
+  <data name="Repairyard_NotificationMessage_Title" xml:space="preserve">
+    <value>整備完成</value>
+  </data>
+  <data name="Repairyard_Notifications_Enable" xml:space="preserve">
+    <value>整備完成時顯示通知</value>
+  </data>
+  <data name="Repairyard_Notifications_Individual" xml:space="preserve">
+    <value>各別設定每個渠</value>
+  </data>
+  <data name="Repairyard_ShipName" xml:space="preserve">
+    <value>入渠中的艦娘</value>
+  </data>
+  <data name="Repairyard_TimeComplete" xml:space="preserve">
+    <value>完成時間</value>
+  </data>
+  <data name="Repairyard_TimeRemaining" xml:space="preserve">
+    <value>距離整備完成還有</value>
+  </data>
+  <data name="Reparyard_Unused" xml:space="preserve">
+    <value>未使用</value>
+  </data>
+  <data name="Screenshot_Failed" xml:space="preserve">
+    <value>螢幕截圖儲存失敗:</value>
+  </data>
+  <data name="Screenshot_Saved" xml:space="preserve">
+    <value>螢幕截圖儲存成功:</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="Settings_BrowserControl" xml:space="preserve">
+    <value>瀏覽器操作</value>
+  </data>
+  <data name="Settings_BrowserControl_ClearZoomFactorButton" xml:space="preserve">
+    <value>縮放倍率回到100%</value>
+  </data>
+  <data name="Settings_BrowserControl_Display" xml:space="preserve">
+    <value>(顯示)</value>
+  </data>
+  <data name="Settings_BrowserControl_Notice" xml:space="preserve">
+    <value>※請注意這動作將會離開遊戲</value>
+  </data>
+  <data name="Settings_Display" xml:space="preserve">
+    <value>顯示設定</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>語言</value>
+  </data>
+  <data name="Settings_Network" xml:space="preserve">
+    <value>網路設定</value>
+  </data>
+  <data name="Settings_Operation" xml:space="preserve">
+    <value>動作設定</value>
+  </data>
+  <data name="Settings_Other" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="Settings_Proxy" xml:space="preserve">
+    <value>Proxy 設定</value>
+  </data>
+  <data name="Settings_Proxy_Enable" xml:space="preserve">
+    <value>使用 Proxy 伺服器</value>
+  </data>
+  <data name="Settings_Proxy_Enable_4_SSL" xml:space="preserve">
+    <value>SSL 連接時也使用 Proxy 伺服器</value>
+  </data>
+  <data name="Settings_Proxy_Host" xml:space="preserve">
+    <value>位址</value>
+  </data>
+  <data name="Settings_Proxy_Port" xml:space="preserve">
+    <value>連接埠</value>
+  </data>
+  <data name="Settings_Screenshot" xml:space="preserve">
+    <value>螢幕截圖</value>
+  </data>
+  <data name="Settings_Screenshot_FolderSelectionDialog_OpenButton" xml:space="preserve">
+    <value>瀏覽</value>
+  </data>
+  <data name="Settings_Screenshot_FolderSelectionDialog_Title" xml:space="preserve">
+    <value>指定螢幕截圖的儲存位置</value>
+  </data>
+  <data name="Settings_Screenshot_FolderTextBox_Label" xml:space="preserve">
+    <value>儲存位置</value>
+  </data>
+  <data name="Settings_Screenshot_FolderTextBox_Prompt" xml:space="preserve">
+    <value>儲存位置的路徑</value>
+  </data>
+  <data name="Settings_Screenshot_ImageFormat_Label" xml:space="preserve">
+    <value>圖片格式</value>
+  </data>
+  <data name="Settings_Screenshot_OpenFolderButton" xml:space="preserve">
+    <value>開啟資料夾</value>
+  </data>
+  <data name="Settings_VersionInfo" xml:space="preserve">
+    <value>版本資訊</value>
+  </data>
+  <data name="Settings_Window" xml:space="preserve">
+    <value>視窗設定</value>
+  </data>
+  <data name="Settings_WindowControl" xml:space="preserve">
+    <value>視窗操作</value>
+  </data>
+  <data name="Settings_WindowControl_LocationLeftButton" xml:space="preserve">
+    <value>將視窗置於螢幕左側</value>
+  </data>
+  <data name="Settings_WindowControl_LocationLeftButton_Sub" xml:space="preserve">
+    <value>8 吋平板用 (800 x 1280)</value>
+  </data>
+  <data name="Settings_Window_TopMost" xml:space="preserve">
+    <value>讓視窗總是顯示在最前面</value>
+  </data>
+  <data name="StartContent_ClearCacheButton" xml:space="preserve">
+    <value>刪除快取</value>
+  </data>
+  <data name="StartContent_ClearCacheButtonMessage" xml:space="preserve">
+    <value>快取已經被清除</value>
+  </data>
+  <data name="StartContent_Introduction1" xml:space="preserve">
+    <value>「提督有點忙！」、遊玩艦これ更便利的工具。</value>
+  </data>
+  <data name="StartContent_Welcom" xml:space="preserve">
+    <value>歡迎</value>
+  </data>
+  <data name="Fleets_AirSuperiorityPotential" xml:space="preserve">
+    <value>制空戰力</value>
+  </data>
+  <data name="Fleets_Average" xml:space="preserve">
+    <value>平均</value>
+  </data>
+  <data name="StatusBar_NotStarted" xml:space="preserve">
+    <value>正在等待艦これ啟動</value>
+  </data>
+  <data name="StatusBar_Ready" xml:space="preserve">
+    <value>準備完成</value>
+  </data>
+  <data name="Fleets_Speed_Fast" xml:space="preserve">
+    <value>高速艦隊</value>
+  </data>
+  <data name="Fleets_Speed_Slow" xml:space="preserve">
+    <value>低速艦隊</value>
+  </data>
+  <data name="ZoomAction_OutOfRange" xml:space="preserve">
+    <value>不支援 {0} % 縮放。</value>
+  </data>
+  <data name="ZoomAction_ZoomFailed" xml:space="preserve">
+    <value>縮放失敗: {0}</value>
+  </data>
+  <data name="Fleets_Level" xml:space="preserve">
+    <value>等級</value>
+  </data>
+  <data name="Fleets_Total" xml:space="preserve">
+    <value>合計</value>
+  </data>
+  <data name="ZoomFactorSelector" xml:space="preserve">
+    <value>遊戲畫面顯示大小</value>
+  </data>
+  <data name="ZoomFactorSelector_Tooltip" xml:space="preserve">
+    <value>調整遊戲畫面顯示大小</value>
+  </data>
+  <data name="Settings_Logging" xml:space="preserve">
+    <value>記錄</value>
+  </data>
+  <data name="Settings_Logging_Enable" xml:space="preserve">
+    <value>把掉落、建造、開發結果記錄到檔案中</value>
+  </data>
+  <data name="Fleets_ViewRange" xml:space="preserve">
+    <value>索敵能力</value>
+  </data>
+  <data name="StartContent_SetRegionCookieButton" xml:space="preserve">
+    <value>設定區域Cookie</value>
+  </data>
+  <data name="StartContent_SetRegionCookieMessage" xml:space="preserve">
+    <value>區域Cookie設定完成</value>
+  </data>
+  <data name="Settings_Translations" xml:space="preserve">
+    <value>翻譯</value>
+  </data>
+  <data name="Settings_Translations_Add_Enable" xml:space="preserve">
+    <value>把遊戲內未翻譯內容寫入翻譯檔案中</value>
+  </data>
+  <data name="Settings_Translations_Enable" xml:space="preserve">
+    <value>是否把遊戲內的裝備、船隻和仼務進行翻譯？</value>
+  </data>
+  <data name="StartContent_SetRegionCookieToolTip" xml:space="preserve">
+    <value>請確定已經在DMM.com的日本語版面上</value>
+  </data>
+  <data name="Stats_Accuracy" xml:space="preserve">
+    <value>命中</value>
+  </data>
+  <data name="Stats_AntiAir" xml:space="preserve">
+    <value>對空</value>
+  </data>
+  <data name="Stats_AntiSub" xml:space="preserve">
+    <value>對潛</value>
+  </data>
+  <data name="Stats_Armor" xml:space="preserve">
+    <value>裝甲</value>
+  </data>
+  <data name="Stats_DiveBomb" xml:space="preserve">
+    <value>爆裝</value>
+  </data>
+  <data name="Stats_Evasion" xml:space="preserve">
+    <value>回避</value>
+  </data>
+  <data name="Stats_Firepower" xml:space="preserve">
+    <value>火力</value>
+  </data>
+  <data name="Stats_Health" xml:space="preserve">
+    <value>耐久</value>
+  </data>
+  <data name="Stats_Luck" xml:space="preserve">
+    <value>運</value>
+  </data>
+  <data name="Stats_SightRange" xml:space="preserve">
+    <value>索敵</value>
+  </data>
+  <data name="Stats_Speed" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="Stats_Torpedo" xml:space="preserve">
+    <value>雷裝</value>
+  </data>
+  <data name="Stats_AttackRange" xml:space="preserve">
+    <value>射程</value>
+  </data>
+  <data name="Notifications_CriticalCondition" xml:space="preserve">
+    <value>{0}有艦娘大破</value>
+  </data>
+  <data name="Notifications_CriticalCondition_Title" xml:space="preserve">
+    <value>大破警告</value>
+  </data>
+  <data name="Settings_Notifications_CriticalCondition" xml:space="preserve">
+    <value>有艦娘大破時顯示通知</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="Settings_Updates" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Settings_Updates_AutoUpdateTrans" xml:space="preserve">
+    <value>啟動時更新翻譯檔案</value>
+  </data>
+  <data name="Settings_Updates_CheckUpdateButn_ToolTip" xml:space="preserve">
+    <value>檢查程式和翻譯檔有沒有更新版本</value>
+  </data>
+  <data name="Settings_Updates_CheckUpdatesBtn" xml:space="preserve">
+    <value>檢查更新</value>
+  </data>
+  <data name="Settings_Updates_CurrentVersion" xml:space="preserve">
+    <value>現時版本</value>
+  </data>
+  <data name="Settings_Updates_OnlineVersion" xml:space="preserve">
+    <value>最新版本</value>
+  </data>
+  <data name="Settings_Updates_UpdateOnStartup" xml:space="preserve">
+    <value>啟動時檢查更新</value>
+  </data>
+  <data name="Settings_Updates_UpdateTransBtn" xml:space="preserve">
+    <value>下載翻譯檔案</value>
+  </data>
+  <data name="Settings_Updates_UpdateTransBtn_ToolTip" xml:space="preserve">
+    <value>如有更新則下載翻譯檔案</value>
+  </data>
+  <data name="Updater_Notification_CheckFailed" xml:space="preserve">
+    <value>檢查更新失敗</value>
+  </data>
+  <data name="Updater_Notification_TransUpdate_Success" xml:space="preserve">
+    <value>翻譯檔案已更新。</value>
+  </data>
+  <data name="Updater_Notification_NewAppVersion" xml:space="preserve">
+    <value>新版KCV 「v{0}」已經放出
+點此開啟下載站</value>
+  </data>
+  <data name="Updater_Notification_Title" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Updater_Notification_TransUpdate_Fail" xml:space="preserve">
+    <value>翻譯檔案下載失敗</value>
+  </data>
+  <data name="Updater_Notification_TransUpdate_Same" xml:space="preserve">
+    <value>翻譯檔案已為最新版本</value>
+  </data>
+  <data name="Settings_Flash" xml:space="preserve">
+    <value>Flash設定</value>
+  </data>
+  <data name="Settings_Flash_Quality" xml:space="preserve">
+    <value>Flash質量</value>
+  </data>
+  <data name="Settings_Flash_Window_ToolTip" xml:space="preserve">
+    <value>Opaque: 預設(在舊版IE上沒有硬體加速)
+Direct: 最快的渲染速度(有硬體加速)
+GPU: 慢速!以GPU優化，平板適用。</value>
+  </data>
+  <data name="Settings_Flash_Window" xml:space="preserve">
+    <value>Flash視窗：</value>
+  </data>
+  <data name="Settings_Flash_Quality_ToolTip" xml:space="preserve">
+    <value>Best: 為所有影像開啟反鋸齒(最慢)
+High: 預設
+Auto-High: 需要時降低質量
+Medium: 普通表現
+AutoLow: 以保持速度為首
+Low: 重視效能表現多於質量。質素最低的選項</value>
+  </data>
+  <data name="Settings_Updates_GetKCVBtn" xml:space="preserve">
+    <value>前往發佈網站</value>
+  </data>
+  <data name="Settings_Updates_GetKCVBtn_ToolTip" xml:space="preserve">
+    <value>前往最新版的下載頁面</value>
+  </data>
+  <data name="Settings_CustomSound" xml:space="preserve">
+    <value>設定通知音</value>
+  </data>
+  <data name="Settings_CustomSound_Volume" xml:space="preserve">
+    <value>音量</value>
+  </data>
+  <data name="Settings_Flash_Message" xml:space="preserve">
+    <value>影響到DMM.com, OSAPI以及API連接。需要重啟本程式以生效。</value>
+  </data>
+  <data name="Ship_RepairDockToolTip" xml:space="preserve">
+    <value>入渠: {0}</value>
+  </data>
+  <data name="Ship_RepairFacilityToolTip" xml:space="preserve">
+    <value>設施: {0}</value>
+  </data>
+  <data name="Settings_UI" xml:space="preserve">
+    <value>界面設定</value>
+  </data>
+  <data name="Settings_UI_Icon" xml:space="preserve">
+    <value>選單上使用圖標</value>
+  </data>
+  <data name="Rank_Admiral" xml:space="preserve">
+    <value>大將</value>
+  </data>
+  <data name="Rank_Captain" xml:space="preserve">
+    <value>大佐</value>
+  </data>
+  <data name="Rank_Commander" xml:space="preserve">
+    <value>中佐</value>
+  </data>
+  <data name="Rank_Lieutenant" xml:space="preserve">
+    <value>中堅少佐</value>
+  </data>
+  <data name="Rank_Lieutenant_Commander" xml:space="preserve">
+    <value>少佐</value>
+  </data>
+  <data name="Rank_Marshal_Admiral" xml:space="preserve">
+    <value>元帥</value>
+  </data>
+  <data name="Rank_Novice_Commander" xml:space="preserve">
+    <value>新米中佐</value>
+  </data>
+  <data name="Rank_Novice_Lieutenant" xml:space="preserve">
+    <value>新米少佐</value>
+  </data>
+  <data name="Rank_Rear_Admiral" xml:space="preserve">
+    <value>少將</value>
+  </data>
+  <data name="Rank_Vice_Admiral" xml:space="preserve">
+    <value>中將</value>
+  </data>
+  <data name="Settings_Notifications" xml:space="preserve">
+    <value>通知設定</value>
+  </data>
+  <data name="Settings_Notifications_AheadOfTime" xml:space="preserve">
+    <value>通知提早：</value>
+  </data>
+  <data name="Settings_Notifications_AheadOfTime_Description" xml:space="preserve">
+    <value>設定伺服器時間偏延。建議設定：40-50秒。受各項因素影響，此偏延可多達1分鐘。</value>
+  </data>
+  <data name="Settings_Notifications_AheadOfTime_Seconds" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="Settings_Notifications_Construction_Enabled" xml:space="preserve">
+    <value>建造完成時通知</value>
+  </data>
+  <data name="Settings_Notifications_Expeditions_Enabled" xml:space="preserve">
+    <value>遠征回港時通知</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale" xml:space="preserve">
+    <value>在艦隊內所有艦娘的疲勞值恢復了後顯示通知</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale_Description" xml:space="preserve">
+    <value>在艦隊內所有艦娘的狀態到達界限值時顯示通知。此值每3分鐘回復3點，但受API的運作模式影響，通知可能提早顯示。</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale_Reference" xml:space="preserve">
+    <value>※可在[動作設定] &gt; [出擊條件] 中設定</value>
+  </data>
+  <data name="Settings_Notifications_FleetsMorale_Threshold" xml:space="preserve">
+    <value>狀態/疲勞界限值</value>
+  </data>
+  <data name="Settings_Notifications_Repair_Enabled" xml:space="preserve">
+    <value>入渠結束時顯示通知</value>
+  </data>
+  <data name="Settings_Operation_SortieCondition" xml:space="preserve">
+    <value>出擊條件</value>
+  </data>
+  <data name="Settings_Operation_SortieCondition_Description" xml:space="preserve">
+    <value>※一般會設在間宮燈熄滅的40與自然回復上限的49之間。</value>
+  </data>
+  <data name="Settings_Operation_SortieCondition_Title" xml:space="preserve">
+    <value>認為可以出擊的最低狀態值</value>
+  </data>
+  <data name="Settings_Network_Proxy_Auth_Password" xml:space="preserve">
+    <value>密碼</value>
+  </data>
+  <data name="Settings_Network_Proxy_Auth_Required" xml:space="preserve">
+    <value>代理伺服器需要用戶名和密碼</value>
+  </data>
+  <data name="Settings_Network_Proxy_Auth_Username" xml:space="preserve">
+    <value>用戶名</value>
+  </data>
+  <data name="Overview_Data" xml:space="preserve">
+    <value>密碼</value>
+  </data>
+  <data name="Overview_EquipmentList" xml:space="preserve">
+    <value>裝備一覽</value>
+  </data>
+  <data name="Overview_ShipList" xml:space="preserve">
+    <value>艦娘一覽</value>
+  </data>
+  <data name="Shipyard" xml:space="preserve">
+    <value>工廠</value>
+  </data>
+  <data name="Shipyard_ConstructionDock" xml:space="preserve">
+    <value>建造</value>
+  </data>
+  <data name="Shipyard_Development" xml:space="preserve">
+    <value>裝備開發•掉落</value>
+  </data>
+  <data name="Shipyard_Development_Result_Failure" xml:space="preserve">
+    <value>失敗</value>
+  </data>
+  <data name="Shipyard_Development_Result_None" xml:space="preserve">
+    <value>無結果</value>
+  </data>
+  <data name="Shipyard_Development_Result_Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="Shipyard_RepairDock" xml:space="preserve">
+    <value>入渠</value>
+  </data>
+  <data name="Ship_Repairing" xml:space="preserve">
+    <value>入渠中</value>
+  </data>
+  <data name="StateDetail_CriticalDamage" xml:space="preserve">
+    <value>有艦娘被大破！！！</value>
+  </data>
+  <data name="StateDetail_EmptyFleet" xml:space="preserve">
+    <value>這艦隊中沒有仼何艦娘</value>
+  </data>
+  <data name="StateDetail_IsReady" xml:space="preserve">
+    <value>可以出擊！</value>
+  </data>
+  <data name="StateDetail_MoraleRecovering" xml:space="preserve">
+    <value>疲勞恢復完成</value>
+  </data>
+  <data name="StateDetail_MoraleRecoveryTimer" xml:space="preserve">
+    <value>距離疲勞恢復完成還有</value>
+  </data>
+  <data name="StateDetail_OnExpedition" xml:space="preserve">
+    <value>遠征中：</value>
+  </data>
+  <data name="StateDetail_OnSortie" xml:space="preserve">
+    <value>艦艦正在出擊！</value>
+  </data>
+  <data name="Notifications_MoraleRestored" xml:space="preserve">
+    <value>疲勞恢復完成</value>
+  </data>
+  <data name="Notifications_MoraleRestored_Details" xml:space="preserve">
+    <value>艦艦「{0}」的疲勞值已恢復完畢。</value>
+  </data>
+  <data name="ShipCatalog_SortieWaters" xml:space="preserve">
+    <value>出擊海域</value>
+  </data>
+  <data name="ShipCatalog_Operation_AL" xml:space="preserve">
+    <value>曾參加AL作戰</value>
+  </data>
+  <data name="ShipCatalog_Operation_MI" xml:space="preserve">
+    <value>曾參加MI作戰</value>
+  </data>
+  <data name="ShipCatalog_Operation_NotLocked" xml:space="preserve">
+    <value>未曾向作戰海域出擊</value>
+  </data>
+  <data name="Settings_Operation_LoSCalculation" xml:space="preserve">
+    <value>索敵值計算</value>
+  </data>
+  <data name="Settings_Operation_LoS_CarrierBasedRecon" xml:space="preserve">
+    <value>艦上偵察機</value>
+  </data>
+  <data name="Settings_Operation_LoS_CarrierBasedRecon_Tooltip" xml:space="preserve">
+    <value>彩雲、二式艦上偵察機</value>
+  </data>
+  <data name="Settings_Operation_LoS_New" xml:space="preserve">
+    <value>(偵察機 × 2) + (電探) + √(包括裝備的艦隊索敵值總合 - 偵察機 - 電探)</value>
+  </data>
+  <data name="Settings_Operation_LoS_New_Desc" xml:space="preserve">
+    <value>更重視裝備索敵值的計算方法 (推定)</value>
+  </data>
+  <data name="Settings_Operation_LoS_Recon" xml:space="preserve">
+    <value>偵察機</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneBomber" xml:space="preserve">
+    <value>水上爆擊機</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneBomber_Tooltip" xml:space="preserve">
+    <value>瑞雲、瑞雲(六三四空)、試製晴嵐</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneRecon" xml:space="preserve">
+    <value>水上偵察機</value>
+  </data>
+  <data name="Settings_Operation_LoS_SeaplaneRecon_Tooltip" xml:space="preserve">
+    <value>零式水上偵察機、零式水上觀測機、九八式水上偵察機(夜偵)</value>
+  </data>
+  <data name="Settings_Operation_LoS_Simple" xml:space="preserve">
+    <value>把艦娘和裝備的索敵值直接加在一起</value>
+  </data>
+  <data name="Settings_Operation_LoS_Simple_Description" xml:space="preserve">
+    <value>舊版KCV的計算方法</value>
+  </data>
+  <data name="Settings_Operation_LoS_Title" xml:space="preserve">
+    <value>使用下列公式算出索敵值</value>
+  </data>
+  <data name="Settings_Updates_CheckUpdatesBtn_ToolTip" xml:space="preserve">
+    <value>檢查KCV和翻譯檔案更新</value>
+  </data>
+  <data name="StateDetail_Repairing" xml:space="preserve">
+    <value>艦隊中有正在入渠的艦娘</value>
+  </data>
+  <data name="StateDetail_ShortSupply" xml:space="preserve">
+    <value>艦隊中有未補給的艦娘。</value>
+  </data>
+  <data name="Quests_Monthly" xml:space="preserve">
+    <value>每月仼務</value>
+  </data>
+  <data name="CommonCatalog_GeneratingList" xml:space="preserve">
+    <value>正在產生列表……</value>
+  </data>
+  <data name="CommonCatalog_Refresh" xml:space="preserve">
+    <value>重新整理</value>
+  </data>
+  <data name="Quests_NoQuest" xml:space="preserve">
+    <value>沒有接受仼務</value>
+  </data>
+  <data name="Settings_Notifications_ActiveNotificationPlugin" xml:space="preserve">
+    <value>下列插件會使用通知功能。</value>
+  </data>
+  <data name="Settings_Notifications_NotificationPlugin" xml:space="preserve">
+    <value>通知設定</value>
+  </data>
+  <data name="Settings_Updates_Option" xml:space="preserve">
+    <value>更新設定</value>
+  </data>
+  <data name="ShipCatalog_All" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="ShipCatalog_AntiAir" xml:space="preserve">
+    <value>對空</value>
+  </data>
+  <data name="ShipCatalog_AntiSub" xml:space="preserve">
+    <value>對潛</value>
+  </data>
+  <data name="ShipCatalog_Armor" xml:space="preserve">
+    <value>裝甲</value>
+  </data>
+  <data name="ShipCatalog_Equips" xml:space="preserve">
+    <value>裝備一覽</value>
+  </data>
+  <data name="ShipCatalog_Evasion" xml:space="preserve">
+    <value>回避</value>
+  </data>
+  <data name="ShipCatalog_ExcludeShipOnExpedition" xml:space="preserve">
+    <value>排除正在遠征的艦</value>
+  </data>
+  <data name="ShipCatalog_ExcludeShiptype" xml:space="preserve">
+    <value>不包括艦種選項！</value>
+  </data>
+  <data name="ShipCatalog_Expedition" xml:space="preserve">
+    <value>遠征</value>
+  </data>
+  <data name="ShipCatalog_Fast" xml:space="preserve">
+    <value>高速</value>
+  </data>
+  <data name="ShipCatalog_FilterSettings" xml:space="preserve">
+    <value>過濾設定</value>
+  </data>
+  <data name="ShipCatalog_Firepower" xml:space="preserve">
+    <value>火力</value>
+  </data>
+  <data name="ShipCatalog_Level" xml:space="preserve">
+    <value>等級</value>
+  </data>
+  <data name="ShipCatalog_Level1" xml:space="preserve">
+    <value>Lv.1</value>
+  </data>
+  <data name="ShipCatalog_Level2Up" xml:space="preserve">
+    <value>Lv.2 以上</value>
+  </data>
+  <data name="ShipCatalog_Lock" xml:space="preserve">
+    <value>鎖</value>
+  </data>
+  <data name="ShipCatalog_Locked" xml:space="preserve">
+    <value>有鎖</value>
+  </data>
+  <data name="ShipCatalog_LoS" xml:space="preserve">
+    <value>索敵</value>
+  </data>
+  <data name="ShipCatalog_Luck" xml:space="preserve">
+    <value>運</value>
+  </data>
+  <data name="ShipCatalog_Modernization" xml:space="preserve">
+    <value>近代化改修</value>
+  </data>
+  <data name="ShipCatalog_ModernizationComplete" xml:space="preserve">
+    <value>改修完成</value>
+  </data>
+  <data name="ShipCatalog_ModernizationIncomplete" xml:space="preserve">
+    <value>仍可改修</value>
+  </data>
+  <data name="ShipCatalog_Name" xml:space="preserve">
+    <value>艦名</value>
+  </data>
+  <data name="ShipCatalog_RemodelIncomplete" xml:space="preserve">
+    <value>仍可改造</value>
+  </data>
+  <data name="ShipCatalog_Remodel" xml:space="preserve">
+    <value>改造</value>
+  </data>
+  <data name="ShipCatalog_RemodelComplete" xml:space="preserve">
+    <value>改造完成</value>
+  </data>
+  <data name="ShipCatalog_ResetFilterSettings" xml:space="preserve">
+    <value>重設過濾設定</value>
+  </data>
+  <data name="ShipCatalog_SaveFilterSettings" xml:space="preserve">
+    <value>保存過濾設定</value>
+  </data>
+  <data name="ShipCatalog_SelectAll" xml:space="preserve">
+    <value>全選</value>
+  </data>
+  <data name="ShipCatalog_ShipType" xml:space="preserve">
+    <value>艦種</value>
+  </data>
+  <data name="ShipCatalog_ShowAdditionalShipStats" xml:space="preserve">
+    <value>顯示全部數據</value>
+  </data>
+  <data name="ShipCatalog_Slow" xml:space="preserve">
+    <value>低速</value>
+  </data>
+  <data name="ShipCatalog_Speed" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="ShipCatalog_Torpedo" xml:space="preserve">
+    <value>雷裝</value>
+  </data>
+  <data name="ShipCatalog_Unlocked" xml:space="preserve">
+    <value>沒有鎖</value>
+  </data>
+  <data name="SlotItemCatalog_EqipName" xml:space="preserve">
+    <value>裝備名稱</value>
+  </data>
+  <data name="SlotItemCatalog_EquippedShipGirls" xml:space="preserve">
+    <value>已裝配的艦娘</value>
+  </data>
+  <data name="SlotItemCatalog_Extra" xml:space="preserve">
+    <value>餘下</value>
+  </data>
+  <data name="SlotItemCatalog_Owned" xml:space="preserve">
+    <value>持有量</value>
+  </data>
+  <data name="SlotItemCatalog_Stats" xml:space="preserve">
+    <value>數據</value>
+  </data>
+  <data name="Shipyard_Drop" xml:space="preserve">
+    <value>掉落</value>
+  </data>
+  <data name="Homeport_ImprovementMaterial" xml:space="preserve">
+    <value>改修資材:</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>資訊</value>
+  </data>
+  <data name="Settings_Updates_ForceUpdateTransBtn" xml:space="preserve">
+    <value>強制更新</value>
+  </data>
+  <data name="Settings_Updates_ForceUpdateTransBtn_ToolTip" xml:space="preserve">
+    <value>無論有沒有更新都下載全部翻譯檔案</value>
+  </data>
+  <data name="Settings_Browser_ResetZoom_Pre" xml:space="preserve">
+    <value>回到遊戲畫面</value>
+  </data>
+  <data name="Settings_Browser_ResetZoomDescription" xml:space="preserve">
+    <value>(不小心放太大時使用)</value>
+  </data>
+  <data name="Settings_Browser_ZoomDescription" xml:space="preserve">
+    <value>你可以用視窗上部的縮放鍵來調整遊戲畫面(IE)的大小。截圖並不會受到此設定影響，只會以100%大小儲存。</value>
+  </data>
+  <data name="Settings_Browser_ResetZoom_Suf" xml:space="preserve">
+    <value>返回%</value>
+  </data>
+  <data name="Browser_GoBack" xml:space="preserve">
+    <value>返回上一頁</value>
+  </data>
+  <data name="Browser_GoForward" xml:space="preserve">
+    <value>前往下一頁</value>
+  </data>
+  <data name="Browser_ReNavigate" xml:space="preserve">
+    <value>重新載入本頁</value>
+  </data>
+  <data name="Browser_URLTip" xml:space="preserve">
+    <value>輸入網址後按Enter鍵前往。</value>
+  </data>
+  <data name="ShipCatalog_Title" xml:space="preserve">
+    <value>所屬艦娘一覽</value>
+  </data>
+  <data name="SlotItemCatalog_Title" xml:space="preserve">
+    <value>持有裝備一覽</value>
+  </data>
+  <data name="Overview_ConstructionDock" xml:space="preserve">
+    <value>建造位</value>
+  </data>
+  <data name="Overview_RepairDock" xml:space="preserve">
+    <value>入渠位</value>
+  </data>
+  <data name="StartContent_Introduction2" xml:space="preserve">
+    <value>本程式基於Internet Explorer (IE)且並不會進行改變向伺服器傳輸的通訊、抽取Flash、或者使用巨集等作弊行為。</value>
+  </data>
+  <data name="StartContent_Introduction3" xml:space="preserve">
+    <value>如果遊戲畫面顯示不正常、經常看到script錯誤或者遊戲畫面有其他問題，請嘗試清除IE的緩存。如果問題仍然未能解決，請檢查Flash是否能在一般的IE上運作等等。</value>
+  </data>
+  <data name="StartContent_Introduction4" xml:space="preserve">
+    <value>本程式經常更新。請在下方檢查更新。</value>
+  </data>
+  <data name="ShipCatalog_ShipType_AircraftCarriers" xml:space="preserve">
+    <value>航空母艦</value>
+  </data>
+  <data name="ShipCatalog_ShipType_AviationShips" xml:space="preserve">
+    <value>航戰•航巡</value>
+  </data>
+  <data name="ShipCatalog_ShipType_Battleships" xml:space="preserve">
+    <value>戰艦</value>
+  </data>
+  <data name="ShipCatalog_ShipType_Destroyers" xml:space="preserve">
+    <value>驅逐艦</value>
+  </data>
+  <data name="ShipCatalog_ShipType_HeavyCruisers" xml:space="preserve">
+    <value>重巡•航巡</value>
+  </data>
+  <data name="ShipCatalog_ShipType_LightCruisers" xml:space="preserve">
+    <value>輕巡•雷巡</value>
+  </data>
+  <data name="ShipCatalog_ShipType_Others" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="ShipCatalog_ShipType_Submarines" xml:space="preserve">
+    <value>潛艇</value>
+  </data>
+  <data name="Ship_Retreat" xml:space="preserve">
+    <value>已撤退</value>
+  </data>
+  <data name="ShipCatalog_Clear" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="ShipCatalog_Condition" xml:space="preserve">
+    <value>狀態值</value>
+  </data>
+  <data name="ShipCatalog_ExpForNextLevel" xml:space="preserve">
+    <value>距離下級所需經驗值</value>
+  </data>
+  <data name="ShipCatalog_HP" xml:space="preserve">
+    <value>耐久</value>
+  </data>
+  <data name="ShipCatalog_None" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="ShipCatalog_Refresh" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="ShipCatalog_SortSettings" xml:space="preserve">
+    <value>排序設定</value>
+  </data>
+  <data name="ShipCatalog_SortSettings_Ascending" xml:space="preserve">
+    <value>升序</value>
+  </data>
+  <data name="ShipCatalog_SortSettings_Descending" xml:space="preserve">
+    <value>降序</value>
+  </data>
+  <data name="ShipCatalog_SortSettings_Description" xml:space="preserve">
+    <value>按下列順序來排列艦娘。</value>
+  </data>
+  <data name="ShipCatalog_SortSettings_SortCriteria" xml:space="preserve">
+    <value>排列方法</value>
+  </data>
+  <data name="SlotItemCatalog_Improvement" xml:space="preserve">
+    <value>改修</value>
+  </data>
+  <data name="SlotItemCatalog_Total" xml:space="preserve">
+    <value>合計</value>
+  </data>
+  <data name="FleetDetail_AirSuperiorityPotential" xml:space="preserve">
+    <value>制空戰力</value>
+  </data>
+  <data name="FleetDetail_AverageLevel" xml:space="preserve">
+    <value>平均等級</value>
+  </data>
+  <data name="FleetDetail_LoSValue" xml:space="preserve">
+    <value>索敵值</value>
+  </data>
+  <data name="FleetDetail_Status" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="FleetDetail_Title" xml:space="preserve">
+    <value>艦隊詳情</value>
+  </data>
+  <data name="FleetDetail_TotalLevel" xml:space="preserve">
+    <value>總等級</value>
+  </data>
+  <data name="Fleets_Details" xml:space="preserve">
+    <value>艦隊詳情</value>
+  </data>
+  <data name="Fleets_Speed_Mixed" xml:space="preserve">
+    <value>混合速度艦隊</value>
+  </data>
+  <data name="Ship_Healthy" xml:space="preserve">
+    <value>健在</value>
+  </data>
+  <data name="Ship_HealthyDamageControlled" xml:space="preserve">
+    <value>健在•配備損管</value>
+  </data>
+  <data name="Ship_HeavilyDamaged" xml:space="preserve">
+    <value>大破(可能轟沉)</value>
+  </data>
+  <data name="Ship_HeavilyDamaged_CanUseDamcon" xml:space="preserve">
+    <value>大破(可用損管)</value>
+  </data>
+  <data name="Ship_HeavilyDamaged_Retreated" xml:space="preserve">
+    <value>大破(已退避)</value>
+  </data>
+  <data name="Ship_Retreated" xml:space="preserve">
+    <value>撒退(護衛退避)</value>
+  </data>
+  <data name="StateDetail_Fatigued" xml:space="preserve">
+    <value>直到疲勞恢復</value>
+  </data>
+  <data name="StateDetail_HeavilyDamaged" xml:space="preserve">
+    <value>艦隊內有大破艦娘</value>
+  </data>
+  <data name="StateDetail_NotFatigued" xml:space="preserve">
+    <value>艦隊內沒有疲勞的艦娘</value>
+  </data>
+  <data name="StateDetail_NotHeavilyDamaged" xml:space="preserve">
+    <value>艦隊內沒有大破的艦娘</value>
+  </data>
+  <data name="StateDetail_NotOnExpedition" xml:space="preserve">
+    <value>艦隊不在遠征中</value>
+  </data>
+  <data name="StateDetail_NotOnShortSupply" xml:space="preserve">
+    <value>艦隊補給完成</value>
+  </data>
+  <data name="StateDetail_NotOnSortie" xml:space="preserve">
+    <value>艦隊不在出擊中</value>
+  </data>
+  <data name="StateDetail_NotReady" xml:space="preserve">
+    <value>艦隊未準備好</value>
+  </data>
+  <data name="StateDetail_NotRepairing" xml:space="preserve">
+    <value>艦隊內沒有正在入渠的艦娘</value>
+  </data>
+  <data name="StateDetail_OnExpeditionDetail" xml:space="preserve">
+    <value>艦隊正在遠征：</value>
+  </data>
+  <data name="StateDetail_OnShortSupply" xml:space="preserve">
+    <value>艦隊內有艦娘未補給</value>
+  </data>
+  <data name="StateDetail_Ready" xml:space="preserve">
+    <value>出擊準備完成！</value>
+  </data>
+  <data name="FleetDetail_DayCombat" xml:space="preserve">
+    <value>彈着觀察射擊</value>
+  </data>
+  <data name="FleetDetail_NightBattleCutin" xml:space="preserve">
+    <value>夜戰Cut-In</value>
+  </data>
+  <data name="Fleet_Combined" xml:space="preserve">
+    <value>聯合艦隊</value>
+  </data>
+  <data name="ShipCatalog_LOS_description" xml:space="preserve">
+    <value>包括了從裝備得來的索敵值</value>
+  </data>
+  <data name="StateDetail_CanNotDoExpedition" xml:space="preserve">
+    <value>聯合艦隊不能進行遠征</value>
+  </data>
+  <data name="Settings_Browser_HorizontalPosition" xml:space="preserve">
+    <value>水平模式</value>
+  </data>
+  <data name="Settings_Browser_HorizontalPosition_Description" xml:space="preserve">
+    <value>橫向模式時瀏覽器畫面位置</value>
+  </data>
+  <data name="Settings_Browser_Position" xml:space="preserve">
+    <value>瀏覽器畫面位置</value>
+  </data>
+  <data name="Settings_Browser_VerticalPosition" xml:space="preserve">
+    <value>垂直模式</value>
+  </data>
+  <data name="Settings_Browser_VerticalPosition_Description" xml:space="preserve">
+    <value>縱向模式時瀏覽器畫面位置</value>
+  </data>
+  <data name="Settings_Orientation" xml:space="preserve">
+    <value>排列模式</value>
+  </data>
+  <data name="FleetDetatils_Status" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="ShipCatalog_CustomSort" xml:space="preserve">
+    <value>遊戲內</value>
+  </data>
+  <data name="ExitDialogConfirm" xml:space="preserve">
+    <value>「KCV提督很忙」即將關閉。你是否確定？</value>
+  </data>
+  <data name="ExitDialogTitle" xml:space="preserve">
+    <value>離開KCV</value>
+  </data>
+  <data name="Settings_ExitConfirm" xml:space="preserve">
+    <value>確認退出</value>
+  </data>
+  <data name="Settings_ExitConfirmOnlyWhenInSortie" xml:space="preserve">
+    <value>只在出擊時顯示對話盒</value>
+  </data>
+  <data name="Settings_ExitConfirmOption" xml:space="preserve">
+    <value>關閉KCV時顯示確認對話盒</value>
+  </data>
+  <data name="Settings_ChangeOrientationMode" xml:space="preserve">
+    <value>改變排列模式</value>
+  </data>
+  <data name="Settings_Flash_Enable" xml:space="preserve">
+    <value>改變Flash設定</value>
+  </data>
+</root>
