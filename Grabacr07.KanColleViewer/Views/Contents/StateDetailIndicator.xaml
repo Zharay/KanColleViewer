@@ -28,23 +28,11 @@
 						<TextBlock x:Name="Text"
 								   Style="{DynamicResource DefaultTextStyleKey}"
 								   Foreground="{DynamicResource ActiveForegroundBrushKey}">
-							<TextBlock.Text>
-								<MultiBinding StringFormat="{}{0}: {1}">
-									<Binding Source="{x:Static models:ResourceService.Current}" Path="Resources.StateDetail_MoraleRecoveryTimer" />
-									<Binding Path="Condition.Remaining" />
-								</MultiBinding>
-							</TextBlock.Text>
 						</TextBlock>
 					</Border>
 				</Grid>
 
 				<DataTemplate.Triggers>
-					<DataTrigger Binding="{Binding Condition.IsRejuvenating}"
-								 Value="False">
-						<Setter TargetName="Text"
-								Property="Text"
-								Value="{Binding Resources.StateDetail_MoraleRecovering, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
-					</DataTrigger>
 					<DataTrigger Binding="{Binding State.IsReady}"
 								 Value="True">
 						<Setter TargetName="Border"
@@ -54,7 +42,31 @@
 								Property="Text"
 								Value="{Binding Resources.StateDetail_IsReady, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 					</DataTrigger>
-					<DataTrigger Binding="{Binding Fleet.IsWounded}"
+					<DataTrigger Binding="{Binding Condition.IsRejuvenating}"
+								 Value="True">
+						<Setter TargetName="Text"
+								Property="Text">
+							<Setter.Value>
+								<MultiBinding StringFormat="{}{0}: {1}">
+									<Binding Source="{x:Static models:ResourceService.Current}" Path="Resources.StateDetail_MoraleRecoveryTimer" />
+									<Binding Path="Condition.Remaining" />
+								</MultiBinding>
+							</Setter.Value>
+						</Setter>
+					</DataTrigger>
+					<DataTrigger Binding="{Binding State.Situation, Converter={StaticResource HasFlagConverter}, ConverterParameter=InShortSupply}"
+								 Value="True">
+						<Setter TargetName="Text"
+								Property="Text"
+								Value="{Binding Resources.FleetWindow_Status_ResupplyNeeded, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding State.Situation, Converter={StaticResource HasFlagConverter}, ConverterParameter=Repairing}"
+								 Value="True">
+						<Setter TargetName="Text"
+								Property="Text"
+								Value="{Binding Resources.Ship_Repairing, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding State.Situation, Converter={StaticResource HasFlagConverter}, ConverterParameter=HeavilyDamaged}"
 								 Value="True">
 						<Setter TargetName="Border"
 								Property="Background"

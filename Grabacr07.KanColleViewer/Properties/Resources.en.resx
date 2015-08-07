@@ -822,7 +822,7 @@ Low: Performance over quality. Ugliest setting.</value>
     <value>Ready to sortie!</value>
   </data>
   <data name="StateDetail_MoraleRecovering" xml:space="preserve">
-    <value>Morale recovered</value>
+    <value>Morale recovering</value>
   </data>
   <data name="StateDetail_MoraleRecoveryTimer" xml:space="preserve">
     <value>Morale will be restored in</value>
