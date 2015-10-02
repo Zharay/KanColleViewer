@@ -6,6 +6,11 @@
 KCV is a Windows-only browser utility that makes it easy to play Kantai Collection.
 This is the translation project of the original [KanColleViewer](http://grabacr.net/kancolleviewer)
 
+## Important Note
+This KCV 3.8.x branch is no longer supported and is hosted here for archival purposes.
+
+**The 4.x development happens over at [my primary repository](https://github.com/Yuubari/KanColleViewer) and is a restart from scratch with a new translation engine.**
+
 ##### Main Contributors
 * [@Zharay](http://twitter.com/Zharay) -- English Version
 * [@Grabacr07](https://twitter.com/Grabacr07) -- Original author
@@ -59,9 +64,8 @@ Important note: while Microsoft has announced that they will be open-sourcing th
 #### I have a white screen / error message about being unable to connect.
 Please let me know if this is happening and tell me what OS you are using and the version of IE. My suspicion is an outdated version of IE. Reports have also shown that clearing your cache+cookies and re-installing flash will also fix this issue.
 
-If you are getting connection errors, try changing the program's proxy server port within KanColleViewer.exe.config. Find the number 37564 and replace it with 37565 or another random number. Restart KCV and see if the problem goes away.
-
-#### My Fleets and Expeditions don't show/update!
+If you are getting connection errors, try changing the program's proxy server port within KanColleViewer.exe.config. Find the number 37564 and replace it with 37565 or another random number. Restart KCV and see if the problem goes away
+#### My Fleets and Expeditions don't show/update with a new translation engine!
 Clear your cache and relaunch KCV again. Especially after updates or playing between versions of KCV, this should fix any issues regarding this.
 
 #### I want the original Japanese names for ships/items/etc.
