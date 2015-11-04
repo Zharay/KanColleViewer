@@ -9,17 +9,13 @@
 			 xmlns:contents="clr-namespace:Grabacr07.KanColleViewer.Views.Contents"
 			 xmlns:properties="clr-namespace:Grabacr07.KanColleViewer.Properties"
 			 xmlns:vm="clr-namespace:Grabacr07.KanColleViewer.ViewModels"
-			 xmlns:vmDocks="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Contents.Docks"
 			 xmlns:vmFleets="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Contents.Fleets"
 			 xmlns:vmContents="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Contents"
 			 xmlns:dev="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Dev"
 			 xmlns:models="clr-namespace:Grabacr07.KanColleViewer.Models"
-			 xmlns:views="clr-namespace:Grabacr07.KanColleViewer.Views"
-			 xmlns:vmTools="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Contents.Tools"
 			 mc:Ignorable="d"
 			 d:DesignHeight="25"
 			 d:DesignWidth="780">
-
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
@@ -30,8 +26,9 @@
 				   Margin="5,0" />
 		<TextBlock Grid.Column="0"
 				   Text="{Binding Source={x:Static root:App.ViewModelRoot}, Path=StatusMessage}"
-				   TextTrimming="CharacterEllipsis"
+				   Style="{DynamicResource DefaultTextStyleKey}"
 				   Foreground="{DynamicResource AccentForegroundBrushKey}"
+				   TextWrapping="NoWrap"
 				   MaxWidth="{Binding ElementName=Col0, Path=ActualWidth}"
 				   Margin="5,0" />
 
@@ -43,25 +40,30 @@
 					<StackPanel Orientation="Horizontal"
 								DataContext="{Binding Content.Fleets.SelectedFleet}">
 						<StackPanel.Resources>
-							<Style TargetType="{x:Type TextBlock}"
-								   BasedOn="{StaticResource {x:Type TextBlock}}">
+							<Style TargetType="{x:Type TextBlock}">
 								<Setter Property="Foreground"
 										Value="{DynamicResource AccentForegroundBrushKey}" />
+								<Setter Property="FontFamily"
+										Value="{DynamicResource DefaultFontFamilyKey}" />
+								<Setter Property="FontSize"
+										Value="{DynamicResource DefaultFontSizeKey}" />
+								<Setter Property="VerticalAlignment"
+										Value="Center" />
 							</Style>
 						</StackPanel.Resources>
 
 						<TextBlock Text="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Fleets_Level, StringFormat='{}{0} '}" />
 						<TextBlock Text="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Fleets_Total, StringFormat='{}{0}: '}" />
-						<TextBlock Text="{Binding TotalLevel}"
+						<TextBlock Text="{Binding State.TotalLevel}"
 								   MinWidth="35" />
 						<TextBlock Text="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Fleets_Average, StringFormat='{}{0}: '}" />
-						<TextBlock Text="{Binding AverageLevel}"
+						<TextBlock Text="{Binding State.AverageLevel}"
 								   MinWidth="75" />
 						<TextBlock Text="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Fleets_ViewRange, StringFormat='{}{0}: '}" />
-						<TextBlock Text="{Binding TotalViewRange}"
+						<TextBlock Text="{Binding State.ViewRange}"
 								   MinWidth="60" />
 						<TextBlock Text="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Fleets_AirSuperiorityPotential, StringFormat='{}{0}: '}" />
-						<TextBlock Text="{Binding AirSuperiorityPotential}"
+						<TextBlock Text="{Binding State.AirSuperiorityPotential}"
 								   MinWidth="60" />
 						<TextBlock Text="{Binding Speed}"
 								   MinWidth="60" />
@@ -71,39 +73,41 @@
 					<StackPanel Orientation="Horizontal"
 								DataContext="{Binding SelectedFleet}">
 						<StackPanel.Resources>
-							<Style TargetType="{x:Type TextBlock}"
-								   BasedOn="{StaticResource {x:Type TextBlock}}">
+							<Style TargetType="{x:Type TextBlock}">
 								<Setter Property="Foreground"
 										Value="{DynamicResource AccentForegroundBrushKey}" />
+								<Setter Property="FontFamily"
+										Value="{DynamicResource DefaultFontFamilyKey}" />
+								<Setter Property="FontSize"
+										Value="{DynamicResource DefaultFontSizeKey}" />
+								<Setter Property="VerticalAlignment"
+										Value="Center" />
 							</Style>
 						</StackPanel.Resources>
 
 						<TextBlock Text="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Fleets_Level, StringFormat='{}{0} '}" />
 						<TextBlock Text="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Fleets_Total, StringFormat='{}{0}: '}" />
-						<TextBlock Text="{Binding TotalLevel}"
+						<TextBlock Text="{Binding State.TotalLevel}"
 								   MinWidth="35" />
 						<TextBlock Text="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Fleets_Average, StringFormat='{}{0}: '}" />
-						<TextBlock Text="{Binding AverageLevel}"
+						<TextBlock Text="{Binding State.AverageLevel}"
 								   MinWidth="75" />
 						<TextBlock Text="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Fleets_ViewRange, StringFormat='{}{0}: '}" />
-						<TextBlock Text="{Binding TotalViewRange}"
+						<TextBlock Text="{Binding State.ViewRange}"
 								   MinWidth="60" />
 						<TextBlock Text="{Binding Source={x:Static models:ResourceService.Current}, Path=Resources.Fleets_AirSuperiorityPotential, StringFormat='{}{0}: '}" />
-						<TextBlock Text="{Binding AirSuperiorityPotential}"
+						<TextBlock Text="{Binding State.AirSuperiorityPotential}"
 								   MinWidth="60" />
-						<TextBlock Text="{Binding Speed}"
+						<TextBlock Text="{Binding State.Speed}"
 								   MinWidth="60" />
 					</StackPanel>
 				</DataTemplate>
-				<DataTemplate DataType="{x:Type vmDocks:RepairyardViewModel}" />
-				<DataTemplate DataType="{x:Type vmDocks:DockyardViewModel}" />
+				<DataTemplate DataType="{x:Type vmContents:ShipyardViewModel}" />
 				<DataTemplate DataType="{x:Type vmContents:QuestsViewModel}" />
 				<DataTemplate DataType="{x:Type vmContents:ExpeditionsViewModel}" />
+				<DataTemplate DataType="{x:Type vmContents:ToolsViewModel}" />
 				<DataTemplate DataType="{x:Type vm:SettingsViewModel}" />
 				<DataTemplate DataType="{x:Type dev:DebugTabViewModel}" />
-				<DataTemplate DataType="{x:Type vmContents:ToolsViewModel}" />
-				<DataTemplate DataType="{x:Type vmTools:CalculatorViewModel}" />
-				<DataTemplate DataType="{x:Type vmTools:RankingsViewModel}" />
 			</ContentControl.Resources>
 		</ContentControl>
 	</Grid>

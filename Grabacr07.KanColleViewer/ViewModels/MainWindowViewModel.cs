@@ -56,7 +56,6 @@ namespace Grabacr07.KanColleViewer.ViewModels
 							KanColleClient.Current.Homeport.Logger.EnableLogging = Settings.EnableLogging;
 						break;
 					case Mode.InSortie:
-						// 今後の実装にご期待ください
 						ThemeService.Current.ChangeAccent(Accent.Orange);
 						break;
 					case Mode.CriticalCondition:
@@ -157,12 +156,13 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			});
 			this.CompositeDisposable.Add(new PropertyChangedEventListener(KanColleClient.Current)
 			{
-				{ () => KanColleClient.Current.IsStarted, (sender, args) => this.Mode = Mode.Started },
+				{ () => KanColleClient.Current.IsStarted, (sender, args) => this.UpdateMode() },
+				{ () => KanColleClient.Current.IsInSortie, (sender, args) => this.UpdateMode() },
 			});
 
-			this.Mode = Mode.NotStarted;
 
 			_RefreshNavigator = new RelayCommand(Navigator.ReNavigate);
+			this.UpdateMode();
 		}
 
 		public void TakeScreenshot()
@@ -187,5 +187,14 @@ namespace Grabacr07.KanColleViewer.ViewModels
 			this.Messenger.Raise(new WindowActionMessage(WindowAction.Active, "Window/Activate"));
 		}
 
+
+		private void UpdateMode()
+		{
+			this.Mode = KanColleClient.Current.IsStarted
+				? KanColleClient.Current.IsInSortie
+					? Mode.InSortie
+					: Mode.Started
+				: Mode.NotStarted;
+		}
 	}
 }

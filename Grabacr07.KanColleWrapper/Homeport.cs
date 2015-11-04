@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Grabacr07.KanColleWrapper.Models;
 using Grabacr07.KanColleWrapper.Models.Raw;
-using Grabacr07.KanColleWrapper.Internal;
 using Livet;
 
 namespace Grabacr07.KanColleWrapper
@@ -27,6 +23,11 @@ namespace Grabacr07.KanColleWrapper
 		/// 資源および資材の保有状況にアクセスできるようにします。
 		/// </summary>
 		public Materials Materials { get; private set; }
+
+		/// <summary>
+		/// 装備や消費アイテムの保有状況にアクセスできるようにします。
+		/// </summary>
+		public Itemyard Itemyard { get; private set; }
 
 		/// <summary>
 		/// 複数の建造ドックを持つ工廠を取得します。
@@ -76,59 +77,12 @@ namespace Grabacr07.KanColleWrapper
 
 		#endregion
 
-		#region SlotItems 変更通知プロパティ
-
-		private MemberTable<SlotItem> _SlotItems;
-
-		/// <summary>
-		/// 艦隊司令部が保有しているすべての装備を取得します。
-		/// <see cref="INotifyPropertyChanged.PropertyChanged"/> イベントによる変更通知をサポートします。
-		/// </summary>
-		public MemberTable<SlotItem> SlotItems
-		{
-			get { return this._SlotItems; }
-			set
-			{
-				if (this._SlotItems != value)
-				{
-					this._SlotItems = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region UseItems 変更通知プロパティ
-
-		private MemberTable<UseItem> _UseItems;
-
-		/// <summary>
-		/// 母港が所有するすべての消費アイテムを取得します。
-		/// <see cref="INotifyPropertyChanged.PropertyChanged"/> イベントによる変更通知をサポートします。
-		/// </summary>
-		public MemberTable<UseItem> UseItems
-		{
-			get { return this._UseItems; }
-			set
-			{
-				if (this._UseItems != value)
-				{
-					this._UseItems = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
 
 
 		internal Homeport(KanColleProxy proxy)
 		{
-			this.SlotItems = new MemberTable<SlotItem>();
-			this.UseItems = new MemberTable<UseItem>();
-
 			this.Materials = new Materials(proxy);
+			this.Itemyard = new Itemyard(proxy);
 			this.Organization = new Organization(this, proxy);
 			this.Repairyard = new Repairyard(this, proxy);
 			this.Dockyard = new Dockyard(proxy);
@@ -140,11 +94,12 @@ namespace Grabacr07.KanColleWrapper
 				this.Organization.Update(x.Data.api_ship);
 				this.Repairyard.Update(x.Data.api_ndock);
 				this.Organization.Update(x.Data.api_deck_port);
+				this.Organization.Combined = x.Data.api_combined_flag != 0;
 				this.Materials.Update(x.Data.api_material);
+				this.UpdateAdmiral(x.Data.api_basic);
 				});
 			proxy.api_get_member_basic.TryParse<kcsapi_basic>().Subscribe(x => this.UpdateAdmiral(x.Data));
-			proxy.api_get_member_slot_item.TryParse<kcsapi_slotitem[]>().Subscribe(x => this.UpdateSlotItems(x.Data));
-			proxy.api_get_member_useitem.TryParse<kcsapi_useitem[]>().Subscribe(x => this.UpdateUseItems(x.Data));
+			proxy.api_req_member_updatecomment.TryParse().Subscribe(this.UpdateComment);
 
 			this.Rankings = new Rankings(proxy);
 		}
@@ -155,14 +110,25 @@ namespace Grabacr07.KanColleWrapper
 			this.Admiral = new Admiral(data);
 		}
 
-		internal void UpdateSlotItems(kcsapi_slotitem[] source)
+		private void UpdateComment(SvData data)
 		{
-			this.SlotItems = new MemberTable<SlotItem>(source.Select(x => new SlotItem(x)));
-				}
+			if (data == null || !data.IsSuccess) return;
 
-		internal void UpdateUseItems(kcsapi_useitem[] source)
-		{
-			this.UseItems = new MemberTable<UseItem>(source.Select(x => new UseItem(x)));
+			try
+			{
+				this.Admiral.Comment = data.Request["api_cmt"];
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine("艦隊名の変更に失敗しました: {0}", ex);
 			}
 		}
+
+
+		internal void StartConditionCount()
+		{
+			//Observable.Timer(TimeSpan.FromSeconds(10), TimeSpan.FromMinutes(3))
+		}
+		
+	}
 }

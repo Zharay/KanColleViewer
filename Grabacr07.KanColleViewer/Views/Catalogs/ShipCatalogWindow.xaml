@@ -20,6 +20,7 @@
 				   xmlns:catalogs="clr-namespace:Grabacr07.KanColleViewer.Views.Catalogs"
 				   xmlns:contentsVm="clr-namespace:Grabacr07.KanColleViewer.ViewModels.Contents"
 				   xmlns:converters="clr-namespace:Grabacr07.KanColleViewer.Views.Converters"
+				   xmlns:models="clr-namespace:Grabacr07.KanColleViewer.Models"
 				   mc:Ignorable="d"
 				   d:DataContext="{d:DesignInstance viewModels:ShipCatalogWindowViewModel}"
 				   Title="{Binding Title}"
@@ -76,10 +77,8 @@
 
 				<TextBlock Grid.Column="1"
 						   Text="{Binding Title}"
-						   FontFamily="Segoe UI"
-						   FontSize="16"
-						   Margin="2,2,8,2"
-						   Opacity="0.85" />
+						   Style="{DynamicResource CaptionTextStyleKey}"
+						   Margin="2,0,8,0" />
 
 				<metro:SystemButtons Grid.Column="2"
 									 HorizontalAlignment="Right"
@@ -91,14 +90,17 @@
 		<Grid Grid.Row="1">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
-				<RowDefinition Height="*" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
 			</Grid.RowDefinitions>
 
-			<Expander Margin="8"
-					  IsExpanded="{Binding IsOpenSettings, Mode=TwoWay}">
+			<Expander Grid.Row="0"
+					  Margin="8"
+					  IsExpanded="{Binding IsOpenFilterSettings, Mode=TwoWay}">
 				<Expander.Header>
-					<TextBlock Text="Filter &amp; Settings"
-							   FontSize="14" />
+                    <TextBlock Text="{Binding Resources.ShipCatalog_Filter_Title, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+							   Style="{DynamicResource HeaderTextStyleKey}"
+							   Foreground="{DynamicResource ActiveForegroundBrushKey}" />
 				</Expander.Header>
 				<StackPanel Grid.IsSharedSizeScope="True">
 					<Border BorderThickness="1"
@@ -119,16 +121,15 @@
 							</Grid.RowDefinitions>
 
 							<TextBlock Margin="0,2">
-								<Run Text="Ship Types" />
+								<Run Text="{Binding Resources.ShipCatalog_Filter_Hulls, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 								<Run Text=":" />
 							</TextBlock>
 
 							<CheckBox Grid.Row="0"
 									  Grid.Column="2"
+									  Content="Select All"
 									  IsChecked="{Binding CheckAllShipTypes, Mode=TwoWay}"
-									  Margin="0,2">
-								<TextBlock Text="Select All" />
-							</CheckBox>
+									  Margin="0,2" />
 
 							<ItemsControl Grid.Row="1"
 										  Grid.Column="2"
@@ -162,7 +163,7 @@
 									</Style>
 								</WrapPanel.Resources>
 								<!-- これっきりボタン -->
-								<metro2:CallMethodButton Content="Destroyers">
+                                <metro2:CallMethodButton Content="{Binding Resources.ShipCatalog_Filter_Hulls_DD, Source={x:Static models:ResourceService.Current}, Mode=OneWay}">
 									<metro2:CallMethodButton.MethodParameter>
 										<x:Array Type="s:Int32">
 											<s:Int32>1</s:Int32>
@@ -170,7 +171,7 @@
 										</x:Array>
 									</metro2:CallMethodButton.MethodParameter>
 								</metro2:CallMethodButton>
-								<metro2:CallMethodButton Content="Light Cruisers">
+                                <metro2:CallMethodButton Content="{Binding Resources.ShipCatalog_Filter_Hulls_CL, Source={x:Static models:ResourceService.Current}, Mode=OneWay}">
 									<metro2:CallMethodButton.MethodParameter>
 										<x:Array Type="s:Int32">
 											<s:Int32>3</s:Int32>
@@ -178,7 +179,7 @@
 										</x:Array>
 									</metro2:CallMethodButton.MethodParameter>
 								</metro2:CallMethodButton>
-								<metro2:CallMethodButton Content="Heavy Cruisers">
+                                <metro2:CallMethodButton Content="{Binding Resources.ShipCatalog_Filter_Hulls_CA, Source={x:Static models:ResourceService.Current}, Mode=OneWay}">
 									<metro2:CallMethodButton.MethodParameter>
 										<x:Array Type="s:Int32">
 											<s:Int32>5</s:Int32>
@@ -186,7 +187,7 @@
 										</x:Array>
 									</metro2:CallMethodButton.MethodParameter>
 								</metro2:CallMethodButton>
-								<metro2:CallMethodButton Content="Battleships">
+                                <metro2:CallMethodButton Content="{Binding Resources.ShipCatalog_Filter_Hulls_BB, Source={x:Static models:ResourceService.Current}, Mode=OneWay}">
 									<metro2:CallMethodButton.MethodParameter>
 										<x:Array Type="s:Int32">
 											<s:Int32>8</s:Int32>
@@ -196,7 +197,7 @@
 										</x:Array>
 									</metro2:CallMethodButton.MethodParameter>
 								</metro2:CallMethodButton>
-								<metro2:CallMethodButton Content="Aircraft Carriers">
+                                <metro2:CallMethodButton Content="{Binding Resources.ShipCatalog_Filter_Hulls_CV, Source={x:Static models:ResourceService.Current}, Mode=OneWay}">
 									<metro2:CallMethodButton.MethodParameter>
 										<x:Array Type="s:Int32">
 											<s:Int32>7</s:Int32>
@@ -205,7 +206,7 @@
 										</x:Array>
 									</metro2:CallMethodButton.MethodParameter>
 								</metro2:CallMethodButton>
-								<metro2:CallMethodButton Content="Submarines">
+                                <metro2:CallMethodButton Content="{Binding Resources.ShipCatalog_Filter_Hulls_SS, Source={x:Static models:ResourceService.Current}, Mode=OneWay}">
 									<metro2:CallMethodButton.MethodParameter>
 										<x:Array Type="s:Int32">
 											<s:Int32>13</s:Int32>
@@ -213,12 +214,21 @@
 										</x:Array>
 									</metro2:CallMethodButton.MethodParameter>
 								</metro2:CallMethodButton>
-								<metro2:CallMethodButton Content="Aviation Ships">
+                                <metro2:CallMethodButton Content="{Binding Resources.ShipCatalog_Filter_Hulls_SeaplaneBomberCapable, Source={x:Static models:ResourceService.Current}, Mode=OneWay}">
 									<metro2:CallMethodButton.MethodParameter>
 										<x:Array Type="s:Int32">
 											<s:Int32>6</s:Int32>
 											<s:Int32>10</s:Int32>
 											<s:Int32>16</s:Int32>
+										</x:Array>
+									</metro2:CallMethodButton.MethodParameter>
+								</metro2:CallMethodButton>
+                                <metro2:CallMethodButton Content="{Binding Resources.ShipCatalog_Filter_Hulls_Misc, Source={x:Static models:ResourceService.Current}, Mode=OneWay}">
+									<metro2:CallMethodButton.MethodParameter>
+										<x:Array Type="s:Int32">
+											<s:Int32>17</s:Int32>
+											<s:Int32>19</s:Int32>
+											<s:Int32>20</s:Int32>
 										</x:Array>
 									</metro2:CallMethodButton.MethodParameter>
 								</metro2:CallMethodButton>
@@ -260,19 +270,16 @@
 									</Grid.ColumnDefinitions>
 									<TextBlock Margin="0,2"
 											   HorizontalAlignment="Right">
-										<Run Text="Level" />
+										<Run Text="{Binding Resources.ShipCatalog_Filter_Misc_Level, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<RadioButton IsChecked="{Binding Both, Mode=TwoWay}">
-											<TextBlock Text="All" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Level2OrMore, Mode=TwoWay}">
-											<TextBlock Text="Lv.2 and up" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Level1, Mode=TwoWay}">
-											<TextBlock Text="Lv.1" />
-										</RadioButton>
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_All, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Both, Mode=TwoWay}" />
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_Level2Up, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Level2OrMore, Mode=TwoWay}" />
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_Level1, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Level1, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 
@@ -285,19 +292,16 @@
 									</Grid.ColumnDefinitions>
 									<TextBlock Margin="0,2"
 											   HorizontalAlignment="Right">
-										<Run Text="Lock" />
+										<Run Text="{Binding Resources.ShipCatalog_Filter_Misc_Lock, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<RadioButton IsChecked="{Binding Both, Mode=TwoWay}">
-											<TextBlock Text="All" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Locked, Mode=TwoWay}">
-											<TextBlock Text="Is locked" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Unlocked, Mode=TwoWay}">
-											<TextBlock Text="Is not locked" />
-										</RadioButton>
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_All, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Both, Mode=TwoWay}" />
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_LockedYes, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Locked, Mode=TwoWay}" />
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_LockedNo, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Unlocked, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 
@@ -310,13 +314,12 @@
 									</Grid.ColumnDefinitions>
 									<TextBlock Margin="0,2"
 											   HorizontalAlignment="Right">
-										<Run Text="Expedition" />
+										<Run Text="{Binding Resources.ShipCatalog_Filter_Misc_Expedition, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<CheckBox IsChecked="{Binding WithoutExpedition, Mode=TwoWay}">
-											<TextBlock Text="Exclude ships on expeditions" />
-										</CheckBox>
+                                        <CheckBox Content="{Binding Resources.ShipCatalog_Filter_Misc_ExcludeOnExpedition, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+												  IsChecked="{Binding WithoutExpedition, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 							</StackPanel>
@@ -331,19 +334,16 @@
 									</Grid.ColumnDefinitions>
 									<TextBlock Margin="0,2"
 											   HorizontalAlignment="Right">
-										<Run Text="Speed" />
+										<Run Text="{Binding Resources.ShipCatalog_Filter_Misc_Speed, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<RadioButton IsChecked="{Binding Both, Mode=TwoWay}">
-											<TextBlock Text="All" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Fast, Mode=TwoWay}">
-											<TextBlock Text="Fast" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding Low, Mode=TwoWay}">
-											<TextBlock Text="Slow" />
-										</RadioButton>
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_All, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Both, Mode=TwoWay}" />
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_SpeedFast, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Fast, Mode=TwoWay}" />
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_SpeedSlow, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Low, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 
@@ -356,19 +356,16 @@
 									</Grid.ColumnDefinitions>
 									<TextBlock Margin="0,2"
 											   HorizontalAlignment="Right">
-										<Run Text="Remodeling" />
+										<Run Text="{Binding Resources.ShipCatalog_Filter_Misc_Remodelled, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<RadioButton IsChecked="{Binding Both, Mode=TwoWay}">
-											<TextBlock Text="All" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding AlreadyRemodeling, Mode=TwoWay}">
-											<TextBlock Text="Complete" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding NotAlreadyRemodeling, Mode=TwoWay}">
-											<TextBlock Text="Incomplete" />
-										</RadioButton>
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_All, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Both, Mode=TwoWay}" />
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_RemodelledYes, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding AlreadyRemodeling, Mode=TwoWay}" />
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_RemodelledNo, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding NotAlreadyRemodeling, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 
@@ -381,19 +378,16 @@
 									</Grid.ColumnDefinitions>
 									<TextBlock Margin="0,2"
 											   HorizontalAlignment="Right">
-										<Run Text="Modernization" />
+										<Run Text="{Binding Resources.ShipCatalog_Filter_Misc_Modernised, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
-										<RadioButton IsChecked="{Binding Both, Mode=TwoWay}">
-											<TextBlock Text="All" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding MaxModernized, Mode=TwoWay}">
-											<TextBlock Text="Complete" />
-										</RadioButton>
-										<RadioButton IsChecked="{Binding NotMaxModernized, Mode=TwoWay}">
-											<TextBlock Text="Incomplete" />
-										</RadioButton>
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_All, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding Both, Mode=TwoWay}" />
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_ModernisedYes, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding MaxModernized, Mode=TwoWay}" />
+                                        <RadioButton Content="{Binding Resources.ShipCatalog_Filter_Misc_ModernisedNo, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding NotMaxModernized, Mode=TwoWay}" />
 									</WrapPanel>
 								</Grid>
 							</StackPanel>
@@ -434,12 +428,12 @@
 									</Grid.ColumnDefinitions>
 									<TextBlock Margin="0,2"
 											   HorizontalAlignment="Right">
-										<Run Text="Save Filter Settings" />
+										<Run Text="{Binding Resources.ShipCatalog_Filter_SaveSettings, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
 										<CheckBox IsChecked="{Binding SaveFilters, Mode=TwoWay}"
-												  ToolTip="Does not include ship types!" />
+												  ToolTip="{Binding Resources.ShipCatalog_Filter_SaveSettings_ToolTip, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</WrapPanel>
 								</Grid>
 							</StackPanel>
@@ -454,7 +448,7 @@
 									</Grid.ColumnDefinitions>
 									<TextBlock Margin="0,2"
 											   HorizontalAlignment="Right">
-										<Run Text="Show Additional Ship Stats" />
+										<Run Text="{Binding Resources.ShipCatalog_AdditionalStats, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 										<Run Text=":" />
 									</TextBlock>
 									<WrapPanel Grid.Column="2">
@@ -464,22 +458,134 @@
 							</StackPanel>
 
 							<StackPanel VerticalAlignment="Center">
-								<metro2:CallMethodButton Content="Reset Filters"
+                                <metro2:CallMethodButton Content="{Binding Resources.ShipCatalog_Filter_Reset, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 														 Padding="12,4"
 														 MethodName="ResetFilters"/>
 							</StackPanel>
 						</WrapPanel>
 					</Border>
+					<!-- <Border BorderThickness="1"
+							BorderBrush="{DynamicResource BorderBrushKey}"
+							Margin="0,8,0,0"
+							Padding="5">
+						<WrapPanel DataContext="{Binding ShipSallyAreaFilter}">
+							<TextBlock Margin="0,2">
+								<Run Text="{Binding Resources.ShipCatalog_SortieWaters, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" /><Run Text=":" />
+							</TextBlock>
+
+							<CheckBox Content="{Binding Resources.ShipCatalog_Operation_NeitherALnorMI, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+									  IsChecked="{Binding None}"
+									  Margin="10,0" />
+							<CheckBox Content="{Binding Resources.ShipCatalog_Operation_AL, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+									  IsChecked="{Binding Aleutian}"
+									  Margin="10,0" />
+							<CheckBox Content="{Binding Resources.ShipCatalog_Operation_MI, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+									  IsChecked="{Binding Midway}"
+									  Margin="10,0" />
+						</WrapPanel>
+					</Border>-->
 				</StackPanel>
 			</Expander>
 
-			<Border Grid.Row="1"
+			<Expander Grid.Row="1"
+					  DockPanel.Dock="Top"
+					  Margin="8,0"
+					  IsExpanded="{Binding IsOpenSortSettings, Mode=TwoWay}">
+				<Expander.Header>
+					<TextBlock Text="{Binding Resources.ShipCatalog_Sort_Title, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+							   Style="{DynamicResource HeaderTextStyleKey}"
+							   Foreground="{DynamicResource ActiveForegroundBrushKey}" />
+				</Expander.Header>
+
+				<Border BorderThickness="1"
+						BorderBrush="{DynamicResource BorderBrushKey}"
+						Padding="5"
+						Margin="0,8,0,0">
+					<DockPanel LastChildFill="False">
+						<metro2:CallMethodButton DockPanel.Dock="Right"
+												 MethodName="Update"
+												 Content="{Binding Resources.ShipCatalog_Sort_Apply, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+												 Margin="8,3,3,3"
+												 Padding="12,4" />
+
+						<metro2:CallMethodButton DockPanel.Dock="Right"
+												 MethodTarget="{Binding SortWorker}"
+												 MethodName="Clear"
+												 Content="{Binding Resources.ShipCatalog_Sort_Clear, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+												 Margin="8,3,0,3"
+												 Padding="12,4" />
+
+						<TextBlock DockPanel.Dock="Top"
+								   Text="{Binding Resources.ShipCatalog_Sort_Subtitle, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+								   Style="{DynamicResource DefaultTextStyleKey}"
+								   Margin="3,2,0,8" />
+
+						<ItemsControl DockPanel.Dock="Left"
+									  ItemsSource="{Binding Selectors}"
+									  DataContext="{Binding SortWorker}"
+									  d:DataContext="{d:DesignData /SampleData/ShipCatalogSortWorkerSampleData.xaml}">
+							<ItemsControl.Template>
+								<ControlTemplate TargetType="{x:Type ItemsControl}">
+									<Border ClipToBounds="True">
+										<WrapPanel IsItemsHost="True"
+												   Margin="3,0,-40,0" />
+									</Border>
+								</ControlTemplate>
+							</ItemsControl.Template>
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<DockPanel Margin="0,4">
+										<ed:RegularPolygon DockPanel.Dock="Right"
+														   PointCount="3"
+														   Fill="{DynamicResource BorderBrushKey}"
+														   Width="40"
+														   Height="20"
+														   RenderTransformOrigin="0.5,0.5">
+											<ed:RegularPolygon.RenderTransform>
+												<RotateTransform Angle="90" />
+											</ed:RegularPolygon.RenderTransform>
+										</ed:RegularPolygon>
+										<metro:PromptComboBox DockPanel.Dock="Bottom"
+															  ItemsSource="{Binding SelectableColumns}"
+															  SelectedItem="{Binding Current, Mode=TwoWay}"
+															  Prompt="{Binding Resources.ShipCatalog_Sort_Prompt, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+															  Width="120"
+															  Margin="1,4,0,0">
+											<metro:PromptComboBox.ItemsPanel>
+												<ItemsPanelTemplate>
+													<StackPanel Margin="02" />
+												</ItemsPanelTemplate>
+											</metro:PromptComboBox.ItemsPanel>
+											<metro:PromptComboBox.ItemTemplate>
+												<DataTemplate>
+													<TextBlock Text="{Binding Name}"
+															   Margin="2" />
+												</DataTemplate>
+											</metro:PromptComboBox.ItemTemplate>
+										</metro:PromptComboBox>
+										<RadioButton DockPanel.Dock="Left"
+													 Content="{Binding Resources.ShipCatalog_Sort_Ascending, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding IsAscending, Mode=TwoWay}" />
+										<RadioButton DockPanel.Dock="Left"
+													 Content="{Binding Resources.ShipCatalog_Sort_Descending, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+													 IsChecked="{Binding IsDescending, Mode=OneWay}"
+													 Margin="12,0,0,0" />
+									</DockPanel>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+					</DockPanel>
+				</Border>
+			</Expander>
+
+			<Border Grid.Row="2"
 					BorderBrush="{DynamicResource BorderBrushKey}"
 					BorderThickness="1"
-					Margin="8,0,8,8">
+					Margin="8">
 
 				<ListView ItemsSource="{Binding Ships}"
-						  ItemContainerStyle="{DynamicResource GridViewItemContainerStyleKey}">
+						  ItemContainerStyle="{DynamicResource GridViewItemContainerStyleKey}"
+						  ScrollViewer.PanningMode="Both">
 					<ListView.Resources>
 						<Style TargetType="{x:Type TextBlock}">
 							<Setter Property="Margin"
@@ -544,12 +650,9 @@
 
 							<GridViewColumn Width="50">
 								<GridViewColumn.Header>
-									<metro2:SortButton Direction="{Binding SortWorker.IdColumn.Direction}"
-													   MethodName="Update">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>Id</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="ID" />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.IdColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_ObtainedID, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</metro2:SortButton>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
@@ -562,12 +665,9 @@
 
 							<GridViewColumn Width="90">
 								<GridViewColumn.Header>
-									<metro2:SortButton Direction="{Binding SortWorker.TypeColumn.Direction}"
-													   MethodName="Update">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>Type</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="Type" />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.StypeColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_HullCode, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</metro2:SortButton>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
@@ -580,12 +680,9 @@
 
 							<GridViewColumn Width="100">
 								<GridViewColumn.Header>
-									<metro2:SortButton Direction="{Binding SortWorker.NameColumn.Direction}"
-													   MethodName="Update">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>Name</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="Ship Name" />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.NameColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_Name, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</metro2:SortButton>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
@@ -600,12 +697,9 @@
 
 							<GridViewColumn Width="110">
 								<GridViewColumn.Header>
-									<metro2:SortButton Direction="{Binding SortWorker.LevelColumn.Direction}"
-													   MethodName="UpdateReverse">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>Level</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="Level" />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.LevelColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_Level, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</metro2:SortButton>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
@@ -625,12 +719,9 @@
 
 							<GridViewColumn Width="50">
 								<GridViewColumn.Header>
-									<metro2:SortButton Direction="{Binding SortWorker.ConditionColumn.Direction}"
-													   MethodName="UpdateReverse">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>Cond</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="Cond." />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.CondColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_Condition, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</metro2:SortButton>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
@@ -652,12 +743,9 @@
 
 							<GridViewColumn Width="64">
 								<GridViewColumn.Header>
-									<metro2:SortButton Direction="{Binding SortWorker.FirepowerColumn.Direction}"
-													   MethodName="UpdateReverse">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>Firepower</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="Firepower" />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.FirepowerColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_Firepower, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</metro2:SortButton>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
@@ -672,12 +760,9 @@
 
 							<GridViewColumn Width="64">
 								<GridViewColumn.Header>
-									<metro2:SortButton Direction="{Binding SortWorker.TorpedoColumn.Direction}"
-													   MethodName="UpdateReverse">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>Torpedo</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="Torpedo" />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.TorpedoColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_Torpedo, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</metro2:SortButton>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
@@ -692,12 +777,9 @@
 
 							<GridViewColumn Width="64">
 								<GridViewColumn.Header>
-									<metro2:SortButton Direction="{Binding SortWorker.AntiAirColumn.Direction}"
-													   MethodName="UpdateReverse">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>AntiAir</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="Anti-Air" />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.AAColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_AntiAir, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</metro2:SortButton>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
@@ -712,12 +794,9 @@
 
 							<GridViewColumn Width="64">
 								<GridViewColumn.Header>
-									<metro2:SortButton Direction="{Binding SortWorker.ArmorColumn.Direction}"
-													   MethodName="UpdateReverse">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>Armor</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="Armor" />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.ArmerColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_Armour, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</metro2:SortButton>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
@@ -732,12 +811,9 @@
 
 							<GridViewColumn Width="64">
 								<GridViewColumn.Header>
-									<metro2:SortButton Direction="{Binding SortWorker.LuckColumn.Direction}"
-													   MethodName="UpdateReverse">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>Luck</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="Luck" />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.LuckColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_Luck, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 									</metro2:SortButton>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
@@ -753,85 +829,107 @@
 							<GridViewColumn Width="64">
 								<GridViewColumnHeader Visibility="{Binding ShowMoreStats, Converter={StaticResource BooleanToVsibilityConverterKey}}"
 													  behaviors:GridViewBehaviors.CollapseableColumn="True">
-									<metro2:SortButton Direction="{Binding SortWorker.ViewRangeColumn.Direction}"
-													   MethodName="UpdateReverse"
-													   ToolTip="Equipment (Base)">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>ViewRange</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="LoS" />
+									<metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.ViewRangeColumn}">
+										<TextBlock Text="{Binding Resources.ShipCatalog_Column_ViewRange, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+												   ToolTip="Including bonuses from the equipment" />
 									</metro2:SortButton>
 								</GridViewColumnHeader>
 								<GridViewColumn.CellTemplate>
 									<DataTemplate>
-										<TextBlock FontSize="9">
-											<Run Text="{Binding Ship.LineOfSight.Current, Mode=OneWay}" 
-												 FontSize="12"
-												 Foreground="{DynamicResource ActiveForegroundBrushKey}"/>
-											<Run Text="" />
-											<Run Text="{Binding Ship.LineOfSight.Minimum, StringFormat=({0}), Mode=OneWay}" />
-										</TextBlock>
+										<TextBlock Text="{Binding Ship.ViewRange, Mode=OneWay}"
+												   Foreground="{DynamicResource ActiveForegroundBrushKey}"
+												   Margin="0,3" />
 									</DataTemplate>
 								</GridViewColumn.CellTemplate>
 							</GridViewColumn>
 
-							<GridViewColumn Width="64">
-								<GridViewColumnHeader Visibility="{Binding ShowMoreStats, Converter={StaticResource BooleanToVsibilityConverterKey}}"
+                            <GridViewColumn Width="64">
+                                <GridViewColumnHeader Visibility="{Binding ShowMoreStats, Converter={StaticResource BooleanToVsibilityConverterKey}}"
 													  behaviors:GridViewBehaviors.CollapseableColumn="True">
-									<metro2:SortButton Direction="{Binding SortWorker.EvasionColumn.Direction}"
-													   MethodName="UpdateReverse"
-													   ToolTip="Equipment (Base)">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>Evasion</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="Evasion" />
-									</metro2:SortButton>
-								</GridViewColumnHeader>
-								<GridViewColumn.CellTemplate>
-									<DataTemplate>
-										<TextBlock FontSize="9">
+                                    <metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.EvasionColumn}">
+                                        <TextBlock Text="{Binding Resources.ShipCatalog_Column_Evasion, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+                                    </metro2:SortButton>
+                                </GridViewColumnHeader>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock FontSize="9">
 											<Run Text="{Binding Ship.Evasion.Current, Mode=OneWay}" 
 												 FontSize="12"
 												 Foreground="{DynamicResource ActiveForegroundBrushKey}"/>
 											<Run Text="" />
 											<Run Text="{Binding Ship.Evasion.Minimum, StringFormat=({0}), Mode=OneWay}" />
-										</TextBlock>
-									</DataTemplate>
-								</GridViewColumn.CellTemplate>
-							</GridViewColumn>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
 
-							<GridViewColumn Width="64">
-								<GridViewColumnHeader Visibility="{Binding ShowMoreStats, Converter={StaticResource BooleanToVsibilityConverterKey}}"
+                            <GridViewColumn Width="64">
+                                <GridViewColumnHeader Visibility="{Binding ShowMoreStats, Converter={StaticResource BooleanToVsibilityConverterKey}}"
 													  behaviors:GridViewBehaviors.CollapseableColumn="True">
-									<metro2:SortButton Direction="{Binding SortWorker.AntiSubColumn.Direction}"
-													   MethodName="UpdateReverse"
-													   ToolTip="Equipment (Base)">
-										<metro2:SortButton.MethodParameter>
-											<viewModels:ShipCatalogSortTarget>AntiSub</viewModels:ShipCatalogSortTarget>
-										</metro2:SortButton.MethodParameter>
-										<TextBlock Text="AntiSub" />
-									</metro2:SortButton>
-								</GridViewColumnHeader>
-								<GridViewColumn.CellTemplate>
-									<DataTemplate>
-										<TextBlock FontSize="9">
+                                    <metro2:SortButton MethodName="Sort"
+													   MethodParameter="{x:Static viewModels:ShipCatalogSortWorker.AntiSubColumn}">
+                                        <TextBlock Text="{Binding Resources.ShipCatalog_Column_ASW, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+                                    </metro2:SortButton>
+                                </GridViewColumnHeader>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock FontSize="9">
 											<Run Text="{Binding Ship.AntiSub.Current, Mode=OneWay}" 
 												 FontSize="12"
 												 Foreground="{DynamicResource ActiveForegroundBrushKey}"/>
 											<Run Text="" />
 											<Run Text="{Binding Ship.AntiSub.Minimum, StringFormat=({0}), Mode=OneWay}" />
-										</TextBlock>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+							<!-- <GridViewColumn Width="65">
+								<GridViewColumn.Header>
+									<TextBlock Text="{Binding Resources.ShipCatalog_SortieWaters, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+								</GridViewColumn.Header>
+								<GridViewColumn.CellTemplate>
+									<DataTemplate>
+										<Border x:Name="Border"
+												Margin="-2,0">
+											<TextBlock x:Name="Text"
+													   Text=""
+													   Foreground="{DynamicResource ActiveForegroundBrushKey}"
+													   Margin="5,3" />
+										</Border>
+										<DataTemplate.Triggers>
+											<DataTrigger Binding="{Binding Ship.SallyArea}"
+														 Value="1">
+												<Setter TargetName="Text"
+														Property="Text"
+														Value="{Binding Resources.ShipCatalog_SortieWaters_AL, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+												<Setter TargetName="Border"
+														Property="Background"
+														Value="#FF204080" />
+											</DataTrigger>
+											<DataTrigger Binding="{Binding Ship.SallyArea}"
+														 Value="2">
+												<Setter TargetName="Text"
+														Property="Text"
+														Value="{Binding Resources.ShipCatalog_SortieWaters_MI, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+												<Setter TargetName="Border"
+														Property="Background"
+														Value="#FF804020" />
+											</DataTrigger>
+										</DataTemplate.Triggers>
 									</DataTemplate>
 								</GridViewColumn.CellTemplate>
-							</GridViewColumn>
+							</GridViewColumn>-->
 
 							<GridViewColumn Width="110">
 								<GridViewColumn.Header>
-									<TextBlock Text="Equips" />
+									<TextBlock Text="{Binding Resources.ShipCatalog_Column_Equipped, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
 									<DataTemplate DataType="{x:Type contentsVm:ShipViewModel}">
-										<ItemsControl ItemsSource="{Binding SlotItems}">
+										<ItemsControl ItemsSource="{Binding Ship.EquippedSlots}">
 											<ItemsControl.Template>
 												<ControlTemplate TargetType="{x:Type ItemsControl}">
 													<StackPanel IsItemsHost="True"
@@ -840,12 +938,12 @@
 											</ItemsControl.Template>
 											<ItemsControl.ItemTemplate>
 												<DataTemplate>
-													<Border ToolTip="{Binding DetailedToolTip}"
+													<Border ToolTip="{Binding Item.NameWithLevel}"
 															Background="Transparent"
 															Height="20"
 															Padding="0,1">
 														<Viewbox>
-															<controls:SlotItemIcon Type="{Binding SlotItem.IconType}"
+															<controls:SlotItemIcon Type="{Binding Item.Info.IconType}"
 																				   Margin="0,0,4,0" />
 														</Viewbox>
 													</Border>
@@ -860,20 +958,18 @@
 				</ListView>
 			</Border>
 
-			<Border Grid.Row="1"
+			<Border Grid.Row="2"
 					Background="{DynamicResource ThemeBrushKey}"
 					BorderBrush="{DynamicResource BorderBrushKey}"
 					BorderThickness="1"
 					Opacity="0.75"
-					Margin="8,0,8,8"
+					Margin="8"
 					Padding="20"
-					Visibility="{Binding IsReloading, Converter={StaticResource BooleanToVisibilityConverter}}"
-					d:IsHidden="True">
-				<TextBlock Text="Updating..."
+					Visibility="{Binding IsReloading, Converter={StaticResource BooleanToVisibilityConverter}}">
+				<TextBlock Text="Generating list…"
+						   Style="{DynamicResource EmphaticTextStyleKey}"
 						   FontSize="16"
-						   Foreground="{DynamicResource ActiveForegroundBrushKey}"
 						   Background="{DynamicResource ThemeBrushKey}"
-						   TextWrapping="Wrap"
 						   HorizontalAlignment="Center" />
 			</Border>
 		</Grid>

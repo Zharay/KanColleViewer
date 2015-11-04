@@ -1,0 +1,6 @@
+[submodule "MetroRadiance"]
+	path = MetroRadiance
+url=https://github.com/Grabacr07/MetroRadiance
+[submodule "resources/translations"]
+	path = resources/translations
+	url = git://github.com/Yuubari/KanColleViewer-Translations.git

@@ -103,6 +103,11 @@ namespace Grabacr07.KanColleWrapper.Models
 		/// <summary>
 		/// 工作艦
 		/// </summary>
-		RepairShip = 19
+		RepairShip = 19,
+
+		/// <summary>
+		/// 潜水母艦
+		/// </summary>
+		SubmarineTender = 20,
 	}
 }

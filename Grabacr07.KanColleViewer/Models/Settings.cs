@@ -1,28 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Grabacr07.KanColleViewer.Models.Data.Xml;
+using Grabacr07.KanColleWrapper;
+using Grabacr07.KanColleWrapper.Models;
 using Livet;
-using MetroRadiance.Core;
 
 namespace Grabacr07.KanColleViewer.Models
 {
+	[Serializable]
 	public class Settings : NotificationObject
 	{
 		#region static members
 
 		private static readonly string filePath = Path.Combine(
 			Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-			"grabacr.net",
+			"Smooth and Flat",
 			"KanColleViewer",
 			"Settings.xml");
 
-		private static readonly string CurrentSettingsVersion = "1.5";
+		private static readonly string CurrentSettingsVersion = "1.7";
 
 		public static Settings Current { get; set; }
 
@@ -37,7 +37,7 @@ namespace Grabacr07.KanColleViewer.Models
 			catch (Exception ex)
 			{
 				Current = GetInitialSettings();
-				Debug.WriteLine(ex);
+				System.Diagnostics.Debug.WriteLine(ex);
 			}
 		}
 
@@ -64,12 +64,16 @@ namespace Grabacr07.KanColleViewer.Models
 				ShipCatalog_RemodelFilter_Both = true,
 				ShipCatalog_ModernFilter_Both = true,
 				ShipCatalog_ShowMoreStats = true,
+				SlotItemCatalog_ShowStats = true,
 				NotifyBuildingCompleted = true,
 				NotifyRepairingCompleted = true,
 				NotifyExpeditionReturned = true,
 				FlashQuality = "High",
 				FlashWindow = "Opaque",
-				CustomSoundVolume = 50
+				CustomSoundVolume = 50,
+				KanColleClientSettings = new KanColleClientSettings(),
+				Culture = "en",
+				OrientationHorizontal = false,
 			};
 		}
 
@@ -250,91 +254,69 @@ namespace Grabacr07.KanColleViewer.Models
 
 		#endregion
 
-		#region EnableProxy 変更通知プロパティ
+		#region NotifyFleetRejuvenated 変更通知プロパティ
 
-		private bool _EnableProxy;
+		private bool _NotifyFleetRejuvenated;
 
-		/// <summary>
-		/// プロキシサーバーを使用して通信をするかどうかを取得または設定します。
-		/// </summary>
+		public bool NotifyFleetRejuvenated
+		{
+			get { return this._NotifyFleetRejuvenated; }
+			set
+			{
+				if (this._NotifyFleetRejuvenated != value)
+				{
+					this._NotifyFleetRejuvenated = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
+		#region ProxySettings 変更通知プロパティ
+
+		private ProxySettings _ProxySettings;
+
+		public ProxySettings ProxySettings
+		{
+			get { return this._ProxySettings ?? (this._ProxySettings = new ProxySettings()); }
+			set
+			{
+				if (this._ProxySettings != value)
+				{
+					this._ProxySettings = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#region old properties
+
 		public bool EnableProxy
 		{
-			get { return this._EnableProxy; }
-			set
-			{
-				if (this._EnableProxy != value)
-				{
-					this._EnableProxy = value;
-					this.RaisePropertyChanged();
-				}
-			}
+			get { return this.ProxySettings.IsEnabled; }
+			set { this.ProxySettings.IsEnabled = value; }
 		}
 
-		#endregion
-
-		#region EnableSSLProxy 変更通知プロパティ
-
-		private bool _EnableSSLProxy;
-
-		/// <summary>
-		/// プロキシサーバーを使用して SSL 通信をするかどうかを取得または設定します。
-		/// </summary>
 		public bool EnableSSLProxy
 		{
-			get { return this._EnableSSLProxy; }
-			set
-			{
-				if (this._EnableSSLProxy != value)
-				{
-					this._EnableSSLProxy = value;
-					this.RaisePropertyChanged();
-				}
-			}
+			get { return this.ProxySettings.IsEnabledOnSSL; }
+			set { this.ProxySettings.IsEnabledOnSSL = value; }
 		}
 
-		#endregion
-
-		#region ProxyHost 変更通知プロパティ
-
-		private string _ProxyHost;
-
-		/// <summary>
-		/// プロキシサーバーのホスト名を取得または設定します。
-		/// </summary>
 		public string ProxyHost
 		{
-			get { return this._ProxyHost; }
-			set
-			{
-				if (this._ProxyHost != value)
-				{
-					this._ProxyHost = value;
-					this.RaisePropertyChanged();
-				}
-			}
+			get { return this.ProxySettings.Host; }
+			set { this.ProxySettings.Host = value; }
+		}
+		
+		public ushort ProxyPort
+		{
+			get { return this.ProxySettings.Port; }
+			set { this.ProxySettings.Port = value; }
 		}
 
 		#endregion
-
-		#region ProxyPort 変更通知プロパティ
-
-		private UInt16 _ProxyPort;
-
-		/// <summary>
-		/// プロキシサーバーのポート番号を取得または設定します。
-		/// </summary>
-		public UInt16 ProxyPort
-		{
-			get { return this._ProxyPort; }
-			set
-			{
-				if (this._ProxyPort != value)
-				{
-					this._ProxyPort = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
 
 		#endregion
 
@@ -416,21 +398,16 @@ namespace Grabacr07.KanColleViewer.Models
 
 		#endregion
 
-		#region ReSortieCondition 変更通知プロパティ
+		#region KanColleClientSettings 変更通知プロパティ
 
-		private ushort _ReSortieCondition = 40;
-
-		/// <summary>
-		/// 艦隊が再出撃可能と判断する基準となるコンディション値を取得または設定します。
-		/// </summary>
-		public ushort ReSortieCondition
+		public KanColleClientSettings KanColleClientSettings
 		{
-			get { return this._ReSortieCondition; }
+			get { return KanColleClient.Current.Settings; }
 			set
 			{
-				if (this._ReSortieCondition != value)
+				if (KanColleClient.Current.Settings != value)
 				{
-					this._ReSortieCondition = value;
+					KanColleClient.Current.Settings = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -438,24 +415,6 @@ namespace Grabacr07.KanColleViewer.Models
 
 		#endregion
 
-		#region EnableLogging 変更通知プロパティ
-
-		private bool _EnableLogging;
-
-		public bool EnableLogging
-		{
-			get { return this._EnableLogging; }
-			set
-			{
-				if (this._EnableLogging != value)
-				{
-					this._EnableLogging = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-
-		#endregion
 
 		#region EnableTranslations 変更通知プロパティ
 
@@ -911,6 +870,25 @@ namespace Grabacr07.KanColleViewer.Models
 
 		#endregion
 
+		#region SlotItemCatalog_ShowStats 変更通知プロパティ
+
+		private bool _SlotItemCatalog_ShowStats;
+
+		public bool SlotItemCatalog_ShowStats
+		{
+			get { return this._SlotItemCatalog_ShowStats; }
+			set
+			{
+				if (this._SlotItemCatalog_ShowStats != value)
+				{
+					this._SlotItemCatalog_ShowStats = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+
+		#endregion
+
 		#region FlashQuality 変更通知プロパティ
 
 		private string _FlashQuality;
@@ -947,24 +925,6 @@ namespace Grabacr07.KanColleViewer.Models
 		}
 		#endregion
 
-		#region EnableFatigueNotification 変更通知プロパティ
-
-		private bool _EnableFatigueNotification;
-
-		public bool EnableFatigueNotification
-		{
-			get { return this._EnableFatigueNotification; }
-			set
-			{
-				if (this._EnableFatigueNotification != value)
-				{
-					this._EnableFatigueNotification = value;
-					this.RaisePropertyChanged();
-				}
-			}
-		}
-		#endregion
-
 		#region CustomSoundVolume 変更通知プロパティ
 
 		private int _CustomSoundVolume;
@@ -977,6 +937,42 @@ namespace Grabacr07.KanColleViewer.Models
 				if (this._CustomSoundVolume != value)
 				{
 					this._CustomSoundVolume = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+		#endregion
+
+		#region EnableLogging 変更通知プロパティ
+
+		private bool _EnableLogging;
+
+		public bool EnableLogging
+		{
+			get { return this._EnableLogging; }
+			set 
+			{ 
+				if (this._EnableLogging != value)
+				{
+					this._EnableLogging = value;
+					this.RaisePropertyChanged();
+				}
+			}
+		}
+		#endregion
+
+		#region OrientationHorizontal 変更通知プロパティ
+
+		private bool _OrientationHorizontal;
+
+		public bool OrientationHorizontal
+		{
+			get { return this._OrientationHorizontal; }
+			set
+			{
+				if (this._OrientationHorizontal != value)
+				{
+					this._OrientationHorizontal = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -1011,7 +1007,7 @@ namespace Grabacr07.KanColleViewer.Models
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine(ex);
+				System.Diagnostics.Debug.WriteLine(ex);
 			}
 		}
 	}

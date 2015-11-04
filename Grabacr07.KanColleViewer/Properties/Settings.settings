@@ -6,7 +6,7 @@
       <Value Profile="(Default)">37564</Value>
     </Setting>
     <Setting Name="KanColleUrl" Type="System.Uri" Scope="Application">
-      <Value Profile="(Default)">http://www.dmm.com/netgame/social/application/-/detail/=/app_id=854854/</Value>
+      <Value Profile="(Default)">http://www.dmm.com/netgame/social/-/gadgets/=/app_id=854854/</Value>
     </Setting>
     <Setting Name="OverrideStyleSheet" Type="System.String" Scope="Application">
       <Value Profile="(Default)">body {
@@ -41,10 +41,10 @@
       <Value Profile="(Default)">8000</Value>
     </Setting>
     <Setting Name="XMLTransUrl" Type="System.Uri" Scope="Application">
-      <Value Profile="(Default)">https://raw.github.com/Zharay/KanColleViewer/master/resources/translations/</Value>
+      <Value Profile="(Default)">https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/</Value>
     </Setting>
     <Setting Name="KCVUpdateUrl" Type="System.Uri" Scope="Application">
-      <Value Profile="(Default)">https://raw.github.com/Zharay/KanColleViewer/master/resources/Version.xml</Value>
+      <Value Profile="(Default)">http://kcv.koumakan.jp/version/</Value>
     </Setting>
     <Setting Name="FlashQualityJS" Type="System.String" Scope="Application">
       <Value Profile="(Default)">var flashQuality = function () {{

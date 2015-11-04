@@ -53,6 +53,7 @@ namespace Grabacr07.KanColleWrapper
 			{
 				string CurrentCulture = (Culture == null || Culture == "en-US" || Culture == "ja-JP" || Culture == "en") ? "" : Culture;
 				string CurrentCultureDir = (CurrentCulture != "" ? CurrentCulture + "\\" : "");
+                string TranslationURL = (BaseTranslationURL.TrimEnd(new[] { '/' }) + "/" + CurrentCulture).TrimEnd(new[] { '/' }) + "/";
 				XDocument TestXML;
 				int ReturnValue = 0;
 
@@ -65,7 +66,7 @@ namespace Grabacr07.KanColleWrapper
 					// In every one of these we download it to a temp folder, check if the file works, then move it over.
 					if (IsOnlineVersionGreater(TranslationType.Equipment, TranslationsRef.EquipmentVersion))
 					{
-						Client.DownloadFile(BaseTranslationURL + CurrentCulture + "/" + "Equipment.xml", "Translations\\tmp\\Equipment.xml");
+						Client.DownloadFile(TranslationURL + "Equipment.xml", "Translations\\tmp\\Equipment.xml");
 
 						try
 						{
@@ -84,7 +85,7 @@ namespace Grabacr07.KanColleWrapper
 
 					if (IsOnlineVersionGreater(TranslationType.Operations, TranslationsRef.OperationsVersion))
 					{
-						Client.DownloadFile(BaseTranslationURL + CurrentCulture + "/" + "Operations.xml", "Translations\\tmp\\Operations.xml");
+						Client.DownloadFile(TranslationURL + "Operations.xml", "Translations\\tmp\\Operations.xml");
 
 						try
 						{
@@ -103,7 +104,7 @@ namespace Grabacr07.KanColleWrapper
 
 					if (IsOnlineVersionGreater(TranslationType.Quests, TranslationsRef.QuestsVersion))
 					{
-						Client.DownloadFile(BaseTranslationURL + CurrentCulture + "/" + "Quests.xml", "Translations\\tmp\\Quests.xml");
+						Client.DownloadFile(TranslationURL + "Quests.xml", "Translations\\tmp\\Quests.xml");
 
 						try
 						{
@@ -122,7 +123,7 @@ namespace Grabacr07.KanColleWrapper
 
 					if (IsOnlineVersionGreater(TranslationType.Ships, TranslationsRef.ShipsVersion))
 					{
-						Client.DownloadFile(BaseTranslationURL + CurrentCulture + "/" + "Ships.xml", "Translations\\tmp\\Ships.xml");
+						Client.DownloadFile(TranslationURL + "Ships.xml", "Translations\\tmp\\Ships.xml");
 
 						try
 						{
@@ -141,7 +142,7 @@ namespace Grabacr07.KanColleWrapper
 
 					if (IsOnlineVersionGreater(TranslationType.ShipTypes, TranslationsRef.ShipTypesVersion))
 					{
-						Client.DownloadFile(BaseTranslationURL + CurrentCulture + "/" + "ShipTypes.xml", "Translations\\tmp\\ShipTypes.xml");
+						Client.DownloadFile(TranslationURL + "ShipTypes.xml", "Translations\\tmp\\ShipTypes.xml");
 
 						try
 						{

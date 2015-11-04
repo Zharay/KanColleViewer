@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace Grabacr07.KanColleViewer.Views.Settings
 {
 	/// <summary>
-	/// Interaction logic for Browser.xaml
+	/// Browser.xaml の相互作用ロジック
 	/// </summary>
 	public partial class Browser : UserControl
 	{

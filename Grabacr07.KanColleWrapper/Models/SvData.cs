@@ -14,42 +14,42 @@ using Grabacr07.KanColleWrapper.Internal;
 
 namespace Grabacr07.KanColleWrapper.Models
 {
-	internal class SvData<T> : RawDataWrapper<svdata<T>>
+	public class SvData<T> : RawDataWrapper<svdata<T>>
 	{
 		public NameValueCollection Request { get; private set; }
 
 		public bool IsSuccess
 		{
-			get { return this.RawData.api_result == 1; }
+		    get { return this.RawData.api_result == 1; }
 		}
 
-		public T Data
-		{
-			get { return this.RawData.api_data; }
-		}
+	    public T Data
+	    {
+	        get { return this.RawData.api_data; }
+	    }
 
-		public kcsapi_deck[] Fleets
-		{
-			get { return this.RawData.api_data_deck; }
-		}
+	    public kcsapi_deck[] Fleets
+	    {
+	        get { return this.RawData.api_data_deck; }
+	    }
 
-		public SvData(svdata<T> rawData, string reqBody)
+	    public SvData(svdata<T> rawData, string reqBody)
 			: base(rawData)
 		{
 			this.Request = HttpUtility.ParseQueryString(reqBody);
 		}
 	}
 
-	internal class SvData : RawDataWrapper<svdata>
+	public class SvData : RawDataWrapper<svdata>
 	{
 		public NameValueCollection Request { get; private set; }
 
 		public bool IsSuccess
 		{
-			get { return this.RawData.api_result == 1; }
+		    get { return this.RawData.api_result == 1; }
 		}
 
-		public SvData(svdata rawData, string reqBody)
+	    public SvData(svdata rawData, string reqBody)
 			: base(rawData)
 		{
 			this.Request = HttpUtility.ParseQueryString(reqBody);

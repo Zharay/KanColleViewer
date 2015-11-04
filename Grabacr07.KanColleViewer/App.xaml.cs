@@ -5,12 +5,14 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Grabacr07.KanColleViewer.Composition;
 using Grabacr07.KanColleViewer.Models;
 using Grabacr07.KanColleViewer.ViewModels;
 using Grabacr07.KanColleViewer.Views;
 using Grabacr07.KanColleWrapper;
 using Livet;
 using MetroRadiance;
+using Microsoft.Win32;
 using AppSettings = Grabacr07.KanColleViewer.Properties.Settings;
 using Settings = Grabacr07.KanColleViewer.Models.Settings;
 
@@ -36,17 +38,15 @@ namespace Grabacr07.KanColleViewer
 			ProductInfo = new ProductInfo();
 
 			Settings.Load();
-			WindowsNotification.Notifier.Initialize();
+			PluginHost.Instance.Initialize();
+			NotifierHost.Instance.Initialize(KanColleClient.Current);
 			Helper.SetRegistryFeatureBrowserEmulation();
+			Helper.SetMMCSSTask();
 
 			KanColleClient.Current.Proxy.Startup(AppSettings.Default.LocalProxyPort);
-			KanColleClient.Current.Proxy.UseProxyOnConnect = Settings.Current.EnableProxy;
-			KanColleClient.Current.Proxy.UseProxyOnSSLConnect = Settings.Current.EnableSSLProxy;
-			KanColleClient.Current.Proxy.UpstreamProxyHost = Settings.Current.ProxyHost;
-			KanColleClient.Current.Proxy.UpstreamProxyPort = Settings.Current.ProxyPort;
+			KanColleClient.Current.Proxy.UpstreamProxySettings = Settings.Current.ProxySettings;
 
 			ResourceService.Current.ChangeCulture(Settings.Current.Culture);
-
 			// Initialize translations
 			KanColleClient.Current.Translations.EnableTranslations = Settings.Current.EnableTranslations;
 			KanColleClient.Current.Translations.EnableAddUntranslated = Settings.Current.EnableAddUntranslated;
@@ -57,7 +57,7 @@ namespace Grabacr07.KanColleViewer
 			{
 				if (Settings.Current.EnableUpdateNotification && KanColleClient.Current.Updater.IsOnlineVersionGreater(0, ProductInfo.Version.ToString()))
 				{
-					WindowsNotification.Notifier.Show(
+					PluginHost.Instance.GetNotifier().Show(NotifyType.Other,
 						KanColleViewer.Properties.Resources.Updater_Notification_Title,
 						string.Format(KanColleViewer.Properties.Resources.Updater_Notification_NewAppVersion, KanColleClient.Current.Updater.GetOnlineVersion(0)),
 						() => Process.Start(KanColleClient.Current.Updater.GetOnlineVersion(0, true)));
@@ -67,7 +67,7 @@ namespace Grabacr07.KanColleViewer
 				{
 					if (KanColleClient.Current.Updater.UpdateTranslations(AppSettings.Default.XMLTransUrl.AbsoluteUri, Settings.Current.Culture, KanColleClient.Current.Translations) > 0)
 					{
-						WindowsNotification.Notifier.Show(
+						PluginHost.Instance.GetNotifier().Show(NotifyType.Other,
 							KanColleViewer.Properties.Resources.Updater_Notification_Title,
 							KanColleViewer.Properties.Resources.Updater_Notification_TransUpdate_Success,
 							() => App.ViewModelRoot.Activate());
@@ -82,6 +82,16 @@ namespace Grabacr07.KanColleViewer
 			ViewModelRoot = new MainWindowViewModel();
 			this.MainWindow = new MainWindow { DataContext = ViewModelRoot };
 			this.MainWindow.Show();
+
+			// Check if Adobe Flash is installed in Microsoft Explorer
+			if (GetFlashVersion() == "")
+			{
+				MessageBoxResult MB = MessageBox.Show(KanColleViewer.Properties.Resources.System_Flash_Not_Installed_Text, KanColleViewer.Properties.Resources.System_Flash_Not_Installed_Caption, MessageBoxButton.YesNo, MessageBoxImage.Error, MessageBoxResult.Yes);
+				if (MB == MessageBoxResult.Yes) {
+					Process.Start("IExplore.exe", @"http://get.adobe.com/flashplayer/");
+					this.MainWindow.Close();
+				}
+			}
 		}
 
 		protected override void OnExit(ExitEventArgs e)
@@ -90,7 +100,7 @@ namespace Grabacr07.KanColleViewer
 
 			KanColleClient.Current.Proxy.Shutdown();
 
-			WindowsNotification.Notifier.Dispose();
+			PluginHost.Instance.Dispose();
 			Settings.Current.Save();
 		}
 
@@ -117,6 +127,23 @@ ERROR, date = {0}, sender = {1},
 			{
 				Debug.WriteLine(ex);
 			}
+		}
+
+		/// <summary>
+		/// Obtains Adobe Flash Player's ActiveX element version.
+		/// </summary>
+		/// <returns>Empty string if Flash is not installed, otherwise the currently installed version.</returns>
+		private static string GetFlashVersion()
+		{
+			string sVersion = "";
+
+			RegistryKey FlashRK = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Macromedia\FlashPlayerActiveX");
+			if (FlashRK != null)
+			{
+				sVersion = FlashRK.GetValue("Version", "").ToString();
+			}
+
+			return sVersion;
 		}
 	}
 }

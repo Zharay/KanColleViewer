@@ -15,18 +15,20 @@
 				   xmlns:behaviors="clr-namespace:Grabacr07.KanColleViewer.Views.Behaviors"
 				   xmlns:controls="clr-namespace:Grabacr07.KanColleViewer.Views.Controls"
 				   xmlns:contents="clr-namespace:Grabacr07.KanColleViewer.Views.Contents"
+				   xmlns:converters="clr-namespace:Grabacr07.KanColleViewer.Views.Converters"
 				   xmlns:catalogs="clr-namespace:Grabacr07.KanColleViewer.Views.Catalogs"
+				   xmlns:models="clr-namespace:Grabacr07.KanColleViewer.Models"
 				   x:Name="GlowMetroWindow"
 				   mc:Ignorable="d"
 				   d:DataContext="{d:DesignInstance viewModels:SlotItemCatalogViewModel}"
 				   Title="{Binding Title}"
-				   Width="900"
+				   Width="950"
 				   Height="800"
 				   FontSize="12"
 				   Background="{DynamicResource ThemeBrushKey}"
 				   Foreground="{DynamicResource ActiveForegroundBrushKey}"
 				   IsRestoringWindowPlacement="True"
-				   SnapsToDevicePixels="True"
+				   UseLayoutRounding="True"
 				   TextOptions.TextFormattingMode="Display">
 
 	<Grid>
@@ -54,10 +56,8 @@
 
 				<TextBlock Grid.Column="1"
 						   Text="{Binding Title}"
-						   FontFamily="Segoe UI"
-						   FontSize="16"
-						   Margin="2,2,8,2"
-						   Opacity="0.85" />
+						   Style="{DynamicResource CaptionTextStyleKey}"
+						   Margin="2,0,8,0" />
 
 				<metro:SystemButtons Grid.Column="2"
 									 HorizontalAlignment="Right"
@@ -67,21 +67,42 @@
 		<!-- #endregion -->
 
 		<DockPanel Grid.Row="1">
-			<!--<Border DockPanel.Dock="Top"
-					Margin="8,0,8,8">
-				<metro2:CallMethodButton Content="表示の更新"
+			<Border DockPanel.Dock="Top"
+					Margin="8,8,8,0">
+				<StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+					<metro2:CallMethodButton Content="{Binding Resources.SlotItemCatalog_Refresh, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
 										 Padding="40,6"
 										 MethodName="Update"
 										 HorizontalAlignment="Left" />
-			</Border>-->
+					<Grid VerticalAlignment="Center"
+						  Margin="15,5,5,5">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"
+														  SharedSizeGroup="FilterName" />
+							<ColumnDefinition Width="10" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<WrapPanel VerticalAlignment="Center">
+							<CheckBox IsChecked="{Binding ShowStats, Mode=TwoWay}" />
+						</WrapPanel>
+						<TextBlock Margin="0,2"
+								   Grid.Column="2"
+								   HorizontalAlignment="Right">
+							<Run Text="{Binding Resources.SlotItemCatalog_ShowStats, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+						</TextBlock>
+					</Grid>
+				</StackPanel>
+			</Border>
 
 			<Border BorderBrush="{DynamicResource BorderBrushKey}"
 					BorderThickness="1"
 					Margin="8">
 				<ListView ItemsSource="{Binding SlotItems}"
-						  ItemContainerStyle="{DynamicResource GridViewItemContainerStyleKey}">
+						  ItemContainerStyle="{DynamicResource GridViewItemContainerStyleKey}"
+						  ScrollViewer.PanningMode="Both">
 					<ListView.Resources>
-						<Style TargetType="{x:Type TextBlock}">
+						<Style TargetType="{x:Type TextBlock}"
+							   BasedOn="{StaticResource DefaultTextStyleKey}">
 							<Setter Property="Margin"
 									Value="5,4" />
 						</Style>
@@ -122,26 +143,27 @@
 								</Setter.Value>
 							</Setter>
 						</Style>
+						<converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterKey" />
 					</ListView.Resources>
 					<ListView.View>
 						<GridView>
-							<GridViewColumn Width="180">
+							<GridViewColumn Width="190">
 								<GridViewColumn.Header>
 									<TextBlock Text="Eq. Name" />
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
-									<DataTemplate DataType="{x:Type viewModels:SlotItemViewModel}">
+									<DataTemplate DataType="{x:Type viewModels:SlotItemCounter}">
 										<StackPanel Orientation="Horizontal">
 											<Border Padding="0,1,5,1">
 												<Viewbox Width="20">
-													<controls:SlotItemIcon Type="{Binding SlotItem.IconType}" />
+													<controls:SlotItemIcon Type="{Binding Target.IconType}" />
 												</Viewbox>
 											</Border>
 											<TextBlock Margin="0,4">
-												<Run Text="{Binding SlotItem.Name, Mode=OneWay}"
+												<Run Text="{Binding Target.Name, Mode=OneWay}"
 													 Foreground="{DynamicResource ActiveForegroundBrushKey}" />
 												<LineBreak />
-												<Run Text="{Binding SlotItem.UntranslatedName, Mode=OneWay}"
+												<Run Text="{Binding Target.UntranslatedName, Mode=OneWay}"
 													 Background="{DynamicResource BackgroundBrushKey}"
 													 FontSize="11" />
 											</TextBlock>
@@ -150,69 +172,125 @@
 								</GridViewColumn.CellTemplate>
 							</GridViewColumn>
 
-							<GridViewColumn Width="82">
+							<GridViewColumn Width="52">
 								<GridViewColumn.Header>
-									<TextBlock>
-										<Run Text="Owned" />
-										<Run Text="(Extra)"
-											 FontSize="10" />
-									</TextBlock>
+									<TextBlock Text="Total" />
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
-									<DataTemplate DataType="{x:Type viewModels:SlotItemViewModel}">
-										<TextBlock Margin="0,4">
-											<Run Text="{Binding Count, Mode=OneWay}"
-												 Foreground="{DynamicResource ActiveForegroundBrushKey}" />
-											<Run Text="{Binding Remainder, StringFormat=({0}), Mode=OneWay}"
-												 FontSize="11" />
-										</TextBlock>
+									<DataTemplate DataType="{x:Type viewModels:SlotItemCounter}">
+										<TextBlock Text="{Binding Count, Mode=OneWay}"
+												   Margin="0,4"
+												   Foreground="{DynamicResource ActiveForegroundBrushKey}" />
 									</DataTemplate>
 								</GridViewColumn.CellTemplate>
 							</GridViewColumn>
 
-							<GridViewColumn Width="100">
-								<GridViewColumn.Header>
+							<controls:GridViewColumnCollapsible Width="100"
+																Visibility="{Binding ShowStats, Converter={StaticResource BooleanToVisibilityConverterKey}}">
+								<GridViewColumnHeader Visibility="{Binding ShowStats, Converter={StaticResource BooleanToVisibilityConverterKey}}">
 									<TextBlock>
 										<Run Text="Stats" />
 									</TextBlock>
-								</GridViewColumn.Header>
-								<GridViewColumn.CellTemplate>
-									<DataTemplate DataType="{x:Type viewModels:SlotItemViewModel}">
+								</GridViewColumnHeader>
+								<controls:GridViewColumnCollapsible.CellTemplate>
+									<DataTemplate DataType="{x:Type viewModels:SlotItemCounter}">
 										<TextBlock Margin="0,4"
 												   TextWrapping="Wrap">
 											<Run Text="{Binding Detail, Mode=OneWay}"
 												 Foreground="{DynamicResource ActiveForegroundBrushKey}" />
 										</TextBlock>
 									</DataTemplate>
-								</GridViewColumn.CellTemplate>
-							</GridViewColumn>
+								</controls:GridViewColumnCollapsible.CellTemplate>
+							</controls:GridViewColumnCollapsible>
 
-							<GridViewColumn Width="500">
+							<GridViewColumn Width="650">
 								<GridViewColumn.Header>
-									<TextBlock Text="Equipped Ship Girls" />
+									<DockPanel>
+										<Border Width="52"
+												BorderThickness="0,0,1,0"
+												BorderBrush="{DynamicResource BorderBrushKey}">
+											<TextBlock Text="★" />
+										</Border>
+										<Border Width="82"
+												BorderThickness="0,0,1,0"
+												BorderBrush="{DynamicResource BorderBrushKey}">
+											<TextBlock>
+												<Run Text="Owned" />
+												<Run Text="(Extra)"
+													 FontSize="11" />
+											</TextBlock>
+										</Border>
+										<Border>
+											<TextBlock Text="Equipped Shipgirls" />
+										</Border>
+									</DockPanel>
 								</GridViewColumn.Header>
 								<GridViewColumn.CellTemplate>
-									<DataTemplate DataType="{x:Type viewModels:SlotItemViewModel}">
-										<ItemsControl ItemsSource="{Binding Ships}">
-											<ItemsControl.Template>
-												<ControlTemplate TargetType="{x:Type ItemsControl}">
-													<WrapPanel IsItemsHost="True"
-															   Margin="0,0,0,4" />
-												</ControlTemplate>
-											</ItemsControl.Template>
+									<DataTemplate DataType="{x:Type viewModels:SlotItemCounter}">
+										<ItemsControl ItemsSource="{Binding Levels}"
+													  Margin="0,0,0,-1">
 											<ItemsControl.ItemTemplate>
 												<DataTemplate>
-													<TextBlock Margin="0,4,18,0"
-															   ToolTip="{Binding StatsToolTip, Mode=OneWay}"
-															   ToolTipService.InitialShowDelay="600">
-														<Run Text="{Binding Ship.Info.Name, Mode=OneWay}"
-															 Foreground="{DynamicResource ActiveForegroundBrushKey}" />
-														<Run Text="{Binding Ship.Level, StringFormat=Lv.{0}, Mode=OneWay}"
-															 FontSize="11" />
-														<Run Text="{Binding CountString, Mode=OneWay}"
-															 Background="{DynamicResource BackgroundBrushKey}"
-															 FontSize="11" />
-													</TextBlock>
+													<Border BorderThickness="0,0,0,1"
+															BorderBrush="{DynamicResource BorderBrushKey}">
+														<DockPanel>
+															<TextBlock Width="53"
+																	   Margin="0,4">
+																<TextBlock.Style>
+																	<Style TargetType="{x:Type TextBlock}">
+																		<Setter Property="Text"
+																				Value="{Binding Level, StringFormat=★+{0}}" />
+																		<Setter Property="Foreground"
+																				Value="#FF45A9A5" />
+																		<Setter Property="Opacity"
+																				Value="1.0" />
+																		<Style.Triggers>
+																			<DataTrigger Binding="{Binding Level}"
+																						 Value="0">
+																				<Setter Property="Foreground"
+																						Value="{DynamicResource InactiveForegroundBrushKey}" />
+																				<Setter Property="Opacity"
+																						Value=".5" />
+																			</DataTrigger>
+																			<DataTrigger Binding="{Binding Level}"
+																						 Value="10">
+																				<Setter Property="Text"
+																						Value="★max" />
+																			</DataTrigger>
+																		</Style.Triggers>
+																	</Style>
+																</TextBlock.Style>
+															</TextBlock>
+															<TextBlock Width="83"
+																	   Margin="0,4">
+																<Run Text="{Binding Count, Mode=OneWay}"
+																	 Foreground="{DynamicResource ActiveForegroundBrushKey}" />
+																<Run Text="{Binding Remainder, StringFormat=({0}), Mode=OneWay}"
+																	 FontSize="11" />
+															</TextBlock>
+															<ItemsControl ItemsSource="{Binding Ships}">
+																<ItemsControl.Template>
+																	<ControlTemplate TargetType="{x:Type ItemsControl}">
+																		<WrapPanel IsItemsHost="True"
+																				   Margin="0,0,0,4" />
+																	</ControlTemplate>
+																</ItemsControl.Template>
+																<ItemsControl.ItemTemplate>
+																	<DataTemplate>
+																		<TextBlock Margin="0,4,18,0">
+																			<Run Text="{Binding Ship.Info.Name, Mode=OneWay}"
+																				 Foreground="{DynamicResource ActiveForegroundBrushKey}" />
+																			<Run Text="{Binding Ship.Level, StringFormat=Lv.{0}, Mode=OneWay}"
+																				 FontSize="11" />
+																			<Run Text="{Binding CountString, Mode=OneWay}"
+																				 Background="{DynamicResource BackgroundBrushKey}"
+																				 FontSize="11" />
+																		</TextBlock>
+																	</DataTemplate>
+																</ItemsControl.ItemTemplate>
+															</ItemsControl>
+														</DockPanel>
+													</Border>
 												</DataTemplate>
 											</ItemsControl.ItemTemplate>
 										</ItemsControl>
@@ -234,11 +312,10 @@
 				Padding="20"
 				Visibility="{Binding IsReloading, Converter={StaticResource BooleanToVisibilityConverter}}"
 				d:IsHidden="True">
-			<TextBlock Text="Generating the list..."
+			<TextBlock Text="Generating list…"
+					   Style="{DynamicResource EmphaticTextStyleKey}"
 					   FontSize="16"
-					   Foreground="{DynamicResource ActiveForegroundBrushKey}"
 					   Background="{DynamicResource ThemeBrushKey}"
-					   TextWrapping="Wrap"
 					   HorizontalAlignment="Center" />
 		</Border>
 

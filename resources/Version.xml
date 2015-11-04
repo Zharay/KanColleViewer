@@ -2,32 +2,32 @@
 <Versions>
 	<Item>
 		<Name>App</Name>
-		<Version>2.6.0.461</Version>
-		<URL>https://github.com/Zharay/KanColleViewer/releases/tag/v2.6.0r461</URL>
+		<Version>3.5.0.2</Version>
+		<URL>https://github.com/Yuubari/KanColleViewer/releases/tag/v3.5.0r2</URL>
 	</Item>
 	<Item>
 		<Name>Equipment</Name>
-		<Version>1.0.2</Version>
-		<URL>https://raw.github.com/Zharay/KanColleViewer/master/resources/translations/Equipment.xml</URL>
+		<Version>1.0.14</Version>
+		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/Equipment.xml</URL>
 	</Item>
 	<Item>
 		<Name>Operations</Name>
-		<Version>1.0.3</Version>
-		<URL>https://raw.github.com/Zharay/KanColleViewer/master/resources/translations/Operations.xml</URL>
+		<Version>1.0.4</Version>
+		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/Operations.xml</URL>
 	</Item>
 	<Item>
 		<Name>Quests</Name>
-		<Version>1.0.1</Version>
-		<URL>https://raw.github.com/Zharay/KanColleViewer/master/resources/translations/Quests.xml</URL>
+		<Version>1.0.23</Version>
+		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/Quests.xml</URL>
 	</Item>
 	<Item>
 		<Name>Ships</Name>
-		<Version>1.0.4</Version>
-		<URL>https://raw.github.com/Zharay/KanColleViewer/master/resources/translations/Ships.xml</URL>
+		<Version>1.0.21</Version>
+		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/Ships.xml</URL>
 	</Item>
 	<Item>
 		<Name>ShipTypes</Name>
-		<Version>1.0.3</Version>
-		<URL>https://raw.github.com/Zharay/KanColleViewer/master/resources/translations/ShipTypes.xml</URL>
+		<Version>1.0.6</Version>
+		<URL>https://raw.githubusercontent.com/KCV-Localisation/KanColleViewer-Translations/master/ShipTypes.xml</URL>
 	</Item>
 </Versions>

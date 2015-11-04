@@ -31,32 +31,25 @@ namespace Grabacr07.KanColleViewer.Models
 		{
 			"ja", // Resources.resx
 			"en",
+            // "de",
 			"zh-CN",
 			"ko-KR",
 		};
 
-		private readonly Resources _Resources = new Resources();
-		private readonly IReadOnlyCollection<CultureInfo> _SupportedCultures;
-
 		/// <summary>
 		/// 多言語化されたリソースを取得します。
 		/// </summary>
-		public Resources Resources
-		{
-			get { return this._Resources; }
-		}
+		public Resources Resources { get; private set; }
 
 		/// <summary>
 		/// サポートされているカルチャを取得します。
 		/// </summary>
-		public IReadOnlyCollection<CultureInfo> SupportedCultures
-		{
-			get { return this._SupportedCultures; }
-		}
+		public IReadOnlyCollection<CultureInfo> SupportedCultures { get; private set; }
 
 		private ResourceService()
 		{
-			this._SupportedCultures = this.supportedCultureNames
+			this.Resources = new Resources();
+			this.SupportedCultures = this.supportedCultureNames
 				.Select(x =>
 				{
 					try
